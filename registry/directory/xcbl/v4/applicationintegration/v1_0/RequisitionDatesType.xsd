@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/applicationintegration/v1_0/applicationintegration.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/applicationintegration/v1_0/applicationintegration.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="RequisitionDatesType">
+        <xsd:annotation>
+            <xsd:documentation>is used to hold a list of the pertinent dates for the requisition.
+            which includes validity dates, RequestedShipDate, CancelByDates,
+        among others. These dates act as defaults that may be overwritten at the item level in the body of the message.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="RequestedShipByDate" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>is the date items in the requisition must be shipped from the
+        seller.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="RequestedDeliverByDate" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>is the date items in the requisition must be received by the buyer.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ValidityDates" type="core:ValidityDatesType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the dates between which the <!--code-->Requisition<!--/code--> is effective.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="CancelByDate" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>is the date after which the <!--code-->Requisition<!--/code--> should be cancelled.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfDateCoded" type="core:ListOfDateCodedType">
+                <xsd:annotation>
+                    <xsd:documentation>contains all other dates for the <!--code-->Requisition<!--/code--> that are not explicitly stated.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

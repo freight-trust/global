@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/financial/v1_0/financial.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/financial/v1_0/financial.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="FXDatesType">
+        <xsd:annotation>
+            <xsd:documentation>contains dates relevant to the spot rate quote.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="FXValueDate" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>specifies the effective date for the transaction.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="RemittanceDate" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>specifies the date the payment will be made.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="QuoteExpirationDate" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>specifies the date and time of the expiration of the FX quote.  </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfDateCoded" type="core:ListOfDateCodedType">
+                <xsd:annotation>
+                    <xsd:documentation>contains a list of <!--code-->DateCoded<!--/code--> which is composed of a date and a date qualifier.  This allows users to specify dates pertinent to the rate quote that is not explicitly defined in the document.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

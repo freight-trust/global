@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/financial/v1_0/financial.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/financial/v1_0/financial.xsd" elementFormDefault="qualified">
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType name="TransactionHandlingCodeType">
+        <xsd:annotation>
+            <xsd:documentation>This code the handling of the transaction for remittance advice. This code list is derived from X12 305 (Transaction Handling Code)</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:enumeration value="Other">
+                <xsd:annotation>
+                    <xsd:documentation>Custom code</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="OffInvoiceDeductionFromOriginalInvoice">
+                <xsd:annotation>
+                    <xsd:documentation>Off invoice (deduction from original invoice)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DebitCreditAdviceNoRemittanceDetail">
+                <xsd:annotation>
+                    <xsd:documentation>Debit/credit advice no remittance detail</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="PaymentAccompaniesRemittanceAdvice">
+                <xsd:annotation>
+                    <xsd:documentation>Payment accompanies remittance advice</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="MakePaymentOnly">
+                <xsd:annotation>
+                    <xsd:documentation>Make payment only</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DebitCreditAdviceWithRemittanceDetail">
+                <xsd:annotation>
+                    <xsd:documentation>Debit/credit advice with remittance detail</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="PlanAndSubmitSuggestedPurchaseOrder">
+                <xsd:annotation>
+                    <xsd:documentation>Plan and submit suggested purchase order(s)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="PlanOrderAndShipProduct">
+                <xsd:annotation>
+                    <xsd:documentation>Plan order(s) and ship product</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="NotificationOnly">
+                <xsd:annotation>
+                    <xsd:documentation>Notification only</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="RemittanceInformationOnly">
+                <xsd:annotation>
+                    <xsd:documentation>Remittance information only</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="PaymentRequestedAdjustmentToAccount">
+                <xsd:annotation>
+                    <xsd:documentation>Payment requested (adjustment to account)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ReimbursementToFollow">
+                <xsd:annotation>
+                    <xsd:documentation>Reimbursement to follow</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ApplyOnAccount">
+                <xsd:annotation>
+                    <xsd:documentation>Apply on account</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="MemoAdditionalRemittanceDetail">
+                <xsd:annotation>
+                    <xsd:documentation>Memo/additional remittance detail</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="CheckIssuanceNotice">
+                <xsd:annotation>
+                    <xsd:documentation>Check issuance notice</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DeductFromNextRemittance">
+                <xsd:annotation>
+                    <xsd:documentation>Deduct from next remittance</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="PrenotificationOfFutureTransfers">
+                <xsd:annotation>
+                    <xsd:documentation>Prenotification of future transfers</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="PaymentBeingIssuedCreditDue">
+                <xsd:annotation>
+                    <xsd:documentation>Credit due, payment being issued</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="RecurringDebitAuthorization">
+                <xsd:annotation>
+                    <xsd:documentation>Recurring debit authorization</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="SingleDebitAuthorization">
+                <xsd:annotation>
+                    <xsd:documentation>Single debit authorization</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="AdjustmentRequested">
+                <xsd:annotation>
+                    <xsd:documentation>Adjustment requested</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="SplitPaymentAndRemittance">
+                <xsd:annotation>
+                    <xsd:documentation>Split payment and remittance</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="HandlingPartysOptionToSplitPaymentAndRemittance">
+                <xsd:annotation>
+                    <xsd:documentation>Handling party's option to split payment and remittance</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/financial/v1_0/financial.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/financial/v1_0/financial.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="SpotRateDetailType">
+        <xsd:annotation>
+            <xsd:documentation>contains fields and elements specific to the spot rate quote.  This structure is provided when the <!--code-->IndicativeIndicator<!--/code--> is false.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="SpotRateID" type="core:ReferenceType">
+                <xsd:annotation>
+                    <xsd:documentation>contains an identification relevant to the spot rate transaction.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="ConfirmationID" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>contains free form text pertinent to the confirmation identification.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="FXIdentificationData" type="FXIdentificationDataType">
+                <xsd:annotation>
+                    <xsd:documentation>contains data relevant to identifying the parties involved in the spot rate transaction.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="FXReferenceNumber" type="core:ReferenceType">
+                <xsd:annotation>
+                    <xsd:documentation>contains a reference to the origins of the exchange rate quote.  This contains the FX rate reference number.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="FXAmounts" type="FXAmountsType">
+                <xsd:annotation>
+                    <xsd:documentation>contains all amount data relevant to the spot rate quote.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfFee" type="ListOfFeeType">
+                <xsd:annotation>
+                    <xsd:documentation>contains a list of fees and amounts pertinent to the spot FX rate quote.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="FXTransactionTypeCoded" type="FXTransactionTypeCodeType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the specific type of FX transaction quoted.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="FXTransactionTypeCodedOther" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is used to provide a non-standard <!--code-->FXTransactionTypeCode<!--/code-->. This element is mandatory if the value of <!--code-->FXTransactionTypeCoded<!--/code--> is 'Other'. These codes should not contain white space unless absolutely necessary.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="FXQuoteTypeCoded" type="FXQuoteTypeCodeType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the coded <!--code-->FXRate<!--/code--> quote type.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="FXQuoteTypeCodedOther" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is used to provide a non-standard <!--code-->FXQuoteTypeCode<!--/code-->. This element is mandatory if the value of <!--code-->FXQuoteTypeCoded<!--/code--> is 'Other'. These codes should not contain white space unless absolutely necessary.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="FXDates" type="FXDatesType">
+                <xsd:annotation>
+                    <xsd:documentation>contains dates relevant to the spot rate quote.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

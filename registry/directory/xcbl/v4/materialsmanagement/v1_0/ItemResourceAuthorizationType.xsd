@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/materialsmanagement/v1_0/materialsmanagement.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/materialsmanagement/v1_0/materialsmanagement.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="ItemResourceAuthorizationType">
+        <xsd:annotation>
+            <xsd:documentation>is used to specify resource authorization in the
+        schedule.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="ResourceAuthorizationCoded" type="ResourceAuthorizationCodeType">
+                <xsd:annotation>
+                    <xsd:documentation>is the code identifying the resource authorization for the
+        schedule quantity. The quantity fields are cumulative when this segment is
+        used. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ResourceAuthorizationCodedOther" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is used to provide a non-standard <!--code-->ResourceAuthorizationCode<!--/code-->. This element is mandatory if the value of <!--code-->ResourceAuthorizationCoded<!--/code--> is
+         'Other'. These codes should not contain white space unless absolutely necessary.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ValidityDates" type="core:ValidityDatesType">
+                <xsd:annotation>
+                    <xsd:documentation>is used to specify a start and end dates of a period which the <!--code-->ItemResourceAuthorization<!--/code--> is valid.
+ </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

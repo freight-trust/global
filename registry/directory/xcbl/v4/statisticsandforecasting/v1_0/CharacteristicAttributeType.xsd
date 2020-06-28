@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/statisticsandforecasting/v1_0/statisticsandforecasting.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/statisticsandforecasting/v1_0/statisticsandforecasting.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="CharacteristicAttributeType">
+        <xsd:annotation>
+            <xsd:documentation>contains the details relevant to describing a characteristic. It
+        also includes a generic characteristic field to allow for user-defined
+        data.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="CharacteristicName" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>identifies the characteristic being described. Examples of  <!--code-->CharacteristicName<!--/code--> are product and location.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="CharacteristicAttributeID" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>identifies the ID for the characteristic being described.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="CharacteristicAttributeName" type="core:IdentifierType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the human readable value to identify the characteristic.  The identifier element consists of an agency and a string value.  The string will hold the <!--code-->CharacteristicAttributeName<!--/code--> value.  The agency will be used to identify the origins of the <!--code-->CharacteristicAttributeName<!--/code--> value.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="CharacteristicAttributeDescription" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>provides a description of the characteristic</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfDimension" type="core:ListOfDimensionType">
+                <xsd:annotation>
+                    <xsd:documentation>is used to further describe the <!--code-->CharacteristicAttribute<!--/code-->.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="CharacteristicAttributeNote" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>provides additional information about the characteristic</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="OtherCharacteristicAttribute" type="CharacteristicAttributeType">
+                <xsd:annotation>
+                    <xsd:documentation>is additional user-specific characteristics related to the <!--code-->CharacteristicAttribute<!--/code-->.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

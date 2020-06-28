@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/financial/v1_0/financial.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/financial/v1_0/financial.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="InvoiceReferencesType">
+        <xsd:annotation>
+            <xsd:documentation>contains external references to the <!--code-->Invoice<!--/code--> that are
+        important to the processing and use of the <!--code-->Invoice<!--/code-->. </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="PurchaseOrderReference" type="core:PurchaseOrderReferenceType">
+                <xsd:annotation>
+                    <xsd:documentation>contains information relevant to the purchase order the invoice
+        is issued against. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ContractReference" type="core:ContractType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the contract number which the purchase order is
+        referencing. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="AccountNumber" type="core:ReferenceType">
+                <xsd:annotation>
+                    <xsd:documentation>holds the buyers account code with the supplier.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ProformaInvoiceNumber" type="core:ReferenceType">
+                <xsd:annotation>
+                    <xsd:documentation>holds the reference number for the proforma invoice.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ASNNumber" type="core:ReferenceType">
+                <xsd:annotation>
+                    <xsd:documentation>holds the ASN or despatch advice number.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PriceListNumber" type="core:ReferenceType">
+                <xsd:annotation>
+                    <xsd:documentation>holds the reference number of the price list.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PriceListVersionNumber" type="core:ReferenceType">
+                <xsd:annotation>
+                    <xsd:documentation>holds the version number of the price list.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="BuyersCatalogNumber" type="core:ReferenceType">
+                <xsd:annotation>
+                    <xsd:documentation>holds the catalog number of the buyer.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="BillOfLadingNumber" type="core:ReferenceType">
+                <xsd:annotation>
+                    <xsd:documentation>holds the bill of lading number for the invoice.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="AirWayBillNumber" type="core:ReferenceType">
+                <xsd:annotation>
+                    <xsd:documentation>holds the air waybill number of the invoice.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="LetterOfCreditNumber" type="core:ReferenceType">
+                <xsd:annotation>
+                    <xsd:documentation>holds the number of the letter of credit for the
+        invoice.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="AuthorizationReference" type="AuthorizationReferenceType">
+                <xsd:annotation>
+                    <xsd:documentation>contains information for the authorization for the purchase
+        order.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="DeliveryNoteNumber" type="core:ReferenceType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the references for the delivery note. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="CostAllocation" type="CostAllocationType">
+                <xsd:annotation>
+                    <xsd:documentation>contains information on the cost allocation.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfRelatedInvoiceRef" type="ListOfRelatedInvoiceRefType">
+                <xsd:annotation>
+                    <xsd:documentation>contains a list of other invoices related to this invoice or
+        <!--code-->InvoiceDetail<!--/code-->.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="OtherInvoiceReferences" type="core:ListOfReferenceCodedType">
+                <xsd:annotation>
+                    <xsd:documentation>contains all other references for the <!--code-->Invoice<!--/code--> not explicitly stated as the content of other elements. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

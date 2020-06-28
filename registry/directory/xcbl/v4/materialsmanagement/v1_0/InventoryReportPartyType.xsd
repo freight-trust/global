@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/materialsmanagement/v1_0/materialsmanagement.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/materialsmanagement/v1_0/materialsmanagement.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="InventoryReportPartyType">
+        <xsd:annotation>
+            <xsd:documentation>holds all party information related to the inventory report.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="SenderParty" type="core:PartyCodedType">
+                <xsd:annotation>
+                    <xsd:documentation>contains information for the party originating the InventoryReport document.
+                    PartyRoleCoded is used to specify the relationship between the sender and receiver and identify
+                    the role that the sender plays with respect to the receiver.  The PartyRoleCoded value can be
+                    any valid role code value.  For example, values such as Seller, Buyer, ThirdParty, or Warehouse
+                    could be used here.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="ReceiverParty" type="core:PartyCodedType">
+                <xsd:annotation>
+                    <xsd:documentation>contains information for the party receving the InventoryReport document.
+                    PartyRoleCoded is used to specify the relationship between the sender and receiver and identify
+                    the role that the receiver plays with respect to the sender.  The PartyRoleCoded value can be
+                    any valid role code value.  For example, values such as Seller, Buyer, ThirdParty, or Warehouse
+                    could be used here.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfPartyCoded" type="core:ListOfPartyCodedType">
+                <xsd:annotation>
+                    <xsd:documentation>is used to identify any other relevant parties associated with the InvetoryReport.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

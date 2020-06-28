@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/materialsmanagement/v1_0/materialsmanagement.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/materialsmanagement/v1_0/materialsmanagement.xsd" elementFormDefault="qualified">
+
+<xsd:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="../../externalschemas/xmldsig-core-schema.xsd"/>
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="PlanningScheduleType">
+        <xsd:annotation>
+            <xsd:documentation> is sent from a party who is planning the use or consumption of
+            products (buyer) to a party who has to plan for the supply of the products (seller).
+            The document consists of the notification of a forecast to be sent from the buyer to the seller.
+            The document outlines the requirements regarding the details for short term delivery and/or medium
+            to long scheduling for products.  The scheduling can be used to authorize manufacturing and/or the
+            provision of materials.  This is based on the terms and conditions defined in a purchasing agreement
+            commonly outlined by a contract or order.  The Planning Schedule defined here will not be designed to
+            support release capability.  This document will serve solely as a materials requirement schedule.
+            All schedule requirements relating to shipping and release authorization will be handled by the
+            ShippingSchedule document.  A response to Planning Schedule can be made using the
+            PlanningScheduleResponse document. Use of this document is determined by trading partners.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="PlanningScheduleHeader" type="PlanningScheduleHeaderType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the header information of the Planning Schedule.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:choice>
+                <xsd:element name="ListOfLocationGroupedPlanningDetail" type="ListOfLocationGroupedPlanningDetailType">
+                    <xsd:annotation>
+                        <xsd:documentation>contains the line level detail information for the <!--code-->PlanningSchedule<!--/code-->. The detail is grouped by the delivery location. This is one of two
+                        options for grouping forecasting detail in the <!--code-->PlanningSchedule<!--/code-->.</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+                <xsd:element name="ListOfMaterialGroupedPlanningDetail" type="ListOfMaterialGroupedPlanningDetailType">
+                    <xsd:annotation>
+                        <xsd:documentation>contains the line level detail information
+                        for the <!--code-->PlanningSchedule<!--/code-->. The detail is grouped by the material. This is one
+                        of two options for grouping forecasting detail in the <!--code-->PlanningSchedule<!--/code-->.
+                        </xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+            </xsd:choice>
+            <xsd:element minOccurs="0" name="PlanningScheduleSummary" type="PlanningScheduleSummaryType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the summary information of the <!--code-->PlanningSchedule<!--/code-->, typically totals of numerical fields.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="DigitalSignature" type="dgs:SignatureType">
+                <xsd:annotation>
+                    <xsd:documentation>contains a digital signature for the document.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

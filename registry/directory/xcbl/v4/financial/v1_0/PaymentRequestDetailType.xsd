@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/financial/v1_0/financial.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/financial/v1_0/financial.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="PaymentRequestDetailType">
+        <xsd:annotation>
+            <xsd:documentation>contains details and instructions for the PaymentRequest. This
+            may include, for example, settlement amount, receiving financial institution
+            detail, payment reason and payment mean codes, and payment dates.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="PaymentDocumentID" type="core:ReferenceType">
+                <xsd:annotation>
+                    <xsd:documentation>contains a unique identifier for the payment document. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PaymentSequenceNo" type="xsd:int">
+                <xsd:annotation>
+                    <xsd:documentation>contains a counter to track the payment document in the case where
+                    the <!--code-->PaymentRequest<!--/code--> document contains more than one payment
+                    document.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PaymentDates" type="PaymentDatesType">
+                <xsd:annotation>
+                    <xsd:documentation>contains a list of dates that are pertinent to the payment
+                    document.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:choice>
+                <xsd:element name="FinancialInstitutionDetail" type="core:FinancialInstitutionDetailType">
+                    <xsd:annotation>
+                        <xsd:documentation>contains specifications for the financial institution information
+                        which includes both account specific detail (i.e., account ID, account type,
+                        account holder) and financial institution specific detail (i.e., bank ID,
+                        branch ID). </xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+                <xsd:sequence>
+                    <xsd:element name="OriginatingFinancialInstitution" type="core:FIAccountType">
+                        <xsd:annotation>
+                            <xsd:documentation>contains the financial institution account information of the
+                            originating bank. The account detail and financial institution detail are
+                            required.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="ReceivingFISpecificID" type="core:PartyType">
+                        <xsd:annotation>
+                            <xsd:documentation>contains a bank specified ID to identify the payee information. This includes optional
+                            payee details such as address and contact. This can be an internal identifier assigned by
+                            the bank or possibly an MPID.contains a bank specified ID to identify the payee information. This includes optional
+                            payee details such as address and contact. This can be an internal identifier assigned by
+                            the bank or possibly an MPID.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                </xsd:sequence>
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="OriginatingFISpecificID" type="core:PartyType">
+                        <xsd:annotation>
+                            <xsd:documentation>contains a bank specified ID to identify the payer information. This includes optional
+                            payee details such as address and contact. This can be an internal identifier assigned by
+                            the bank or possibly an MPID.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:choice>
+                        <xsd:element name="ReceivingFinancialInstitution" type="core:FIAccountDetailType">
+                            <xsd:annotation>
+                                <xsd:documentation>contains the financial institution account information for the
+                                receiving bank. The account detail and financial institution detail is
+                                required.</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:element>
+                        <xsd:element name="ReceivingFISpecificID" type="core:PartyType">
+                            <xsd:annotation>
+                                <xsd:documentation>contains a bank specified ID to identify the payee information. This includes optional
+                                payee details such as address and contact. This can be an internal identifier assigned by
+                                the bank or possibly an MPID.contains a bank specified ID to identify the payee information. This includes optional
+                                payee details such as address and contact. This can be an internal identifier assigned by
+                                the bank or possibly an MPID.</xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:element>
+                    </xsd:choice>
+                </xsd:sequence>
+                <xsd:element name="CardInfo" type="core:CardInfoType">
+                    <xsd:annotation>
+                        <xsd:documentation>contains details of the credit or debit card that is being used for
+                        the payment. This includes credit card number, card type, card holder name, expiration date
+                        and other pertinent information.</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+            </xsd:choice>
+            <xsd:element name="SettlementAmount" type="core:Decimal21_6Type">
+                <xsd:annotation>
+                    <xsd:documentation>specifies the monetary amount to be paid.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="SettlementCurrency" type="core:CurrencyType">
+                <xsd:annotation>
+                    <xsd:documentation>specifies the currency for the <!--code-->PaymentRequest<!--/code--> document. This is the
+                    currency in which the payment will be made. This is an ISO currency code
+                    list.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="PaymentRequestParty" type="PaymentRequestPartyType">
+                <xsd:annotation>
+                    <xsd:documentation>contains all parties relevant to the payment document. The <!--code-->PayerParty<!--/code-->
+                    is optional in this structure. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="LegalReportingInformation" type="LegalReportingInformationType">
+                <xsd:annotation>
+                    <xsd:documentation>contains legal reporting information associated with payments made to
+                    a foreign payee. This is used by central banks for processing cross border
+                    payments over a certain amount.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PaymentReasonCoded" type="PaymentReasonCodeType">
+                <xsd:annotation>
+                    <xsd:documentation>specifies the business purpose of the payment. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PaymentReasonCodedOther" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is used to provide a non-standard <!--code-->PaymentReasonCode<!--/code-->.
+                    This element is mandatory if the value of <!--code-->PaymentReasonCoded<!--/code--> is
+                    'Other'. These codes should not contain white space unless absolutely
+                    necessary.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PaymentUrgencyCoded" type="PaymentUrgencyCodeType">
+                <xsd:annotation>
+                    <xsd:documentation>specifies the priority of the payment document.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PaymentUrgencyCodedOther" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is used to provide a non-standard <!--code-->PaymentUrgencyCode<!--/code-->.
+                    This element is mandatory if the value of <!--code-->PaymentUrgencyCoded<!--/code--> is
+                    'Other'. These codes should not contain white space unless absolutely
+                    necessary.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="InternationalPaymentIndicator" type="xsd:boolean">
+                <xsd:annotation>
+                    <xsd:documentation>contains a boolean indicator to specify whether the payment is a
+                    cross border payment</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="IntraCompanyPaymentIndicator" type="xsd:boolean">
+                <xsd:annotation>
+                    <xsd:documentation>contains a boolean indicator to specify if the payment is an
+                    intra-company transaction</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="PaymentMeanCoded" type="core:PaymentMeanCodeType">
+                <xsd:annotation>
+                    <xsd:documentation>contains a valid means of extinguishing the debt to which it
+                    relates.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PaymentMeanCodedOther" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is used to provide a non-standard <!--code-->PaymentMeanCode<!--/code-->. This
+                    element is mandatory if the value of <!--code-->PaymentMeanCoded<!--/code--> is 'Other'.
+                    These codes should not contain white space unless absolutely necessary.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PaymentMeanReference" type="core:ReferenceType">
+                <xsd:annotation>
+                    <xsd:documentation>identifies specific information relating to the specified payment
+                    mean. For example, if the selected payment mean were check, then
+                    <!--code-->PaymentMeanReference<!--/code--> would be used to communicate the check
+                    number.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PaymentSystemCoded" type="core:PaymentSystemCodeType">
+                <xsd:annotation>
+                    <xsd:documentation>indicates the system through which the payment is processed using a
+                    standard codelist.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PaymentSystemCodedOther" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is used to provide a non-standard <!--code-->PaymentSystemCode<!--/code-->.
+                    This element is mandatory if the value of <!--code-->PaymentSystemCoded<!--/code--> is
+                    'Other'. These codes should not contain white space unless absolutely
+                    necessary.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PaymentReference" type="core:ListOfReferenceCodedType">
+                <xsd:annotation>
+                    <xsd:documentation>contains a list of documents, business transactions, or identifiers
+                    that are relevant to the <!--code-->PaymentRequest<!--/code-->. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="AcceptFXMarketRate" type="xsd:boolean">
+                <xsd:annotation>
+                    <xsd:documentation>specifies whether the payer is willing to accept an FI supplied market rate for payment.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfRateOfExchangeDetail" type="core:ListOfRateOfExchangeDetailType">
+                <xsd:annotation>
+                    <xsd:documentation>contains one or more elements detailing information on the rate of
+                    exchange between currencies.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PaymentDetailAttachment" type="core:AttachmentType">
+                <xsd:annotation>
+                    <xsd:documentation>contains an attachment relevant to the payment request transaction.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PaymentInstructionNotes" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>contains any free-form text pertinent to the
+                    <!--code-->PaymentInstructionDetail<!--/code-->. This element may contain notes or any other
+                    similar information that is not contained explicitly in another structure. You
+                    should not assume that the receiving application is capable of doing more than
+                    storing and/or displaying this information.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="IsCredit" type="xsd:boolean">
+                <xsd:annotation>
+                    <xsd:documentation>contains a boolean value to indicate whether the amount is a credit
+                    or debit. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="RepetitiveCode" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>describes a company specific payment transaction code which a payer
+                    and the financial institution agree upon for fixed payments. The code is used to
+                    indicate the determined set of payer and payee accounts from which the funds
+                    will be transferred to or from. The financial institutions require this code to
+                    validate, transact, and bill properly.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="FinancialChargesAllocation" type="FinancialChargesAllocationType">
+                <xsd:annotation>
+                    <xsd:documentation>contains information pertaining to how payment of fees will be
+                    allocated between partners.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfPaymentDocumentDetail" type="ListOfPaymentDocumentDetailType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the <!--code-->RemittanceAdvice<!--/code--> details. Remittance detail
+                    is not required to process a payment. Thus, usage of this element is dependent
+                    on the established trading partner agreements between sender and receiver of
+                    this document.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ListOfPaymentRequestDetailType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" name="PaymentRequestDetail" type="PaymentRequestDetailType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

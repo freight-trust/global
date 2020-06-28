@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/statisticsandforecasting/v1_0/statisticsandforecasting.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/statisticsandforecasting/v1_0/statisticsandforecasting.xsd" elementFormDefault="qualified">
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="CharacteristicCombinationType">
+        <xsd:annotation>
+            <xsd:documentation>defines a single characteristic combination for the time series.
+        </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="CharacteristicCombinationPurposeCoded" type="TimeSeriesPurposeCodeType">
+                <xsd:annotation>
+                    <xsd:documentation>is used to indicate the function of the characteristic
+        combination in the transmission of this document. The application can use this
+        code to process the characteristic combinations appropriately.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="CharacteristicCombinationPurposeCodedOther" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is used to provide a non-standard <!--code-->CharacteristicCombinationPurposeCode<!--/code-->. This element is mandatory if the value
+       of <!--code-->CharacteristicCombinationPurposeCoded<!--/code--> is 'Other'. These codes should not contain white space unless absolutely necessary.
+    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="CharacteristicCombinationResponseCoded" type="TimeSeriesErrorCodeType">
+                <xsd:annotation>
+                    <xsd:documentation>indicates whether there is an error in the characteristic
+        combination data. This code is sent in response to a
+        <!--code-->TimeSeriesRequest<!--/code-->.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="CharacteristicCombinationResponseCodedOther" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is used to provide a non-standard <!--code-->CharacteristicCombinationResponseCode<!--/code-->. This element is mandatory if the value
+       of <!--code-->CharacteristicCombinationResponseCoded<!--/code--> is 'Other'. These codes should not contain white space unless absolutely necessary.
+    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="CharacteristicCombinationID" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is the key to uniquely identify a characteristic
+        combination.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="CharacteristicProduct" type="CharacteristicProductType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the basic elements used to describe a characteristic
+        product with respect to the source and target systems. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="CharacteristicLocation" type="CharacteristicLocationType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the basic elements used to describe a characteristic
+        location with respect to the source and target systems. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="CharacteristicProductGroup" type="CharacteristicProductGroupType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the basic elements used to describe a characteristic
+        product group with respect to the source and target systems. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="CharacteristicOther" type="CharacteristicOtherType">
+                <xsd:annotation>
+                    <xsd:documentation>is a generic configurable characteristic element that can be used
+        to describe various characteristics of a time series. This element is given
+        with respect to the source and target systems. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ListOfCharacteristicCombinationType">
+        <xsd:sequence>
+            <xsd:element name="CharacteristicCombination" type="CharacteristicCombinationType" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

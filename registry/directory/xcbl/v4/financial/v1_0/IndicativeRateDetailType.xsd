@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/financial/v1_0/financial.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/financial/v1_0/financial.xsd" elementFormDefault="qualified">
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="IndicativeRateDetailType">
+        <xsd:annotation>
+            <xsd:documentation>contains fields and elements specific to the indicate rate quote.  This structure is provided when the <!--code-->IndicativeIndicator<!--/code--> is true.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="CurrencyDecimalPlaces" type="xsd:int">
+                <xsd:annotation>
+                    <xsd:documentation>contains the number of decimal places that will be used to quote the currency.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="CurrencyAvailabilityCheckList" type="CurrencyAvailabilityCheckListType">
+                <xsd:annotation>
+                    <xsd:documentation>indicates multiple types of payment services available for the exchange currency.  </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="IndicativeRateRetrievedDate" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>contains the date and time that the indicative rate was quoted.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="CurrentDateTime" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>contains the current date and time.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

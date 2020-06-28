@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/statisticsandforecasting/v1_0/statisticsandforecasting.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/statisticsandforecasting/v1_0/statisticsandforecasting.xsd" elementFormDefault="qualified">
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="TimeSeriesRequestDetailType">
+        <xsd:annotation>
+            <xsd:documentation>is similar to TimeSeriesDetail with a few minor changes. The
+        ListOfCharacteristicCombinations is the same but the ListOfTimeSeriesKeyFigures
+        contains only information for the key figure and no time series
+        data.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="ListOfCharacteristicCombinations" type="ListOfCharacteristicCombinationType">
+                <xsd:annotation>
+                    <xsd:documentation>contains a list of all the characteristic combinations for the
+        time series. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfKeyFigureData" type="ListOfKeyFigureDataType">
+                <xsd:annotation>
+                    <xsd:documentation>contains a list of all the key figure and time series data
+        related information.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

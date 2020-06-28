@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/messagemanagement/v1_0/messagemanagement.xsd" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/messagemanagement/v1_0/messagemanagement.xsd" elementFormDefault="qualified">
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType name="SeverityCodeType">
+        <xsd:annotation>
+            <xsd:documentation>This code indicates the severity of an error.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:NMTOKEN">
+				<xsd:enumeration value="Fatal">
+                <xsd:annotation/>
+				</xsd:enumeration>                
+				<xsd:enumeration value="Warning">
+                <xsd:annotation>
+                    <xsd:documentation>Non fatal error.</xsd:documentation>
+                </xsd:annotation>
+                </xsd:enumeration>
+				<xsd:enumeration value="Transient">
+                <xsd:annotation>
+                    <xsd:documentation>Errors are temporary in nature and request
+            possibly can be resent in the future.  The interval before
+            resend can occurs can be specified as one of the
+            parameters.</xsd:documentation>
+                </xsd:annotation>
+                </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

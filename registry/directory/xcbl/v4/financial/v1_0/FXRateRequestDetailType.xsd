@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/financial/v1_0/financial.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/financial/v1_0/financial.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="FXRateRequestDetailType">
+        <xsd:annotation>
+            <xsd:documentation>contains detailed information related to the FX rates being requested.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="SequenceNumber" type="xsd:int">
+                <xsd:annotation>
+                    <xsd:documentation>contains the sequence number for the rate quote request.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="RateQuoteID" type="core:ReferenceType">
+                <xsd:annotation>
+                    <xsd:documentation>identifies the unique user identifier for the <!--code-->FXRateRequest<!--/code-->.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="ReferenceCurrency" type="core:CurrencyType">
+                <xsd:annotation>
+                    <xsd:documentation>specifies the reference currency of the rate of exchange.  </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="TargetCurrency" type="core:CurrencyType">
+                <xsd:annotation>
+                    <xsd:documentation>indicates the target currency of the rate of exchange.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="SettlementAmount" type="core:MonetaryValueType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the monetary amount to be transacted.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="DebitAmount" type="core:MonetaryValueType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the amount to be debited from the payers account.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="CreditAmount" type="core:MonetaryValueType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the amount to be credited to the payees account.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="OriginatingFinancialInstitution" type="core:FIAccountType">
+                <xsd:annotation>
+                    <xsd:documentation>contains financial details relating to the customer's deposit account. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="CardInfo" type="core:CardInfoType">
+                <xsd:annotation>
+                    <xsd:documentation>contains details for payments made via credit card.  This includes credit card number, card type, card holder name, expiration date, and other pertinent information.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ComputationalMethodCoded" type="ComputationalMethodCodeType">
+                <xsd:annotation>
+                    <xsd:documentation>indicates the means by which the requester would like to have the rate quoted.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ComputationalMethodCodedOther" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is used to provide a non-standard <!--code-->ComputationalMethodCode<!--/code-->. This element is mandatory if the value of <!--code-->ComputationalMethodCoded<!--/code--> is 'Other'. These codes should not contain white space unless absolutely necessary.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="FXQuoteTypeCoded" type="FXQuoteTypeCodeType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the coded <!--code-->FXRate<!--/code--> quote type.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="FXQuoteTypeCodedOther" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is used to provide a non-standard <!--code-->FXQuoteTypeCode<!--/code-->. This element is mandatory if the value of <!--code-->FXQuoteTypeCoded<!--/code--> is 'Other'. These codes should not contain white space unless absolutely necessary.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfReference" type="core:ListOfReferenceType">
+                <xsd:annotation>
+                    <xsd:documentation>contains additional customer defined reference information.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PayeeParty" type="core:PartyType">
+                <xsd:annotation>
+                    <xsd:documentation>describes the beneficiary of the payment and their identification number.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PayerParty" type="PayerPartyType">
+                <xsd:annotation>
+                    <xsd:documentation>describes who is responsible for payment.  This is assumed to also be the sender of the document. The <!--code-->PayerParty<!--/code--> includes an optional <!--code-->CertificateAuthority<!--/code--> field to hold the payer's digital signature or certificate of authority.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="FXRateRequestNote" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>contains any free-form text pertinent for other <!--code-->FXRateRequest<!--/code--> related information This element may contain notes or any other similar information that is not contained explicitly in another structure. You should not assume that the receiving application is capable of doing more than storing and/or displaying this information.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ListOfFXRateRequestDetailType">
+        <xsd:annotation>
+            <xsd:documentation>contains a list of <!--code-->FXRateRequestDetails<!--/code-->.  Details are optional in the case where an indicative FX rate is being requested.  This is specified by the <!--code-->IndicativeIndicator<!--/code--> in the header.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" name="FXRateRequestDetail" type="FXRateRequestDetailType">
+                <xsd:annotation>
+                    <xsd:documentation>contains detailed information related to the FX rates being requested.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

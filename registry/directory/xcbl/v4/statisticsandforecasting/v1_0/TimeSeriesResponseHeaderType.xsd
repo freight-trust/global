@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/statisticsandforecasting/v1_0/statisticsandforecasting.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/statisticsandforecasting/v1_0/statisticsandforecasting.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="TimeSeriesResponseHeaderType">
+        <xsd:annotation>
+            <xsd:documentation>contains all time series response header relevant information.
+        The header data includes information such as sender receiver ID, issue date,
+        time series ID and reference information, response code, etc. </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="TimeSeriesResponseIssueDate" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>indicates the date and time that the <!--code-->TimeSeriesResponse<!--/code--> document is transmitted. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="TimeSeriesResponseID" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>contains a reference number to uniquely identify the <!--code-->TimeSeriesResponse<!--/code--> document. The reference data type also contains an optional reference date. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="TimeSeriesReference" type="core:ReferenceType">
+                <xsd:annotation>
+                    <xsd:documentation>is the original time series document for which this response
+        document refers to. The reference also includes an optional date field which
+        can be used to indicate original create date.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="TimeSeriesPlanningData" type="SourceTargetIDType">
+                <xsd:annotation>
+                    <xsd:documentation>identifies the time series planning data with respect to the
+        relevant source or target system. This contains the name or ID of the planning
+        instance for a given planning system. For SAP users, this would be the
+        planning book ID.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="TimeSeriesResponseParty" type="TimeSeriesPartyType">
+                <xsd:annotation>
+                    <xsd:documentation>contains information describing all parties associated with the
+        time series response document. Data such as the name, address, and contact
+        information is provided.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="TimeSeriesHeaderResponseCoded" type="TimeSeriesResponseCodeType">
+                <xsd:annotation>
+                    <xsd:documentation>indicates the type of acknowledgement with respect to the time
+        series document.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="TimeSeriesHeaderResponseCodedOther" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is used to provide a non-standard TimeSeriesHeaderResponseCode. This element is mandatory if the value
+       of TimeSeriesHeaderResponseCoded is 'Other'. These codes should not contain white space unless absolutely necessary.
+    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ChangedTimeSeriesHeader" type="TimeSeriesHeaderType">
+                <xsd:annotation>
+                    <xsd:documentation>is the entire TimeSeriesHeader document as provided here. The
+        purpose of this is to allow the user to make the appropriate changes to the
+        time series header. You have the option of sending corrections to the time series header or
+        just simply sending the response code.
+     </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Language" type="core:LanguageType">
+                <xsd:annotation>
+                    <xsd:documentation>denotes the language the attachment is written in.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="TimeSeriesResponseNote" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>contains information or instructions pertinent to the analysis of
+		the time series response data.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

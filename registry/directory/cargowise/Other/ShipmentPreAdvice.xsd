@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by Richard White (Eagle Datamation International) -->
+<xs:schema targetNamespace="http://www.edi.com.au/EnterpriseService/" xmlns="http://www.edi.com.au/EnterpriseService/" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="Elements.xsd"/>
+	<xs:include schemaLocation="Event.xsd"/>
+	<xs:include schemaLocation="Order.xsd"/>
+    <xs:element name="ShipmentPreAdvices" type="ShipmentPreAdvices"/>
+    <xs:complexType name="ShipmentPreAdvices">
+		<xs:sequence>
+			<xs:element name="ShipmentPreAdvice" type="ShipmentPreAdvice" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ShipmentPreAdvice">
+		<xs:sequence>
+			<xs:element name="Orders" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Order" type="Order" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="PreAdviceID" type="xs:string"/>
+			<xs:element name="Carrier" type="Organisation" minOccurs="0"/>
+			<xs:element name="ReceivingAgent" type="Organisation" minOccurs="0"/>
+			<xs:element name="SendingAgent" type="Organisation" minOccurs="0"/>
+			<xs:element name="MasterBill" type="xs:string" minOccurs="0"/>
+			<xs:element name="HouseBill" type="xs:string" minOccurs="0"/>
+            <xs:element name="Cancelled" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="LoadPort" type="UNLOCO" minOccurs="0"/>
+			<xs:element name="DischargePort" type="UNLOCO" minOccurs="0"/>
+			<xs:element name="Buyer" type="Organisation"/>
+			<xs:element name="Volume" type="DimensionValue" minOccurs="0"/>
+			<xs:element name="Weight" type="DimensionValue" minOccurs="0"/>
+			<xs:element name="Packs" type="DimensionValue" minOccurs="0"/>
+			<xs:element name="Events" type="Events" minOccurs="0"/>
+			<xs:element name="Notes" type="Notes" minOccurs="0"/>
+			<xs:element name="TransportPlan" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="TransportLeg" type="PlannedLeg" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+            <xs:element name="Containers" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Container" type="PlannedContainer" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="ReferenceNumber" minOccurs="0">
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base="xs:string">
+                            <xs:attribute name="Type" use="required">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:NMTOKEN">
+                                        <xs:enumeration value="Shipment"/>
+                                        <xs:enumeration value="Declaration"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:attribute>
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

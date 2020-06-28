@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/materialsmanagement/v1_0/materialsmanagement.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/materialsmanagement/v1_0/materialsmanagement.xsd" elementFormDefault="qualified">
+
+<xsd:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="../../externalschemas/xmldsig-core-schema.xsd"/>
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="AdvanceShipmentNoticeType">
+        <xsd:annotation>
+            <xsd:documentation>(ASN) comprises
+     the notification by a supplier to the buyer of a shipment. The shipment
+     can be for planning or serve as a notice of a shipment in progress.
+     Therefore it is not necessary for a supplier to provide a preliminary
+     notice of shipment, nor is it necessary for a supplier to send an actual
+     note of shipment. Actual tracking of freight will initially be handled by
+      the shipper directly and not via the ASN. Buyers can respond to the ASN
+       with an ASN Error document that will be created at a later date.
+</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="ASNHeader" type="ASNHeaderType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the header information of the <!--code-->ASN.<!--/code-->
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ASNDetail" type="ASNDetailType">
+                <xsd:annotation>
+                    <xsd:documentation>contains line item and package details of the <!--code-->ASN<!--/code-->.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ASNSummary" type="ASNSummaryType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the summary information of the <!--code-->ASN<!--/code-->,
+        typically totals of numerical fields.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="DigitalSignature" type="dgs:SignatureType">
+                <xsd:annotation>
+                    <xsd:documentation>contains a digital signature for the document.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

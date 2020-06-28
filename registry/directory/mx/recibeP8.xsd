@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://privados.recintos.ws" xmlns:tns="http://privados.recintos.ws" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xs:import namespace="http://www.w3.org/2001/XMLSchema-instance" schemaLocation="xsi.xsd"/>
+  <xs:element name="recibeP8Vucem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="informacionGeneral" form="unqualified">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idOperacion" form="unqualified" type="xs:integer"/>
+              <xs:element name="idAsociado" form="unqualified" type="xs:integer"/>
+              <xs:element name="fechRegistro" form="unqualified" type="xs:dateTime"/>
+              <xs:element name="idDetalleMovimiento" form="unqualified" type="xs:integer"/>
+              <xs:element name="idMovimiento" form="unqualified" type="xs:integer"/>
+              <xs:element name="idTipoOperacion" form="unqualified" type="xs:integer"/>
+              <xs:element name="idRecintoFiscalizado" form="unqualified" type="xs:integer"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="IdtipoMercancia" form="unqualified" type="xs:integer"/>
+        <xs:element name="fechaInicioCarga" form="unqualified" type="xs:dateTime"/>
+        <xs:element name="fechaFinCarga" form="unqualified" type="xs:dateTime"/>
+        <xs:element name="peso" form="unqualified" type="xs:decimal"/>
+        <xs:element name="condicionCarga" form="unqualified" type="xs:string"/>
+        <xs:element name="observaciones" form="unqualified" type="xs:string"/>
+      </xs:sequence>
+      <xs:attribute ref="xsi:schemaLocation" use="required"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

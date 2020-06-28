@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/messagemanagement/v1_0/messagemanagement.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/messagemanagement/v1_0/messagemanagement.xsd" elementFormDefault="qualified">
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType name="ErrorTypeCodeType">
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:enumeration value="CorrelationError">
+                <xsd:annotation>
+                    <xsd:documentation>A correlation error is an error that prevents the document from being processed, related to the referencing of other business documents or the sequence of exchange of documents in a choreography.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="BusinessError">
+                <xsd:annotation>
+                    <xsd:documentation>These are commonly referred to as Context Errors.  The payload has a valid structure and follows the basic consistency rules for the payload but the particular usage of a field or combination of fields is incorrect, and will stop processing, or make it prone to error.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="PayloadError">
+                <xsd:annotation>
+                    <xsd:documentation>An error in the payload which can be a structure error in the XML, an error in non-XML data, or an inconsistency in the data.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Informational">
+                <xsd:annotation>
+                    <xsd:documentation>An error has not occured, but warning level information is communicated.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Other">
+                <xsd:annotation>
+                    <xsd:documentation>Other</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

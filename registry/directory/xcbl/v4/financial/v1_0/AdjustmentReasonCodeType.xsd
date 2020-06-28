@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/financial/v1_0/financial.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/financial/v1_0/financial.xsd" elementFormDefault="qualified">
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType name="AdjustmentReasonCodeType">
+        <xsd:annotation>
+            <xsd:documentation>This code identifies the reason for adjustment. This codelist is derived from EDIFACT 4465 (Adjustment reason description code)</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:enumeration value="AgreedSettlement">
+                <xsd:annotation>
+                    <xsd:documentation/>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="BelowSpecificationGoods">
+                <xsd:annotation>
+                    <xsd:documentation>Goods of inferior quality.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DamagedGoods">
+                <xsd:annotation>
+                    <xsd:documentation/>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ShortDelivery">
+                <xsd:annotation>
+                    <xsd:documentation/>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="PriceQuery">
+                <xsd:annotation>
+                    <xsd:documentation/>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ProofOfDeliveryRequired">
+                <xsd:annotation>
+                    <xsd:documentation/>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="PaymentOnAccount">
+                <xsd:annotation>
+                    <xsd:documentation/>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ReturnableContainerChargeIncluded">
+                <xsd:annotation>
+                    <xsd:documentation/>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="InvoiceError">
+                <xsd:annotation>
+                    <xsd:documentation/>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="CostsForDraft">
+                <xsd:annotation>
+                    <xsd:documentation>Cost of draft has been deducted from payment.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="BankCharges">
+                <xsd:annotation>
+                    <xsd:documentation>Bank charges have been deducted from payment.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="AgentCommission">
+                <xsd:annotation>
+                    <xsd:documentation>Agent commission has been deducted from payment.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="CounterClaim">
+                <xsd:annotation>
+                    <xsd:documentation>Buyer claims an existing (financial) obligation from the seller which (partly) offsets the outstanding invoice(s).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="WrongDelivery">
+                <xsd:annotation>
+                    <xsd:documentation>Delivery not according to specifications.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="GoodsReturnedToAgent">
+                <xsd:annotation>
+                    <xsd:documentation>Goods returned to agent.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="GoodsPartlyReturned">
+                <xsd:annotation>
+                    <xsd:documentation>Goods partly returned.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="TransportDamage">
+                <xsd:annotation>
+                    <xsd:documentation>Goods damaged in transit.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="GoodsOnConsignment">
+                <xsd:annotation>
+                    <xsd:documentation>Buyer does not accept invoice(s) charge as it relates to the goods where the ownership remains with the seller until sold.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="TradeDiscount">
+                <xsd:annotation>
+                    <xsd:documentation>Trade discount deducted from payment.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DeductionForLateDelivery">
+                <xsd:annotation>
+                    <xsd:documentation>Penalty amount deducted for later delivery.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="AdvertisingCosts">
+                <xsd:annotation>
+                    <xsd:documentation>Advertising costs deducted from payment.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="CustomsDuties">
+                <xsd:annotation>
+                    <xsd:documentation>Customs duties deducted from payment.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="TelephoneAndPostalCosts">
+                <xsd:annotation>
+                    <xsd:documentation>Telephone and postal costs deducted from payment.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="RepairCosts">
+                <xsd:annotation>
+                    <xsd:documentation>Repair costs deducted from payment.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="AttorneyFees">
+                <xsd:annotation>
+                    <xsd:documentation>Attorney fees deducted from payment.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Taxes">
+                <xsd:annotation>
+                    <xsd:documentation>Taxes deducted from payment.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ReclaimedDeduction">
+                <xsd:annotation>
+                    <xsd:documentation>Buyer reclaims an unspecified deduction from the invoice(s) (to be) paid.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="SeeSeparateAdvice">
+                <xsd:annotation>
+                    <xsd:documentation>Buyer or seller refers to separate correspondence a related shipment(s) and/or invoice(s) and/or a payment(s).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="BuyerRefusedToTakeDelivery">
+                <xsd:annotation>
+                    <xsd:documentation>Buyer refused to take delivery.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DirectPaymentToSeller">
+                <xsd:annotation>
+                    <xsd:documentation>Buyer states to have paid to seller.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="BuyerDisagreesWithDueDate">
+                <xsd:annotation>
+                    <xsd:documentation>Buyer disagrees with due date.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="GoodsNotDelivered">
+                <xsd:annotation>
+                    <xsd:documentation>Buyer has not received the goods.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="LateDelivery">
+                <xsd:annotation>
+                    <xsd:documentation>Goods delivered too late.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="QuotedAsPaidToYou">
+                <xsd:annotation>
+                    <xsd:documentation>Factor informs the seller that a certain invoice( paid by the buyer directly to the seller.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="GoodsReturned">
+                <xsd:annotation>
+                    <xsd:documentation>Buyer returned the goods to seller.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="InvoiceNotReceived">
+                <xsd:annotation>
+                    <xsd:documentation>Buyer claims he did not receive the invoice for w payment is requested.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="CreditNoteToDebtorOrNotToUs">
+                <xsd:annotation>
+                    <xsd:documentation>Factor informs the seller that he did not receive of a credit note sent to the buyer.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DeductedBonus">
+                <xsd:annotation>
+                    <xsd:documentation>Buyer has/will deduct a bonus he is entitled to f payment.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DeductedDiscount">
+                <xsd:annotation>
+                    <xsd:documentation>Buyer has/will deduct the discount he is entitled from the payment.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DeductedFreightCosts">
+                <xsd:annotation>
+                    <xsd:documentation>Buyer has/will deduct freight costs from the payment</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DeductionAgainstOtherInvoices">
+                <xsd:annotation>
+                    <xsd:documentation>Deduction against invoices already settled.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="CreditBalance">
+                <xsd:annotation>
+                    <xsd:documentation>Buyer makes use of existing credit balance(s) to (partly) the outstanding invoice(s).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ReasonUnknown">
+                <xsd:annotation>
+                    <xsd:documentation>Factor informs the seller that the reason of a commercial dispute raised by the buyer is unknown</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="AwaitingMessageFromSeller">
+                <xsd:annotation>
+                    <xsd:documentation>Buyer or factor are waiting for a (reply) message the seller before a commercial dispute can be set</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DebitNoteToSeller">
+                <xsd:annotation>
+                    <xsd:documentation>Buyer issued debit note to seller.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DiscountBeyondTerms">
+                <xsd:annotation>
+                    <xsd:documentation>Buyer has taken a discount larger than the discount terms agreed with the seller.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="SeeBuyersLetter">
+                <xsd:annotation>
+                    <xsd:documentation>See correspondence from buyer.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="AllowanceOrChargeError">
+                <xsd:annotation>
+                    <xsd:documentation>Error made by seller in the amount of allowance/charge</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="SubstituteProduct">
+                <xsd:annotation>
+                    <xsd:documentation>Product delivered not fully according to specification.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="TermsOfSaleError">
+                <xsd:annotation>
+                    <xsd:documentation>Terms of sale not according to purchase order.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="RequiredDataMissing">
+                <xsd:annotation>
+                    <xsd:documentation>A message sent by buyer to seller or by seller to buyer. did not contain data required to take action/decision</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="WrongInvoice">
+                <xsd:annotation>
+                    <xsd:documentation>Invoice issued to wrong party.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DuplicateInvoice">
+                <xsd:annotation>
+                    <xsd:documentation>Invoice sent twice.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="WeightError">
+                <xsd:annotation>
+                    <xsd:documentation>Weight not in accordance with the order.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="AdditionalChargeNotAuthorized">
+                <xsd:annotation>
+                    <xsd:documentation>Additional charge not authorised.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="IncorrectDiscount">
+                <xsd:annotation>
+                    <xsd:documentation>Buyer states that calculated discount on the invoice(s) is wrongly calculated.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="PriceChange">
+                <xsd:annotation>
+                    <xsd:documentation>Price has been changed.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Variation">
+                <xsd:annotation>
+                    <xsd:documentation>The adjustment is a variation from an agreed value</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Chargeback">
+                <xsd:annotation>
+                    <xsd:documentation>Balance of one or more items charged back to seller</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Offset">
+                <xsd:annotation>
+                    <xsd:documentation>Allocation of one or more debit items to one or more credit items or vice-versa.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="IndirectPayment">
+                <xsd:annotation>
+                    <xsd:documentation>Payment in settlement of an invoice has been made to a party other than the designated creditor.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="FinancialReassignment">
+                <xsd:annotation>
+                    <xsd:documentation>Previously assigned invoice/credit note is being reassigned.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ReinstatementOfChargebackOrOffset">
+                <xsd:annotation>
+                    <xsd:documentation>Reversal or cancellation of a chargeback and/or offset relating to an incorrect balance.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ExpectingNewTerms">
+                <xsd:annotation>
+                    <xsd:documentation>Buyer expects that seller revises the terms of payment of an invoice.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="SettlementToAgent">
+                <xsd:annotation>
+                    <xsd:documentation>Invoice has been/to be paid to seller's agent.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="CashDiscount">
+                <xsd:annotation>
+                    <xsd:documentation>An adjustment has been made due to the application of a  cash discount.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DelcredereCosts">
+                <xsd:annotation>
+                    <xsd:documentation>Costs deducted from a total amount to pay for the services of central payment.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="EarlyPaymentAllowanceAdjustment">
+                <xsd:annotation>
+                    <xsd:documentation>Adjustment results from the application of an early payment allowance.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="IncorrectDueDateForMonetaryAmount">
+                <xsd:annotation>
+                    <xsd:documentation>Adjustment has been made because an incorrect due date was referred to with regard to the monetary amount</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="WrongMonetaryAmountResultingFromIncorrectFreeGoods">
+                <xsd:annotation>
+                    <xsd:documentation>quantity Adjustment has been made because of a wrong monetary amount resulting from an incorrect free goods quantity</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="RackOrShelfReplenishmentServiceByASupplier">
+                <xsd:annotation>
+                    <xsd:documentation>Adjustment due to the replenishment of the racks or shelves by a supplier.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="TemporarySpecialPromotion">
+                <xsd:annotation>
+                    <xsd:documentation>Adjustment due to a temporary special promotion.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DifferenceInTaxRate">
+                <xsd:annotation>
+                    <xsd:documentation>Adjustment due to a difference in tax rate.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Other">
+                <xsd:annotation>
+                    <xsd:documentation>Other.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

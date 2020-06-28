@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/statisticsandforecasting/v1_0/statisticsandforecasting.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/statisticsandforecasting/v1_0/statisticsandforecasting.xsd" elementFormDefault="qualified">
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="TimeSeriesResponseType">
+        <xsd:annotation>
+            <xsd:documentation>contains all time series response header,
+       detail and summary information relating to the response to a time series document.
+        TimeSeries is a forecasting document that can be used to process data based
+        on variable characteristics. Data is collected over a period of time, and time
+        slices can be presented as a historical account or a planned
+        forecast.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="TimeSeriesResponseHeader" type="TimeSeriesResponseHeaderType">
+                <xsd:annotation>
+                    <xsd:documentation>contains all time series response header relevant information.
+        The header data includes information such as sender receiver ID, issue date,
+        time series ID and reference information, response code, etc. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="TimeSeriesResponseDetail" type="TimeSeriesResponseDetailType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the detail level information relating to the time series
+        response.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="TimeSeriesResponseSummary" type="TimeSeriesSummaryType">
+                <xsd:annotation>
+                    <xsd:documentation>contains all information relevant to the summary of the time
+        series document.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

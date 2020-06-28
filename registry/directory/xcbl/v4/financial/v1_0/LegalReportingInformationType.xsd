@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/financial/v1_0/financial.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/financial/v1_0/financial.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="LegalReportingInformationType">
+        <xsd:annotation>
+            <xsd:documentation>contains legal reporting information associated with payments
+        made to a foreign payee. This is used by central banks for processing cross
+        border payments over a certain amount.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="LegalReportingIndicator" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>contains a country specific code assigned by the central
+        bank.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="LegalReportingSupplementalCode" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>contains an additional code that is country dependent used for
+        further identification.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="LegalReportingParty" type="CompanyType">
+                <xsd:annotation>
+                    <xsd:documentation>identifies the company responsible for legal
+        reporting.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="LegalReportingInvoicedAmount" type="core:MonetaryValueType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the total invoiced amount.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="LegalReportingPaymentAmount" type="core:MonetaryValueType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the total amount of payment.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="LegalReportingSupplyingCountry" type="core:CountryType">
+                <xsd:annotation>
+                    <xsd:documentation>specifies the country where the services or goods
+        originate.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="LegalReportingPayeeCountry" type="core:CountryType">
+                <xsd:annotation>
+                    <xsd:documentation>specifies the country in from which the payment is
+        made.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="LegalReportingImportDate" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>specifies the import date that is legally reported.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="LegalReportingPaymentDate" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>specifies the payment date that is legally reported</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="LegalReportingDescription" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is a free form description of the legel reporting information.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

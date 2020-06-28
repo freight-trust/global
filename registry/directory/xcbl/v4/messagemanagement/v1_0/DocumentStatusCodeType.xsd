@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/messagemanagement/v1_0/messagemanagement.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/messagemanagement/v1_0/messagemanagement.xsd" elementFormDefault="qualified">
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType name="DocumentStatusCodeType">
+        <xsd:annotation>
+            <xsd:documentation/>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:enumeration value="Received">
+                <xsd:annotation>
+                    <xsd:documentation>The message has been received but not checked or processed it in any way</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="CheckedOK">
+                <xsd:annotation>
+                    <xsd:documentation>The message has been received and checked for structure and content as well as consistency between inerdependent data within the document and with other sources such as earlier documents received and reference data. No problems were found</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="WarningError">
+                <xsd:annotation>
+                    <xsd:documentation>The message has been received and checked and problems were found. However the message can still be processed successfuly</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="FatalError">
+                <xsd:annotation>
+                    <xsd:documentation>The message has been received and checked but problems were found that prevent the message from being processed</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ProcessingStarted">
+                <xsd:annotation>
+                    <xsd:documentation>Processing of the message has started but not yet completed</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ProcessedOK">
+                <xsd:annotation>
+                    <xsd:documentation>Processing of the message has completed and no errors were found</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ProcessFatalError">
+                <xsd:annotation>
+                    <xsd:documentation>The message was processed but errors were found which prevented a successful conclusion of the process</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ProcessWarningError">
+                <xsd:annotation>
+                    <xsd:documentation>The message was processed and errors were found. However successful processing of the message occurred</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Other">
+                <xsd:annotation>
+                    <xsd:documentation>Other</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

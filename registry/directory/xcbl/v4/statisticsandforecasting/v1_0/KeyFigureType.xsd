@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/statisticsandforecasting/v1_0/statisticsandforecasting.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/statisticsandforecasting/v1_0/statisticsandforecasting.xsd" elementFormDefault="qualified">
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="KeyFigureType">
+        <xsd:annotation>
+            <xsd:documentation>is the key figure data used to identify the name, type, and value
+        of a key figure used in a time series.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="KeyFigureID" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is the key that uniquely identifies a key figure via its
+        technical name with respect to the <!--code-->TimeSeriesSystemType<!--/code--> given at the
+        header. Eg: APO_FORECAST</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="KeyFigureName" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>contains the predefined name used for the key figure. Eg: sales forecast</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="KeyFigureDescription" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>contains the alternate name used to rename the given key
+        figure. Eg: my sales forecast</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

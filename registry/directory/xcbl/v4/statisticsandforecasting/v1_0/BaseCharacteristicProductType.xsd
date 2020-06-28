@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/statisticsandforecasting/v1_0/statisticsandforecasting.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/statisticsandforecasting/v1_0/statisticsandforecasting.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="BaseCharacteristicProductType">
+        <xsd:annotation>
+            <xsd:documentation>contains the details describing a characteristic product. It also
+        includes a generic characteristic field to allow for user-specific product
+        related data.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="ProductAttributeID" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>contains a unique identifier which serves as the technical
+        description or primary key of the product with respect to the originating
+        system.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="ProductAttributeName" type="core:IdentifierType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the human readable value to identify the product.
+        </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ProductAttributeDescription" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is used to describe the product. This is a language dependent
+        text field.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfDimension" type="core:ListOfDimensionType">
+                <xsd:annotation>
+                    <xsd:documentation>element is a container for a list of one or more dimension elements.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ProductNotes" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>gives specifications relating to the product. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="OtherProductAttribute" type="CharacteristicAttributeType">
+                <xsd:annotation>
+                    <xsd:documentation>is additional user-specific characteristics related to the
+        product.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

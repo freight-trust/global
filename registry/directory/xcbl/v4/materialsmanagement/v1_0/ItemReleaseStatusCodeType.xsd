@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/materialsmanagement/v1_0/materialsmanagement.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/materialsmanagement/v1_0/materialsmanagement.xsd" elementFormDefault="qualified">
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType name="ItemReleaseStatusCodeType">
+        <xsd:annotation>
+            <xsd:documentation>This code identifies the status of the part being ordered or forecast with respect to the material release or planning document. This code list is derived from X12 682 (Part release status code)</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:enumeration value="Other">
+                <xsd:annotation>
+                    <xsd:documentation>Custom Code</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="FabricationAuthorizationQuantityIsFinalYearRequirement">
+                <xsd:annotation>
+                    <xsd:documentation>Fabrication Authorization Quantity is Final Model Year Requirement; The Part is a Non carryover Item for the Subsequent Model Year from the Supplier</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="MaterialAuthorizationQuantityIsFinalYearRequirement">
+                <xsd:annotation>
+                    <xsd:documentation>Material Authorization Quantity is Final Model Year Requirement; The Part is a Non carryover Item for the Subsequent Model Year from the Supplier</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="PartWillBeCanceledAtTheMaterialQuantity">
+                <xsd:annotation>
+                    <xsd:documentation>Part will be Canceled at the Material Quantity</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="PartIsACarryoverItemFromSubsequentModelYearFromTheSupplier">
+                <xsd:annotation>
+                    <xsd:documentation>Part is a Carryover Item from Subsequent Model Year from the Supplier</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="PartIsANewItemForTheSubsequentModelYear">
+                <xsd:annotation>
+                    <xsd:documentation>Part is a New Item for the Subsequent Model Year</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="PartIsANewItemDueToAnInterimEngineeringRelease">
+                <xsd:annotation>
+                    <xsd:documentation>Part is a New Item Due to an Interim Engineering Release</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="FinalReleaseForThisCancelledPart">
+                <xsd:annotation>
+                    <xsd:documentation>Final Release for this Cancelled Part</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="PlanningQuantityIsFinalYearRequirement">
+                <xsd:annotation>
+                    <xsd:documentation>Planning Quantity is Final Model Year Requirement The Part is a Non-Carryover Item for the Subsequent Model Year From the Supplier</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="FinalForecastForThisCancelledPart">
+                <xsd:annotation>
+                    <xsd:documentation>Final Forecast for this Cancelled Part</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="AllTimeBuy">
+                <xsd:annotation>
+                    <xsd:documentation>All Time Buy. Unless Specifically Stated, This Code is Not to be Interpreted as Authorization for Tool Scrap</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Balance-OutPart">
+                <xsd:annotation>
+                    <xsd:documentation>Balance-Out Part; Eng. Change Pending</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="TerminalBuy">
+                <xsd:annotation>
+                    <xsd:documentation>Terminal Buy</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="SystemsAutomatedBuy">
+                <xsd:annotation>
+                    <xsd:documentation>Systems Automated Buy</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="CorporationCampaignBuy">
+                <xsd:annotation>
+                    <xsd:documentation>Corporation Campaign Buy</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="SourceSurplus">
+                <xsd:annotation>
+                    <xsd:documentation>Source Surplus</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Reschedule">
+                <xsd:annotation>
+                    <xsd:documentation>Reschedule</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="MerchandizingActPromotionBuy">
+                <xsd:annotation>
+                    <xsd:documentation>Merchandizing Act Promotion Buy</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="MinimumOrLotBuy">
+                <xsd:annotation>
+                    <xsd:documentation>Minimum or Lot Buy</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DieTie">
+                <xsd:annotation>
+                    <xsd:documentation>Die Tie</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="LandauSpecification">
+                <xsd:annotation>
+                    <xsd:documentation>Landau Specification</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="MillRunPurchase">
+                <xsd:annotation>
+                    <xsd:documentation>Mill Run Purchase</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Solicitation">
+                <xsd:annotation>
+                    <xsd:documentation>Solicitation</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="PilotPreProduction">
+                <xsd:annotation>
+                    <xsd:documentation>Pilot/Pre-production</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="SpecialLargeQuantityBuy">
+                <xsd:annotation>
+                    <xsd:documentation>Special Large Quantity Buy</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ReplacementOrders">
+                <xsd:annotation>
+                    <xsd:documentation>Replacement Orders</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="InitialOrders">
+                <xsd:annotation>
+                    <xsd:documentation>Initial Orders</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="TrimOrder">
+                <xsd:annotation>
+                    <xsd:documentation>Trim Order</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ConfirmingPhoneOrder">
+                <xsd:annotation>
+                    <xsd:documentation>Confirming Phone Order</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="CoverOvershipment-DoNotReship">
+                <xsd:annotation>
+                    <xsd:documentation>Cover Overshipment - Do Not Reship</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="EconomicOrderQuantity">
+                <xsd:annotation>
+                    <xsd:documentation>Economic Order Quantity</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ProductionYearEndSurplus">
+                <xsd:annotation>
+                    <xsd:documentation>Production Year End Surplus</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

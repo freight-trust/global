@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/messagemanagement/v1_0/messagemanagement.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/messagemanagement/v1_0/messagemanagement.xsd" elementFormDefault="qualified">
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="MessageAcknowledgmentType">
+        <xsd:annotation>
+            <xsd:documentation>is part of a larger business process defined by a
+document exchange.  Message acknowledgments are used by e-business parties to
+notify the sender of a message/document that the message has been received.
+Message acknowledgments are not used to indicate a syntactical or content
+check of the received document.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="AcknowledgmentLocation" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation> references the location in the system in which the
+        corresponding message is being acknowledged. For example,
+        "MyCompany.XPC.MsgAckResponder" and
+        "MyCompany.Translator"</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="AcknowledgmentReferenceNumber" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is a reference number that can be used to associate the message
+        acknowledgment with an originating message.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="AcknowledgmentNote" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is a note that can included with the message
+        acknowledgment.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

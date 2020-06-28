@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd"
+			xmlns:dgs="http://www.w3.org/2000/09/xmldsig#"
+			xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/financial/v1_0/financial.xsd"
+			targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/financial/v1_0/financial.xsd"
+			elementFormDefault="qualified">
+
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+<xsd:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="../../externalschemas/xmldsig-core-schema.xsd"/>
+
+<!-- Include all Type Definitions -->
+<xsd:include schemaLocation="AdjustmentReasonCodeType.xsd"/>
+<xsd:include schemaLocation="AdjustmentDetailType.xsd"/>
+<xsd:include schemaLocation="AuthorizationReferenceType.xsd"/>
+<xsd:include schemaLocation="ChargeRegulationCodeType.xsd"/>
+<xsd:include schemaLocation="CompanyType.xsd"/>
+<xsd:include schemaLocation="ComputationalMethodCodeType.xsd"/>
+<xsd:include schemaLocation="CostAllocationType.xsd"/>
+<xsd:include schemaLocation="CountryRequirementType.xsd"/>
+<xsd:include schemaLocation="CountrySpecificRequirementsType.xsd"/>
+<xsd:include schemaLocation="CurrencyAvailabilityCheckListType.xsd"/>
+<xsd:include schemaLocation="EncryptedFieldType.xsd"/>
+<xsd:include schemaLocation="EncryptedInfoType.xsd"/>
+<xsd:include schemaLocation="ExceptionQuantitiesType.xsd"/>
+<xsd:include schemaLocation="FeeType.xsd"/>
+<xsd:include schemaLocation="FinancialChargesAllocationType.xsd"/>
+<xsd:include schemaLocation="FinancialInstitutionCodedType.xsd"/>
+<xsd:include schemaLocation="FXAmountsType.xsd"/>
+<xsd:include schemaLocation="FXDatesType.xsd"/>
+<xsd:include schemaLocation="FXIdentificationDataType.xsd"/>
+<xsd:include schemaLocation="FXQuoteTypeCodeType.xsd"/>
+<xsd:include schemaLocation="FXRateRequestDetailType.xsd"/>
+<xsd:include schemaLocation="FXRateRequestHeaderType.xsd"/>
+<xsd:include schemaLocation="FXRateRequestSummaryType.xsd"/>
+<xsd:include schemaLocation="FXRateRequestType.xsd"/>
+<xsd:include schemaLocation="FXRateResponseDetailType.xsd"/>
+<xsd:include schemaLocation="FXRateResponseHeaderType.xsd"/>
+<xsd:include schemaLocation="FXRateResponseType.xsd"/>
+<xsd:include schemaLocation="FXTransactionTypeCodeType.xsd"/>
+<xsd:include schemaLocation="IndicativeRateDetailType.xsd"/>
+<xsd:include schemaLocation="IndustrySectorCodeType.xsd"/>
+<xsd:include schemaLocation="InvoiceBaseItemDetailType.xsd"/>
+<xsd:include schemaLocation="InvoiceDatesType.xsd"/>
+<xsd:include schemaLocation="InvoiceDetailType.xsd"/>
+<xsd:include schemaLocation="InvoiceHeaderType.xsd"/>
+<xsd:include schemaLocation="InvoiceItemDetailType.xsd"/>
+<xsd:include schemaLocation="InvoiceMediumCodeType.xsd"/>
+<xsd:include schemaLocation="InvoiceMediumType.xsd"/>
+<xsd:include schemaLocation="InvoicePartyType.xsd"/>
+<xsd:include schemaLocation="InvoicePaymentStatusType.xsd"/>
+<xsd:include schemaLocation="InvoicePricingDetailType.xsd"/>
+<xsd:include schemaLocation="InvoicePurposeCodeType.xsd"/>
+<xsd:include schemaLocation="InvoicePurposeType.xsd"/>
+<xsd:include schemaLocation="InvoiceReferencesType.xsd"/>
+<xsd:include schemaLocation="InvoiceResponseDetailType.xsd"/>
+<xsd:include schemaLocation="InvoiceResponseHeaderType.xsd"/>
+<xsd:include schemaLocation="InvoiceResponseType.xsd"/>
+<xsd:include schemaLocation="InvoiceSummaryType.xsd"/>
+<xsd:include schemaLocation="InvoiceTotalsType.xsd"/>
+<xsd:include schemaLocation="InvoiceType.xsd"/>
+<xsd:include schemaLocation="InvoiceTypeCodeType.xsd"/>
+<xsd:include schemaLocation="InvoiceTypeType.xsd"/>
+<xsd:include schemaLocation="InvoicingDetailType.xsd"/>
+<xsd:include schemaLocation="LegalReportingInformationType.xsd"/>
+<xsd:include schemaLocation="LineItemAdjustmentType.xsd"/>
+<xsd:include schemaLocation="OtherInvoicePartiesType.xsd"/>
+<xsd:include schemaLocation="PayerPartyType.xsd"/>
+<xsd:include schemaLocation="PaymentDatesType.xsd"/>
+<xsd:include schemaLocation="PaymentDocumentDetailType.xsd"/>
+<xsd:include schemaLocation="PaymentExceptionCodeType.xsd"/>
+<xsd:include schemaLocation="PaymentExceptionType.xsd"/>
+<xsd:include schemaLocation="PaymentPartyType.xsd"/>
+<xsd:include schemaLocation="PaymentReasonCodeType.xsd"/>
+<xsd:include schemaLocation="PaymentRequestAcknDetailType.xsd"/>
+<xsd:include schemaLocation="PaymentRequestAcknHeaderType.xsd"/>
+<xsd:include schemaLocation="PaymentRequestAcknowledgmentType.xsd"/>
+<xsd:include schemaLocation="PaymentRequestDetailType.xsd"/>
+<xsd:include schemaLocation="PaymentRequestHeaderType.xsd"/>
+<xsd:include schemaLocation="PaymentRequestPartyType.xsd"/>
+<xsd:include schemaLocation="PaymentRequestSummaryType.xsd"/>
+<xsd:include schemaLocation="PaymentRequestType.xsd"/>
+<xsd:include schemaLocation="PaymentStatusEventCodeType.xsd"/>
+<xsd:include schemaLocation="PaymentStatusRequestDetailType.xsd"/>
+<xsd:include schemaLocation="PaymentStatusRequestHeaderType.xsd"/>
+<xsd:include schemaLocation="PaymentStatusRequestSummaryType.xsd"/>
+<xsd:include schemaLocation="PaymentStatusRequestType.xsd"/>
+<xsd:include schemaLocation="PaymentStatusResponseDetailType.xsd"/>
+<xsd:include schemaLocation="PaymentStatusResponseHeaderType.xsd"/>
+<xsd:include schemaLocation="PaymentStatusResponseType.xsd"/>
+<xsd:include schemaLocation="PaymentUrgencyCodeType.xsd"/>
+<xsd:include schemaLocation="RelatedInvoiceRefType.xsd"/>
+<xsd:include schemaLocation="RemittanceAdviceDetailType.xsd"/>
+<xsd:include schemaLocation="RemittanceAdviceHeaderType.xsd"/>
+<xsd:include schemaLocation="RemittanceAdviceStatusCodeType.xsd"/>
+<xsd:include schemaLocation="RemittanceAdviceType.xsd"/>
+<xsd:include schemaLocation="RemittanceAdviceSummaryType.xsd"/>
+<xsd:include schemaLocation="SpecificRequirementType.xsd"/>
+<xsd:include schemaLocation="SpotRateDetailType.xsd"/>
+<xsd:include schemaLocation="SubsidiaryType.xsd"/>
+<xsd:include schemaLocation="TraceTypeCodeType.xsd"/>
+<xsd:include schemaLocation="TraceTypeType.xsd"/>
+<xsd:include schemaLocation="TransactionHandlingCodeType.xsd"/>
+
+<!-- Document Root Element Declarations -->
+<xsd:element name="FXRateRequest" type="FXRateRequestType"/>
+<xsd:element name="FXRateResponse" type="FXRateResponseType"/>
+<xsd:element name="Invoice" type="InvoiceType"/>
+<xsd:element name="InvoiceResponse" type="InvoiceResponseType"/>
+<xsd:element name="PaymentRequest" type="PaymentRequestType"/>
+<xsd:element name="PaymentRequestAcknowledgment" type="PaymentRequestAcknowledgmentType"/>
+<xsd:element name="PaymentStatusRequest" type="PaymentStatusRequestType"/>
+<xsd:element name="PaymentStatusResponse" type="PaymentStatusResponseType"/>
+<xsd:element name="RemittanceAdvice" type="RemittanceAdviceType"/>
+
+</xsd:schema>

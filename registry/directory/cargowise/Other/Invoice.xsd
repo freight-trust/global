@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by Richard White (Eagle Datamation International) -->
+<xs:schema targetNamespace="http://www.edi.com.au/EnterpriseService/" xmlns="http://www.edi.com.au/EnterpriseService/" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="Elements.xsd"/>
+	<xs:element name="Invoices">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="InvoiceHeader" type="InvoiceHeader" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="Version" type="Version" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="InvoiceLine">
+		<xs:sequence>
+			<xs:element name="InvoiceQty" type="DimensionValue" minOccurs="0"/>
+			<xs:element name="LinePrice" type="FinancialValue"/>
+			<xs:element name="ProductNumber" type="xs:string" minOccurs="0"/>
+			<xs:element name="ProductDescription" type="xs:string" minOccurs="0"/>
+			<xs:element name="CustomsInvoiceQty" type="DimensionValue" minOccurs="0"/>
+			<xs:element name="OrderNumber" type="xs:string" minOccurs="0"/>
+			<xs:element name="LineClassification" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="TariffCode" type="TariffCode" minOccurs="0"/>
+						<xs:element name="TariffLookup" type="xs:string" minOccurs="0"/>
+						<xs:element name="OriginOfGoods" type="xs:string" minOccurs="0"/>
+						<xs:element name="TreatmentCode" type="xs:NMTOKEN" minOccurs="0"/>
+						<xs:element name="Preference" type="xs:NMTOKEN" minOccurs="0"/>
+						<xs:element name="Concession" type="xs:string" minOccurs="0"/>
+						<xs:element name="InstrumentType" type="xs:string" minOccurs="0"/>
+						<xs:element name="InstrumentCode" type="xs:string" minOccurs="0"/>
+						<xs:element name="AddCustomsDetails" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="AddCustomsDetail" type="AdditionalCustomsInformation" minOccurs="0" maxOccurs="unbounded"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Volume" type="DimensionValue" minOccurs="0"/>
+			<xs:element name="Weight" type="DimensionValue" minOccurs="0"/>
+			<xs:element name="ContainerNumbers" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ContainerNumber" type="xs:string" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="CustomText1" type="xs:string" minOccurs="0"/>
+			<xs:element name="CustomText2" type="xs:string" minOccurs="0"/>
+			<xs:element name="CustomText3" type="xs:string" minOccurs="0"/>
+			<xs:element name="Charges" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Charge" type="InvoiceCharge" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="PartAttrib1" type="xs:string" minOccurs="0"/>
+			<xs:element name="PartAttrib2" type="xs:string" minOccurs="0"/>
+			<xs:element name="PartAttrib3" type="xs:string" minOccurs="0"/>
+			<xs:element name="Bond" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="Summary" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>This is for reference only. Contains the charges summary information for the invoice line</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="FOB" type="FinancialValue" minOccurs="0"/>
+						<xs:element name="FOBInLocalCurr" type="MonetaryAmount" minOccurs="0"/>
+						<xs:element name="Freight" type="FinancialValue" minOccurs="0"/>
+						<xs:element name="FreightInLocalCurr" type="MonetaryAmount" minOccurs="0"/>
+						<xs:element name="Insurance" type="FinancialValue" minOccurs="0"/>
+						<xs:element name="InsuranceInLocalCurr" type="MonetaryAmount" minOccurs="0"/>
+						<xs:element name="CIF" type="FinancialValue" minOccurs="0"/>
+						<xs:element name="CIFInLocalCurr" type="MonetaryAmount" minOccurs="0"/>
+						<xs:element name="Duty" type="FinancialValue" minOccurs="0"/>
+						<xs:element name="DutyPercent" minOccurs="0">
+							<xs:simpleType>
+								<xs:restriction base="xs:decimal"/>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="GST" type="FinancialValue" minOccurs="0"/>
+						<xs:element name="TransportAndInsurance" type="FinancialValue" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="LandedCosting" type="LandedCostingInfo" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="InvoiceHeader">
+		<xs:sequence>
+			<xs:element name="InvoiceNumber" type="xs:string" minOccurs="0"/>
+			<xs:element name="InvoiceAmount" type="FinancialValue" minOccurs="0"/>
+			<xs:element name="ExchangeRate" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="InvoiceDate" type="xs:date" minOccurs="0"/>
+			<xs:element name="ValuationDate" type="xs:dateTime" minOccurs="0"/>
+			<xs:element name="PackingDetails" type="PackingDetails" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>This contains the reference to the packing details. This indicates the Housebill/Master bill that contains this Invoice </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Consignor" type="Organisation" minOccurs="0"/>
+			<xs:element name="IsGroupInvoice" type="TrueFalse" minOccurs="0"/>
+			<xs:element name="RelatedGroupInvoiceNumber" type="xs:string" minOccurs="0"/>
+			<xs:element name="Incoterm" type="INCOTERM" minOccurs="0"/>
+			<xs:element name="Volume" type="DimensionValue" minOccurs="0"/>
+			<xs:element name="Weight" type="DimensionValue" minOccurs="0"/>
+			<xs:element name="AddCustomsDetails" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="AddCustomsDetail" type="AdditionalCustomsInformation" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="InvoiceCharges" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="InvoiceCharge" type="InvoiceCharge" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="InvoiceLines" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="InvoiceLine" type="InvoiceLine" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="InvoiceCharge">
+		<xs:sequence>
+			<xs:element name="ChargeType" type="xs:NMTOKEN"/>
+			<xs:element name="ChargeValue" type="FinancialValue" minOccurs="0"/>
+			<xs:element name="GstApplies" type="TrueFalse" minOccurs="0"/>
+			<xs:element name="DutyApplies" type="TrueFalse" minOccurs="0"/>
+			<xs:element name="IsIncludedInTotal" type="TrueFalse" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PackingDetails">
+		<xs:sequence>
+			<xs:element name="Housebill" type="xs:string" minOccurs="0"/>
+			<xs:element name="Masterbill" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="LandedCostGroupCharge">
+		<xs:sequence>
+			<xs:element name="Id" type="xs:int"/>
+			<xs:element name="ChargesAmount" type="FinancialValue"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="LandedCostSellDetails">
+		<xs:sequence>
+			<xs:element name="Sequence" type="xs:int"/>
+			<xs:element name="MarkUpPercentage" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="EffectiveMarkUpPercentage" type="xs:decimal" minOccurs="0"/>
+			<xs:element name="SellPriceExGST" type="FinancialValue" minOccurs="0"/>
+			<xs:element name="SellPriceIncGST" type="FinancialValue" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SpecialTax">
+		<xs:sequence>
+			<xs:element name="Sequence" type="xs:int"/>
+			<xs:element name="TaxAmount" type="FinancialValue"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="LandedCostingInfo">
+		<xs:sequence>
+			<xs:element name="LineType" type="xs:string"/>
+			<xs:element name="UnitPriceInLocalCurrency" type="FinancialValue" minOccurs="0"/>
+			<xs:element name="DutiesAndTaxesPerUnit" type="FinancialValue" minOccurs="0"/>
+			<xs:element name="LandingCostPerUnit" type="FinancialValue" minOccurs="0"/>
+			<xs:element name="TotalCostPerUnit" type="FinancialValue" minOccurs="0"/>
+			<xs:element name="SellDetails">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="SellDetails" type="LandedCostSellDetails" maxOccurs="3"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="LCGroupCharges">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="LCGroupCharge" type="LandedCostGroupCharge" maxOccurs="6"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="LCMisc" type="FinancialValue" minOccurs="0"/>
+			<xs:element name="OtherDuty" type="FinancialValue" minOccurs="0"/>
+			<xs:element name="Excise" type="FinancialValue" minOccurs="0"/>
+			<xs:element name="EntryFees" type="FinancialValue" minOccurs="0"/>
+			<xs:element name="SpecialTax" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="SpecialTax" type="SpecialTax" maxOccurs="3"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

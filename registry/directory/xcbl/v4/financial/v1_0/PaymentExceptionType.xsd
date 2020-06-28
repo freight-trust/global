@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/financial/v1_0/financial.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/financial/v1_0/financial.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="PaymentExceptionType">
+        <xsd:annotation>
+            <xsd:documentation>holds the exception details that include an exception code, exception note and a specifier for the offending element.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="PaymentExceptionCoded" type="PaymentExceptionCodeType">
+                <xsd:annotation>
+                    <xsd:documentation>contains exception codes that relate to the <!--code-->PaymentRequest<!--/code--> document.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PaymentExceptionCodedOther" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is used to provide a non-standard
+          <!--code-->PaymentExceptionCode<!--/code-->. This element is mandatory if the value of <!--code-->PaymentExceptionCoded<!--/code--> is 'Other'. These codes should not contain white space unless absolutely necessary.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PaymentExceptionNote" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>contains any free form text pertinent to the
+          <!--code-->PaymentException<!--/code-->. This element may contain notes or any
+          other similar information that is not contained explicitly in another
+          structure. You should not assume that the receiving application is capable of
+          doing more than storing and/or displaying this information. .</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="OffendingPaymentElement" type="core:NameValuePairType">
+                <xsd:annotation>
+                    <xsd:documentation> specifies the name and value of the element for which the exception applies.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ListOfPaymentExceptionType">
+        <xsd:annotation>
+            <xsd:documentation>contains a list of exception codes relating to the <!--code-->PaymentRequest<!--/code--> document.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" name="PaymentException" type="PaymentExceptionType">
+                <xsd:annotation>
+                    <xsd:documentation>contains exception details which include an exception code, exception note and a specifier for the offending element..</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

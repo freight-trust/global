@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/messagemanagement/v1_0/messagemanagement.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/messagemanagement/v1_0/messagemanagement.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="ApplicationResponseDetailType">
+        <xsd:annotation>
+            <xsd:documentation>provides details of an error in a document</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="ErrorTypeCoded" type="ErrorTypeCodeType">
+                <xsd:annotation>
+                    <xsd:documentation>defines the type of error identified by the <!--code-->ApplicationResponse<!--/code-->
+        </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ErrorTypeCodedOther" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is used to provide a non-standard <!--code-->ErrorTypeCode<!--/code-->. This element is mandatory if the value of <!--code-->ErrorTypeCoded<!--/code--> is 'Other'. These codes should not contain white space unless absolutely necessary.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ItemReference" type="ItemReferenceType">
+                <xsd:annotation>
+                    <xsd:documentation>contains information to identify the line item and the schedule line information that contains an error.  If an error does not occur in the line item it is not necessary to complete this</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="ErrorInfo" type="core:ErrorInfoType">
+                <xsd:annotation>
+                    <xsd:documentation>element is used by the receiving application to return complete information about errors encountered during processing of a message.  The specific use of some of  these elements is as follows:&lt;ul&gt;&lt;br&gt;1.  CompletionText- contains the error code produced by the recieving service/application. These codes are generally agreed upon by trading partners.  Completion codes are not defined in enumerated lists and possible values are not listed in xCBL documentation because it is not reasonably possible to know every completion code for every business process or document.&lt;br&gt;2.  CompletionMSG- contains the detailed description of the error code (ie the error message)&lt;br&gt;3.  Severity- states the severity of the error encountered &lt;br&gt;4.  ListOfParameter- can be used to provide any additional information needed to further identify the error.  For instance this can be used to provide the complete schema path for a payload error.&lt;/ul&gt;</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfStructuredNote" type="core:ListOfStructuredNoteType">
+                <xsd:annotation>
+                    <xsd:documentation>contains one or more structured notes that allow you to provide notes that are more than a simple free-text field. Such notes may include the message text, or this text may be referenced with an external identifier or a URL. An agency may be specified, and is needed in the case where an ID has been provided for a note that is either included in-line or referenced. This field is often used to include references to centrally stored clauses in contracts that are required to appear within business documents. Can also be used to contain the document being responded to.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfNameValueSet" type="core:ListOfNameValueSetType">
+                <xsd:annotation>
+                    <xsd:documentation>is used to hold a collection of values qualified by names. The values contained in this element should be agreed upon by trading partners.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ListOfApplicationResponseDetailType">
+        <xsd:annotation>
+            <xsd:documentation>contains a list of ApplicationResponseDetails.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" name="ApplicationResponseDetail" type="ApplicationResponseDetailType">
+                <xsd:annotation>
+                    <xsd:documentation>Provides details of an error in a document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

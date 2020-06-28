@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/materialsmanagement/v1_0/materialsmanagement.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/materialsmanagement/v1_0/materialsmanagement.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="ASNDatesType">
+        <xsd:annotation>
+            <xsd:documentation>indicates the pertinent dates for the ASN. These dates are
+        global and apply to the entire ASN, except where overridden by dates provided at the line item or package level
+ </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="DeliveryDate" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>indicates the date delivery is requested to arrive at the
+        destination.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ShipDate" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>indicates the date items in the ASN must be shipped from the
+		seller.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="EarliestDeliveryDate" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>indicates the earliest delivery date. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="LatestDeliveryDate" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>indicates the latest delivery date.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="CollectionDateOfCargo" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>indicates the date the cargo is requested to be collected.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ScheduleDeliveryDateAfter" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>indicates the date that delivery is scheduled for on or
+        after.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ScheduleDeliveryDateBefore" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>indicates the date that delivery is scheduled for on or
+        before.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfDateCoded" type="core:ListOfDateCodedType">
+                <xsd:annotation>
+                    <xsd:documentation>is used to communicate any other dates not explicitly stated by another element.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

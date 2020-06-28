@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/materialsmanagement/v1_0/materialsmanagement.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/materialsmanagement/v1_0/materialsmanagement.xsd" elementFormDefault="qualified">
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType name="GoodsReceiptTypeCodeType">
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:enumeration value="Other">
+                <xsd:annotation>
+                    <xsd:documentation>CustomCode</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ReceivingDockAdvice">
+                <xsd:annotation>
+                    <xsd:documentation>Receiving Dock Advice</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="PostReceiptAdvice">
+                <xsd:annotation>
+                    <xsd:documentation>Post Receipt Advice</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DispositionAdvice">
+                <xsd:annotation>
+                    <xsd:documentation>indicates receipt at the final point where disposal will occur</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="MeteredGasVolumeAdvice">
+                <xsd:annotation>
+                    <xsd:documentation>Metered Gas Volume Advice</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="FacilityOperatorsAllocationAdvice">
+                <xsd:annotation>
+                    <xsd:documentation>Facility Operator's Allocation Advice</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="NaturalGasSellersAllocationAdvice">
+                <xsd:annotation>
+                    <xsd:documentation>Natural Gas Seller's Allocation Advice</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="PipelineAllocationAdvice">
+                <xsd:annotation>
+                    <xsd:documentation>Pipeline Allocation Advice</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="AcceptanceCertificate">
+                <xsd:annotation>
+                    <xsd:documentation>Acceptance Certificate</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="AuthorizedRepresentativeInReceipt">
+                <xsd:annotation>
+                    <xsd:documentation>Authorized Representative in Receipt of an Acceptance Alert</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="AuthorizedRepresentativeNotInReceipt">
+                <xsd:annotation>
+                    <xsd:documentation>Authorized Representative Not in Receipt of an Acceptance Alert</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="IntermediatePointReceiptAdvice">
+                <xsd:annotation>
+                    <xsd:documentation>Intermediate Point Receipt Advice</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Acknowledgement">
+                <xsd:annotation>
+                    <xsd:documentation>Acknowledgement to ASN</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

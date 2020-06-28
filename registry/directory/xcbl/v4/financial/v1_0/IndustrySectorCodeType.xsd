@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/financial/v1_0/financial.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/financial/v1_0/financial.xsd" elementFormDefault="qualified">
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType name="IndustrySectorCodeType">
+        <xsd:annotation>
+            <xsd:documentation>This code identifies the industry sector for a given company. This code list is derived from EDIFACT 7293(Sector/subject identification qualifier)</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:enumeration value="ConstructionIndustry">
+                <xsd:annotation>
+                    <xsd:documentation/>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="GovernmentalExportConditions">
+                <xsd:annotation>
+                    <xsd:documentation/>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ChemicalIndustry">
+                <xsd:annotation>
+                    <xsd:documentation/>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ElectronicIndustry">
+                <xsd:annotation>
+                    <xsd:documentation/>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="AutomotiveIndustry">
+                <xsd:annotation>
+                    <xsd:documentation/>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="SteelIndustry">
+                <xsd:annotation>
+                    <xsd:documentation/>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Factoring">
+                <xsd:annotation>
+                    <xsd:documentation>Factoring industry.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DefenceIndustry">
+                <xsd:annotation>
+                    <xsd:documentation>A code to identify the defence industry.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="AlcoholBeverageIndustry">
+                <xsd:annotation>
+                    <xsd:documentation>Alcohol beverage industry.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Police">
+                <xsd:annotation>
+                    <xsd:documentation>Applies to police formalities.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Customs">
+                <xsd:annotation>
+                    <xsd:documentation>Applies to customs regulations.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="HealthRegulation">
+                <xsd:annotation>
+                    <xsd:documentation>Applies to health regulation.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="BalanceOfPayments">
+                <xsd:annotation>
+                    <xsd:documentation>Balance of payments.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="NationalLegislation">
+                <xsd:annotation>
+                    <xsd:documentation>National regulations specified by the relevant government.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Government">
+                <xsd:annotation>
+                    <xsd:documentation>To identify requirements and conditions applicable to government activity.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="StandardsImplementation">
+                <xsd:annotation>
+                    <xsd:documentation>Subject refers to standards implementation.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Insurance">
+                <xsd:annotation>
+                    <xsd:documentation>The information is related to insurance.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="CreditInquiry">
+                <xsd:annotation>
+                    <xsd:documentation>Applies to credit inquiry.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="GeneralRequest">
+                <xsd:annotation>
+                    <xsd:documentation>Applies to a general request.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="PaymentTerms">
+                <xsd:annotation>
+                    <xsd:documentation>Applies to payment terms.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Other">
+                <xsd:annotation>
+                    <xsd:documentation>Other.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

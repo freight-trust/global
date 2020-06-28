@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/materialsmanagement/v1_0/materialsmanagement.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/materialsmanagement/v1_0/materialsmanagement.xsd" elementFormDefault="qualified">
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType name="ForecastFrequencyCodeType">
+        <xsd:annotation>
+            <xsd:documentation>This code identifies the release frequency of the line item. This code list is derived from X12 681 (Timing Qualifier)</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:enumeration value="Annually">
+                <xsd:annotation>
+                    <xsd:documentation>Annually (Calendar Year)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Daily">
+                <xsd:annotation>
+                    <xsd:documentation>Daily</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Discrete">
+                <xsd:annotation>
+                    <xsd:documentation>Discrete</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="FlexibleInterval">
+                <xsd:annotation>
+                    <xsd:documentation>Flexible Interval (from Date X through Date Y)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="MonthlyBucket">
+                <xsd:annotation>
+                    <xsd:documentation>Monthly Bucket (Calendar Months)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Quarterly">
+                <xsd:annotation>
+                    <xsd:documentation>Quarterly (Calendar Quarters)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Semi-Annually">
+                <xsd:annotation>
+                    <xsd:documentation>Semi-Annually (Calendar Year)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="FourWeekBucket">
+                <xsd:annotation>
+                    <xsd:documentation>Four week bucket (13 buckets per year)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="WeeklyBucket">
+                <xsd:annotation>
+                    <xsd:documentation>Weekly Bucket (Monday through Sunday)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Just-In-Time">
+                <xsd:annotation>
+                    <xsd:documentation>Just-in-time</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Continuous">
+                <xsd:annotation>
+                    <xsd:documentation>Continuous</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Synchronous">
+                <xsd:annotation>
+                    <xsd:documentation>Synchronous</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Replenishment">
+                <xsd:annotation>
+                    <xsd:documentation>Replenishment</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Other">
+                <xsd:annotation>
+                    <xsd:documentation>Custom Code</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

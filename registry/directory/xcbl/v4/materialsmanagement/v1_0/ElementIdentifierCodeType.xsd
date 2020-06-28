@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/materialsmanagement/v1_0/materialsmanagement.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/materialsmanagement/v1_0/materialsmanagement.xsd" elementFormDefault="qualified">
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType name="ElementIdentifierCodeType">
+        <xsd:annotation>
+            <xsd:documentation>In EDIFACT this is used at the segment level, where the CDI and INP are per segment.  In X12 the default value for this is the GoodsReceiptDocument in the header.  At the header the values pertain to the entire header document item level discrepancies are handled at the detail level.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:enumeration value="Other">
+                <xsd:annotation>
+                    <xsd:documentation>Custom Code</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="GoodsReceiptDocument">
+                <xsd:annotation>
+                    <xsd:documentation>describes the entire goods receipt document.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="TransportRouting">
+                <xsd:annotation>
+                    <xsd:documentation>describes the discrepancy in the TransportRouting</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Equipment">
+                <xsd:annotation>
+                    <xsd:documentation>describes the discrepancy in the equipment</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Packaging">
+                <xsd:annotation>
+                    <xsd:documentation>describes the discrepancy in the packaging</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="SealNumber">
+                <xsd:annotation>
+                    <xsd:documentation>describes the discrepancy in the SealNumber found in the TransportEquipment</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

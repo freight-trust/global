@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/materialsmanagement/v1_0/materialsmanagement.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/materialsmanagement/v1_0/materialsmanagement.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="ShippingScheduleHeaderType">
+        <xsd:annotation>
+            <xsd:documentation>contains the header information of the ShippingSchedule.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="ScheduleID" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>contains a reference number to uniquely identify the <!--code-->ShippingSchedule.<!--/code-->
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="ScheduleIssuedDate" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>is a digital time stamp the time the application created the <!--code-->ShippingSchedule<!--/code--> document.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ScheduleReferences" type="ScheduleReferencesType">
+                <xsd:annotation>
+                    <xsd:documentation>is used to identify references to other documents and release information for the <!--code-->ShippingSchedule.<!--/code-->
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ReleaseNumber" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>identifies the specific iteration of the release against a given
+                    contract, purchase order, etc.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="Purpose" type="core:PurposeType">
+                <xsd:annotation>
+                    <xsd:documentation>indicates the intended use of the <!--code-->ShippingSchedule<!--/code-->
+                    document. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="RequestedResponse" type="core:RequestedResponseType">
+                <xsd:annotation>
+                    <xsd:documentation>specifies the type of acknowledgment requested by the buyer from
+                    the seller.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="ScheduleTypeCoded" type="ScheduleTypeCodeType">
+                <xsd:annotation>
+                    <xsd:documentation>identifies the type of schedule when defining shipping or
+                    delivery time in a schedule or forecast.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ScheduleTypeCodedOther" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is used to provide a non-standard <!--code-->ScheduleTypeCode<!--/code-->. This element is mandatory if the value of <!--code-->ScheduleTypeCoded<!--/code--> is 'Other'. These codes should not contain white space unless absolutely necessary.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="QuantityQualifierCoded" type="core:QuantityQualifierCodeType">
+                <xsd:annotation>
+                    <xsd:documentation>is the purpose of a quantity using a standard
+                    codelist.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="QuantityQualifierCodedOther" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is used to provide a non-standard
+                    <!--code-->QuantityQualifierCode<!--/code-->. This element is mandatory if the value of
+                    <!--code-->QuantityQualifierCoded<!--/code--> is 'Other'. These codes should not contain
+                    white space unless absolutely necessary.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ShippingDates" type="ShippingDatesType">
+                <xsd:annotation>
+                    <xsd:documentation/>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="ScheduleParty" type="SchedulePartyType">
+                <xsd:annotation>
+                    <xsd:documentation>contains information on the parties to the
+                    <!--code-->ShippingSchedule<!--/code-->, including unique ID's and address
+                    information.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfTransportRouting" type="core:ListOfTransportRoutingType">
+                <xsd:annotation>
+                    <xsd:documentation>defines the information on the movement of the goods, including
+                    the carrier, equipment, locations and dates.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="TermsOfDelivery" type="core:TermsOfDeliveryType">
+                <xsd:annotation>
+                    <xsd:documentation>includes the information related to delivery including shipment
+                    method payment and transport.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="Language" type="core:LanguageType">
+                <xsd:annotation>
+                    <xsd:documentation>denotes the language the <!--code-->ShippingSchedule<!--/code--> is written in.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ShippingScheduleHeaderNote" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>contains any free-form text pertinent to the entire
+                    <!--code-->ShippingSchedule<!--/code-->. This element may contain notes or any other
+                    similar information that is not contained explicitly in another structure. You
+                    should not assume that the receiving application is capable of doing more than
+                    storing and/or displaying this information. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfStructuredNote" type="core:ListOfStructuredNoteType">
+                <xsd:annotation>
+                    <xsd:documentation>is a structured note which contains an identifier and
+                    URL.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfAttachment" type="core:ListOfAttachmentType">
+                <xsd:annotation>
+                    <xsd:documentation>holds a list of attachments to a document that contain
+                    information relating to the document.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

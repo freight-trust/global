@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/financial/v1_0/financial.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/financial/v1_0/financial.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="LineItemAdjustmentType">
+        <xsd:annotation>
+            <xsd:documentation/>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="SequenceNum" type="xsd:int">
+                <xsd:annotation>
+                    <xsd:documentation>uniquely identifies the line item adjustment.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="LineItemReference" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is a reference to the line item number of the payment document
+        			from which the adjustment was made.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ExpectedLineItemAmount" type="core:MonetaryValueType">
+                <xsd:annotation>
+                    <xsd:documentation>specifies an amount of payment expected as stated on payment
+        			document.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="ActualLineItemAmount" type="core:MonetaryValueType">
+                <xsd:annotation>
+                    <xsd:documentation>specifies an amount of payment expected as stated on payment
+        			document.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="TotalLineItemAdjustmentAmount" type="core:MonetaryValueType">
+                <xsd:annotation>
+                    <xsd:documentation>contains a monetary amount of adjustment.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="LineItemAdjustmentNote" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>describes any free-form text pertinent to the <!--code-->Adjustment<!--/code-->. This element may contain notes or any other similar information that
+    				is not contained explicitly in another structure.  You should not assume that the receiving application
+    				is capable of doing more than storing and/or displaying this information.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="ListOfAdjustmentDetail" type="ListOfAdjustmentDetailType">
+                <xsd:annotation>
+                    <xsd:documentation>contains line item adjustment detail.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ListOfLineItemAdjustmentType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" name="LineItemAdjustment" type="LineItemAdjustmentType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

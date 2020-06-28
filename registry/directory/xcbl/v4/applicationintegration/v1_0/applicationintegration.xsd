@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd"
+			xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/applicationintegration/v1_0/applicationintegration.xsd"
+			targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/applicationintegration/v1_0/applicationintegration.xsd"
+			elementFormDefault="qualified">
+
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+<xsd:include schemaLocation="AccountCheckRequestDetailType.xsd"/>
+<xsd:include schemaLocation="AccountCheckRequestHeaderType.xsd"/>
+<xsd:include schemaLocation="AccountCheckReferencesType.xsd"/>
+<xsd:include schemaLocation="AccountCheckRequestType.xsd"/>
+<xsd:include schemaLocation="ApprovalInformationType.xsd"/>
+<xsd:include schemaLocation="GetOrderType.xsd"/>
+<xsd:include schemaLocation="POReferencesType.xsd"/>
+<xsd:include schemaLocation="RequisitionDatesType.xsd"/>
+<xsd:include schemaLocation="RequisitionDeliveryDetailType.xsd"/>
+<xsd:include schemaLocation="RequisitionItemDetailType.xsd"/>
+<xsd:include schemaLocation="RequisitionDetailPartyType.xsd"/>
+<xsd:include schemaLocation="RequisitionHeaderType.xsd"/>
+<xsd:include schemaLocation="RequisitionDetailType.xsd"/>
+<xsd:include schemaLocation="RequisitionNumberType.xsd"/>
+<xsd:include schemaLocation="RequisitionPartyType.xsd"/>
+<xsd:include schemaLocation="RequisitionReferencesType.xsd"/>
+<xsd:include schemaLocation="RequisitionSummaryType.xsd"/>
+<xsd:include schemaLocation="RequisitionType.xsd"/>
+<xsd:include schemaLocation="BaseItemDetailType.xsd"/>
+<xsd:include schemaLocation="GetERPDataType.xsd"/>
+<xsd:include schemaLocation="KeyFieldType.xsd"/>
+<xsd:include schemaLocation="FieldType.xsd"/>
+<xsd:include schemaLocation="GetERPDataResponseType.xsd"/>
+<xsd:include schemaLocation="RecordDataType.xsd"/>
+<xsd:include schemaLocation="RecordFieldType.xsd"/>
+<xsd:include schemaLocation="RequisitionTypeType.xsd"/>
+<xsd:include schemaLocation="RequisitionTypeCodeType.xsd"/>
+<xsd:include schemaLocation="RoundTripShoppingCartType.xsd"/>
+
+<xsd:element name="AccountCheckRequest" type="AccountCheckRequestType"/>
+<xsd:element name="GetERPData" type="GetERPDataType"/>
+<xsd:element name="GetERPDataResponse" type="GetERPDataResponseType"/>
+<xsd:element name="GetOrder" type="GetOrderType"/>
+<xsd:element name="Requisition" type="RequisitionType"/>
+
+</xsd:schema>

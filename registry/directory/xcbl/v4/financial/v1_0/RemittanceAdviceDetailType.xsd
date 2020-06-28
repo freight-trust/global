@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/financial/v1_0/financial.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/financial/v1_0/financial.xsd" elementFormDefault="qualified">
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="RemittanceAdviceDetailType">
+        <xsd:annotation>
+            <xsd:documentation>contains detail information pertaining to the
+    <!--code-->RemittanceAdvice<!--/code--> document. The structure is composed of
+    Adjustments, Subsidiary and/or InvoicingDetail</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:choice>
+                <xsd:element name="ListOfSubsidiary" type="ListOfSubsidiaryType">
+                    <xsd:annotation>
+                        <xsd:documentation>contains a set of subsidiary detail with associated invoicing and
+    adjustment information. This structure is used in the case where the payment is
+    made by a central party and invoice detail needs to be specified by
+    subsidiary.</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+                <xsd:element name="ListOfInvoicingDetail" type="ListOfInvoicingDetailType">
+                    <xsd:annotation>
+                        <xsd:documentation>contains a set of invoicing detail.</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+                <xsd:element name="ListOfLineItemAdjustment" type="ListOfLineItemAdjustmentType">
+                    <xsd:annotation>
+                        <xsd:documentation>contains a set of adjustment detail.</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+            </xsd:choice>
+            <xsd:element minOccurs="0" name="GeneralNote" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>describes any free-form text pertinent to the detail item described by the
+    <!--code-->RemittanceAdvice<!--/code-->. This element may contain notes or any other similar information that
+    is not contained explicitly in another structure.  You should not assume that the receiving application
+    is capable of doing more than storing and/or displaying this information.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

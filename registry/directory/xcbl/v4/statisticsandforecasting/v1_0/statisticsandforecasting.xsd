@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd"
+			xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/statisticsandforecasting/v1_0/statisticsandforecasting.xsd"
+			targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/statisticsandforecasting/v1_0/statisticsandforecasting.xsd"
+			elementFormDefault="qualified">
+
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+<xsd:include schemaLocation="BaseCharacteristicLocationType.xsd"/>
+<xsd:include schemaLocation="BaseCharacteristicProductType.xsd"/>
+<xsd:include schemaLocation="CharacteristicAttributeType.xsd"/>
+<xsd:include schemaLocation="CharacteristicCombinationType.xsd"/>
+<xsd:include schemaLocation="CharacteristicLocationType.xsd"/>
+<xsd:include schemaLocation="CharacteristicOtherType.xsd"/>
+<xsd:include schemaLocation="CharacteristicProductGroupType.xsd"/>
+<xsd:include schemaLocation="CharacteristicProductType.xsd"/>
+<xsd:include schemaLocation="KeyFigureDataType.xsd"/>
+<xsd:include schemaLocation="KeyFigureInformationType.xsd"/>
+<xsd:include schemaLocation="KeyFigureType.xsd"/>
+<xsd:include schemaLocation="SourceTargetIDType.xsd"/>
+<xsd:include schemaLocation="TimeSeriesActionCodeType.xsd"/>
+<xsd:include schemaLocation="TimeSeriesDataType.xsd"/>
+<xsd:include schemaLocation="TimeSeriesDetailType.xsd"/>
+<xsd:include schemaLocation="TimeSeriesErrorCodeType.xsd"/>
+<xsd:include schemaLocation="TimeSeriesHeaderType.xsd"/>
+<xsd:include schemaLocation="TimeSeriesKeyFigureDataType.xsd"/>
+<xsd:include schemaLocation="TimeSeriesPartyType.xsd"/>
+<xsd:include schemaLocation="TimeSeriesPurposeCodeType.xsd"/>
+<xsd:include schemaLocation="TimeSeriesRequestDetailType.xsd"/>
+<xsd:include schemaLocation="TimeSeriesRequestType.xsd"/>
+<xsd:include schemaLocation="TimeSeriesResponseCodeType.xsd"/>
+<xsd:include schemaLocation="TimeSeriesResponseDetailType.xsd"/>
+<xsd:include schemaLocation="TimeSeriesResponseHeaderType.xsd"/>
+<xsd:include schemaLocation="TimeSeriesResponseType.xsd"/>
+<xsd:include schemaLocation="TimeSeriesSummaryType.xsd"/>
+<xsd:include schemaLocation="TimeSeriesType.xsd"/>
+
+<xsd:element name="TimeSeriesResponse" type="TimeSeriesResponseType"/>
+<xsd:element name="TimeSeriesRequest" type="TimeSeriesRequestType"/>
+<xsd:element name="TimeSeries" type="TimeSeriesType"/>
+
+</xsd:schema>

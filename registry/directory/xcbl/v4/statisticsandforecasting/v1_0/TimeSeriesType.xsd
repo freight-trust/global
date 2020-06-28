@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/statisticsandforecasting/v1_0/statisticsandforecasting.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/statisticsandforecasting/v1_0/statisticsandforecasting.xsd" elementFormDefault="qualified">
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="TimeSeriesType">
+        <xsd:annotation>
+            <xsd:documentation>is a forecasting document that can be used to process data based
+        on variable characteristics. Data is collected over a period of time, and time
+        slices can be presented as a historical account or a planned
+        forecast.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="TimeSeriesHeader" type="TimeSeriesHeaderType">
+                <xsd:annotation>
+                    <xsd:documentation>contains all time series header relevant information. The header
+        data will include information such as source target ID, issue date, time series
+        ID, reference information, purpose code, etc. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="TimeSeriesDetail" type="TimeSeriesDetailType">
+                <xsd:annotation>
+                    <xsd:documentation>contains detail information for the time series document. The
+        <!--code-->TimeSeriesDetail<!--/code--> defines the characteristic combination, key figure, unit of
+        measure, and time series values of a given planning data. This element is
+        broken down into two structures: <!--code-->ListOfTimeSeriesKeyFigures<!--/code--> and <!--code-->ListOfCharacteristicCombinations<!--/code-->.
+        Both lists can occur independently of the other. If necessary, you can
+        send only one of the data elements.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="TimeSeriesSummary" type="TimeSeriesSummaryType">
+                <xsd:annotation>
+                    <xsd:documentation>contains all information relevant to the summary of the time
+        series document.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

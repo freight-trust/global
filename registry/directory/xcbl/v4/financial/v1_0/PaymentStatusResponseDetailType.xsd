@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/financial/v1_0/financial.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/financial/v1_0/financial.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="PaymentStatusResponseDetailType">
+        <xsd:annotation>
+            <xsd:documentation>contains detailed information pertaining to the payment status.  This includes payment document information containing payment related information at the line item level.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="SequenceNumber" type="xsd:int">
+                <xsd:annotation>
+                    <xsd:documentation>contains a sequence number to be used when there are multiple payments per document.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="PaymentRequestID" type="core:ReferenceType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the unique identifier assigned by the payer for the original <!--code-->PaymentRequest<!--/code--> transaction.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="ConfirmationID" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>contains the confirmation identifier of the payment. This is the unique identifier assigned by the financial institution for the original <!--code-->PaymentRequest<!--/code--> transaction.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PaymentDates" type="PaymentDatesType">
+                <xsd:annotation>
+                    <xsd:documentation>contains a list of dates that are pertinent to the payment.  This structure is composed of optional <!--code-->PaymentDueDate<!--/code-->, <!--code-->RequestedPaymentDate<!--/code-->, <!--code-->PayBeforeDate<!--/code--> and <!--code-->ListOfPaymentDates<!--/code-->.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="SettlementDate" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>contains the actual date that the transaction is settled.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="FXValueDate" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>contains the date that a foreign exchange transaction is expected to settle.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="SettlementAmount" type="core:MonetaryValueType">
+                <xsd:annotation>
+                    <xsd:documentation>identifies the monetary amount paid.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="DebitAmount" type="core:MonetaryValueType">
+                <xsd:annotation>
+                    <xsd:documentation>identifies the monetary amount debited from the originating account.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="CreditAmount" type="core:MonetaryValueType">
+                <xsd:annotation>
+                    <xsd:documentation>identifies the monetary amount credited to the receiving account.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="OriginatingFinancialInstitution" type="core:FIAccountDetailType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the financial institution account information for the "From" bank.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ReceivingFinancialInstitution" type="core:FIAccountDetailType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the  financial institution information for the "To" bank.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="CardInfo" type="core:CardInfoType">
+                <xsd:annotation>
+                    <xsd:documentation>contains details for payments made via credit card.  This includes credit card number, card type, card holder name, expiration date, and other pertinent information.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PaymentParty" type="PaymentPartyType">
+                <xsd:annotation>
+                    <xsd:documentation>contains all parties relevant to the payment transaction.  The required parties are the <!--code-->PayerParty<!--/code--> and the <!--code-->PayeeParty<!--/code-->.  The <!--code-->PayerParty<!--/code--> includes an optional <!--code-->CertificateAuthority<!--/code--> field to specify a digital signature.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ParticipantUserID" type="core:IdentifierType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the user identification of the participant.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PaymentSystemCoded" type="core:PaymentSystemCodeType">
+                <xsd:annotation>
+                    <xsd:documentation>contains a code that indicates the system through which the payment was processed.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PaymentSystemCodedOther" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is used to provide a non-standard <!--code-->PaymentSystemCode<!--/code-->. This element is mandatory if the value of <!--code-->PaymentSystemCoded<!--/code--> is 'Other'. These codes should not contain white space unless absolutely necessary.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfPaymentReferences" type="core:ListOfReferenceType">
+                <xsd:annotation>
+                    <xsd:documentation>contains a list of payment related references such as invoice numbers, purchase order numbers, dates  etc.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfNameValueSet" type="core:ListOfNameValueSetType">
+                <xsd:annotation>
+                    <xsd:documentation>contains a set of generic name and values pairs that can be used to describe payment details not explicitly specified in this document.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="ListOfPaymentException" type="ListOfPaymentExceptionType">
+                <xsd:annotation>
+                    <xsd:documentation>contains a list of response codes relating to the <!--code-->PaymentRequest<!--/code--> document.  This includes both positive status response codes as well as error response codes.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ListOfPaymentStatusResponseDetailType">
+        <xsd:annotation>
+            <xsd:documentation>contains a list of <!--code-->PaymentStatusResponse<!--/code--> details.  </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" name="PaymentStatusResponseDetail" type="PaymentStatusResponseDetailType">
+                <xsd:annotation>
+                    <xsd:documentation>contains detailed information pertaining to the payment status.  This includes payment document information containing payment related information at the line item level.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

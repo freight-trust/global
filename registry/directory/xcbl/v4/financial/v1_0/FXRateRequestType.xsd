@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/financial/v1_0/financial.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/financial/v1_0/financial.xsd" elementFormDefault="qualified">
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="FXRateRequestType">
+        <xsd:annotation>
+            <xsd:documentation>enables payers to retrieve a foreign exchange quote from a financial institution. The payer can initiate a Foreign Exchange Request to get a rate quote and quote reference number on two specific currency pairs.  The payer will review the quote information and then decide whether this quote is satisfactory. This will allow the payer the capability to pay for goods and services in a foreign currency when they perform a Payment Request.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="FXRateRequestHeader" type="FXRateRequestHeaderType">
+                <xsd:annotation>
+                    <xsd:documentation>contains all header-related data associated with the <!--code-->FXRateRequest<!--/code--> document.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfFXRateRequestDetail" type="ListOfFXRateRequestDetailType">
+                <xsd:annotation>
+                    <xsd:documentation>contains a list of FXRateRequestDetails.  Details are optional in the case where an indicative FX rate is being requested.  This is specified by the <!--code-->IndicativeIndicator<!--/code--> in the header.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="FXRateRequestSummary" type="FXRateRequestSummaryType">
+                <xsd:annotation>
+                    <xsd:documentation>contains summary related information for the <!--code-->FXRateRequest<!--/code--> document.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

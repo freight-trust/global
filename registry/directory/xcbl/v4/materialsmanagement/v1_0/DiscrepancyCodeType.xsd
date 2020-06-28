@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/materialsmanagement/v1_0/materialsmanagement.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/materialsmanagement/v1_0/materialsmanagement.xsd" elementFormDefault="qualified">
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType name="DiscrepancyCodeType">
+        <xsd:annotation>
+            <xsd:documentation>Defines the disposition or physical condition of any difference between the quantityshipped/ordered/invoiced and the quantity received for a line item or transaction. Based on EDIFACT 4221, 7001 and X12 412</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:enumeration value="Over-Shipped">
+                <xsd:annotation>
+                    <xsd:documentation>Over-shipped</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DeliveredButNotAdvised">
+                <xsd:annotation>
+                    <xsd:documentation>Delivered but not advised</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="GoodsDeliveredDamaged">
+                <xsd:annotation>
+                    <xsd:documentation>Goods delivered damaged</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DeliveredTooLate">
+                <xsd:annotation>
+                    <xsd:documentation>Delivered too late</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="NextHigherPackagingQuantity">
+                <xsd:annotation>
+                    <xsd:documentation>Next higher packaging quantity</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="BackOrderedFromPreviousOrder">
+                <xsd:annotation>
+                    <xsd:documentation>Back ordered from previous order</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ShipmentPartial-BackOrderToFollow">
+                <xsd:annotation>
+                    <xsd:documentation>Shipment partial - back order to follow</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ShipmentIncludesExtraItemsToMeetPriceBreak">
+                <xsd:annotation>
+                    <xsd:documentation>Shipment includes extra items to meet price break</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="CancelledFromPreviousOrder">
+                <xsd:annotation>
+                    <xsd:documentation>Cancelled from previous order</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ShipmentCompleteWithAdditionalQuantity">
+                <xsd:annotation>
+                    <xsd:documentation>Shipment complete with additional quantity</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="NextCarrier">
+                <xsd:annotation>
+                    <xsd:documentation>Next carrier  PVE - (date)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ShipmentPartial-ConsideredComplete">
+                <xsd:annotation>
+                    <xsd:documentation>Shipment partial - considered complete no backorder</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ShipmentCompleteWithSubstitution">
+                <xsd:annotation>
+                    <xsd:documentation>Shipment complete with substitution</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ItemCancelled">
+                <xsd:annotation>
+                    <xsd:documentation>Item cancelled</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ItemRepresentsSubstitutionFromOriginalOrder">
+                <xsd:annotation>
+                    <xsd:documentation>Item represents substitution from original order</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="LastShipment">
+                <xsd:annotation>
+                    <xsd:documentation>Last shipment (date)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="PurchaseOrderComplete">
+                <xsd:annotation>
+                    <xsd:documentation>Purchase order complete</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="SplitShipment">
+                <xsd:annotation>
+                    <xsd:documentation>Split shipment</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="MutuallyDefined">
+                <xsd:annotation>
+                    <xsd:documentation>Mutually defined</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ContainerDamaged">
+                <xsd:annotation>
+                    <xsd:documentation>damaged container at receipt</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="QuantityShort">
+                <xsd:annotation>
+                    <xsd:documentation>quantity short of orginally ordered or shipped quantity</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="QualityProblem">
+                <xsd:annotation>
+                    <xsd:documentation>problem with the quality</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="IncorrectProduct">
+                <xsd:annotation>
+                    <xsd:documentation>incorrect product</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Non-standardContainer">
+                <xsd:annotation>
+                    <xsd:documentation>non-standard container</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="WrongIdentification">
+                <xsd:annotation>
+                    <xsd:documentation>The actual identification is different from the given identification.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Other">
+                <xsd:annotation>
+                    <xsd:documentation>Custom Code</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

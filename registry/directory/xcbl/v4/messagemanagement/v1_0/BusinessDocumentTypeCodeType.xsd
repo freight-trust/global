@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/messagemanagement/v1_0/messagemanagement.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/messagemanagement/v1_0/messagemanagement.xsd" elementFormDefault="qualified">
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType name="BusinessDocumentTypeCodeType">
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:enumeration value="AccountCheck">
+                <xsd:annotation>
+                    <xsd:documentation>the AccountCheck document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="AdvanceShipmentNotice">
+                <xsd:annotation>
+                    <xsd:documentation>the AdvanceShipmentNotice document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="AuctionCreate">
+                <xsd:annotation>
+                    <xsd:documentation>The AuctionCreate document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="AuctionCreateResponse">
+                <xsd:annotation>
+                    <xsd:documentation>The AuctionCreateResponse document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="AuctionEventCreate">
+                <xsd:annotation>
+                    <xsd:documentation>The AuctionEventCreate document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="AuctionEventCreateResponse">
+                <xsd:annotation>
+                    <xsd:documentation>The AuctionEventCreateResponse document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="AuctionEventResult">
+                <xsd:annotation>
+                    <xsd:documentation>The AuctionEventResult document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="AuctionEventResultResponse">
+                <xsd:annotation>
+                    <xsd:documentation>The AuctionEventResultResponse document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="AuctionResult">
+                <xsd:annotation>
+                    <xsd:documentation>The AuctionResult document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="AuctionResultResponse">
+                <xsd:annotation>
+                    <xsd:documentation>The AuctionResultResponse document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="AvailabilityCheckResult">
+                <xsd:annotation>
+                    <xsd:documentation>The AvailabilityCheckResult document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="AvailabilityToPromise">
+                <xsd:annotation>
+                    <xsd:documentation>The AvailabilityToPromise document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="AvailabilityToPromiseResponse">
+                <xsd:annotation>
+                    <xsd:documentation>The AvailabilityToPromiseResponse document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="BulletinBoardNoteChange">
+                <xsd:annotation>
+                    <xsd:documentation>The BulletinBoardNoteChange document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="BulletinBoardNoteCreate">
+                <xsd:annotation>
+                    <xsd:documentation>The BulletinBoardNoteCreate document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="BulletinBoardNoteDelete">
+                <xsd:annotation>
+                    <xsd:documentation>The BulletinBoardNoteDelete document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="BulletinBoardReceipt">
+                <xsd:annotation>
+                    <xsd:documentation>The BulletinBoardReceipt document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ExternalRequirementFullfillment">
+                <xsd:annotation>
+                    <xsd:documentation>The ExternalRequirementFullfillment document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="FXRateRequest">
+                <xsd:annotation>
+                    <xsd:documentation>The FXRateRequest document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="FXRateResponse">
+                <xsd:annotation>
+                    <xsd:documentation>The FXRateResponse document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="GoodsReceipt">
+                <xsd:annotation>
+                    <xsd:documentation>The GoodsReceipt document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="InternalInvoice">
+                <xsd:annotation>
+                    <xsd:documentation>The InternalInvoice document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="InternalOrder">
+                <xsd:annotation>
+                    <xsd:documentation>The InternalOrder document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="InvoiceResponse">
+                <xsd:annotation>
+                    <xsd:documentation>The InvoiceResponse document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="MessageAcknowledgement">
+                <xsd:annotation>
+                    <xsd:documentation>The MessageAcknowledgement document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Opportunity">
+                <xsd:annotation>
+                    <xsd:documentation>The Opportunity document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="OpportunityAcknowledgement">
+                <xsd:annotation>
+                    <xsd:documentation>The OpportunityAcknowledgement document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="OpportunityList">
+                <xsd:annotation>
+                    <xsd:documentation>The OpportunityList document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="OpportunityRequest">
+                <xsd:annotation>
+                    <xsd:documentation>The OpportunityRequest document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="OpportunityResponse">
+                <xsd:annotation>
+                    <xsd:documentation>The OpportunityResponse document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="OpportunityResult">
+                <xsd:annotation>
+                    <xsd:documentation>The OpportunityResult document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="OrderConfirmationResponse">
+                <xsd:annotation>
+                    <xsd:documentation>The OrderConfirmationResponse document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="OrderRequest">
+                <xsd:annotation>
+                    <xsd:documentation>The OrderRequest document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="OrderResponse">
+                <xsd:annotation>
+                    <xsd:documentation>The OrderResponse document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="OrderStatusResult">
+                <xsd:annotation>
+                    <xsd:documentation>The OrderStatusResult document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="PaymentRequest">
+                <xsd:annotation>
+                    <xsd:documentation>The PaymentRequest document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="PaymentRequestAcknowledgment">
+                <xsd:annotation>
+                    <xsd:documentation>The PaymentRequestAcknowledgment document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="PaymentStatusRequest">
+                <xsd:annotation>
+                    <xsd:documentation>The PaymentStatusRequest document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="PaymentStatusResponse">
+                <xsd:annotation>
+                    <xsd:documentation>The PaymentStatusResponse document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="PlanningSchedule">
+                <xsd:annotation>
+                    <xsd:documentation>The PlanningSchedule document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="PlanningScheduleResponse">
+                <xsd:annotation>
+                    <xsd:documentation>The PlanningScheduleResponse document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="PriceCheckResult">
+                <xsd:annotation>
+                    <xsd:documentation>The PriceCheckResult document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ProductCatalog">
+                <xsd:annotation>
+                    <xsd:documentation>The ProductCatalog document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Quote">
+                <xsd:annotation>
+                    <xsd:documentation>The Quote document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="RemittanceAdvice">
+                <xsd:annotation>
+                    <xsd:documentation>The RemittanceAdvice document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="RequestForQuotation">
+                <xsd:annotation>
+                    <xsd:documentation>The RequestForQuotation document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Requisition">
+                <xsd:annotation>
+                    <xsd:documentation>The Requisition document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ShippingSchedule">
+                <xsd:annotation>
+                    <xsd:documentation>The ShippingSchedule document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ShippingScheduleResponse">
+                <xsd:annotation>
+                    <xsd:documentation>The ShippingScheduleResponse document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="SourcingCreate">
+                <xsd:annotation>
+                    <xsd:documentation>The SourcingCreate document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="SourcingCreateResponse">
+                <xsd:annotation>
+                    <xsd:documentation>The SourcingCreateResponse document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="SourcingResult">
+                <xsd:annotation>
+                    <xsd:documentation>The SourcingResult document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="SourcingResultResponse">
+                <xsd:annotation>
+                    <xsd:documentation>The SourcingResultResponse document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="TimeSeries">
+                <xsd:annotation>
+                    <xsd:documentation>The TimeSeries document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="TimeSeriesRequest">
+                <xsd:annotation>
+                    <xsd:documentation>The TimeSeriesRequest document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="TimeSeriesResponse">
+                <xsd:annotation>
+                    <xsd:documentation>The TimeSeriesResponse document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="TradingPartnerOrganizationDelete">
+                <xsd:annotation>
+                    <xsd:documentation>The TradingPartnerOrganizationDelete document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="TradingPartnerOrganizationInformation">
+                <xsd:annotation>
+                    <xsd:documentation>The TradingPartnerOrganizationInformation document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="TradingPartnerResponse">
+                <xsd:annotation>
+                    <xsd:documentation>The TradingPartnerResponse document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="TradingPartnerUserDelete">
+                <xsd:annotation>
+                    <xsd:documentation>The TradingPartnerUserDelete document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="TradingPartnerUserInformation">
+                <xsd:annotation>
+                    <xsd:documentation>The TradingPartnerUserInformation document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="TransportOrderInitialRequest">
+                <xsd:annotation>
+                    <xsd:documentation>TransportOrderInitialRequest document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="TransportOrderQuoteConfirm">
+                <xsd:annotation>
+                    <xsd:documentation>TransportOrderQuoteConfirm document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="TransportOrderFollowUpRequest">
+                <xsd:annotation>
+                    <xsd:documentation>TransportOrderFollowUpRequest document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="TransportOrderQuoteResponse">
+                <xsd:annotation>
+                    <xsd:documentation>TransportOrderQuoteResponse document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="TransportOrderResponse">
+                <xsd:annotation>
+                    <xsd:documentation>TransportOrderResponse document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="TransportOrderStatusRequest">
+                <xsd:annotation>
+                    <xsd:documentation>TransportOrderStatusRequest document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="TransportOrderStatusRequestResponse">
+                <xsd:annotation>
+                    <xsd:documentation>TransportOrderStatusRequestResponse document</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Other">
+                <xsd:annotation>
+                    <xsd:documentation>Non-Standard BusinessTypeCode</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

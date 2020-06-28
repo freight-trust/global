@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/financial/v1_0/financial.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/financial/v1_0/financial.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="InvoicingDetailType">
+        <xsd:annotation>
+            <xsd:documentation>contains information relating to the payment document for which
+          the <!--code-->RemittanceAdvice<!--/code--> is placed against. </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="SequenceNum" type="xsd:int">
+                <xsd:annotation>
+                    <xsd:documentation>uniquely identifies the invoicing detail.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="InvoicingDetailReference" type="core:ReferenceCodedType">
+                <xsd:annotation>
+                    <xsd:documentation>contains a unique reference number for the invoicing document. (i.e.
+          Invoice Number, Purchase Order Number). This structure contains a coded
+          reference field along with a line item number. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="InvoicingDetailAmountDue" type="core:MonetaryValueType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the total amount due for the line item as stated on the
+          payment document.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="InvoicingDetailAmountPaid" type="core:MonetaryValueType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the total amount that is being paid for the line item of the
+          associated payment document.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="InvoicingItemDetail" type="InvoiceItemDetailType">
+                <xsd:annotation>
+                    <xsd:documentation>contains line item detail relating to the payment document.
+          This structure is an extension of the <!--code-->InvoiceItemDetail<!--/code--> data structure.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfAdjustmentDetail" type="ListOfAdjustmentDetailType">
+                <xsd:annotation>
+                    <xsd:documentation>contains line item adjustment detail.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ListOfInvoicingDetailType">
+        <xsd:annotation>
+            <xsd:documentation>contains a set of invoicing detail.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" name="InvoicingDetail" type="InvoicingDetailType">
+                <xsd:annotation>
+                    <xsd:documentation>contains information relating to the payment document for which the
+          <!--code-->RemittanceAdvice<!--/code--> is placed against. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

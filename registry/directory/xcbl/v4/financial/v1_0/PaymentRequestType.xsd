@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/financial/v1_0/financial.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/financial/v1_0/financial.xsd" elementFormDefault="qualified">
+
+<xsd:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="../../externalschemas/xmldsig-core-schema.xsd"/>
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="PaymentRequestType">
+        <xsd:annotation>
+            <xsd:documentation>consists of details for arranging for payment of a specified
+            value amount to a beneficiary in settlement of a business transaction. The
+            payer can initiate a PaymentRequest to instruct its financial
+            institution to debit its account by the specified amount to be paid to the
+            beneficiary for goods or services rendered. The PaymentRequest can
+            reference multiple documents (i.e. PO, ASN, Invoice) but no reference is
+            mandatory. The payment is expressed in a single language. Consolidated payment
+            is supported. The Payer can send multiple payment requests in a single
+            PaymentRequest document. Foreign exchange rates are supported. This is not an
+            IFX compliant document; however IFX influenced the design of this document.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="PaymentRequestHeader" type="PaymentRequestHeaderType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the header information of the <!--code-->PaymentRequest<!--/code-->.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="ListOfPaymentRequestDetail" type="ListOfPaymentRequestDetailType">
+                <xsd:annotation>
+                    <xsd:documentation>contains a list of payment documents which include details and
+                    instructions for payment. Each payment document can optionally have <!--code-->RemittanceAdviceDetail<!--/code-->.
+                    This is a required element with at least one payment
+                    document.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PaymentRequestSummary" type="PaymentRequestSummaryType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the summary information of the <!--code-->PaymentRequest<!--/code-->
+                    typically totals of numeric fields.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="DigitalSignature" type="dgs:SignatureType">
+                <xsd:annotation>
+                    <xsd:documentation>contains a digital signature for the document.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

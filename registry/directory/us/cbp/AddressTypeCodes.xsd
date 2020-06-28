@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeDescriptionPairList xmlns="http://www.edi.com.au/CodeDescriptionPairList.xsd" xmlns:cdpl="http://www.edi.com.au/CodeDescriptionPairList.xsd" cdpl:Sort="true">
+	<Item>
+		<Identifier>BuyerDocumentaryAddress</Identifier>
+		<Code>BUY</Code>
+		<Description>Buyer Documentary Address</Description>
+	</Item>
+	<Item>
+		<Identifier>ConsignorDocumentaryAddress</Identifier>
+		<Code>CRD</Code>
+		<Description>Consignor Documentary Address</Description>
+	</Item>
+	<Item>
+		<Identifier>ConsignorPostalAddress</Identifier>
+		<Code>CRP</Code>
+		<Description>Consignor Postal Address</Description>
+	</Item>
+	<Item>
+		<Identifier>ConsignorPickupDeliveryAddress</Identifier>
+		<Code>CRG</Code>
+		<Description>Consignor Pickup/Delivery Address</Description>
+	</Item>
+	<Item>
+		<Identifier>GoodsBillToAddress</Identifier>
+		<Code>GBA</Code>
+		<Description>Goods Billed To Address</Description>
+	</Item>
+	<Item>
+		<Identifier>ConsigneeAddress</Identifier>
+		<Code>CEA</Code>
+		<Description>Consignee Address</Description>
+	</Item>
+	<Item>
+		<Identifier>ConsigneeDocumentaryAddress</Identifier>
+		<Code>CED</Code>
+		<Description>Consignee Documentary Address</Description>
+	</Item>
+	<Item>
+		<Identifier>ConsigneePostalAddress</Identifier>
+		<Code>CEP</Code>
+		<Description>Consignee Postal Address</Description>
+	</Item>
+	<Item>
+		<Identifier>ConsigneePickupDeliveryAddress</Identifier>
+		<Code>CEG</Code>
+		<Description>Consignee Pickup/Delivery Address</Description>
+	</Item>
+	<Item>
+		<Identifier>SupplierDocumentaryAddress</Identifier>
+		<Code>SUD</Code>
+		<Description>Supplier Documentary Address</Description>
+	</Item>
+	<Item>
+		<Identifier>SupplierPostalAddress</Identifier>
+		<Code>SUP</Code>
+		<Description>Supplier Postal Address</Description>
+	</Item>
+	<Item>
+		<Identifier>SupplierPickupDeliveryAddress</Identifier>
+		<Code>SUG</Code>
+		<Description>Supplier Pickup/Delivery Address</Description>
+	</Item>
+	<Item>
+		<Identifier>ImporterDocumentaryAddress</Identifier>
+		<Code>IMD</Code>
+		<Description>Importer Documentary Address</Description>
+	</Item>
+	<Item>
+		<Identifier>ImporterPostalAddress</Identifier>
+		<Code>IMP</Code>
+		<Description>Importer Postal Address</Description>
+	</Item>
+	<Item>
+		<Identifier>ImporterPickupDeliveryAddress</Identifier>
+		<Code>IMG</Code>
+		<Description>Importer Pickup/Delivery Address</Description>
+	</Item>
+	<Item>
+		<Identifier>NotifyPartyDocumentaryAddress</Identifier>
+		<Code>NPD</Code>
+		<Description>Notify Party Documentary Address</Description>
+	</Item>
+	<Item>
+		<Identifier>NotifyPartyPostalAddress</Identifier>
+		<Code>NPP</Code>
+		<Description>Notify Party Postal Address</Description>
+	</Item>
+	<Item>
+		<Identifier>NotifyPartyPickupDeliveryAddress</Identifier>
+		<Code>NPG</Code>
+		<Description>Notify Party Pickup/Delivery Address</Description>
+	</Item>
+	<Item>
+		<Identifier>LocalCartagePickupFromAddress</Identifier>
+		<Code>LCP</Code>
+		<Description>Local Cartage Pickup Address</Description>
+	</Item>
+	<Item>
+		<Identifier>LocalCartageDeliverToAddress</Identifier>
+		<Code>LCD</Code>
+		<Description>Local Cartage Deliver Address</Description>
+	</Item>
+	<Item>
+		<Identifier>LocalCartageCTO</Identifier>
+		<Code>LCT</Code>
+		<Description>Local Cartage CTO Address</Description>
+	</Item>
+	<Item>
+		<Identifier>LocalCartageCFS</Identifier>
+		<Code>LCF</Code>
+		<Description>Local Cartage CFS Address</Description>
+	</Item>
+	<Item>
+		<Identifier>LocalCartageYard</Identifier>
+		<Code>LCY</Code>
+		<Description>Local Cartage Container Yard Address</Description>
+	</Item>
+	<Item>
+		<Identifier>LocalCartageImporter</Identifier>
+		<Code>LCI</Code>
+		<Description>Local Cartage Importer Address</Description>
+	</Item>
+	<Item>
+		<Identifier>LocalCartageExporter</Identifier>
+		<Code>LCE</Code>
+		<Description>Local Cartage Exporter Address</Description>
+	</Item>
+	<Item>
+		<Identifier>LocalCartageAddress1</Identifier>
+		<Code>LC1</Code>
+		<Description>Local Cartage First Address</Description>
+	</Item>
+	<Item>
+		<Identifier>LocalCartageAddress2</Identifier>
+		<Code>LC2</Code>
+		<Description>Local Cartage Second Address</Description>
+	</Item>
+	<Item>
+		<Identifier>LocalCartageAddress3</Identifier>
+		<Code>LC3</Code>
+		<Description>Local Cartage Third Address</Description>
+	</Item>
+	<Item>
+		<Identifier>LocalCartageAddress4</Identifier>
+		<Code>LC4</Code>
+		<Description>Local Cartage Fourth Address</Description>
+	</Item>
+	<Item>
+		<Identifier>ContainerLegPickupAddress</Identifier>
+		<Code>CLP</Code>
+		<Description>Container Leg Pickup Address</Description>
+	</Item>
+	<Item>
+		<Identifier>ContainerLegWaitPointAddress</Identifier>
+		<Code>CLW</Code>
+		<Description>Container Leg WaitPoint Address</Description>
+	</Item>
+	<Item>
+		<Identifier>ContainerLegDeliveryAddress</Identifier>
+		<Code>CLD</Code>
+		<Description>Container Leg Delivery Address</Description>
+	</Item>
+	<Item>
+		<Identifier>BookingPartyDocumentaryAddress</Identifier>
+		<Code>BKD</Code>
+		<Description>Booking Party Documentary Address</Description>
+	</Item>
+	<Item>
+		<Identifier>PickUpAddress</Identifier>
+		<Code>PUA</Code>
+		<Description>Pick Up Address</Description>
+	</Item>
+	<Item>
+		<Identifier>ForeignShipperDocumentaryAddress</Identifier>
+		<Code>FSD</Code>
+		<Description>Foreign Shipper Documentary Address</Description>
+	</Item>
+	<Item>
+		<Identifier>OneOffQuotePickupAddress</Identifier>
+		<Code>OQP</Code>
+		<Description>One Off Quote Pickup Address</Description>
+	</Item>
+	<Item>
+		<Identifier>OneOffQuoteDeliveryAddress</Identifier>
+		<Code>OQD</Code>
+		<Description>One Off Quote Delivery Address</Description>
+	</Item>
+	<Item>
+		<Identifier>DepartureCYDAddress</Identifier>
+		<Code>DCY</Code>
+		<Description>Departure CYD Address</Description>
+	</Item>
+	<Item>
+		<Identifier>DepartureCFSAddress</Identifier>
+		<Code>DCF</Code>
+		<Description>Departure CFS Address</Description>
+	</Item>
+	<Item>
+		<Identifier>DepartureCTOAddress</Identifier>
+		<Code>DCT</Code>
+		<Description>Departure CTO Address</Description>
+	</Item>
+	<Item>
+		<Identifier>ArrivalCTOAddress</Identifier>
+		<Code>ACT</Code>
+		<Description>Arrival CTO Address</Description>
+	</Item>
+	<Item>
+		<Identifier>ArrivalCFSAddress</Identifier>
+		<Code>ACF</Code>
+		<Description>Arrival CFS Address</Description>
+	</Item>
+	<Item>
+		<Identifier>ArrivalCYDAddress</Identifier>
+		<Code>ACY</Code>
+		<Description>Arrival CYD Address</Description>
+	</Item>
+	<Item>
+		<Identifier>DropOffAddress</Identifier>
+		<Code>DOA</Code>
+		<Description>Drop Off Address</Description>
+	</Item>
+	<Item>
+		<Identifier>InsuredByDocumentaryAddress</Identifier>
+		<Code>INS</Code>
+		<Description>Insured By Documentary Address</Description>
+	</Item>
+	<Item>
+		<Identifier>AssuredPartyDocumentaryAddress</Identifier>
+		<Code>ASS</Code>
+		<Description>Assured Party Documentary Address</Description>
+	</Item>
+	<Item>
+		<Identifier>ClaimsPayableByDocumentaryAddress</Identifier>
+		<Code>CPB</Code>
+		<Description>Claims Payable By Documentary Address</Description>
+	</Item>
+	<Item>
+		<Identifier>SurveyReportPartyDocumentaryAddress</Identifier>
+		<Code>SRO</Code>
+		<Description>Survey Report Obtained From Documentary Address</Description>
+	</Item>
+</CodeDescriptionPairList>

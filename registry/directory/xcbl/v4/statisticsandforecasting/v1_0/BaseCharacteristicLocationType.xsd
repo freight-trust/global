@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/statisticsandforecasting/v1_0/statisticsandforecasting.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/statisticsandforecasting/v1_0/statisticsandforecasting.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="BaseCharacteristicLocationType">
+        <xsd:annotation>
+            <xsd:documentation>contains the details describing a location. It also includes a
+        generic characteristic field to allow for user specific location related
+        data.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="LocationAttributeID" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>contains a unique identifier which serves as the technical
+        description or primary key of the location with respect to the originating
+        system.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="LocationAttributeName" type="core:IdentifierType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the human readable value to identify the location. The
+        <!--code-->LocationAttributeName<!--/code--> will contain the attributes <!--code-->Agency<!--/code--> and <!--code-->AgencyCoded<!--/code--> which
+        can be used to qualify the value of the <!--code-->LocationName<!--/code-->. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="LocationAttributeDescription" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is used to describe the location. This is a language dependent
+        text field.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="Location" type="core:LocationType">
+                <xsd:annotation>
+                    <xsd:documentation>contains details relevant to describing the location. This
+        includes name, address, and contact information.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="LocationNotes" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>gives specifications relating to the location
+        description.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="OtherLocationAttribute" type="CharacteristicAttributeType">
+                <xsd:annotation>
+                    <xsd:documentation>is additional user-specific characteristics related to the
+        location.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

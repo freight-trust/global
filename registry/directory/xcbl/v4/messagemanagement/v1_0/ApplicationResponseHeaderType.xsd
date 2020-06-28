@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/messagemanagement/v1_0/messagemanagement.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/messagemanagement/v1_0/messagemanagement.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="ApplicationResponseHeaderType">
+        <xsd:annotation>
+            <xsd:documentation>contains the <!--code-->ApplicationResponse<!--/code--> header-level information. This element occurs once within the document.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="ApplicationResponseIssueDate" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>holds a digital time stamp provided by the application that created the <!--code-->ApplicationResponse<!--/code--> document.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="ApplicationResponseTypeCoded" type="ApplicationResponseTypeCodeType">
+                <xsd:annotation>
+                    <xsd:documentation>defines whether this <!--code-->ApplicationResponse<!--/code--> is an acknowledgment of receipt or identifies an error.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="ApplicationResponseSender" type="core:PartyType">
+                <xsd:annotation>
+                    <xsd:documentation>identifies the party that is sending the <!--code-->ApplicationResponse<!--/code-->.  This party was the receiver of the original document to which the <!--code-->ApplicationResponse<!--/code--> is in response.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="SendingApplication" type="ApplicationIdentificationType">
+                <xsd:annotation>
+                    <xsd:documentation>is used to reference the service or application that sent the original document to which the <!--code-->ApplicationResponse<!--/code--> is in response to.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="ApplicationResponseReceiver" type="core:PartyType">
+                <xsd:annotation>
+                    <xsd:documentation>identifies the party who will receive the <!--code-->ApplicationReponse<!--/code--> and who sent the original document to which the <!--code-->ApplicationResponse<!--/code--> responds.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="RespondingApplication" type="ApplicationIdentificationType">
+                <xsd:annotation>
+                    <xsd:documentation>is used to reference the service or application that identified the error and is sending the <!--code-->ApplicationResponse<!--/code-->.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="BusinessDocumentTypeCoded" type="BusinessDocumentTypeCodeType">
+                <xsd:annotation>
+                    <xsd:documentation>identifies the type of business document the <!--code-->ApplicationResponse<!--/code--> is in reponse to.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="BusinessDocumentTypeCodedOther" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is used to provide a non-standard <!--code-->BusinessDocumentTypeCode<!--/code-->. This element is mandatory if the value of <!--code-->BusinessDocumentTypeCoded<!--/code--> is 'Other'. These codes should not contain white space unless absolutely necessary.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="DocumentReference" type="core:ReferenceType">
+                <xsd:annotation>
+                    <xsd:documentation>identifies the original document that the <!--code-->ApplicationResponse<!--/code--> is in response to</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="DocumentStatusCoded" type="DocumentStatusCodeType">
+                <xsd:annotation>
+                    <xsd:documentation>describes the status of the document being responded to.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="DocumentStatusCodedOther" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is used to provide a non-standard <!--code-->DocumentStatusCode<!--/code-->. This element is mandatory if the value of <!--code-->DocumentStatusCoded<!--/code--> is 'Other'. These codes should not contain white space unless absolutely necessary.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ApplicationResponseNote" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>contains any free form text pertinent to the entire header or to the <!--code-->ApplicationResponse<!--/code--> message itself. This element may contain notes or any other similar information that is not contained explicitly in another structure. You should not assume that the receiving application is capable of doing more than storing and/or displaying this information.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfStructuredNote" type="core:ListOfStructuredNoteType">
+                <xsd:annotation>
+                    <xsd:documentation>contains one or more structured notes that allow you to provide notes that are more than a simple free-text field. Such notes may include the message text, or this text may be referenced with an external identifier or a URL. An agency may be specified, and is needed in the case where an ID has been provided for a note that is either included in-line or referenced. This field is often used to include references to centrally stored clauses in contracts that are required to appear within business documents.
+            Can also be used to contain the document being responded to.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfNameValueSet" type="core:ListOfNameValueSetType">
+                <xsd:annotation>
+                    <xsd:documentation>is a set of collections of name value pairs.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

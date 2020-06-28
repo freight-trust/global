@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/statisticsandforecasting/v1_0/statisticsandforecasting.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/statisticsandforecasting/v1_0/statisticsandforecasting.xsd" elementFormDefault="qualified">
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="TimeSeriesResponseDetailType">
+        <xsd:annotation>
+            <xsd:documentation>contains the detail level information relating to the time series
+        response.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="TimeSeriesDetailResponseCoded" type="TimeSeriesActionCodeType">
+                <xsd:annotation>
+                    <xsd:documentation>is the overall line level response code for the entire time
+        series detail section. This is a subset of the ActionCode list.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="TimeSeriesDetailResponseCodedOther" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is used to provide a non-standard <!--code-->TimeSeriesDetailResponseCode<!--/code-->.
+        This element is mandatory if the value of <!--code-->TimeSeriesDetailResponseCoded<!--/code--> is
+        'Other'. These codes should not contain white space unless absolutely
+        necessary.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfChangedCharacteristicCombinations" type="ListOfCharacteristicCombinationType">
+                <xsd:annotation>
+                    <xsd:documentation>contains a list of all the characteristic combinations for the
+        time series that need to be changed.  The
+        <!--code-->ListOfChangedCharacteristicCombinations<!--/code--> is identical to the <!--code-->ListOfCharacteristicCombinations<!--/code--> with the exception that the response code is required. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfChangedTimeSeriesKeyFigureData" type="ListOfTimeSeriesKeyFigureDataType">
+                <xsd:annotation>
+                    <xsd:documentation>contains a list of all the key figure and time series data
+        related information that will need to be changed. The
+        <!--code-->ListOfChangeTimeSeriesKeyFigureData<!--/code--> is identical to the
+        <!--code-->ListOfTimeSeriesKeyFigureData<!--/code--> with the exception that the response code is
+        required.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

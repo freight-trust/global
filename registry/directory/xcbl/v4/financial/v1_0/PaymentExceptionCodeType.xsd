@@ -1,0 +1,712 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/financial/v1_0/financial.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/financial/v1_0/financial.xsd" elementFormDefault="qualified">
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType name="PaymentExceptionCodeType">
+        <xsd:annotation>
+            <xsd:documentation>This code contains exception codes that relate to the  Payment document.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:enumeration value="Other">
+                <xsd:annotation>
+                    <xsd:documentation>Custom Code</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Success">
+                <xsd:annotation>
+                    <xsd:documentation>The service provider successfully processed the request.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ClientUpToDate">
+                <xsd:annotation>
+                    <xsd:documentation>The client's indicator (i.e., date-time or token) of last update in the request is equal to the server's indicator of last update processed. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="GeneralError">
+                <xsd:annotation>
+                    <xsd:documentation>There was an error that prevented the service provider from processing the transaction.  No additional information is provided.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="GeneralDataError">
+                <xsd:annotation>
+                    <xsd:documentation>One or more of the elements in the request is either invalid or is inconsistent with other elements.  No additional information is available.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="SystemNotAvailable">
+                <xsd:annotation>
+                    <xsd:documentation>The service provider for this transaction is not available due to a technical problem. Try again later</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="FunctionNotAvailable">
+                <xsd:annotation>
+                    <xsd:documentation>The function selected is not available.  Other functions may be available.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="UnsupportedService">
+                <xsd:annotation>
+                    <xsd:documentation>The service provider does not support the specified service offering.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="UnsupportedMessage">
+                <xsd:annotation>
+                    <xsd:documentation>The server does not support the message.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="UnsupportedFunction">
+                <xsd:annotation>
+                    <xsd:documentation>The server does not support one or more functions within the request.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ObjectAlreadyCommitted">
+                <xsd:annotation>
+                    <xsd:documentation>The object cannot be modified or canceled because it has already been committed for processing.  </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="MessageAcceptedForAsynchronousProcessing">
+                <xsd:annotation>
+                    <xsd:documentation>The message was accepted for future processing.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DuplicateRequestID">
+                <xsd:annotation>
+                    <xsd:documentation>A request with this client message identifier has already been received and processed.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="TheCursorReturnedWithinRecCtrlInIsInvalidOrHasExpired">
+                <xsd:annotation>
+                    <xsd:documentation>The suggested action is to resend the original message, omitting the cursor, to restart the sequence of messages required to retrieve all of the records.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="RequiredElementNotIncluded">
+                <xsd:annotation>
+                    <xsd:documentation>The request message does not contain one or more required elements.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="RequestDeclined">
+                <xsd:annotation>
+                    <xsd:documentation>The Service Provider has declined your request (e.g., a no pay was received for a payment or a credit limit change request was declined).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="InvalidEnumValue">
+                <xsd:annotation>
+                    <xsd:documentation>Customer input of an Enum value is not valid.  The condition may echo the element name in error or the value input by the Customer.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="CannotModifyElement">
+                <xsd:annotation>
+                    <xsd:documentation>The service provider does not allow modifications to one or more elements in a modification request.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="NoChangesMade">
+                <xsd:annotation>
+                    <xsd:documentation>No changes have been made. The requested change matched the existing data on the server.  </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="TooManyRecordsRequested">
+                <xsd:annotation>
+                    <xsd:documentation>The request has asked for more records than the service provider can satisfy. The quantity that the service provider can satisfy has been provided.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="NoRecordsMatchSelectionCriteria">
+                <xsd:annotation>
+                    <xsd:documentation>No records match the selection criteria of the request.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="SomeSelectionCriteriaNotSupported">
+                <xsd:annotation>
+                    <xsd:documentation>The server does not support one or more of the selection criterion fields in the request. Records returned based on only those supported.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="NoneOfSelectionCriteriaSupported">
+                <xsd:annotation>
+                    <xsd:documentation>The server supports none of the selection criterion fields specified in the request.  No records returned.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="TokenValuePriorToAvailableHistory">
+                <xsd:annotation>
+                    <xsd:documentation>The client has sent a token that precedes the history currently available.  The client must do an inquiry to resync.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="InvalidToken">
+                <xsd:annotation>
+                    <xsd:documentation>The token is not of the valid format.  Used when the client may edit the token format.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DetailNotAvailable">
+                <xsd:annotation>
+                    <xsd:documentation>Detail for this item is not available at this time.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="UnknownObjectId">
+                <xsd:annotation>
+                    <xsd:documentation>The specified object ID does not exist.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ObjectAlreadyExists">
+                <xsd:annotation>
+                    <xsd:documentation>The object that the client requested to add already exists.  (e.g., the specified service is already activated for the customer or customer account, or customer is already enrolled.)</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ObjectNotDeleted-DependentObjectsExist">
+                <xsd:annotation>
+                    <xsd:documentation>The object was not deleted because dependent objects exist, and the client did not request a cascading delete.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="CascadeDeleteFailed">
+                <xsd:annotation>
+                    <xsd:documentation>The object was not deleted because the dependent objects could not be deleted at this time.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ObjectExistsButDoesNotMatchCustomerID">
+                <xsd:annotation>
+                    <xsd:documentation>The object exists but does not match the Customer ID. Customer is not authorized to act.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ServiceProviderNameInvalid">
+                <xsd:annotation>
+                    <xsd:documentation>The Service Provider name specified in a request was not found or invalid.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ServiceProviderNameWithinCustomerIDIsInvalid">
+                <xsd:annotation>
+                    <xsd:documentation>The Service Provider Name specified within a customer identification aggregate is invalid.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ServiceProviderNameWithinBillerIDIsInvalid">
+                <xsd:annotation>
+                    <xsd:documentation>The Service Provider Name specified within a biller identification aggregate is invalid.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="CustomerIDInvalid">
+                <xsd:annotation>
+                    <xsd:documentation>The customer identifier Customer ID specified is invalid or not found.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="EditMaskError">
+                <xsd:annotation>
+                    <xsd:documentation>The value specified does not match the edit mask.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="InvalidAddress">
+                <xsd:annotation>
+                    <xsd:documentation>The specified address is incorrect.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="InvalidCity">
+                <xsd:annotation>
+                    <xsd:documentation>The city specified was incorrect.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="InvalidStateOrProvince">
+                <xsd:annotation>
+                    <xsd:documentation>The state or province specified was incorrect.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="InvalidPostalCode">
+                <xsd:annotation>
+                    <xsd:documentation>The postal code specified was incorrect.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="InvalidCountryCode">
+                <xsd:annotation>
+                    <xsd:documentation>The specified country code is not valid in ISO 3166.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="CryptTypeNotValid">
+                <xsd:annotation>
+                    <xsd:documentation>CryptType not valid or not supported.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="NoServiceProviderName">
+                <xsd:annotation>
+                    <xsd:documentation>Ambiguous request, Service Provider Name required </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="NoServiceName">
+                <xsd:annotation>
+                    <xsd:documentation>Ambiguous request, Service Name required</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="SecurityViolation">
+                <xsd:annotation>
+                    <xsd:documentation>A security violation has occurred.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="CustomerLoginIdAndPasswordWillBeSentOut-Of-Band">
+                <xsd:annotation>
+                    <xsd:documentation>The service provider will send the customer Login ID and password through postal mail, e-mail, or some other means.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="AuthenticationFailed">
+                <xsd:annotation>
+                    <xsd:documentation>The customer could not be authenticated due to an incorrect login ID or password.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="AuthorizationFailure">
+                <xsd:annotation>
+                    <xsd:documentation>Customer is not eligible to perform this function</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="OBOIsNotActiveForThisCustomerID">
+                <xsd:annotation>
+                    <xsd:documentation>The currently logged-in customer does not have the authority to act on behalf of another user.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ServiceNotEnabled">
+                <xsd:annotation>
+                    <xsd:documentation>The customer has not enabled the service with the service provider.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="CustomerSessionAlreadyInProgress">
+                <xsd:annotation>
+                    <xsd:documentation>The service provider supports only one session at a time per customer and there is already an active session for this Customer ID. Please try again later.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="NoCustomerSessionInProgress">
+                <xsd:annotation>
+                    <xsd:documentation>The specified customer does not have a session in progress.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ImmediateCustomerLockOut">
+                <xsd:annotation>
+                    <xsd:documentation>The customer identity for the current session is suspect.  End any active sessions.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="CustomerLockedOut">
+                <xsd:annotation>
+                    <xsd:documentation>The service provider has received too many failed authentication attempts for this customer or has detected other suspicious activity.  Please call the technical support telephone number.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="PasswordChangeRequired">
+                <xsd:annotation>
+                    <xsd:documentation>The Logon is successful but the customer must enter a new password before any other messages will be allowed.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="MustChangePassword">
+                <xsd:annotation>
+                    <xsd:documentation>The customer must change his or her password before any other messages will be allowed.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="InvalidNewCustomerIdentifier">
+                <xsd:annotation>
+                    <xsd:documentation>The new customer ID entered is not valid because it does not meet edit criteria.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="NewCustomerIdentifierInUse">
+                <xsd:annotation>
+                    <xsd:documentation>The customer chose a customer identifier that is already in use. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="InvalidNewPassword">
+                <xsd:annotation>
+                    <xsd:documentation>The new password entered as part of a CustPswdModRq is invalid.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="UnsupportedApplicationId">
+                <xsd:annotation>
+                    <xsd:documentation>The ID of the client application is unsupported.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="InvalidDataInSingleOrLowAmountField">
+                <xsd:annotation>
+                    <xsd:documentation>Non-numeric or missing data was encountered in a single or low amount field.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="InvalidDataInHighAmountField">
+                <xsd:annotation>
+                    <xsd:documentation>Non-numeric or missing data was encountered in a high amount field.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="AmountTooSmall">
+                <xsd:annotation>
+                    <xsd:documentation>The amount entered is too small (e.g., less than the minimum required).  Please enter a larger amount.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="AmountTooLarge">
+                <xsd:annotation>
+                    <xsd:documentation>The amount entered is too large (e.g., exceeds the limit for this transaction).  Please enter a smaller amount.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="InvalidHighLowAmount">
+                <xsd:annotation>
+                    <xsd:documentation>Low amount is greater than high amount in an amount range.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="FinalAmountExceedsLimit">
+                <xsd:annotation>
+                    <xsd:documentation>The service provider has established a maximum value for the amount of the final transfer or payment, which has been exceeded.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="InvalidDatetime-SingleDateOrLowOfRange">
+                <xsd:annotation>
+                    <xsd:documentation>The specified single date/time or the low date/time in a range is not in a valid date/time format.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="InvalidDatetime-HighOfRange">
+                <xsd:annotation>
+                    <xsd:documentation>The specified high date/time in a range is not in a valid date/time format.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="InvalidDatetimeRange">
+                <xsd:annotation>
+                    <xsd:documentation>The date range specified is invalid because the low date exceeds the high date.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DatePassed">
+                <xsd:annotation>
+                    <xsd:documentation>The date entered is in the past.  Please enter a valid date.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DatetimeTooSoon">
+                <xsd:annotation>
+                    <xsd:documentation>The specified date and time is too near; enter a later date and time. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DatetimeTooFarInFuture">
+                <xsd:annotation>
+                    <xsd:documentation>The specified date and time is too far in the future. Reenter an earlier date.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ProcessingDatePrecedesToday">
+                <xsd:annotation>
+                    <xsd:documentation>The processing date required to meet the due date DueDt entered would be earlier than today.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="RequestedDateAdjusted">
+                <xsd:annotation>
+                    <xsd:documentation>The Service Provider successfully processed the request, but the date requested has been adjusted.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="RequestIsTooLateForTodaysWork">
+                <xsd:annotation>
+                    <xsd:documentation>The customer has asked to schedule a transfer or payment for today but the cutoff time for today's work has passed.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="WeekendOrHoliday">
+                <xsd:annotation>
+                    <xsd:documentation>The date entered is a weekend or holiday.  The date cannot be adjusted.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="HistoryNotAvailableForFullDateRange">
+                <xsd:annotation>
+                    <xsd:documentation>History is not available for the full date range specified.  All transactions that were available were returned.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="AccountBalanceInformationNotAvailable">
+                <xsd:annotation>
+                    <xsd:documentation>One or more account balances for the selected account is currently unavailable.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ExtendedAccountBalanceInformationNotAvailable">
+                <xsd:annotation>
+                    <xsd:documentation>One or more extended account balances for the selected account is currently unavailable.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="SingleOrSourceAccountInvalid">
+                <xsd:annotation>
+                    <xsd:documentation>The Specified single account or source account identification aggregate contains invalid data or was not found. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DestinationAccountInvalid">
+                <xsd:annotation>
+                    <xsd:documentation>The specified destination account identification aggregate contains invalid data or was not found.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="SingleAccountOrSourceAccountNotForCustomer">
+                <xsd:annotation>
+                    <xsd:documentation>The specified single account or source account does not correspond to the customer.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DestinationAccountNotForCustomer">
+                <xsd:annotation>
+                    <xsd:documentation>The specified destination account does not correspond to the customer.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="SingleOrSourceAccountClosed">
+                <xsd:annotation>
+                    <xsd:documentation>The specified single account or source account has been closed.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DestinationAccountClosed">
+                <xsd:annotation>
+                    <xsd:documentation>The specified destination account has been closed.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="SourceAndDestinationAccountsAreIdentical">
+                <xsd:annotation>
+                    <xsd:documentation>A transfer that indicates that the source and destination accounts are the same is invalid.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="SingleOrSourceAccountNotAuthorized">
+                <xsd:annotation>
+                    <xsd:documentation>The customer is not authorized to perform the requested action on the specified single or source account.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DestinationAccountNotAuthorized">
+                <xsd:annotation>
+                    <xsd:documentation>The customer is not authorized to perform the requested action on the specified destination account.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="SingleOrSourceAccountNotAvailable">
+                <xsd:annotation>
+                    <xsd:documentation>The single or source account requested is not available for transaction processing at this time. The customer may continue to access other accounts.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DestinationAccountNotAvailable">
+                <xsd:annotation>
+                    <xsd:documentation>The destination account requested is not available for transaction processing at this time. The customer may continue to access other accounts.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="SingleOrSourceAccountNotEligibleForTransaction">
+                <xsd:annotation>
+                    <xsd:documentation>This single or source account is not authorized for this particular transaction.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DestinationAccountNotEligibleForTransaction">
+                <xsd:annotation>
+                    <xsd:documentation>This destination account is not authorized for this particular transaction.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="InvalidSingleOrSourceAccountType">
+                <xsd:annotation>
+                    <xsd:documentation>The single or source account type specified is not permitted by the service provider.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="InvalidDestinationAccountType">
+                <xsd:annotation>
+                    <xsd:documentation>The service provider does not permit the destination account type specified.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="SingleOrSourceAccountBankIDError">
+                <xsd:annotation>
+                    <xsd:documentation>The Bank Identifier in the source or single account identification aggregate is incorrect.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DestinationAccountBankIDError">
+                <xsd:annotation>
+                    <xsd:documentation>The Bank Identifier in the destination account is incorrect.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="BranchIdMissing">
+                <xsd:annotation>
+                    <xsd:documentation>A branch ID value must be provided in the single or source bank account information aggregate, but is missing.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="InvalidBankInfo">
+                <xsd:annotation>
+                    <xsd:documentation>The information contained within Bank Information is either invalid or insufficient to unambiguously identify the single or source bank.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="InvalidIndustryID">
+                <xsd:annotation>
+                    <xsd:documentation>The specified industry number is not valid for the Organization identifier.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="InvalidCardMagneticStripData">
+                <xsd:annotation>
+                    <xsd:documentation>The card magnetic strip data provided is either incorrect or incomplete.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="InvalidCheckNumberRange">
+                <xsd:annotation>
+                    <xsd:documentation>The specified check number range is invalid.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="RequestIsTooLate-CheckHasBeenPaid">
+                <xsd:annotation>
+                    <xsd:documentation>The customer has requested a Stop Payment on a check that has already cleared the bank and settled.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="CheckNumberNotFound">
+                <xsd:annotation>
+                    <xsd:documentation>The specified check number could not be found.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="StopCheckInProcess">
+                <xsd:annotation>
+                    <xsd:documentation>Stop Check is already in process. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="TooManyChecksToProcess">
+                <xsd:annotation>
+                    <xsd:documentation>The check range specified in StpChkAddRq is too large for the service provider to handle.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="CheckBookStyleNotAvailable">
+                <xsd:annotation>
+                    <xsd:documentation>The specified checkbook style is not currently available.  Please choose another style</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="InvalidNumberOfChecks">
+                <xsd:annotation>
+                    <xsd:documentation>The number of checks specified is not valid for the specified checkbook style.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ForeignExchangeNotSupported">
+                <xsd:annotation>
+                    <xsd:documentation>The currency code on both accounts involved in a transfer must be the same as the currency code of the input amount, unless ForEx is specified in OptSupt.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="InvalidCurrencyCode">
+                <xsd:annotation>
+                    <xsd:documentation>The specified currency code is not valid in ISO 4217.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="InvalidLanguageCode">
+                <xsd:annotation>
+                    <xsd:documentation>The specified language code is not valid in ISO 639.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="UnsupportedFrequency">
+                <xsd:annotation>
+                    <xsd:documentation>The specified frequency is not supported for this message.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DuplicatePaymentTransferExists">
+                <xsd:annotation>
+                    <xsd:documentation>The customer has attempted to schedule a payment/transfer that matches a previously entered payment/transfer (I.e., the day, amount and merchant or to account are the same).  The client may resubmit using DupChkOverride = True, if the payment or transfer is not a duplicate.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DuplicateRecurringModel">
+                <xsd:annotation>
+                    <xsd:documentation>The customer has attempted to schedule a recurring model that matches a previously entered model. The client may resubmit using DupChkOverride = True, if the model is not a duplicate.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="InvalidSkipCount">
+                <xsd:annotation>
+                    <xsd:documentation>The number of transfers or payments specified to skip exceeds the number of transfers or payments remaining for this recurring model.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="InsufficientFunds">
+                <xsd:annotation>
+                    <xsd:documentation>The service provider cannot process the transaction because the specified account does not have sufficient funds.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="NumberOfTransfersExceedsLimit">
+                <xsd:annotation>
+                    <xsd:documentation>The number of transfers allowed for a monthly or statement cycle has been exceeded.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DailyTransferLimitExceeded">
+                <xsd:annotation>
+                    <xsd:documentation>Total transfers for today exceed maximum allowable for one day.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="TransferPaymentGreaterThanLoanBalance">
+                <xsd:annotation>
+                    <xsd:documentation>A transfer to a loan account (a payment) is declined because the loan payoff is less than the transfer amount.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="InvalidBillerID">
+                <xsd:annotation>
+                    <xsd:documentation>The biller identifier specified could not be found or is invalid.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="InvalidStdPayeeID">
+                <xsd:annotation>
+                    <xsd:documentation>The standard payee identifier could not be found or was invalid.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="InvalidCustomerPayeeID">
+                <xsd:annotation>
+                    <xsd:documentation>The specified Customer Payee ID CustPayeeId does not exist or no longer exists.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="InvalidPayeeName">
+                <xsd:annotation>
+                    <xsd:documentation>The name specified for the payee was incorrect or incomplete.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="PayeeListFull">
+                <xsd:annotation>
+                    <xsd:documentation>The payee list is currently full.  To add a payee, first delete an existing payee.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="InvalidCustomerAccountWithPayee">
+                <xsd:annotation>
+                    <xsd:documentation>The pay account PayAcct specified by the user is invalid.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="PayeeTypeNotSupported">
+                <xsd:annotation>
+                    <xsd:documentation>This service provider does not support the payee type requested.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="NumberOfPaymentsInvalid">
+                <xsd:annotation>
+                    <xsd:documentation>The number of payments entered is invalid.  Please re-enter the number of payments.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="TotalPaymentAmountsScheduledForTodayExceededDailyLimit">
+                <xsd:annotation>
+                    <xsd:documentation>The sum of all payment amounts scheduled for today exceeds the daily limit (either at the SP or customer level).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ExpiredCard">
+                <xsd:annotation>
+                    <xsd:documentation>The card specified has expired.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="RecurringModelOpen-Ended">
+                <xsd:annotation>
+                    <xsd:documentation>No final date or number of instances has been specified for the recurring model; it has been added as open-ended.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DataChangedOrTruncated">
+                <xsd:annotation>
+                    <xsd:documentation>The server is responding with a warning that the data in the response is not identical to the data provided in the request. Rather, the data has been changed en route to storage.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="CurrenciesDoNotMatch">
+                <xsd:annotation>
+                    <xsd:documentation>The currencies of the amounts (e.g. in SelRangeCurAmt) are not the same.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="CardAccountIdMatchesMultipleAccounts">
+                <xsd:annotation>
+                    <xsd:documentation>The account cannot be uniquely identified based on the information provided by the Card Account Identifier.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="AuthorizationIsRejected">
+                <xsd:annotation>
+                    <xsd:documentation>The Pay Provider is indicating that the payment has been rejected by the Customer Payment Provider</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="AuthorizationHeldOver">
+                <xsd:annotation>
+                    <xsd:documentation>The Pay provider is indicating that a payment has held over (typically for next day payment) by the CPP</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="AuthorizationIsDeclinedForInsufficientFunds">
+                <xsd:annotation>
+                    <xsd:documentation>The financial institution has declined the payment authorization because the specified account does not have sufficient funds.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="AuthorizationIsDeclinedForInactiveAccount">
+                <xsd:annotation>
+                    <xsd:documentation>The financial institution has declined the payment authorization because the specified account is inactive.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="AuthorizationIsDeclinedForClosedAccount">
+                <xsd:annotation>
+                    <xsd:documentation>The financial institution has declined the payment authorization because the specified account is closed.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="AuthorizationIsDeclinedForOtherReason">
+                <xsd:annotation>
+                    <xsd:documentation>The financial institution has declined the payment authorization for another reason.  Customer should contact the FI for specific reason.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

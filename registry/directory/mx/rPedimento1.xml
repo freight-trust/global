@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<recibePedimento xmlns="http://privados.recintos.ws"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://privados.recintos.ws file:/Users/sbacha/Documents/tradedocs-tdoc/MX-CUSTOMS/PIDEMENTO/ucm195816/objetosSimples.xsd">
+    <informacionGeneral xmlns="">
+        <idOperacion>50</idOperacion>
+        <idAsociado>50</idAsociado>
+        <fechRegistro>2006-05-04T18:13:51.0</fechRegistro>
+        <idDetalleMovimiento>50</idDetalleMovimiento>
+        <idMovimiento>50</idMovimiento>
+        <idTipoOperacion>50</idTipoOperacion>
+        <idRecintoFiscalizado>50</idRecintoFiscalizado>
+    </informacionGeneral>
+    <pedimento xmlns="">50</pedimento>
+    <aduana xmlns="">aduana0</aduana>
+    <patente xmlns="">5000000</patente>
+    <mercancia xmlns="">
+        <idMercancia>50</idMercancia>
+        <idAsociado>50</idAsociado>
+        <numSecuencia>50</numSecuencia>
+        <numPiezas>500000</numPiezas>
+        <cveUmPiezas>cve</cveUmPiezas>
+        <numPeso>0.000</numPeso>
+    </mercancia>
+    <mercancia xmlns="">
+        <idMercancia>50</idMercancia>
+        <idAsociado>50</idAsociado>
+        <numSecuencia>50</numSecuencia>
+        <numPiezas>500000</numPiezas>
+        <cveUmPiezas>cve</cveUmPiezas>
+        <numPeso>0.000</numPeso>
+    </mercancia>
+</recibePedimento>

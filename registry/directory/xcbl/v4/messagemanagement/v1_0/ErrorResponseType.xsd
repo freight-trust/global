@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/messagemanagement/v1_0/messagemanagement.xsd" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/messagemanagement/v1_0/messagemanagement.xsd" elementFormDefault="qualified">
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+	<xsd:complexType name="ErrorResponseType">
+		<xsd:annotation>
+			<xsd:documentation>Error information that is exposed to applications </xsd:documentation>
+		</xsd:annotation>	
+		<xsd:sequence>
+			<xsd:element minOccurs="0" name="Code" type="xsd:string">
+				<xsd:annotation>
+					<xsd:documentation>Error code for debugging purpose. Error codes can be hierarchical with each subcode separated by the "|" character, for example "abc|def|ghi"</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			
+			<xsd:element name="String" type="StringType">
+				<xsd:annotation>
+					<xsd:documentation>This is a human readable field that provides a short description of the cause of the error. This is the same as the SOAP 1.2 SOAP Reason element</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			
+			<xsd:element minOccurs="0" name="Role" type="xsd:anyURI">
+				<xsd:annotation>
+					<xsd:documentation>This describes the type of processing that the "Originator" of the error was carrying out when the error was generated. This is the same as the SOAP 1.2 Role element</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			
+			<xsd:element minOccurs="0" name="Originator" type="xsd:anyURI">
+				<xsd:annotation>
+					<xsd:documentation>This contains the identifier of the connector or server that generated the error. This is the same as the SOAP 1.2 SOAP Node element</xsd:documentation>
+				</xsd:annotation>			
+			</xsd:element>
+			
+			<xsd:element name="CategoryCoded" type="CategoryCodeType">
+            		    <xsd:annotation>
+            		        <xsd:documentation>indicates what the problem is. Its purpose is to enable an application 
+							to use the information in this element to determine what alternative or compensating 
+							action to take.</xsd:documentation>
+            		    </xsd:annotation>
+					</xsd:element>
+					<xsd:element name="ScopeCoded" type="ScopeCodeType">
+            		    <xsd:annotation>
+            		        <xsd:documentation>indicates where in the message the error occurs, for example the 
+							envelope, the header or the body.</xsd:documentation>
+            		    </xsd:annotation>
+					</xsd:element>	
+					<xsd:element name="SeverityCoded" type="SeverityCodeType">
+            		    <xsd:annotation>
+            		        <xsd:documentation>indicates the severity of the error. It is used to determine whether or not the 
+							message was processed by its recipient and whether a resend of the same message 
+							could succeed.</xsd:documentation>
+            		    </xsd:annotation>			
+					</xsd:element>
+					<xsd:element minOccurs="0" name="Pointer" type="xsd:string">
+            		    <xsd:annotation>
+            		        <xsd:documentation>contains a pointer to the exact part of the message, e.g. an element or 
+							attribute that caused the error. It contains an XPATH expression, content id, 
+							or a URL.</xsd:documentation>
+            		    </xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="DetailedMessage" type="DetailedMessageType">
+            		    <xsd:annotation>
+            		        <xsd:documentation>is a field that allows developers to put large detailed information 
+							(in human readable format) about the error, for instance stack trace and message dump.</xsd:documentation>
+            		    </xsd:annotation>
+            		</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

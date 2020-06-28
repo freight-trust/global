@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/financial/v1_0/financial.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/financial/v1_0/financial.xsd" elementFormDefault="qualified">
+
+<xsd:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="../../externalschemas/xmldsig-core-schema.xsd"/>
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="InvoiceType">
+        <xsd:annotation>
+            <xsd:documentation> comprises the creation of an invoice that is sent
+        from a seller to a buyer for payment for the goods or services detailed in the
+        invoice supplied under conditions agreed between buyer and seller. An invoice
+        may refer to goods, items or services related to one or more orders. An invoice
+        may contain references to payment terms and transport information.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="InvoiceHeader" type="InvoiceHeaderType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the header information of the
+        <!--code-->Invoice<!--/code-->.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="InvoiceDetail" type="InvoiceDetailType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the line item and package details of the
+        <!--code-->Invoice<!--/code-->.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="InvoiceSummary" type="InvoiceSummaryType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the summary information of the
+        <!--code-->Invoice<!--/code-->.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="DigitalSignature" type="dgs:SignatureType">
+                <xsd:annotation>
+                    <xsd:documentation>contains a digital signature for the document.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

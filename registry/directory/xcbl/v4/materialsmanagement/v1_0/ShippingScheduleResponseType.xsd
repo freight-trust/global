@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/materialsmanagement/v1_0/materialsmanagement.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/materialsmanagement/v1_0/materialsmanagement.xsd" elementFormDefault="qualified">
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="ShippingScheduleResponseType">
+        <xsd:annotation>
+            <xsd:documentation>is a response to a
+       previously sent <!--code-->ShippingSchedule<!--/code-->. The intent of these documents is for sellers to
+       provide changes or corrections to the original documents.  A seller can reply back with changes
+       to a schedule due to factors such as backorder, insufficient parts, cannot meet demand, incorrect
+       information, etc. The choice between <!--code-->ListOfLocationGroupedShippingResponse<!--/code--> and <!--code-->ListOfMaterialGroupedShippingResponse<!--/code-->
+        allows you to determine how the detail section will be structured. <!--code-->ListOfLocationGroupedShippingResponse<!--/code-->
+         groups the shipping schedule line items according to location and <!--code-->ListOfMaterialGroupedShippingResponse<!--/code-->
+         allows you to group the planning schedule line items according to product.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="ShippingScheduleResponseHeader" type="ShippingScheduleResponseHeaderType">
+                <xsd:annotation>
+                    <xsd:documentation>holds all <!--code-->ShippingScheduleResponse<!--/code--> header-level information. This
+        element occurs once within the document.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:choice>
+                <xsd:element name="ListOfLocationGroupedShippingResponse" type="ListOfLocationGroupedShippingResponseType">
+                    <xsd:annotation>
+                        <xsd:documentation>contains the line level detail information for the
+        planning schedule. The detail is grouped by the delivery location. This is one
+        of two options for grouping forecasting detail in the <!--code-->ShippingScheduleResponse<!--/code--> document.
+        </xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+                <xsd:element name="ListOfMaterialGroupedShippingResponse" type="ListOfMaterialGroupedShippingResponseType">
+                    <xsd:annotation>
+                        <xsd:documentation>contains the line level detail information for the planning
+        schedule. The detail is grouped by the material. This is one of two options for
+        grouping forecasting detail in the <!--code-->ShippingScheduleResponse<!--/code-->
+        document.</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+            </xsd:choice>
+            <xsd:element minOccurs="0" name="ShippingScheduleResponseSummary" type="ShippingScheduleSummaryType">
+                <xsd:annotation>
+                    <xsd:documentation>provides summary information for the <!--code-->ShippingScheduleResponse<!--/code--> document.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

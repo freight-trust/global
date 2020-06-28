@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd"
+			xmlns:dgs="http://www.w3.org/2000/09/xmldsig#"
+			xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/materialsmanagement/v1_0/materialsmanagement.xsd"
+			targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/materialsmanagement/v1_0/materialsmanagement.xsd"
+			elementFormDefault="qualified">
+
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+<xsd:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="../../externalschemas/xmldsig-core-schema.xsd"/>
+
+<xsd:include schemaLocation="AdvanceShipmentNoticeType.xsd"/>
+<xsd:include schemaLocation="ASNBaseItemDetailType.xsd"/>
+<xsd:include schemaLocation="ASNDatesType.xsd"/>
+<xsd:include schemaLocation="ASNDetailType.xsd"/>
+<xsd:include schemaLocation="ASNHeaderType.xsd"/>
+<xsd:include schemaLocation="ASNItemDatesType.xsd"/>
+<xsd:include schemaLocation="ASNItemDetailType.xsd"/>
+<xsd:include schemaLocation="ASNLineItemPartyType.xsd"/>
+<xsd:include schemaLocation="ASNLineItemReferencesType.xsd"/>
+<xsd:include schemaLocation="ASNOrderNumberType.xsd"/>
+<xsd:include schemaLocation="ASNPartyType.xsd"/>
+<xsd:include schemaLocation="ASNPurposeCodeType.xsd"/>
+<xsd:include schemaLocation="ASNPurposeType.xsd"/>
+<xsd:include schemaLocation="ASNQuantitiesType.xsd"/>
+<xsd:include schemaLocation="ASNStatusCodeType.xsd"/>
+<xsd:include schemaLocation="ASNStatusType.xsd"/>
+<xsd:include schemaLocation="ASNSummaryType.xsd"/>
+<xsd:include schemaLocation="ASNTypeCodeType.xsd"/>
+<xsd:include schemaLocation="ASNTypeType.xsd"/>
+<xsd:include schemaLocation="BaseShippingDetailType.xsd"/>
+<xsd:include schemaLocation="CarrierReferenceType.xsd"/>
+<xsd:include schemaLocation="CommitmentLevelCodeType.xsd"/>
+<xsd:include schemaLocation="DeliveryStageQualifierCodeType.xsd"/>
+<xsd:include schemaLocation="DiscrepancyCodeType.xsd"/>
+<xsd:include schemaLocation="ElementIdentifierCodeType.xsd"/>
+<xsd:include schemaLocation="ForecastFrequencyCodeType.xsd"/>
+<xsd:include schemaLocation="GoodsConditionCodeType.xsd"/>
+<xsd:include schemaLocation="GoodsConditionType.xsd"/>
+<xsd:include schemaLocation="GoodsReceiptBaseItemDetailType.xsd"/>
+<xsd:include schemaLocation="GoodsReceiptDatesType.xsd"/>
+<xsd:include schemaLocation="GoodsReceiptDeliveryDetailType.xsd"/>
+<xsd:include schemaLocation="GoodsReceiptDetailType.xsd"/>
+<xsd:include schemaLocation="GoodsReceiptHeaderType.xsd"/>
+<xsd:include schemaLocation="GoodsReceiptItemDetailType.xsd"/>
+<xsd:include schemaLocation="GoodsReceiptLineItemReferencesType.xsd"/>
+<xsd:include schemaLocation="GoodsReceiptQuantitiesType.xsd"/>
+<xsd:include schemaLocation="GoodsReceiptReferencesType.xsd"/>
+<xsd:include schemaLocation="GoodsReceiptType.xsd"/>
+<xsd:include schemaLocation="GoodsReceiptTypeCodeType.xsd"/>
+<xsd:include schemaLocation="ItemReleaseStatusCodeType.xsd"/>
+<xsd:include schemaLocation="ItemResourceAuthorizationType.xsd"/>
+<xsd:include schemaLocation="InventoryReportType.xsd"/>
+<xsd:include schemaLocation="InventoryReportSummaryType.xsd"/>
+<xsd:include schemaLocation="InventoryManagementDetailType.xsd"/>
+<xsd:include schemaLocation="InventoryReportDetailType.xsd"/>
+<xsd:include schemaLocation="InventoryReportHeaderType.xsd"/>
+<xsd:include schemaLocation="InventoryReportPartyType.xsd"/>
+<xsd:include schemaLocation="InventoryReportDatesType.xsd"/>
+<xsd:include schemaLocation="InventoryReportTypeCodeType.xsd"/>
+<xsd:include schemaLocation="InventoryReportTypeType.xsd"/>
+<xsd:include schemaLocation="InventoryItemIdentifiersType.xsd"/>
+<xsd:include schemaLocation="IDNumberRangesType.xsd"/>
+<xsd:include schemaLocation="IDNumbersType.xsd"/>
+<xsd:include schemaLocation="LineItemGoodsConditionType.xsd"/>
+<xsd:include schemaLocation="LocationGroupedPlanningDetailType.xsd"/>
+<xsd:include schemaLocation="LocationGroupedPlanningResponseType.xsd"/>
+<xsd:include schemaLocation="LocationGroupedShippingDetailType.xsd"/>
+<xsd:include schemaLocation="LocationGroupedShippingResponseType.xsd"/>
+<xsd:include schemaLocation="LocationPlanningItemDetailType.xsd"/>
+<xsd:include schemaLocation="LocationScheduleType.xsd"/>
+<xsd:include schemaLocation="LocationShippingItemDetailType.xsd"/>
+<xsd:include schemaLocation="LocationShipScheduleType.xsd"/>
+<xsd:include schemaLocation="MaterialGroupedPlanningDetailType.xsd"/>
+<xsd:include schemaLocation="MaterialGroupedPlanningResponseType.xsd"/>
+<xsd:include schemaLocation="MaterialGroupedShippingDetailType.xsd"/>
+<xsd:include schemaLocation="MaterialGroupedShippingResponseType.xsd"/>
+<xsd:include schemaLocation="PlanningScheduleHeaderType.xsd"/>
+<xsd:include schemaLocation="PlanningScheduleResponseHeaderType.xsd"/>
+<xsd:include schemaLocation="PlanningScheduleResponseType.xsd"/>
+<xsd:include schemaLocation="PlanningScheduleSummaryType.xsd"/>
+<xsd:include schemaLocation="PlanningScheduleType.xsd"/>
+<xsd:include schemaLocation="ResourceAuthorizationCodeType.xsd"/>
+<xsd:include schemaLocation="ScheduleBaseItemDetailType.xsd"/>
+<xsd:include schemaLocation="ScheduleDetailType.xsd"/>
+<xsd:include schemaLocation="SchedulePartyType.xsd"/>
+<xsd:include schemaLocation="ScheduleReferencesType.xsd"/>
+<xsd:include schemaLocation="ScheduleTypeCodeType.xsd"/>
+<xsd:include schemaLocation="ShippingDatesType.xsd"/>
+<xsd:include schemaLocation="ShippingReferencesType.xsd"/>
+<xsd:include schemaLocation="ShippingScheduleHeaderType.xsd"/>
+<xsd:include schemaLocation="ShippingScheduleResponseHeaderType.xsd"/>
+<xsd:include schemaLocation="ShippingScheduleResponseType.xsd"/>
+<xsd:include schemaLocation="ShippingScheduleSummaryType.xsd"/>
+<xsd:include schemaLocation="ShippingScheduleType.xsd"/>
+<xsd:include schemaLocation="ShipScheduleDetailType.xsd"/>
+<xsd:include schemaLocation="TrackingInformationType.xsd"/>
+
+<xsd:element name="AdvanceShipmentNotice" type="AdvanceShipmentNoticeType"/>
+<xsd:element name="GoodsReceipt" type="GoodsReceiptType"/>
+<xsd:element name="InventoryReport" type="InventoryReportType"/>
+<xsd:element name="PlanningSchedule" type="PlanningScheduleType"/>
+<xsd:element name="PlanningScheduleResponse" type="PlanningScheduleResponseType"/>
+<xsd:element name="ShippingSchedule" type="ShippingScheduleType"/>
+<xsd:element name="ShippingScheduleResponse" type="ShippingScheduleResponseType"/>
+
+</xsd:schema>

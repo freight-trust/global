@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/financial/v1_0/financial.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/financial/v1_0/financial.xsd" elementFormDefault="qualified">
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType name="InvoiceTypeCodeType">
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:enumeration value="Other">
+                <xsd:annotation>
+                    <xsd:documentation>Custom Code</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="MeteredServicesInvoice">
+                <xsd:annotation>
+                    <xsd:documentation>Metered Services Invoice</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="CreditNoteFinancialAdjustment">
+                <xsd:annotation>
+                    <xsd:documentation>Credit Note Related To Financial Adjustments</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DebitNoteFinancialAdjustment">
+                <xsd:annotation>
+                    <xsd:documentation>Debit Note Related To Financial Adjustment</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="InvoicingDataSheet">
+                <xsd:annotation>
+                    <xsd:documentation>Invoicing Data Sheet</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ProformaInvoice">
+                <xsd:annotation>
+                    <xsd:documentation>Proforma Invoice</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="CommercialInvoice">
+                <xsd:annotation>
+                    <xsd:documentation>Commercial Invoice</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="CreditNoteGoodsAndServices">
+                <xsd:annotation>
+                    <xsd:documentation>Credit Note - Goods and Services</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DebitNoteGoodsAndServices">
+                <xsd:annotation>
+                    <xsd:documentation>Debit Note - Goods and Services</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="CommissionNote">
+                <xsd:annotation>
+                    <xsd:documentation>Commission Note</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="CorrectedInvoice">
+                <xsd:annotation>
+                    <xsd:documentation>Corrected Invoice</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ConsolidatedInvoice">
+                <xsd:annotation>
+                    <xsd:documentation>Consolidated Invoice</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="PrepaymentInvoice">
+                <xsd:annotation>
+                    <xsd:documentation>Prepayment Invoice</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="SelfBilledInvoice">
+                <xsd:annotation>
+                    <xsd:documentation>Self-Billed Invoice</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DelcredereInvoice">
+                <xsd:annotation>
+                    <xsd:documentation>Delcredere Invoice</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="FactoredInvoice">
+                <xsd:annotation>
+                    <xsd:documentation>Factored Invoice</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="CreditInvoice">
+                <xsd:annotation>
+                    <xsd:documentation>Credit Invoice</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="CreditMemo">
+                <xsd:annotation>
+                    <xsd:documentation>Credit Memo</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DetourBilling">
+                <xsd:annotation>
+                    <xsd:documentation>Detour Billing</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ThirdPartyConsolidatedInvoice">
+                <xsd:annotation>
+                    <xsd:documentation>Third Party Consolidated Invoice</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DebitInvoice">
+                <xsd:annotation>
+                    <xsd:documentation>Debit Invoice</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DebitMemo">
+                <xsd:annotation>
+                    <xsd:documentation>Debit Memo</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

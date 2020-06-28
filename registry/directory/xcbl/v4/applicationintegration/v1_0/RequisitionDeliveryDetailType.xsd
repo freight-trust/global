@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/applicationintegration/v1_0/applicationintegration.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/applicationintegration/v1_0/applicationintegration.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="RequisitionDeliveryDetailType">
+        <xsd:annotation>
+            <xsd:documentation>is used to specify the scheduling information for a distinct set
+        of ship from party, ship to party, and transport information for the line
+        item</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="ShipToLocation" type="core:LocationType">
+                <xsd:annotation>
+                    <xsd:documentation>is the location to which the shipments are to be
+        delivered.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ShipFromLocation" type="core:LocationType">
+                <xsd:annotation>
+                    <xsd:documentation>identifies the party from which the item is to be shipped from.
+        This is only used if the <!--code-->ShipFromParty<!--/code--> differs from that identified in the
+        header.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfScheduleLine" type="core:ListOfScheduleLineType">
+                <xsd:annotation>
+                    <xsd:documentation>is all of the schedule information relevant to the line item for
+        the shipping parties. This may indicate several shipments to the same location
+        over a period of time.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="TermsOfDelivery" type="core:TermsOfDeliveryType">
+                <xsd:annotation>
+                    <xsd:documentation>includes the information related to delivery including shipment
+        method payment and transport.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="SpecialHandling" type="core:SpecialHandlingType">
+                <xsd:annotation>
+                    <xsd:documentation>is used to describe any special handling relating to the item.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ShipInstructions" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>contains free form text to describe special instructions related to the shipment of the item.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

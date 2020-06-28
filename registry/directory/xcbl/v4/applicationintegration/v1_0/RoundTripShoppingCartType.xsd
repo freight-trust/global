@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/applicationintegration/v1_0/applicationintegration.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/applicationintegration/v1_0/applicationintegration.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="RoundTripShoppingCartType">
+        <xsd:annotation>
+            <xsd:documentation>contains information pertinent to the round trip shopping cart.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="ShoppingCartID" type="xsd:int">
+                <xsd:annotation>
+                    <xsd:documentation>is a unique number assigned to the shopping cart.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="SellerParty" type="core:PartyType">
+                <xsd:annotation>
+                    <xsd:documentation>contains details to describe the seller party.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="RoundTripInformation" type="core:RoundTripInformationType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the details to describe the round trip.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="ListOfRoundTripShoppingCartType">
+        <xsd:annotation>
+            <xsd:documentation>contains information to describe one or more round trip shopping carts.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" name="RoundTripShoppingCart" type="RoundTripShoppingCartType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the round trip shopping cart information.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+</xsd:schema>

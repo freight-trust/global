@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/financial/v1_0/financial.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/financial/v1_0/financial.xsd" elementFormDefault="qualified">
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType name="PaymentReasonCodeType">
+        <xsd:annotation>
+            <xsd:documentation>This code identifies the reason or business function for the payment. This code list is derived from EDIFACT 4025 (Business function code).</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:enumeration value="Other">
+                <xsd:annotation>
+                    <xsd:documentation>Custom Code</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="PaymentTerms">
+                <xsd:annotation>
+                    <xsd:documentation>The business function is to specify payment terms.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="MedicalServices">
+                <xsd:annotation>
+                    <xsd:documentation>The reason for the transaction is medical services.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="MultipleTypesOfService">
+                <xsd:annotation>
+                    <xsd:documentation>The reason for the transaction is for multiple types of services.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="NotOtherwiseSpecified">
+                <xsd:annotation>
+                    <xsd:documentation>The reason for the transaction is for types of services not specified elsewhere.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="VisionCare">
+                <xsd:annotation>
+                    <xsd:documentation>The reason for the transaction is vision care services.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="HomeHealthCare">
+                <xsd:annotation>
+                    <xsd:documentation>The reason for the transaction is for home health care services.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="HospitalCare">
+                <xsd:annotation>
+                    <xsd:documentation>The reason for the transaction is for hospital care services.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="IntermediateCareFacility">
+                <xsd:annotation>
+                    <xsd:documentation>The reason for the transaction is for intermediate care facility services.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Long-TermCareFacility">
+                <xsd:annotation>
+                    <xsd:documentation>The reason for the transaction is for long-term care facility services.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ConvalescentCareFacility">
+                <xsd:annotation>
+                    <xsd:documentation>The reason for the transaction is for convalescent care facility services.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="AnesthesiaService">
+                <xsd:annotation>
+                    <xsd:documentation>The reason for the transaction is for health care  anaesthesia services</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DentalServices">
+                <xsd:annotation>
+                    <xsd:documentation>The reason for the transaction is for dental services.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DurableMedicalEquipment">
+                <xsd:annotation>
+                    <xsd:documentation>The reason for the transaction is the use of durable medical equipment.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="BusinessExpenses">
+                <xsd:annotation>
+                    <xsd:documentation>The reason for the transaction is business expenses.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="AdvancePayment">
+                <xsd:annotation>
+                    <xsd:documentation>The reason for payment is advance payment.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="AgriculturalTransfer">
+                <xsd:annotation>
+                    <xsd:documentation>Support payment to farmer.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Alimony">
+                <xsd:annotation>
+                    <xsd:documentation>Payment on alimony.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ChildBenefit">
+                <xsd:annotation>
+                    <xsd:documentation>Payment made to assist to parent/guardian to maintain child.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Unemployment-Disability-Benefit">
+                <xsd:annotation>
+                    <xsd:documentation>Payment to person unemployed/disabled.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Bonus">
+                <xsd:annotation>
+                    <xsd:documentation>The reason the transaction is bonus.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="CashManagementTransfer">
+                <xsd:annotation>
+                    <xsd:documentation>Reason for the transaction is cash management transfer.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="CapitalBuildingFringeFortune">
+                <xsd:annotation>
+                    <xsd:documentation>Capital building for retirement.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="CommodityTransfer">
+                <xsd:annotation>
+                    <xsd:documentation>Reason for payment is commodity.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="CommercialCreditPayment">
+                <xsd:annotation>
+                    <xsd:documentation>Reason for payment is commercial credit.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="CommissionPayment">
+                <xsd:annotation>
+                    <xsd:documentation>Payment of commission.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Costs">
+                <xsd:annotation>
+                    <xsd:documentation>Reason for payments is costs.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="CopyrightPayment">
+                <xsd:annotation>
+                    <xsd:documentation>Reason for payment is copyright.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="DividendPayment">
+                <xsd:annotation>
+                    <xsd:documentation>Reason for payment is dividend.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ForeignExchange">
+                <xsd:annotation>
+                    <xsd:documentation>Reason for transaction is foreign exchange.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="PurchasingAndSellingOfGoods">
+                <xsd:annotation>
+                    <xsd:documentation>Purchasing and selling of goods.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="GovernmentPayment">
+                <xsd:annotation>
+                    <xsd:documentation>Payment to or from a government department.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="InstalmentOrHire-PurchaseAgreement">
+                <xsd:annotation>
+                    <xsd:documentation>Reason for transaction is instalment or hire/purchase agreement.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="InsurancePremium">
+                <xsd:annotation>
+                    <xsd:documentation>Reason for transaction is insurance premium.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="InterestPayment">
+                <xsd:annotation>
+                    <xsd:documentation>Payment of interest.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="LicenceFeesPayment">
+                <xsd:annotation>
+                    <xsd:documentation>Payment of licence fees.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Loan">
+                <xsd:annotation>
+                    <xsd:documentation>Transfer of loan to borrower.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="LoanRepayment">
+                <xsd:annotation>
+                    <xsd:documentation>Repayment of loan to lender.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Netting">
+                <xsd:annotation>
+                    <xsd:documentation>Reason for transaction is netting.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="PensionPayment">
+                <xsd:annotation>
+                    <xsd:documentation>Payment of pension.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Refunding">
+                <xsd:annotation>
+                    <xsd:documentation>Payment of refund.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Rent">
+                <xsd:annotation>
+                    <xsd:documentation>Reason for transaction is rent.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="RoyaltiesPayment">
+                <xsd:annotation>
+                    <xsd:documentation>Payment of royalties.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="SalaryPayment">
+                <xsd:annotation>
+                    <xsd:documentation>Reason for payment is salary.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="PurchasingAndSellingOfServices">
+                <xsd:annotation>
+                    <xsd:documentation>Purchasing and selling of services.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Securities">
+                <xsd:annotation>
+                    <xsd:documentation>Reason for transaction is securities.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="SocialSecurityBenefit">
+                <xsd:annotation>
+                    <xsd:documentation>Payment made by government to support individuals.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Subscription">
+                <xsd:annotation>
+                    <xsd:documentation>Reason for transaction is subscription.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="TaxPayment">
+                <xsd:annotation>
+                    <xsd:documentation>Payment of tax.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="ValueAddedTaxPayment">
+                <xsd:annotation>
+                    <xsd:documentation>Payment of Value Added Tax (VAT).</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="VendorPayment">
+                <xsd:annotation>
+                    <xsd:documentation/>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

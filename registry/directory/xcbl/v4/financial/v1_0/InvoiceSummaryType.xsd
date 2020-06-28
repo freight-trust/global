@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/financial/v1_0/financial.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/financial/v1_0/financial.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="InvoiceSummaryType">
+        <xsd:annotation>
+            <xsd:documentation>contains summary information relating to the
+          <!--code-->Invoice<!--/code-->.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="NumberOfLines" type="xsd:int">
+                <xsd:annotation>
+                    <xsd:documentation>contains the number of line items in the <!--code-->Invoice<!--/code-->.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="NumberOfOrders" type="xsd:int">
+                <xsd:annotation>
+                    <xsd:documentation>contains the number of orders in the <!--code-->Invoice<!--/code-->, in the case
+                    that consolidated invoicing is used.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="InvoiceTotals" type="InvoiceTotalsType">
+                <xsd:annotation>
+                    <xsd:documentation>contains a number of totals relevant to the <!--code-->Invoice<!--/code-->.
+          </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfTaxSummary" type="core:ListOfTaxSummaryType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the summary of the tax information specified within the
+          <!--code-->Invoice<!--/code-->. This element is mandatory if tax elements occur in either
+          the invoice header or any invoice detail item line. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="AllowOrChargeSummary" type="core:AllowOrChargeSummaryType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the summary amounts, for each category of the allowance or
+          charge. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfActualPayment" type="core:ListOfActualPaymentType">
+                <xsd:annotation>
+                    <xsd:documentation>contains a list of information relating to payment(s) made on the
+          invoice at the time the invoice was produced.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="SummaryNote" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>contains any free form text pertinent to the invoice summary. This
+          element may contain notes or any other similar information that is not
+          contained explicitly in another structure. You should not assume that the
+          receiving application is capable of doing more than storing and/or displaying
+          this information.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

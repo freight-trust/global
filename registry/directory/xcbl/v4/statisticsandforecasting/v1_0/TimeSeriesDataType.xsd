@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/statisticsandforecasting/v1_0/statisticsandforecasting.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/statisticsandforecasting/v1_0/statisticsandforecasting.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="TimeSeriesDataType">
+        <xsd:annotation>
+            <xsd:documentation>contains the time series data which is composed of time buckets
+        and a value. This element can occur a multiple of times.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="TimeSeriesBucket" type="core:ValidityDatesType">
+                <xsd:annotation>
+                    <xsd:documentation>describes the date range of the time series value by specifying
+        the start and end dates. The element is composed of a <!--code-->StartDate<!--/code--> and an <!--code-->EndDate<!--/code-->
+        which are both of type datetime.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="TimeSeriesValue" type="xsd:float">
+                <xsd:annotation>
+                    <xsd:documentation>is the value of the time series data to be analyzed</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="TimeSeriesDataNote" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>is associated with the time series data. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

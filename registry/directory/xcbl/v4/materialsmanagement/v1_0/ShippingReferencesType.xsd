@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/materialsmanagement/v1_0/materialsmanagement.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/materialsmanagement/v1_0/materialsmanagement.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="ShippingReferencesType">
+        <xsd:annotation>
+            <xsd:documentation>defines the references for the ASN.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="ShipmentIdentifier" type="core:ReferenceType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the shipper's unique identification number for identifying the
+					shipment.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="PackingListNumber" type="core:ReferenceType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the number of the packing list for this ASN.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ContractNumber" type="core:ReferenceType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the number of the contract.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="BillOfLadingNumber" type="core:ReferenceType">
+                <xsd:annotation>
+                    <xsd:documentation>holds the bill of lading number for the invoice.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="AirWaybillNumber" type="core:ReferenceType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the reference to the air waybill.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ImportLicenceNumber" type="core:ReferenceType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the reference to the import license number.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ExportLicenceNumber" type="core:ReferenceType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the reference to the export license number.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="LetterOfCreditNumber" type="core:ReferenceType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the reference to a Letter of Credit.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="URL" type="xsd:anyURI">
+                <xsd:annotation>
+                    <xsd:documentation>contains the reference to a URL.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="TrackingInformation" type="TrackingInformationType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the information to allow tracking of the ASN.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfCarrierReference" type="ListOfCarrierReferenceType">
+                <xsd:annotation>
+                    <xsd:documentation>contains a list of references issued by the carrier.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="OtherShippingReferences" type="core:ListOfReferenceCodedType">
+                <xsd:annotation>
+                    <xsd:documentation>contains all other references for the shipment not explicitly stated as the content of other
+					elements.
+					</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

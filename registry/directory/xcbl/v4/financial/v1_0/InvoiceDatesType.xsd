@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/financial/v1_0/financial.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/financial/v1_0/financial.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="InvoiceDatesType">
+        <xsd:annotation>
+            <xsd:documentation>contains pertinent dates for the invoice. These may be
+        overwritten at a lower level within the structure
+        <!--code-->InvoiceDetail<!--/code-->.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="InvoiceDueDate" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>holds the date that the invoice is due for payment.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ExpectedShipDate" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>holds the date the goods are expected to be shipped.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ActualShipDate" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>holds the date the goods were shipped.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ExpectedDeliveryDate" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>holds the date the goods are expected to be shipped.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ActualDeliveryDate" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>holds the date the goods were shipped.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ReceiptDate" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>holds the date the goods were received at their destination.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="TaxPeriod" type="core:ValidityDatesType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the tax period for the invoice.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="InvoicingPeriod" type="core:ValidityDatesType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the period for which the invoice is issued.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfOtherInvoiceDates" type="core:ListOfDateCodedType">
+                <xsd:annotation>
+                    <xsd:documentation>contains all other dates for the invoice that have not been
+        explicitly defined as the content of other elements. </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

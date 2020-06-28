@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/statisticsandforecasting/v1_0/statisticsandforecasting.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/statisticsandforecasting/v1_0/statisticsandforecasting.xsd" elementFormDefault="qualified">
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="TimeSeriesDetailType">
+        <xsd:annotation>
+            <xsd:documentation>contains detail information for the time series document. The
+        <!--code-->TimeSeriesDetail<!--/code--> defines the characteristic combination, key figure, unit of
+        measure, and time series values of a given planning data. This element is
+        broken down into two structures: <!--code-->ListOfTimeSeriesKeyFigures<!--/code--> and <!--code-->ListOfCharacteristicCombinations<!--/code-->.
+        Both lists can occur independently of the other. If necessary, you can
+        send only one of the data elements.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="ListOfCharacteristicCombinations" type="ListOfCharacteristicCombinationType">
+                <xsd:annotation>
+                    <xsd:documentation>contains a list of all the characteristic combinations for the
+        time series. This element can be sent in a separate transmission from the time
+        series document (without the key figure and time series value information) to
+        serve as an initial setup/configuration process.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfTimeSeriesKeyFigureData" type="ListOfTimeSeriesKeyFigureDataType">
+                <xsd:annotation>
+                    <xsd:documentation>contains a list of all the key figure and time series data
+        related information.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

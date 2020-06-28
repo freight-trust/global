@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/materialsmanagement/v1_0/materialsmanagement.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/materialsmanagement/v1_0/materialsmanagement.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="GoodsReceiptDeliveryDetailType">
+        <xsd:annotation>
+            <xsd:documentation>contains the delivery information in the <!--code-->GoodsReceipt<!--/code-->.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element minOccurs="0" name="ItemPackagingReference" type="core:ItemPackagingReferenceType">
+                <xsd:annotation>
+                    <xsd:documentation>contains reference information when detailed packaging information contained in the list of package detail is to be associated with the line item.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ListOfDestinationRef" type="core:ListOfDestinationRefType">
+                <xsd:annotation>
+                    <xsd:documentation>holds a list of all the destinations for the line item.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="RequestedDeliveryDate" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>is the date items in the purchase order must be received by the buyer.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ShipByDate" type="xsd:dateTime">
+                <xsd:annotation>
+                    <xsd:documentation>is the date items in the purchase order must be shipped from the seller.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="OtherItemDates" type="core:ListOfDateCodedType">
+                <xsd:annotation>
+                    <xsd:documentation>specifies other dates related to the item.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ItemShipToParty" type="core:PartyType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the information for the party which the items were shipped to.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ItemShipFromParty" type="core:PartyType">
+                <xsd:annotation>
+                    <xsd:documentation>contains party information identifying the location from which the items were shipped.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="TermsOfDelivery" type="core:TermsOfDeliveryType">
+                <xsd:annotation>
+                    <xsd:documentation>includes the information related to delivery including shipment method of payment and transport.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

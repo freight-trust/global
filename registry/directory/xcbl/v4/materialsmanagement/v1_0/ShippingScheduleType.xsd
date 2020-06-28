@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/materialsmanagement/v1_0/materialsmanagement.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/materialsmanagement/v1_0/materialsmanagement.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+<xsd:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="../../externalschemas/xmldsig-core-schema.xsd"/>
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="ShippingScheduleType">
+        <xsd:annotation>
+            <xsd:documentation> consists of notifications of short-term shipping requirements
+            from a buyer to a supplier in reference to an existing planning schedule or
+            purchasing agreement. The shipping schedule is not intended to be used for
+            authorizing labor, materials, or other resources. The buyer will initially
+            outline product requirements to the supplier in the form of a planning schedule
+            or purchasing agreement. The Shipping Schedule will then be issued in reference
+            to a planning schedule or purchasing agreement and provide specific details
+            relating to the required products, quantities, delivery points and requested
+            delivery dates. The Shipping Schedule document supersedes certain shipping and
+            delivery information transmitted in a previous planning schedule, but does not
+            replace it. Shipping schedules are usually stated in daily, weekly or monthly
+            buckets (depending upon the industry) and are used to refine planning schedules
+            in support of a just-in-time planning environment. This provides a mechanism to
+            issue precise shipping schedule requirements on a more frequent basis than with
+            the issuance of a planning schedule. The Shipping Schedule also provides the
+            ability for a customer location to issue shipping requirements independent of
+            other customer locations when planning schedules are issued by a consolidated
+            scheduling organization. </xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="ShippingScheduleHeader" type="ShippingScheduleHeaderType">
+                <xsd:annotation>
+                    <xsd:documentation>contains the header information of the <!--code-->ShippingSchedule.<!--/code-->
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:choice>
+                <xsd:element name="ListOfLocationGroupedShippingDetail" type="ListOfLocationGroupedShippingDetailType">
+                    <xsd:annotation>
+                        <xsd:documentation>contains the line level detail information for the <!--code-->ShippingSchedule<!--/code--> document. The detail is grouped by the delivery point. This is one of two options for grouping the shipping detail.</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+                <xsd:element name="ListOfMaterialGroupedShippingDetail" type="ListOfMaterialGroupedShippingDetailType">
+                    <xsd:annotation>
+                        <xsd:documentation>contains the line level detail information for the
+                        <!--code-->ShippingSchedule<!--/code--> document. The detail is grouped by the
+                        material.  This is one of two options for grouping shipping
+                        detail.</xsd:documentation>
+                    </xsd:annotation>
+                </xsd:element>
+            </xsd:choice>
+            <xsd:element minOccurs="0" name="ListOfPackageDetail" type="core:ListOfPackageDetailType">
+                <xsd:annotation>
+                    <xsd:documentation>is a container to hold a number of package details.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="ShippingScheduleSummary" type="ShippingScheduleSummaryType">
+                <xsd:annotation>
+                    <xsd:documentation>is the summary section for the <!--code-->ShippingSchedule<!--/code-->
+                    document which contains a total number of lines.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="DigitalSignature" type="dgs:SignatureType">
+                <xsd:annotation>
+                    <xsd:documentation>contains a digital signature for the document.
+                    </xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/applicationintegration/v1_0/applicationintegration.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/applicationintegration/v1_0/applicationintegration.xsd" elementFormDefault="qualified">
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="RecordFieldType">
+        <xsd:annotation>
+            <xsd:documentation>specifies the field information for the record.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="RecordFieldCounter" type="xsd:int">
+                <xsd:annotation>
+                    <xsd:documentation>is a sequence counter to identify the field record.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="RecordFieldName" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>contains name of the field record.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+	    <xsd:element name="RecordFieldValue" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>contains value of the field record.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+	    <xsd:element minOccurs="0" name="IsNull" type="xsd:boolean">
+                <xsd:annotation>
+                    <xsd:documentation>is a boolean flag to indicate whether the record field value is null.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+       	    <xsd:element minOccurs="0" maxOccurs="unbounded" name="RecordFieldAttribute" type="RecordFieldAttributeType">
+                <xsd:annotation>
+                     <xsd:documentation>specifies attributes to describe the record field.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+    <xsd:complexType name="RecordFieldAttributeType">
+        <xsd:annotation>
+             <xsd:documentation>specifies the attribute details for the record field.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+             <xsd:element name="AttributeName" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>contains name of the field record attribute.</xsd:documentation>
+                </xsd:annotation>
+             </xsd:element>
+	     <xsd:element minOccurs="0" name="AttributeCategory" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:documentation>contains category value of the field record attribute.</xsd:documentation>
+                </xsd:annotation>
+             </xsd:element>
+	</xsd:sequence>
+     </xsd:complexType>
+</xsd:schema>

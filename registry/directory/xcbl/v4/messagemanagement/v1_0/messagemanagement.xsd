@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd"
+			xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/messagemanagement/v1_0/messagemanagement.xsd"
+			targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/messagemanagement/v1_0/messagemanagement.xsd"
+			elementFormDefault="qualified">
+
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+<xsd:import schemaLocation="../../externalschemas/xml.xsd" namespace="http://www.w3.org/XML/1998/namespace"/>
+
+<xsd:include schemaLocation="ApplicationIdentificationType.xsd"/>
+<xsd:include schemaLocation="ApplicationResponseDetailType.xsd"/>
+<xsd:include schemaLocation="ApplicationResponseHeaderType.xsd"/>
+<xsd:include schemaLocation="ApplicationResponseType.xsd"/>
+<xsd:include schemaLocation="ApplicationResponseTypeCodeType.xsd"/>
+<xsd:include schemaLocation="BusinessDocumentTypeCodeType.xsd"/>
+<xsd:include schemaLocation="DetailedMessageType.xsd"/>
+<xsd:include schemaLocation="DocumentStatusCodeType.xsd"/>
+<xsd:include schemaLocation="CategoryCodeType.xsd"/>
+<xsd:include schemaLocation="ErrorResponseType.xsd"/>
+<xsd:include schemaLocation="ScopeCodeType.xsd"/>
+<xsd:include schemaLocation="ErrorTypeCodeType.xsd"/>
+<xsd:include schemaLocation="ItemReferenceType.xsd"/>
+<xsd:include schemaLocation="MessageAcknowledgmentType.xsd"/>
+<xsd:include schemaLocation="SeverityCodeType.xsd"/>
+<xsd:include schemaLocation="StringType.xsd"/>
+
+<xsd:element name="ApplicationResponse" type="ApplicationResponseType"/>
+<xsd:element name="ErrorResponse" type="ErrorResponseType"/>
+<xsd:element name="MessageAcknowledgment" type="MessageAcknowledgmentType"/>
+
+</xsd:schema>

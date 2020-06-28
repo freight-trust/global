@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/materialsmanagement/v1_0/materialsmanagement.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/materialsmanagement/v1_0/materialsmanagement.xsd" elementFormDefault="qualified">
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleType name="GoodsConditionCodeType">
+        <xsd:annotation>
+            <xsd:documentation>this list describes the status of units in a specific shipment.This code list is derived from EDIFACT 7007 and X12 412.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:NMTOKEN">
+            <xsd:enumeration value="GoodCondition">
+                <xsd:annotation>
+                    <xsd:documentation>in a state of good condition</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Rejected">
+                <xsd:annotation>
+                    <xsd:documentation>Rejected</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Hold">
+                <xsd:annotation>
+                    <xsd:documentation>on hold, waiting further information</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="MaterialScrapped">
+                <xsd:annotation>
+                    <xsd:documentation>Material scrapped</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="AdjustSupplierShippedCumulativeQuantity">
+                <xsd:annotation>
+                    <xsd:documentation>Adjust supplier shipped cumulative quantity</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="QuantityNotProcessed">
+                <xsd:annotation>
+                    <xsd:documentation>Quantity received, but cannot process because no matching ship notice</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="NotReceived-ShipNoticeRequired">
+                <xsd:annotation>
+                    <xsd:documentation>Not received - Ship Notice required</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Split">
+                <xsd:annotation>
+                    <xsd:documentation>Separated into multiple units.</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Missing">
+                <xsd:annotation>
+                    <xsd:documentation>Missing</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Proposed">
+                <xsd:annotation>
+                    <xsd:documentation>Proposed</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Accepted">
+                <xsd:annotation>
+                    <xsd:documentation>Accepted</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Scheduled">
+                <xsd:annotation>
+                    <xsd:documentation>Scheduled</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Completed">
+                <xsd:annotation>
+                    <xsd:documentation>Completed</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Postponed">
+                <xsd:annotation>
+                    <xsd:documentation>Postponed</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Cancelled">
+                <xsd:annotation>
+                    <xsd:documentation>Cancelled</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="QuantityProcessed">
+                <xsd:annotation>
+                    <xsd:documentation>Quantity processed with no matching ship notice</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Returned">
+                <xsd:annotation>
+                    <xsd:documentation>Quantity returned.  Can be used for returnable containers</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+            <xsd:enumeration value="Other">
+                <xsd:annotation>
+                    <xsd:documentation>Non-standard GoodsConditionCode</xsd:documentation>
+                </xsd:annotation>
+            </xsd:enumeration>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="rrn:org.xcbl:schemas/xcbl/v4_0/financial/v1_0/financial.xsd" xmlns:core="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" xmlns:dgs="http://www.w3.org/2000/09/xmldsig#" targetNamespace="rrn:org.xcbl:schemas/xcbl/v4_0/financial/v1_0/financial.xsd" elementFormDefault="qualified">
+<xsd:import namespace="rrn:org.xcbl:schemas/xcbl/v4_0/core/core.xsd" schemaLocation="../../core/core.xsd"/>
+
+
+    <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+            XML Common Business Library 4.0
+            Copyright 2002 Commerce One, Inc.
+            Permission is granted to use, copy, modify and distribute the
+            DTD's, schemas and modules in the Commerce One XML Common Business
+            Library Version 4.0 subject to the terms and conditions specified
+            at http://www.xcbl.org/license.html
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType name="CompanyType">
+        <xsd:annotation>
+            <xsd:documentation>contains information pertinent to identifying a company.  This element extends the Party definition with an Industry sector code.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="core:PartyType">
+                <xsd:sequence>
+                    <xsd:element minOccurs="0" name="IndustrySectorCoded" type="IndustrySectorCodeType">
+                        <xsd:annotation>
+                            <xsd:documentation>identifies the industry sector for a given company.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element minOccurs="0" name="IndustrySectorCodedOther" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation>is used to provide a non-standard <!--code-->IndustrySectorCode<!--/code-->.
+        This element is mandatory if the value of <!--code-->IndustrySectorCoded<!--/code--> is
+        'Other'. These codes should not contain white space unless absolutely
+        necessary.</xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+</xsd:schema>
