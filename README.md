@@ -1,0 +1,2 @@
+# global
+schema registry global
