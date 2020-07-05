@@ -1,0 +1,203 @@
+{
+	"canon": "1.1.0",
+	"info": {
+		"title": "Freight Trust Network Object Model Core Types",
+		"license": {
+			"name": "Apache 2.0",
+			"url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+		}
+	},
+	"id": "com.freighttrust.network.model.core",
+	"version": "1.0",
+	"basePath": "/object/core/v1",
+	"model": {
+		"javaGenPackage": "com.freighttrust.core.canon",
+		"javaFacadePackage": "com.freighttrust.core.canon.facade"
+	},
+	"methods": {
+  },
+	"components": {
+		"schemas": {
+      "HashType": {
+        "description": "A Hash type ID.",
+        "type": "integer",
+        "format": "int32",
+        "minimum": 0,
+        "maximum": 2
+      },
+      "Hash": {
+        "description": "A Hash value, encoded as Base64.",
+        "type": "string",
+        "format": "byte",
+        "x-canon-attributes": {
+          "javaExternalPackage": "com.freighttrust.core.commons.hash",
+          "javaExternalType": "Hash",
+          "isDirectExternal": "true"
+        }
+      },
+      "Url": {
+        "description": "A URL.",
+        "type": "string",
+        "format": "url",
+        "x-canon-attributes": {
+          "javaExternalPackage": "java.net",
+          "javaExternalType": "URL"
+        }
+      },
+      "TimeStamp": {
+        "description": "A millisecond resolution timestamp, compatible java.util.Date.",
+        "type": "integer",
+        "format": "int64",
+        "facade": true
+      },
+      "PodId": {
+        "type": "integer",
+        "format": "int32",
+        "facade": true
+      },
+      "UserId": {
+        "type": "integer",
+        "format": "int64",
+        "facade": true
+      },
+      "PodAndUserId": {
+        "type": "integer",
+        "format": "int64",
+        "facade": true
+      },
+      "ThreadId": {
+        "type": "string",
+        "format": "byte",
+        "facade": true
+      },
+      "RotationId": {
+        "description": "A crypto rotation identifier.",
+        "type": "integer",
+        "format": "int64",
+        "facade": true
+      },
+      "CertificateId": {
+        "type": "integer",
+        "format": "int64"
+      },
+      "BroadcastType": {
+        "type": "string",
+        "enum": [
+          "ALL"
+        ]
+      },
+      "Instant": {
+        "description": "A nanosecond resolution timestamp, compatible with the Java8 definition of Instant.",
+        "type": "string",
+        "x-canon-attributes": {
+          "javaExternalPackage": "java.time",
+          "javaExternalType": "Instant"
+        }
+      },
+      "BigDecimal": {
+        "description": "A BigDecimal value.",
+        "type": "string",
+        "x-canon-attributes": {
+          "javaExternalPackage":  "java.math",
+          "javaExternalType":     "BigDecimal"
+        }
+      },
+      "ApplicationPayload": {
+        "type": "object",
+        "description": "An application payload.",
+        "properties": {
+        }
+      },
+      "SystemObject": {
+        "type": "object",
+        "extends": "#/components/schemas/ApplicationPayload",
+        "facade": true,
+        "builderFacade": true,
+        "description": "Base type for system objects in the object store.",
+        "required": [
+          "hashType"
+        ],
+        "properties": {
+          "hashType": {
+            "$ref": "#/components/schemas/HashType"
+          }
+        }
+      },
+      "Pagination":  {
+        "type": "object",
+        "facade": false,
+        "builderFacade": false,
+        "properties": {
+          "cursors": {
+            "$ref": "#/components/schemas/Cursors"
+          },
+          "previous": {
+            "type": "string"
+          },
+          "next": {
+            "type": "string"
+          }
+        }
+      },
+      "Cursors":  {
+        "type": "object",
+        "facade": false,
+        "builderFacade": false,
+        "properties": {
+          "before": {
+            "type": "string"
+          },
+          "after": {
+            "type": "string"
+          }
+        }
+      },
+			"Envelope": {
+				"type": "object",
+				"facade": true,
+				"builderFacade": false,
+				"description": "This is not a persisted object it exists only on a pub sub topic.",
+
+				"properties": {
+          "podId": {
+            "$ref": "#/components/schemas/PodId"
+          },
+          "internalPodId": {
+            "$ref": "#/components/schemas/PodId"
+          },
+          "createdDate": {
+            "$ref": "#/components/schemas/Instant"
+          },
+          "purgeDate": {
+            "$ref": "#/components/schemas/Instant"
+          },
+          "payloadType": {
+            "type": "string"
+          },
+					"distributionList": {
+						"type": "array",
+						"x-canon-cardinality": "SET",
+						"items": {
+							"$ref": "#/components/schemas/PodAndUserId"
+						}
+					},
+          "expirationDate": {
+            "$ref": "#/components/schemas/Instant"
+          },
+          "broadcast": {
+            "$ref": "#/components/schemas/BroadcastType"
+          },
+          "conflationId": {
+              "type": "string"
+          },
+          "notificationDate": {
+            "$ref": "#/components/schemas/Instant"
+          },
+					"payload": {
+						"$ref": "#/components/schemas/ApplicationPayload"
+					}
+				}
+			}
+		}
+	}
+}
