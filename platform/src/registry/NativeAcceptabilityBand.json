@@ -1,0 +1,353 @@
+{
+    "xs:schema": {
+        "targetNamespace": "http://www.cargowise.com/Schemas/Native/2011/11",
+        "version": 2,
+        "elementFormDefault": "qualified",
+        "xmlns": "http://www.cargowise.com/Schemas/Native/2011/11",
+        "xmlns:xs": "http://www.w3.org/2001/XMLSchema",
+        "xs:include": {"schemaLocation": "Native.xsd"},
+        "xs:element": {
+            "name": "AcceptabilityBand",
+            "type": "AcceptabilityBandData"
+        },
+        "xs:complexType": [
+            {
+                "name": "AcceptabilityBandData",
+                "xs:all": {
+                    "xs:element": {
+                        "name": "BMComponentAcceptabilityBand",
+                        "type": "NativeAcceptabilityBand"
+                    }
+                },
+                "xs:attribute": {
+                    "name": "version",
+                    "type": "xs:token"
+                }
+            },
+            {
+                "name": "NativeAcceptabilityBand",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "PK",
+                            "minOccurs": 0,
+                            "type": "xs:string"
+                        },
+                        {
+                            "name": "Name",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 80}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Type",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 3}
+                                }
+                            }
+                        },
+                        {
+                            "name": "CautionLowerBound",
+                            "minOccurs": 0,
+                            "type": "xs:int"
+                        },
+                        {
+                            "name": "GoodLowerBound",
+                            "minOccurs": 0,
+                            "type": "xs:int"
+                        },
+                        {
+                            "name": "ExcellentLowerBound",
+                            "minOccurs": 0,
+                            "type": "xs:int"
+                        },
+                        {
+                            "name": "ExcellentUpperBound",
+                            "minOccurs": 0,
+                            "type": "xs:int"
+                        },
+                        {
+                            "name": "GoodUpperBound",
+                            "minOccurs": 0,
+                            "type": "xs:int"
+                        },
+                        {
+                            "name": "CautionUpperBound",
+                            "minOccurs": 0,
+                            "type": "xs:int"
+                        },
+                        {
+                            "name": "IsGoldenRule",
+                            "minOccurs": 0,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "SystemCreateTimeUtc",
+                            "minOccurs": 0,
+                            "type": "emptiableDateTime"
+                        },
+                        {
+                            "name": "SystemLastEditTimeUtc",
+                            "minOccurs": 0,
+                            "type": "emptiableDateTime"
+                        },
+                        {
+                            "name": "IsActive",
+                            "minOccurs": 0,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "SqlText",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {"base": "xs:string"}
+                            }
+                        },
+                        {
+                            "name": "FiltersByReleaseGroup",
+                            "minOccurs": 0,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "FiltersBySection",
+                            "minOccurs": 0,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "BMComponent",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:all": {
+                                    "xs:element": [
+                                        {
+                                            "name": "Name",
+                                            "minOccurs": 0,
+                                            "xs:simpleType": {
+                                                "xs:restriction": {
+                                                    "base": "xs:string",
+                                                    "xs:maxLength": {"value": 100}
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "name": "PK",
+                                            "minOccurs": 0,
+                                            "type": "xs:string"
+                                        },
+                                        {
+                                            "name": "System",
+                                            "minOccurs": 0,
+                                            "xs:complexType": {
+                                                "xs:all": {
+                                                    "xs:element": [
+                                                        {
+                                                            "name": "Name",
+                                                            "minOccurs": 0,
+                                                            "xs:simpleType": {
+                                                                "xs:restriction": {
+                                                                    "base": "xs:string",
+                                                                    "xs:maxLength": {"value": 30}
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "name": "PK",
+                                                            "minOccurs": 0,
+                                                            "type": "xs:string"
+                                                        }
+                                                    ]
+                                                },
+                                                "xs:attribute": [
+                                                    {
+                                                        "name": "Action",
+                                                        "type": "Action"
+                                                    },
+                                                    {
+                                                        "name": "TableName",
+                                                        "type": "xs:string"
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                },
+                                "xs:attribute": {
+                                    "name": "Action",
+                                    "type": "Action"
+                                }
+                            }
+                        },
+                        {
+                            "name": "StmModuleFilter",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:all": {
+                                    "xs:element": [
+                                        {
+                                            "name": "PK",
+                                            "minOccurs": 0,
+                                            "type": "xs:string"
+                                        },
+                                        {
+                                            "name": "ModuleID",
+                                            "minOccurs": 0,
+                                            "xs:simpleType": {
+                                                "xs:restriction": {
+                                                    "base": "xs:string",
+                                                    "xs:maxLength": {"value": 200}
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "name": "FilterData",
+                                            "minOccurs": 0,
+                                            "type": "xs:base64Binary"
+                                        },
+                                        {
+                                            "name": "RelatedEntityID",
+                                            "minOccurs": 0,
+                                            "type": "xs:string"
+                                        },
+                                        {
+                                            "name": "ColumnLayoutData",
+                                            "minOccurs": 0,
+                                            "type": "xs:base64Binary"
+                                        },
+                                        {
+                                            "name": "IsSystem",
+                                            "minOccurs": 0,
+                                            "type": "xs:boolean"
+                                        },
+                                        {
+                                            "name": "IsPublished",
+                                            "minOccurs": 0,
+                                            "type": "xs:boolean"
+                                        },
+                                        {
+                                            "name": "SaveColumnLayout",
+                                            "minOccurs": 0,
+                                            "type": "xs:boolean"
+                                        },
+                                        {
+                                            "name": "FilterName",
+                                            "minOccurs": 0,
+                                            "xs:simpleType": {
+                                                "xs:restriction": {
+                                                    "base": "xs:string",
+                                                    "xs:maxLength": {"value": 50}
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "name": "FilterType",
+                                            "minOccurs": 0,
+                                            "xs:simpleType": {
+                                                "xs:restriction": {
+                                                    "base": "xs:string",
+                                                    "xs:maxLength": {"value": 3}
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "name": "GridColourLayoutID",
+                                            "minOccurs": 0,
+                                            "type": "xs:string"
+                                        },
+                                        {
+                                            "name": "SaveGridColourLayout",
+                                            "minOccurs": 0,
+                                            "type": "xs:boolean"
+                                        },
+                                        {
+                                            "name": "GlbCompany",
+                                            "minOccurs": 0,
+                                            "xs:complexType": {
+                                                "xs:all": {
+                                                    "xs:element": [
+                                                        {
+                                                            "name": "Code",
+                                                            "minOccurs": 0,
+                                                            "xs:simpleType": {
+                                                                "xs:restriction": {
+                                                                    "base": "xs:string",
+                                                                    "xs:maxLength": {"value": 3}
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "name": "PK",
+                                                            "minOccurs": 0,
+                                                            "type": "xs:string"
+                                                        }
+                                                    ]
+                                                },
+                                                "xs:attribute": {
+                                                    "name": "Action",
+                                                    "type": "Action"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "name": "StmModuleFilterUserData",
+                                            "minOccurs": 0,
+                                            "xs:complexType": {
+                                                "xs:all": {
+                                                    "xs:element": [
+                                                        {
+                                                            "name": "PK",
+                                                            "minOccurs": 0,
+                                                            "type": "xs:string"
+                                                        },
+                                                        {
+                                                            "name": "RelatedEntityID",
+                                                            "minOccurs": 0,
+                                                            "type": "xs:string"
+                                                        },
+                                                        {
+                                                            "name": "FilterDataValues",
+                                                            "minOccurs": 0,
+                                                            "type": "xs:base64Binary"
+                                                        },
+                                                        {
+                                                            "name": "RelatedEntityTableCode",
+                                                            "minOccurs": 0,
+                                                            "xs:simpleType": {
+                                                                "xs:restriction": {
+                                                                    "base": "xs:string",
+                                                                    "xs:maxLength": {"value": 3}
+                                                                }
+                                                            }
+                                                        }
+                                                    ]
+                                                },
+                                                "xs:attribute": {
+                                                    "name": "Action",
+                                                    "type": "Action"
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                "xs:attribute": {
+                                    "name": "Action",
+                                    "type": "Action"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "xs:attribute": {
+                    "name": "Action",
+                    "type": "Action"
+                }
+            }
+        ]
+    }
+}

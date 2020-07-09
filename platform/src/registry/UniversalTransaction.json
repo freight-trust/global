@@ -1,0 +1,1057 @@
+{
+    "xs:schema": {
+        "targetNamespace": "http://www.cargowise.com/Schemas/Universal/2011/11",
+        "version": 1.1,
+        "elementFormDefault": "qualified",
+        "xmlns": "http://www.cargowise.com/Schemas/Universal/2011/11",
+        "xmlns:xs": "http://www.w3.org/2001/XMLSchema",
+        "xs:include": [
+            {"schemaLocation": "UniversalCommon.xsd"},
+            {"schemaLocation": "UniversalShipment.xsd"}
+        ],
+        "xs:element": {
+            "name": "UniversalTransaction",
+            "type": "UniversalTransactionData"
+        },
+        "xs:complexType": [
+            {
+                "name": "UniversalTransactionData",
+                "xs:all": {
+                    "xs:element": {
+                        "name": "TransactionInfo",
+                        "type": "TransactionInfo"
+                    }
+                },
+                "xs:attribute": {
+                    "name": "version",
+                    "type": "xs:token"
+                }
+            },
+            {
+                "name": "TransactionInfo",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "DataContext",
+                            "minOccurs": 0,
+                            "type": "DataContext"
+                        },
+                        {
+                            "name": "AgreedPaymentMethod",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 3}
+                                }
+                            }
+                        },
+                        {
+                            "name": "APAccountGroup",
+                            "minOccurs": 0,
+                            "type": "CodeDescriptionPair"
+                        },
+                        {
+                            "name": "ARAccountGroup",
+                            "minOccurs": 0,
+                            "type": "CodeDescriptionPair"
+                        },
+                        {
+                            "name": "BankAccount",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 10}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Branch",
+                            "minOccurs": 0,
+                            "type": "Branch"
+                        },
+                        {
+                            "name": "BranchAddress",
+                            "minOccurs": 0,
+                            "type": "OrganizationAddress"
+                        },
+                        {
+                            "name": "Category",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 3}
+                                }
+                            }
+                        },
+                        {
+                            "name": "CheckDrawer",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 50}
+                                }
+                            }
+                        },
+                        {
+                            "name": "CheckNumberOrPaymentRef",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 38}
+                                }
+                            }
+                        },
+                        {
+                            "name": "ComplianceSubType",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 3}
+                                }
+                            }
+                        },
+                        {
+                            "name": "CreateTime",
+                            "minOccurs": 0,
+                            "type": "emptiable_dateTime"
+                        },
+                        {
+                            "name": "CreateUser",
+                            "minOccurs": 0,
+                            "type": "StaffUsingAttributes"
+                        },
+                        {
+                            "name": "DateClearedInCashBook",
+                            "minOccurs": 0,
+                            "type": "emptiable_dateTime"
+                        },
+                        {
+                            "name": "Department",
+                            "minOccurs": 0,
+                            "type": "Department"
+                        },
+                        {
+                            "name": "Description",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 128}
+                                }
+                            }
+                        },
+                        {
+                            "name": "DigitalSignature",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 200}
+                                }
+                            }
+                        },
+                        {
+                            "name": "DrawerBank",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 25}
+                                }
+                            }
+                        },
+                        {
+                            "name": "DrawerBranch",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 25}
+                                }
+                            }
+                        },
+                        {
+                            "name": "DueDate",
+                            "minOccurs": 0,
+                            "type": "emptiable_dateTime"
+                        },
+                        {
+                            "name": "ExchangeRate",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "ExternalCreditorCode",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 25}
+                                }
+                            }
+                        },
+                        {
+                            "name": "ExternalDebtorCode",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 25}
+                                }
+                            }
+                        },
+                        {
+                            "name": "FullyPaidDate",
+                            "minOccurs": 0,
+                            "type": "emptiable_dateTime"
+                        },
+                        {
+                            "name": "InvoiceTerm",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:enumeration": [
+                                        {"value": "COD"},
+                                        {"value": "INV"},
+                                        {"value": "MTH"},
+                                        {"value": "PER"},
+                                        {"value": "SHP"},
+                                        {"value": "MIC"},
+                                        {"value": "PIA"},
+                                        {"value": "DPC"},
+                                        {"value": "CUS"},
+                                        {"value": "EWK"}
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "InvoiceTermDays",
+                            "minOccurs": 0,
+                            "type": "xs:int"
+                        },
+                        {
+                            "name": "IsCancelled",
+                            "minOccurs": 0,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "IsCreatedByMatchingProcess",
+                            "minOccurs": 0,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "IsPrinted",
+                            "minOccurs": 0,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "Job",
+                            "minOccurs": 0,
+                            "type": "EntityReference"
+                        },
+                        {
+                            "name": "JobInvoiceNumber",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 38}
+                                }
+                            }
+                        },
+                        {
+                            "name": "LastEditTime",
+                            "minOccurs": 0,
+                            "type": "emptiable_dateTime"
+                        },
+                        {
+                            "name": "LastEditUser",
+                            "minOccurs": 0,
+                            "type": "StaffUsingAttributes"
+                        },
+                        {
+                            "name": "Ledger",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 2}
+                                }
+                            }
+                        },
+                        {
+                            "name": "LocalCurrency",
+                            "minOccurs": 0,
+                            "type": "Currency"
+                        },
+                        {
+                            "name": "LocalExVATAmount",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "LocalTotal",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "LocalVATAmount",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "LocalWHTAmount",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "Number",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 38}
+                                }
+                            }
+                        },
+                        {
+                            "name": "NumberOfSupportingDocuments",
+                            "minOccurs": 0,
+                            "type": "xs:int"
+                        },
+                        {
+                            "name": "OrderCollectionDate",
+                            "minOccurs": 0,
+                            "type": "emptiable_dateTime"
+                        },
+                        {
+                            "name": "OrganizationAddress",
+                            "minOccurs": 0,
+                            "type": "OrganizationAddress"
+                        },
+                        {
+                            "name": "OriginalReference",
+                            "minOccurs": 0,
+                            "type": "OriginalReference"
+                        },
+                        {
+                            "name": "OSCurrency",
+                            "minOccurs": 0,
+                            "type": "Currency"
+                        },
+                        {
+                            "name": "OSExGSTVATAmount",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "OSGSTVATAmount",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "OSTotal",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "OSWHTAmount",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "OutstandingAmount",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "PaymentOrReceiptType",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:enumeration": [
+                                        {"value": "AMF"},
+                                        {"value": "BDT"},
+                                        {"value": "BDP"},
+                                        {"value": "CSH"},
+                                        {"value": "CHQ"},
+                                        {"value": "CCD"},
+                                        {"value": "DCR"},
+                                        {"value": "DDR"},
+                                        {"value": "DDL"},
+                                        {"value": "EFT"},
+                                        {"value": "SFT"},
+                                        {"value": "CRQ"},
+                                        {"value": "ECC"},
+                                        {"value": "ENC"},
+                                        {"value": "END"},
+                                        {"value": "EDF"},
+                                        {"value": "INT"},
+                                        {"value": "INR"},
+                                        {"value": "MSF"},
+                                        {"value": "MSR"},
+                                        {"value": "NRB"},
+                                        {"value": "PPY"},
+                                        {"value": "STD"}
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "PlaceOfIssue",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 50}
+                                }
+                            }
+                        },
+                        {
+                            "name": "PlaceOfSupply",
+                            "minOccurs": 0,
+                            "type": "PlaceOfSupply"
+                        },
+                        {
+                            "name": "PostDate",
+                            "minOccurs": 0,
+                            "type": "emptiable_dateTime"
+                        },
+                        {
+                            "name": "ReceiptOrDirectDebitNumber",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 20}
+                                }
+                            }
+                        },
+                        {
+                            "name": "RequisitionDate",
+                            "minOccurs": 0,
+                            "type": "emptiable_dateTime"
+                        },
+                        {
+                            "name": "RequisitionStatus",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 3}
+                                }
+                            }
+                        },
+                        {
+                            "name": "SettlementMethod",
+                            "minOccurs": 0,
+                            "type": "SettlementMethod"
+                        },
+                        {
+                            "name": "TransactionDate",
+                            "minOccurs": 0,
+                            "type": "emptiable_dateTime"
+                        },
+                        {
+                            "name": "TransactionReference",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 20}
+                                }
+                            }
+                        },
+                        {
+                            "name": "TransactionType",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:enumeration": [
+                                        {"value": "JNL"},
+                                        {"value": "TRF"},
+                                        {"value": "CTR"},
+                                        {"value": "PAY"},
+                                        {"value": "REC"},
+                                        {"value": "EXX"},
+                                        {"value": "OVP"},
+                                        {"value": "DSC"},
+                                        {"value": "OPY"},
+                                        {"value": "ORC"},
+                                        {"value": "DPY"},
+                                        {"value": "DRC"},
+                                        {"value": "GJL"},
+                                        {"value": "RJL"},
+                                        {"value": "AJL"},
+                                        {"value": "INV"},
+                                        {"value": "CRD"},
+                                        {"value": "ADJ"},
+                                        {"value": "JRJ"},
+                                        {"value": "WIP"},
+                                        {"value": "ACR"},
+                                        {"value": "REV"},
+                                        {"value": "CST"}
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "PostingJournalCollection",
+                            "minOccurs": 1,
+                            "xs:complexType": {
+                                "xs:sequence": {
+                                    "xs:element": {
+                                        "name": "PostingJournal",
+                                        "minOccurs": 1,
+                                        "maxOccurs": "unbounded",
+                                        "type": "PostingJournal"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "name": "AttachedDocumentCollection",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:sequence": {
+                                    "xs:element": {
+                                        "name": "AttachedDocument",
+                                        "minOccurs": 0,
+                                        "maxOccurs": "unbounded",
+                                        "type": "AttachedDocument"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "name": "BankAccountCollection",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:sequence": {
+                                    "xs:element": {
+                                        "name": "BankAccount",
+                                        "minOccurs": 0,
+                                        "maxOccurs": "unbounded",
+                                        "type": "BankAccount"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "name": "InvoiceRemittanceCollection",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:sequence": {
+                                    "xs:element": {
+                                        "name": "InvoiceRemittance",
+                                        "minOccurs": 0,
+                                        "maxOccurs": "unbounded",
+                                        "type": "InvoiceRemittance"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "name": "OrganizationDocumentTrackingCollection",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:sequence": {
+                                    "xs:element": {
+                                        "name": "OrganizationDocumentTracking",
+                                        "minOccurs": 0,
+                                        "maxOccurs": "unbounded",
+                                        "type": "DocumentTracking"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "name": "ShipmentCollection",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:sequence": {
+                                    "xs:element": {
+                                        "name": "Shipment",
+                                        "minOccurs": 0,
+                                        "maxOccurs": "unbounded",
+                                        "type": "Shipment"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "GLAccount",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "AccountCode",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 10}
+                                }
+                            }
+                        },
+                        {
+                            "name": "AccountType",
+                            "minOccurs": 0,
+                            "type": "CodeDescriptionPair"
+                        },
+                        {
+                            "name": "ConsolidationAccountCode",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 10}
+                                }
+                            }
+                        },
+                        {
+                            "name": "DebitCredit",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:enumeration": [
+                                        {"value": "Debit"},
+                                        {"value": "Credit"}
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Description",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 35}
+                                }
+                            }
+                        },
+                        {
+                            "name": "LocalComplianceAccountCode",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 20}
+                                }
+                            }
+                        },
+                        {
+                            "name": "LocalComplianceAccountDescription",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 80}
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "PostingJournal",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "BatchSequence",
+                            "minOccurs": 0,
+                            "type": "xs:int"
+                        },
+                        {
+                            "name": "Branch",
+                            "minOccurs": 0,
+                            "type": "Branch"
+                        },
+                        {
+                            "name": "ChargeCode",
+                            "minOccurs": 0,
+                            "type": "ChargeCode"
+                        },
+                        {
+                            "name": "ChargeCurrency",
+                            "minOccurs": 0,
+                            "type": "Currency"
+                        },
+                        {
+                            "name": "ChargeExchangeRate",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "ChargeTotalAmount",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "ChargeTotalExVATAmount",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "ChargeTotalVATAmount",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "CostSource",
+                            "minOccurs": 0,
+                            "type": "EntityReference"
+                        },
+                        {
+                            "name": "Department",
+                            "minOccurs": 0,
+                            "type": "Department"
+                        },
+                        {
+                            "name": "Description",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 1024}
+                                }
+                            }
+                        },
+                        {
+                            "name": "GLAccount",
+                            "minOccurs": 0,
+                            "type": "GLAccount"
+                        },
+                        {
+                            "name": "GLPostDate",
+                            "minOccurs": 0,
+                            "type": "emptiable_dateTime"
+                        },
+                        {
+                            "name": "GovernmentReportingChargeCode",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 20}
+                                }
+                            }
+                        },
+                        {
+                            "name": "GSTVATBasis",
+                            "minOccurs": 0,
+                            "type": "CodeDescriptionPair"
+                        },
+                        {
+                            "name": "IsFinalCharge",
+                            "minOccurs": 0,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "Job",
+                            "minOccurs": 0,
+                            "type": "EntityReference"
+                        },
+                        {
+                            "name": "JobRecognitionDate",
+                            "minOccurs": 0,
+                            "type": "emptiable_dateTime"
+                        },
+                        {
+                            "name": "LocalAmount",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "LocalCurrency",
+                            "minOccurs": 0,
+                            "type": "Currency"
+                        },
+                        {
+                            "name": "LocalExtraVATAmount",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "LocalGLAccount",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 20}
+                                }
+                            }
+                        },
+                        {
+                            "name": "LocalGSTVATAmount",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "LocalTotalAmount",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "LocalWHTAmount",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "Organization",
+                            "minOccurs": 0,
+                            "type": "OrganizationReference"
+                        },
+                        {
+                            "name": "OriginalBatchNumber",
+                            "minOccurs": 0,
+                            "type": "xs:int"
+                        },
+                        {
+                            "name": "OriginalBatchSequence",
+                            "minOccurs": 0,
+                            "type": "xs:int"
+                        },
+                        {
+                            "name": "OSAmount",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "OSCurrency",
+                            "minOccurs": 0,
+                            "type": "Currency"
+                        },
+                        {
+                            "name": "OSExtraVATAmount",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "OSGSTVATAmount",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "OSTotalAmount",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "OSWHTAmount",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "PlaceOfSupply",
+                            "minOccurs": 0,
+                            "type": "PlaceOfSupply"
+                        },
+                        {
+                            "name": "RecoverableGSTVATPercentage",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "RevenueRecognitionType",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:enumeration": [
+                                        {"value": "ARV"},
+                                        {"value": "DEP"},
+                                        {"value": "EAD"},
+                                        {"value": "EDD"},
+                                        {"value": "AWB"},
+                                        {"value": "CUS"},
+                                        {"value": "DEL"},
+                                        {"value": "IMM"},
+                                        {"value": "JCL"},
+                                        {"value": "JOP"},
+                                        {"value": "JOB"},
+                                        {"value": "PIC"},
+                                        {"value": "FAR"},
+                                        {"value": "VAD"},
+                                        {"value": "VDD"}
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Sequence",
+                            "minOccurs": 0,
+                            "type": "xs:int"
+                        },
+                        {
+                            "name": "SubAccount",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:all": {
+                                    "xs:element": [
+                                        {
+                                            "name": "Code",
+                                            "minOccurs": 0,
+                                            "xs:simpleType": {
+                                                "xs:restriction": {
+                                                    "base": "xs:string",
+                                                    "xs:maxLength": {"value": 35}
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "name": "Type",
+                                            "minOccurs": 0,
+                                            "type": "CodeDescriptionPair"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "TaxDate",
+                            "minOccurs": 0,
+                            "type": "emptiable_date"
+                        },
+                        {
+                            "name": "TaxMessageID",
+                            "minOccurs": 0,
+                            "type": "TaxMessageID"
+                        },
+                        {
+                            "name": "TransactionCategory",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 3}
+                                }
+                            }
+                        },
+                        {
+                            "name": "TransactionType",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:enumeration": [
+                                        {"value": "JNL"},
+                                        {"value": "TRF"},
+                                        {"value": "CTR"},
+                                        {"value": "PAY"},
+                                        {"value": "REC"},
+                                        {"value": "EXX"},
+                                        {"value": "OVP"},
+                                        {"value": "DSC"},
+                                        {"value": "OPY"},
+                                        {"value": "ORC"},
+                                        {"value": "DPY"},
+                                        {"value": "DRC"},
+                                        {"value": "GJL"},
+                                        {"value": "RJL"},
+                                        {"value": "AJL"},
+                                        {"value": "INV"},
+                                        {"value": "CRD"},
+                                        {"value": "ADJ"},
+                                        {"value": "JRJ"},
+                                        {"value": "WIP"},
+                                        {"value": "ACR"},
+                                        {"value": "REV"},
+                                        {"value": "CST"}
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "VATTaxID",
+                            "minOccurs": 0,
+                            "type": "TaxID"
+                        },
+                        {
+                            "name": "WithholdingTaxID",
+                            "minOccurs": 0,
+                            "type": "TaxID"
+                        },
+                        {
+                            "name": "PostingJournalDetailCollection",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:sequence": {
+                                    "xs:element": {
+                                        "name": "PostingJournalDetail",
+                                        "minOccurs": 0,
+                                        "maxOccurs": "unbounded",
+                                        "xs:complexType": {
+                                            "xs:all": {
+                                                "xs:element": [
+                                                    {
+                                                        "name": "CreditGLAccount",
+                                                        "minOccurs": 0,
+                                                        "type": "GLAccount"
+                                                    },
+                                                    {
+                                                        "name": "DebitGLAccount",
+                                                        "minOccurs": 0,
+                                                        "type": "GLAccount"
+                                                    },
+                                                    {
+                                                        "name": "PostingAmount",
+                                                        "minOccurs": 0,
+                                                        "type": "xs:decimal"
+                                                    },
+                                                    {
+                                                        "name": "PostingCurrency",
+                                                        "minOccurs": 0,
+                                                        "type": "Currency"
+                                                    },
+                                                    {
+                                                        "name": "PostingDate",
+                                                        "minOccurs": 0,
+                                                        "type": "emptiable_dateTime"
+                                                    },
+                                                    {
+                                                        "name": "PostingPeriod",
+                                                        "minOccurs": 0,
+                                                        "type": "xs:int"
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "name": "RatingBasisCollection",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:sequence": {
+                                    "xs:element": {
+                                        "name": "RatingBasis",
+                                        "minOccurs": 0,
+                                        "maxOccurs": "unbounded",
+                                        "type": "RatingBasis"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

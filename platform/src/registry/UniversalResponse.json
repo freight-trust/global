@@ -1,0 +1,51 @@
+{
+    "xs:schema": {
+        "targetNamespace": "http://www.cargowise.com/Schemas/Universal/2011/11",
+        "version": 1.1,
+        "elementFormDefault": "qualified",
+        "xmlns": "http://www.cargowise.com/Schemas/Universal/2011/11",
+        "xmlns:xs": "http://www.w3.org/2001/XMLSchema",
+        "xs:element": {
+            "name": "UniversalResponse",
+            "type": "UniversalResponseData"
+        },
+        "xs:complexType": {
+            "name": "UniversalResponseData",
+            "xs:all": {
+                "xs:element": [
+                    {
+                        "name": "Status",
+                        "minOccurs": 1,
+                        "xs:simpleType": {
+                            "xs:restriction": {
+                                "base": "xs:string",
+                                "xs:maxLength": {"value": 3}
+                            }
+                        }
+                    },
+                    {
+                        "name": "Data",
+                        "xs:complexType": {
+                            "xs:sequence": {
+                                "xs:any": {
+                                    "minOccurs": 0,
+                                    "maxOccurs": 1,
+                                    "processContents": "skip"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "name": "ProcessingLog",
+                        "minOccurs": 0,
+                        "type": "xs:string"
+                    }
+                ]
+            },
+            "xs:attribute": {
+                "name": "version",
+                "type": "xs:token"
+            }
+        }
+    }
+}

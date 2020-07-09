@@ -1,0 +1,211 @@
+{
+    "xs:schema": {
+        "targetNamespace": "http://www.cargowise.com/Schemas/Native/2011/11",
+        "version": 2,
+        "elementFormDefault": "qualified",
+        "xmlns": "http://www.cargowise.com/Schemas/Native/2011/11",
+        "xmlns:xs": "http://www.w3.org/2001/XMLSchema",
+        "xs:include": {"schemaLocation": "Native.xsd"},
+        "xs:element": {
+            "name": "Vessel",
+            "type": "VesselData"
+        },
+        "xs:complexType": [
+            {
+                "name": "VesselData",
+                "xs:all": {
+                    "xs:element": {
+                        "name": "RefVessel",
+                        "type": "NativeVessel"
+                    }
+                },
+                "xs:attribute": {
+                    "name": "version",
+                    "type": "xs:token"
+                }
+            },
+            {
+                "name": "NativeVessel",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "PK",
+                            "minOccurs": 0,
+                            "type": "xs:string"
+                        },
+                        {
+                            "name": "Code",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 35}
+                                }
+                            }
+                        },
+                        {
+                            "name": "LloydsNumber",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 7}
+                                }
+                            }
+                        },
+                        {
+                            "name": "RadioCallSign",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 10}
+                                }
+                            }
+                        },
+                        {
+                            "name": "NetRegisterTon",
+                            "minOccurs": 0,
+                            "type": "xs:int"
+                        },
+                        {
+                            "name": "VesselType",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 3}
+                                }
+                            }
+                        },
+                        {
+                            "name": "CarrierCode",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 4}
+                                }
+                            }
+                        },
+                        {
+                            "name": "YearOfConstruction",
+                            "minOccurs": 0,
+                            "type": "xs:int"
+                        },
+                        {
+                            "name": "MalaysiaVesselId",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 9}
+                                }
+                            }
+                        },
+                        {
+                            "name": "IsActive",
+                            "minOccurs": 0,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "ScreeningStatus",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 3}
+                                }
+                            }
+                        },
+                        {
+                            "name": "OrgHeader",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:all": {
+                                    "xs:element": [
+                                        {
+                                            "name": "Code",
+                                            "minOccurs": 0,
+                                            "xs:simpleType": {
+                                                "xs:restriction": {
+                                                    "base": "xs:string",
+                                                    "xs:maxLength": {"value": 12}
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "name": "PK",
+                                            "minOccurs": 0,
+                                            "type": "xs:string"
+                                        }
+                                    ]
+                                },
+                                "xs:attribute": {
+                                    "name": "Action",
+                                    "type": "Action"
+                                }
+                            }
+                        },
+                        {
+                            "name": "RefCarrierConsortium",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:all": {
+                                    "xs:element": {
+                                        "name": "PK",
+                                        "minOccurs": 0,
+                                        "type": "xs:string"
+                                    }
+                                },
+                                "xs:attribute": {
+                                    "name": "Action",
+                                    "type": "Action"
+                                }
+                            }
+                        },
+                        {
+                            "name": "CountryOfReg",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:all": {
+                                    "xs:element": [
+                                        {
+                                            "name": "Code",
+                                            "minOccurs": 0,
+                                            "xs:simpleType": {
+                                                "xs:restriction": {
+                                                    "base": "xs:string",
+                                                    "xs:maxLength": {"value": 2}
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "name": "PK",
+                                            "minOccurs": 0,
+                                            "type": "xs:string"
+                                        }
+                                    ]
+                                },
+                                "xs:attribute": [
+                                    {
+                                        "name": "Action",
+                                        "type": "Action"
+                                    },
+                                    {
+                                        "name": "TableName",
+                                        "type": "xs:string"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                "xs:attribute": {
+                    "name": "Action",
+                    "type": "Action"
+                }
+            }
+        ]
+    }
+}

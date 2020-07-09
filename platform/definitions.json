@@ -1,0 +1,15 @@
+  /**
+   * The "definitions" keywords provides a standardized location for schema authors to inline re-usable JSON Schemas into a more general schema.
+   * There are no restrictions placed on the values within the array.
+   *
+   * @example { definitions: { [name]: definition } }
+   *
+   * @reference https://json-schema.org/latest/json-schema-validation.html#rfc.section.9
+   *
+   * @param {string} name
+   * @param {BaseSchema} props
+   * @returns {this}
+   */
+  definition (name: string, definition: BaseSchema) {
+    return this.copyWith({ definitions: { ...this.definitions, [name]: definition.plain } })
+  }

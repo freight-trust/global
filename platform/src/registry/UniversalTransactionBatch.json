@@ -1,0 +1,92 @@
+{
+    "xs:schema": {
+        "targetNamespace": "http://www.cargowise.com/Schemas/Universal/2011/11",
+        "version": 1.1,
+        "elementFormDefault": "qualified",
+        "xmlns": "http://www.cargowise.com/Schemas/Universal/2011/11",
+        "xmlns:xs": "http://www.w3.org/2001/XMLSchema",
+        "xs:include": [
+            {"schemaLocation": "UniversalCommon.xsd"},
+            {"schemaLocation": "UniversalTransaction.xsd"}
+        ],
+        "xs:element": {
+            "name": "UniversalTransactionBatch",
+            "type": "UniversalTransactionBatchData"
+        },
+        "xs:complexType": [
+            {
+                "name": "UniversalTransactionBatchData",
+                "xs:all": {
+                    "xs:element": {
+                        "name": "TransactionBatch",
+                        "type": "TransactionBatch"
+                    }
+                },
+                "xs:attribute": {
+                    "name": "version",
+                    "type": "xs:token"
+                }
+            },
+            {
+                "name": "TransactionBatch",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "BatchType",
+                            "minOccurs": 0,
+                            "type": "CodeDescriptionPair"
+                        },
+                        {
+                            "name": "DataContext",
+                            "minOccurs": 0,
+                            "type": "DataContext"
+                        },
+                        {
+                            "name": "DateFrom",
+                            "minOccurs": 0,
+                            "type": "emptiable_dateTime"
+                        },
+                        {
+                            "name": "DateTo",
+                            "minOccurs": 0,
+                            "type": "emptiable_dateTime"
+                        },
+                        {
+                            "name": "Periodicity",
+                            "minOccurs": 0,
+                            "type": "CodeDescriptionPair"
+                        },
+                        {
+                            "name": "OrganizationAddressCollection",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:sequence": {
+                                    "xs:element": {
+                                        "name": "OrganizationAddress",
+                                        "minOccurs": 0,
+                                        "maxOccurs": "unbounded",
+                                        "type": "OrganizationAddress"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "name": "TransactionCollection",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:sequence": {
+                                    "xs:element": {
+                                        "name": "Transaction",
+                                        "minOccurs": 0,
+                                        "maxOccurs": "unbounded",
+                                        "type": "TransactionInfo"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

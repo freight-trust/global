@@ -1,0 +1,29 @@
+{
+  "type": "HorizontalLayout", 
+  "elements": [
+    {
+      "type": "Control",
+      "label": "deliveryStatus",
+      "scope": "#/properties/deliveryStatus"
+    },
+    {
+      "type": "transportStatus",
+      "label": "Status",
+      "scope": "#/properties/transportStatus"
+    },
+    {
+      "type": "transportEmitEvents",
+      "label": "Kind of dead",
+      "scope": "#/properties/transportEmitEvents",
+      "rule": {
+        "effect": "DISABLE",
+        "condition": {
+          "scope": "#/properties/transportStatus",
+          "schema": {
+            "const": true
+          }
+        }
+      }
+    }
+  ]
+}

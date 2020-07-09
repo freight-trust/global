@@ -1,0 +1,3196 @@
+{
+    "xs:schema": {
+        "targetNamespace": "http://www.cargowise.com/Schemas/Universal/2011/11",
+        "version": 1.1,
+        "elementFormDefault": "qualified",
+        "xmlns": "http://www.cargowise.com/Schemas/Universal/2011/11",
+        "xmlns:xs": "http://www.w3.org/2001/XMLSchema",
+        "xs:complexType": [
+            {
+                "name": "AttachedDocument",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "FileName",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 277}
+                                }
+                            }
+                        },
+                        {
+                            "name": "ImageData",
+                            "minOccurs": 1,
+                            "type": "xs:base64Binary"
+                        },
+                        {
+                            "name": "Type",
+                            "minOccurs": 1,
+                            "type": "CodeDescriptionPair"
+                        },
+                        {
+                            "name": "IsPublished",
+                            "minOccurs": 0,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "SaveDateUTC",
+                            "minOccurs": 0,
+                            "type": "emptiable_dateTime"
+                        },
+                        {
+                            "name": "SavedBy",
+                            "minOccurs": 0,
+                            "type": "Staff"
+                        },
+                        {
+                            "name": "Source",
+                            "minOccurs": 0,
+                            "type": "CodeDescriptionPair"
+                        },
+                        {
+                            "name": "VisibleBranchCode",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 3}
+                                }
+                            }
+                        },
+                        {
+                            "name": "VisibleCompanyCode",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 3}
+                                }
+                            }
+                        },
+                        {
+                            "name": "VisibleDepartmentCode",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 3}
+                                }
+                            }
+                        },
+                        {
+                            "name": "ContextCollection",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:sequence": {
+                                    "xs:element": {
+                                        "name": "Context",
+                                        "minOccurs": 0,
+                                        "maxOccurs": "unbounded",
+                                        "type": "Context"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "BankAccount",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "AccountName",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 35}
+                                }
+                            }
+                        },
+                        {
+                            "name": "AccountNumber",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 35}
+                                }
+                            }
+                        },
+                        {
+                            "name": "AccountType",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:enumeration": [
+                                        {"value": "Credit"},
+                                        {"value": "Debit"}
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "AutoDDRFormat",
+                            "minOccurs": 0,
+                            "type": "CodeDescriptionPair"
+                        },
+                        {
+                            "name": "BankBranch",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 15}
+                                }
+                            }
+                        },
+                        {
+                            "name": "BankBranchName",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 35}
+                                }
+                            }
+                        },
+                        {
+                            "name": "BankName",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 35}
+                                }
+                            }
+                        },
+                        {
+                            "name": "BankSwift",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 35}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Country",
+                            "minOccurs": 0,
+                            "type": "Country"
+                        },
+                        {
+                            "name": "Currency",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 3}
+                                }
+                            }
+                        },
+                        {
+                            "name": "EFTUserId",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 20}
+                                }
+                            }
+                        },
+                        {
+                            "name": "IBANNumber",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 35}
+                                }
+                            }
+                        },
+                        {
+                            "name": "IsDefaultAccount",
+                            "minOccurs": 0,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "Method",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 3}
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Branch",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "Code",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 3}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Name",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 50}
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Capability",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "Code",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 3}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Name",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 50}
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "ChargeCode",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "Code",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 10}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Description",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 80}
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "ChargeLine",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "Branch",
+                            "minOccurs": 0,
+                            "type": "Branch"
+                        },
+                        {
+                            "name": "ChargeCode",
+                            "minOccurs": 0,
+                            "type": "ChargeCode"
+                        },
+                        {
+                            "name": "ChargeCodeGroup",
+                            "minOccurs": 0,
+                            "type": "CodeDescriptionPair"
+                        },
+                        {
+                            "name": "CostAPInvoiceNumber",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 38}
+                                }
+                            }
+                        },
+                        {
+                            "name": "CostApportionmentConsolNumber",
+                            "minOccurs": 0,
+                            "type": "EntityReference"
+                        },
+                        {
+                            "name": "CostDueDate",
+                            "minOccurs": 0,
+                            "type": "emptiable_dateTime"
+                        },
+                        {
+                            "name": "CostExchangeRate",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "CostGSTVATID",
+                            "minOccurs": 0,
+                            "type": "TaxID"
+                        },
+                        {
+                            "name": "CostInvoiceDate",
+                            "minOccurs": 0,
+                            "type": "emptiable_dateTime"
+                        },
+                        {
+                            "name": "CostIsPosted",
+                            "minOccurs": 0,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "CostLocalAmount",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "CostOSAmount",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "CostOSCurrency",
+                            "minOccurs": 0,
+                            "type": "Currency"
+                        },
+                        {
+                            "name": "CostOSGSTVATAmount",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "CostPlaceOfSupply",
+                            "minOccurs": 0,
+                            "type": "PlaceOfSupply"
+                        },
+                        {
+                            "name": "Creditor",
+                            "minOccurs": 0,
+                            "type": "OrganizationReference"
+                        },
+                        {
+                            "name": "Debtor",
+                            "minOccurs": 0,
+                            "type": "OrganizationReference"
+                        },
+                        {
+                            "name": "Department",
+                            "minOccurs": 0,
+                            "type": "Department"
+                        },
+                        {
+                            "name": "Description",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 1024}
+                                }
+                            }
+                        },
+                        {
+                            "name": "DisplaySequence",
+                            "minOccurs": 0,
+                            "type": "xs:short"
+                        },
+                        {
+                            "name": "ExternalCreditorCode",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 25}
+                                }
+                            }
+                        },
+                        {
+                            "name": "ExternalDebtorCode",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 25}
+                                }
+                            }
+                        },
+                        {
+                            "name": "GovernmentReportingCostChargeCode",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 20}
+                                }
+                            }
+                        },
+                        {
+                            "name": "GovernmentReportingSellChargeCode",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 20}
+                                }
+                            }
+                        },
+                        {
+                            "name": "ImportMetaData",
+                            "minOccurs": 0,
+                            "type": "ImportMetaData"
+                        },
+                        {
+                            "name": "SellExchangeRate",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "SellGSTVATID",
+                            "minOccurs": 0,
+                            "type": "TaxID"
+                        },
+                        {
+                            "name": "SellInvoiceType",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 3}
+                                }
+                            }
+                        },
+                        {
+                            "name": "SellIsPosted",
+                            "minOccurs": 0,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "SellLocalAmount",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "SellOSAmount",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "SellOSCurrency",
+                            "minOccurs": 0,
+                            "type": "Currency"
+                        },
+                        {
+                            "name": "SellOSGSTVATAmount",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "SellPlaceOfSupply",
+                            "minOccurs": 0,
+                            "type": "PlaceOfSupply"
+                        },
+                        {
+                            "name": "SellPostedTransactionNumber",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 38}
+                                }
+                            }
+                        },
+                        {
+                            "name": "SellPostedTransactionType",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 3}
+                                }
+                            }
+                        },
+                        {
+                            "name": "SellReference",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 35}
+                                }
+                            }
+                        },
+                        {
+                            "name": "SupplierReference",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 38}
+                                }
+                            }
+                        },
+                        {
+                            "name": "CostRatingBasisCollection",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:sequence": {
+                                    "xs:element": {
+                                        "name": "CostRatingBasis",
+                                        "minOccurs": 0,
+                                        "maxOccurs": "unbounded",
+                                        "type": "RatingBasis"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "name": "SellRatingBasisCollection",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:sequence": {
+                                    "xs:element": {
+                                        "name": "SellRatingBasis",
+                                        "minOccurs": 0,
+                                        "maxOccurs": "unbounded",
+                                        "type": "RatingBasis"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "CodeDescriptionPair",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "Code",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 3}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Description",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 80}
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "CodeDescriptionPair5Char",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "Code",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 5}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Description",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 80}
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Company",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "Code",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 3}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Country",
+                            "minOccurs": 0,
+                            "type": "Country"
+                        },
+                        {
+                            "name": "Name",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 100}
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Context",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "Type",
+                            "minOccurs": 1,
+                            "type": "ContextType"
+                        },
+                        {
+                            "name": "Value",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 2147483647}
+                                }
+                            }
+                        },
+                        {
+                            "name": "SubContextCollection",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:sequence": {
+                                    "xs:element": {
+                                        "name": "SubContext",
+                                        "minOccurs": 0,
+                                        "maxOccurs": "unbounded",
+                                        "type": "Context"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "ContextType",
+                "xs:simpleContent": {
+                    "xs:extension": {
+                        "base": "string_maxLength50",
+                        "xs:attribute": {
+                            "name": "Description",
+                            "type": "string_maxLength50"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "Conversation",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "ConversationMessageCollection",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:sequence": {
+                                    "xs:element": {
+                                        "name": "ConversationMessage",
+                                        "minOccurs": 0,
+                                        "maxOccurs": "unbounded",
+                                        "type": "ConversationMessage"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "name": "ParticipantGroupCollection",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:sequence": {
+                                    "xs:element": {
+                                        "name": "ParticipantGroup",
+                                        "minOccurs": 0,
+                                        "maxOccurs": "unbounded",
+                                        "type": "ParticipantGroup"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "name": "ParticipantRelatedPartyCollection",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:sequence": {
+                                    "xs:element": {
+                                        "name": "ParticipantRelatedParty",
+                                        "minOccurs": 0,
+                                        "maxOccurs": "unbounded",
+                                        "type": "ParticipantRelatedParty"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "name": "ParticipantStaffCollection",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:sequence": {
+                                    "xs:element": {
+                                        "name": "ParticipantStaff",
+                                        "minOccurs": 0,
+                                        "maxOccurs": "unbounded",
+                                        "type": "ParticipantStaff"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "ConversationMessage",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "ParticipantName",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 256}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Text",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 2147483647}
+                                }
+                            }
+                        },
+                        {
+                            "name": "CreatedTime",
+                            "minOccurs": 0,
+                            "type": "emptiable_dateTime"
+                        },
+                        {
+                            "name": "IsInternal",
+                            "minOccurs": 0,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "IsSystem",
+                            "minOccurs": 0,
+                            "type": "xs:boolean"
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Country",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "Code",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 2}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Name",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 35}
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Currency",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "Code",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 3}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Description",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 35}
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "CustomizedField",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "DataType",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:enumeration": [
+                                        {"value": "String"},
+                                        {"value": "Byte"},
+                                        {"value": "Integer"},
+                                        {"value": "Decimal"},
+                                        {"value": "Boolean"},
+                                        {"value": "DateTime"},
+                                        {"value": "Short"},
+                                        {"value": "DateTimeOffset"},
+                                        {"value": "Geography"}
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Key",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 32}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Value",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 2147483647}
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "DataContext",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "DataSourceCollection",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:sequence": {
+                                    "xs:element": {
+                                        "name": "DataSource",
+                                        "minOccurs": 0,
+                                        "maxOccurs": "unbounded",
+                                        "type": "DataSource"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "name": "ActionPurpose",
+                            "minOccurs": 0,
+                            "type": "CodeDescriptionPair"
+                        },
+                        {
+                            "name": "CodesMappedToTarget",
+                            "minOccurs": 0,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "Company",
+                            "minOccurs": 0,
+                            "type": "Company"
+                        },
+                        {
+                            "name": "DataProvider",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 50}
+                                }
+                            }
+                        },
+                        {
+                            "name": "DocumentaryOverride",
+                            "minOccurs": 0,
+                            "type": "DocumentaryOverride"
+                        },
+                        {
+                            "name": "EnterpriseID",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 3}
+                                }
+                            }
+                        },
+                        {
+                            "name": "EventBranch",
+                            "minOccurs": 0,
+                            "type": "Branch"
+                        },
+                        {
+                            "name": "EventDepartment",
+                            "minOccurs": 0,
+                            "type": "Department"
+                        },
+                        {
+                            "name": "EventReference",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 128}
+                                }
+                            }
+                        },
+                        {
+                            "name": "EventType",
+                            "minOccurs": 0,
+                            "type": "CodeDescriptionPair"
+                        },
+                        {
+                            "name": "EventUser",
+                            "minOccurs": 0,
+                            "type": "Staff"
+                        },
+                        {
+                            "name": "ServerID",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 3}
+                                }
+                            }
+                        },
+                        {
+                            "name": "TriggerCount",
+                            "minOccurs": 0,
+                            "type": "xs:int"
+                        },
+                        {
+                            "name": "TriggerDate",
+                            "minOccurs": 0,
+                            "type": "emptiable_dateTime"
+                        },
+                        {
+                            "name": "TriggerDescription",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 50}
+                                }
+                            }
+                        },
+                        {
+                            "name": "TriggerReference",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 128}
+                                }
+                            }
+                        },
+                        {
+                            "name": "TriggerType",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:enumeration": [
+                                        {"value": "Trigger"},
+                                        {"value": "Milestone"},
+                                        {"value": "Exception"},
+                                        {"value": "Manual"}
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "DataTargetCollection",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:sequence": {
+                                    "xs:element": {
+                                        "name": "DataTarget",
+                                        "minOccurs": 0,
+                                        "maxOccurs": "unbounded",
+                                        "type": "DataTarget"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "name": "RecipientRoleCollection",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:sequence": {
+                                    "xs:element": {
+                                        "name": "RecipientRole",
+                                        "minOccurs": 0,
+                                        "maxOccurs": "unbounded",
+                                        "type": "RecipientRole"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "DataSource",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "Type",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 35}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Key",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 50}
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "DataTarget",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "Type",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 35}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Key",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 50}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Owner",
+                            "minOccurs": 0,
+                            "type": "OrganizationAddress"
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Department",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "Code",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 3}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Name",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 35}
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "DocumentaryOverride",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "DataVersion",
+                            "minOccurs": 0,
+                            "type": "xs:int"
+                        },
+                        {
+                            "name": "DocumentName",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 256}
+                                }
+                            }
+                        },
+                        {
+                            "name": "IsSystemDefined",
+                            "minOccurs": 0,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "Purpose",
+                            "minOccurs": 0,
+                            "type": "CodeDescriptionPair"
+                        },
+                        {
+                            "name": "SubmissionVersion",
+                            "minOccurs": 0,
+                            "type": "xs:int"
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "DocumentTracking",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "DocumentPeriod",
+                            "minOccurs": 1,
+                            "type": "CodeDescriptionPair"
+                        },
+                        {
+                            "name": "DocumentType",
+                            "minOccurs": 1,
+                            "type": "CodeDescriptionPair"
+                        },
+                        {
+                            "name": "DocumentUsage",
+                            "minOccurs": 1,
+                            "type": "CodeDescriptionPair"
+                        },
+                        {
+                            "name": "Category",
+                            "minOccurs": 0,
+                            "type": "CodeDescriptionPair"
+                        },
+                        {
+                            "name": "Country",
+                            "minOccurs": 0,
+                            "type": "Country"
+                        },
+                        {
+                            "name": "DocumentNote",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 200}
+                                }
+                            }
+                        },
+                        {
+                            "name": "DocumentNumber",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 15}
+                                }
+                            }
+                        },
+                        {
+                            "name": "DocumentOwner",
+                            "minOccurs": 0,
+                            "type": "OrganizationAddress"
+                        },
+                        {
+                            "name": "IsDocumentCreditControl",
+                            "minOccurs": 0,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "IsOriginalDocumentRequired",
+                            "minOccurs": 0,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "ReceivedDate",
+                            "minOccurs": 0,
+                            "type": "emptiable_dateTime"
+                        },
+                        {
+                            "name": "ReceivedFromCustomsBroker",
+                            "minOccurs": 0,
+                            "type": "emptiable_dateTime"
+                        },
+                        {
+                            "name": "ReturnToShipper",
+                            "minOccurs": 0,
+                            "type": "emptiable_dateTime"
+                        },
+                        {
+                            "name": "SentToCustomsBroker",
+                            "minOccurs": 0,
+                            "type": "emptiable_dateTime"
+                        },
+                        {
+                            "name": "ValidToDate",
+                            "minOccurs": 0,
+                            "type": "emptiable_dateTime"
+                        },
+                        {
+                            "name": "DocumentTrackingAttributeCollection",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:sequence": {
+                                    "xs:element": {
+                                        "name": "DocumentTrackingAttribute",
+                                        "minOccurs": 0,
+                                        "maxOccurs": "unbounded",
+                                        "type": "DocumentTrackingAttribute"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "DocumentTrackingAttribute",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "Type",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 35}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Value",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 80}
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "EntityReference",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "Type",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 40}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Key",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 35}
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Group",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "Code",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 15}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Name",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 64}
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "ImportMetaData",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "Instruction",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:enumeration": [
+                                        {"value": "Insert"},
+                                        {"value": "Update"},
+                                        {"value": "UpdateAndInsertIfNotFound"},
+                                        {"value": "Delete"}
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "PostingInstruction",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:enumeration": [
+                                        {"value": "PostCost"},
+                                        {"value": "PostRevenue"},
+                                        {"value": "PostRevenueAndCost"}
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "MatchingCriteriaCollection",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:sequence": {
+                                    "xs:element": {
+                                        "name": "MatchingCriteria",
+                                        "minOccurs": 0,
+                                        "maxOccurs": "unbounded",
+                                        "type": "MatchingCriteria"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "InvoiceRemittance",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "BillerAccountNumber",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 50}
+                                }
+                            }
+                        },
+                        {
+                            "name": "BillerCode",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 20}
+                                }
+                            }
+                        },
+                        {
+                            "name": "DebtorClientNumber",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 20}
+                                }
+                            }
+                        },
+                        {
+                            "name": "InvoiceRemittanceReference",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 60}
+                                }
+                            }
+                        },
+                        {
+                            "name": "InvoiceTransactionReference",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 8}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Message",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 160}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Type",
+                            "minOccurs": 0,
+                            "type": "CodeDescriptionPair"
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "JobCosting",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "AccrualNotRecognized",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "AccrualRecognized",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "AgentRevenue",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "Branch",
+                            "minOccurs": 0,
+                            "type": "Branch"
+                        },
+                        {
+                            "name": "Currency",
+                            "minOccurs": 0,
+                            "type": "Currency"
+                        },
+                        {
+                            "name": "Department",
+                            "minOccurs": 0,
+                            "type": "Department"
+                        },
+                        {
+                            "name": "HomeBranch",
+                            "minOccurs": 0,
+                            "type": "Branch"
+                        },
+                        {
+                            "name": "LocalClientRevenue",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "OperationsStaff",
+                            "minOccurs": 0,
+                            "type": "Staff"
+                        },
+                        {
+                            "name": "OtherDebtorRevenue",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "SalesStaff",
+                            "minOccurs": 0,
+                            "type": "Staff"
+                        },
+                        {
+                            "name": "TotalAccrual",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "TotalCost",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "TotalJobProfit",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "TotalRevenue",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "TotalWIP",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "WIPNotRecognized",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "WIPRecognized",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "ChargeLineCollection",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:sequence": {
+                                    "xs:element": {
+                                        "name": "ChargeLine",
+                                        "minOccurs": 0,
+                                        "maxOccurs": "unbounded",
+                                        "type": "ChargeLine"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Language",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "Code",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 7}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Description",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 35}
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "MatchingCriteria",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "FieldName",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 50}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Value",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 1024}
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Milestone",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "Description",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 50}
+                                }
+                            }
+                        },
+                        {
+                            "name": "EventCode",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 3}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Sequence",
+                            "minOccurs": 1,
+                            "type": "xs:int"
+                        },
+                        {
+                            "name": "ActualDate",
+                            "minOccurs": 0,
+                            "type": "emptiable_dateTime"
+                        },
+                        {
+                            "name": "ConditionReference",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 128}
+                                }
+                            }
+                        },
+                        {
+                            "name": "ConditionType",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 3}
+                                }
+                            }
+                        },
+                        {
+                            "name": "EstimatedDate",
+                            "minOccurs": 0,
+                            "type": "emptiable_dateTime"
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Note",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "Description",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 50}
+                                }
+                            }
+                        },
+                        {
+                            "name": "IsCustomDescription",
+                            "minOccurs": 1,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "NoteText",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 2147483647}
+                                }
+                            }
+                        },
+                        {
+                            "name": "NoteContext",
+                            "minOccurs": 0,
+                            "type": "NoteContext"
+                        },
+                        {
+                            "name": "Visibility",
+                            "minOccurs": 0,
+                            "type": "CodeDescriptionPair"
+                        },
+                        {
+                            "name": "VisibleCompany",
+                            "minOccurs": 0,
+                            "type": "CodeDescriptionPair"
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "NoteContext",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "Code",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 3}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Description",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 100}
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "OrganizationAddress",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "AddressType",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 40}
+                                }
+                            }
+                        },
+                        {
+                            "name": "AdditionalAddressInformation",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 50}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Address1",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 50}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Address2",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 50}
+                                }
+                            }
+                        },
+                        {
+                            "name": "AddressOverride",
+                            "minOccurs": 0,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "AddressShortCode",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 25}
+                                }
+                            }
+                        },
+                        {
+                            "name": "City",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 50}
+                                }
+                            }
+                        },
+                        {
+                            "name": "CompanyName",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 100}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Contact",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 256}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Country",
+                            "minOccurs": 0,
+                            "type": "Country"
+                        },
+                        {
+                            "name": "Email",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 254}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Fax",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 20}
+                                }
+                            }
+                        },
+                        {
+                            "name": "GovRegNum",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 254}
+                                }
+                            }
+                        },
+                        {
+                            "name": "GovRegNumType",
+                            "minOccurs": 0,
+                            "type": "RegistrationNumberType"
+                        },
+                        {
+                            "name": "IsResidential",
+                            "minOccurs": 0,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "Mobile",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 20}
+                                }
+                            }
+                        },
+                        {
+                            "name": "OrganizationCode",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 12}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Phone",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 20}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Port",
+                            "minOccurs": 0,
+                            "type": "UNLOCO"
+                        },
+                        {
+                            "name": "Postcode",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 10}
+                                }
+                            }
+                        },
+                        {
+                            "name": "ScreeningStatus",
+                            "minOccurs": 0,
+                            "type": "CodeDescriptionPair"
+                        },
+                        {
+                            "name": "State",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 25}
+                                }
+                            }
+                        },
+                        {
+                            "name": "SuppressAddressValidationError",
+                            "minOccurs": 0,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "UniversalNettingCode",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 254}
+                                }
+                            }
+                        },
+                        {
+                            "name": "UniversalOfficeCode",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 254}
+                                }
+                            }
+                        },
+                        {
+                            "name": "LocalAddressCollection",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:sequence": {
+                                    "xs:element": {
+                                        "name": "LocalAddress",
+                                        "minOccurs": 0,
+                                        "maxOccurs": "unbounded",
+                                        "type": "OrganizationLocalAddress"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "name": "RegistrationNumberCollection",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:sequence": {
+                                    "xs:element": {
+                                        "name": "RegistrationNumber",
+                                        "minOccurs": 0,
+                                        "maxOccurs": "unbounded",
+                                        "type": "RegistrationNumber"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "OrganizationLocalAddress",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "Address1",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 50}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Address2",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 50}
+                                }
+                            }
+                        },
+                        {
+                            "name": "City",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 50}
+                                }
+                            }
+                        },
+                        {
+                            "name": "CompanyName",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 200}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Language",
+                            "minOccurs": 0,
+                            "type": "Language"
+                        },
+                        {
+                            "name": "Postcode",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 20}
+                                }
+                            }
+                        },
+                        {
+                            "name": "State",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 25}
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "OrganizationReference",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "Type",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 35}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Key",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 35}
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "OriginalReference",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "OriginalTransactionComplianceSubType",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 3}
+                                }
+                            }
+                        },
+                        {
+                            "name": "OriginalTransactionDate",
+                            "minOccurs": 0,
+                            "type": "emptiable_dateTime"
+                        },
+                        {
+                            "name": "OriginalTransactionJobInvoiceNumber",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 38}
+                                }
+                            }
+                        },
+                        {
+                            "name": "OriginalTransactionNumber",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 38}
+                                }
+                            }
+                        },
+                        {
+                            "name": "OriginalTransactionReference",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 20}
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "ParticipantGroup",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "Group",
+                            "minOccurs": 1,
+                            "type": "Group"
+                        },
+                        {
+                            "name": "IsActive",
+                            "minOccurs": 0,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "IsSubscribed",
+                            "minOccurs": 0,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "Location",
+                            "minOccurs": 0,
+                            "type": "UNLOCO"
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "ParticipantRelatedParty",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "Party",
+                            "minOccurs": 1,
+                            "type": "OrganizationAddress"
+                        },
+                        {
+                            "name": "RelatedPartyType",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:enumeration": [
+                                        {"value": "Contact"},
+                                        {"value": "Organization"},
+                                        {"value": "Email"}
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "IsActive",
+                            "minOccurs": 0,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "IsSubscribed",
+                            "minOccurs": 0,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "Location",
+                            "minOccurs": 0,
+                            "type": "UNLOCO"
+                        },
+                        {
+                            "name": "Relation",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 30}
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "ParticipantStaff",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "Staff",
+                            "minOccurs": 1,
+                            "type": "Staff"
+                        },
+                        {
+                            "name": "IsActive",
+                            "minOccurs": 0,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "IsSubscribed",
+                            "minOccurs": 0,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "JobTitle",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 128}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Location",
+                            "minOccurs": 0,
+                            "type": "UNLOCO"
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "PlaceOfSupply",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "Location",
+                            "minOccurs": 0,
+                            "type": "CodeDescriptionPair5Char"
+                        },
+                        {
+                            "name": "LocationType",
+                            "minOccurs": 0,
+                            "type": "CodeDescriptionPair"
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "RatingBasis",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "OriginType",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 50}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Currency",
+                            "minOccurs": 0,
+                            "type": "Currency"
+                        },
+                        {
+                            "name": "FlatRate",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "IsPercentageRate",
+                            "minOccurs": 0,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "MaximumRate",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "MinimumRate",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "OriginAdditionalReference",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 2000}
+                                }
+                            }
+                        },
+                        {
+                            "name": "OriginKey",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 50}
+                                }
+                            }
+                        },
+                        {
+                            "name": "OriginQuantity",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "OriginQuantityUnit",
+                            "minOccurs": 0,
+                            "type": "RatingUnit"
+                        },
+                        {
+                            "name": "PerUnitRate",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "RateUnit",
+                            "minOccurs": 0,
+                            "type": "RatingUnit"
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "RatingUnit",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "Code",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 25}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Description",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 80}
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "RecipientRole",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "Code",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:enumeration": [
+                                        {"value": "AAD"},
+                                        {"value": "ACF"},
+                                        {"value": "ACR"},
+                                        {"value": "ACT"},
+                                        {"value": "ACY"},
+                                        {"value": "AFR"},
+                                        {"value": "ARP"},
+                                        {"value": "ASY"},
+                                        {"value": "BCO"},
+                                        {"value": "BKP"},
+                                        {"value": "BRO"},
+                                        {"value": "BRI"},
+                                        {"value": "BRE"},
+                                        {"value": "BTP"},
+                                        {"value": "CAP"},
+                                        {"value": "CAR"},
+                                        {"value": "CBA"},
+                                        {"value": "CCA"},
+                                        {"value": "CD4"},
+                                        {"value": "CLI"},
+                                        {"value": "CNE"},
+                                        {"value": "CNR"},
+                                        {"value": "COA"},
+                                        {"value": "CTA"},
+                                        {"value": "CTG"},
+                                        {"value": "CTO"},
+                                        {"value": "CTP"},
+                                        {"value": "CYD"},
+                                        {"value": "DAG"},
+                                        {"value": "DCA"},
+                                        {"value": "DCF"},
+                                        {"value": "DCR"},
+                                        {"value": "DCT"},
+                                        {"value": "DCY"},
+                                        {"value": "DTP"},
+                                        {"value": "FOR"},
+                                        {"value": "GRP"},
+                                        {"value": "HCA"},
+                                        {"value": "HSA"},
+                                        {"value": "ICE"},
+                                        {"value": "IDB"},
+                                        {"value": "JWG"},
+                                        {"value": "LCT"},
+                                        {"value": "NFP"},
+                                        {"value": "NGP"},
+                                        {"value": "ORP"},
+                                        {"value": "PAG"},
+                                        {"value": "PCA"},
+                                        {"value": "PEM"},
+                                        {"value": "PER"},
+                                        {"value": "PIM"},
+                                        {"value": "PIR"},
+                                        {"value": "PRC"},
+                                        {"value": "PUP"},
+                                        {"value": "RAG"},
+                                        {"value": "SAG"},
+                                        {"value": "SGA"},
+                                        {"value": "SPM"},
+                                        {"value": "SRP"},
+                                        {"value": "STF"},
+                                        {"value": "TPC"},
+                                        {"value": "DTW"},
+                                        {"value": "ATW"},
+                                        {"value": "UAM"},
+                                        {"value": "WAR"},
+                                        {"value": "WIN"},
+                                        {"value": "BWI"},
+                                        {"value": "BWR"},
+                                        {"value": "WHS"},
+                                        {"value": "WNS"},
+                                        {"value": "YER"},
+                                        {"value": "YIA"}
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Description",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 50}
+                                }
+                            }
+                        },
+                        {
+                            "name": "ServiceCode",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:enumeration": [
+                                        {"value": "AMD"},
+                                        {"value": "BRQ"},
+                                        {"value": "HLD"},
+                                        {"value": "SIN"},
+                                        {"value": "TWD"},
+                                        {"value": "TWR"},
+                                        {"value": "VGM"}
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "ServiceDescription",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 50}
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "RegistrationNumber",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "Type",
+                            "minOccurs": 1,
+                            "type": "RegistrationNumberType"
+                        },
+                        {
+                            "name": "CountryOfIssue",
+                            "minOccurs": 0,
+                            "type": "Country"
+                        },
+                        {
+                            "name": "Value",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 254}
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "RegistrationNumberType",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "Code",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 3}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Description",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 35}
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "SettlementMethod",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "AuthorizationExpiryDate",
+                            "minOccurs": 0,
+                            "type": "emptiable_dateTime"
+                        },
+                        {
+                            "name": "AuthorizationReference",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 35}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Method",
+                            "minOccurs": 0,
+                            "type": "CodeDescriptionPair"
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Staff",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "Code",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 3}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Name",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 256}
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "StaffUsingAttributes",
+                "xs:simpleContent": {
+                    "xs:extension": {
+                        "base": "string_maxLength3",
+                        "xs:attribute": {
+                            "name": "Name",
+                            "type": "string_maxLength35"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "State",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "Code",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 3}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Name",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 35}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Region",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 35}
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "Task",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "Description",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 50}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Sequence",
+                            "minOccurs": 1,
+                            "type": "xs:int"
+                        },
+                        {
+                            "name": "Status",
+                            "minOccurs": 1,
+                            "type": "CodeDescriptionPair"
+                        },
+                        {
+                            "name": "TaskID",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 20}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Type",
+                            "minOccurs": 1,
+                            "type": "CodeDescriptionPair"
+                        },
+                        {
+                            "name": "ActualDuration",
+                            "minOccurs": 0,
+                            "type": "xs:duration"
+                        },
+                        {
+                            "name": "ActualStartTimeUTC",
+                            "minOccurs": 0,
+                            "type": "emptiable_dateTime"
+                        },
+                        {
+                            "name": "AssignedCapability",
+                            "minOccurs": 0,
+                            "type": "Capability"
+                        },
+                        {
+                            "name": "AssignedGroup",
+                            "minOccurs": 0,
+                            "type": "Group"
+                        },
+                        {
+                            "name": "AssignedStaff",
+                            "minOccurs": 0,
+                            "type": "Staff"
+                        },
+                        {
+                            "name": "CardNote",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 40}
+                                }
+                            }
+                        },
+                        {
+                            "name": "CompletedTimeUTC",
+                            "minOccurs": 0,
+                            "type": "emptiable_dateTime"
+                        },
+                        {
+                            "name": "EstimatedDuration",
+                            "minOccurs": 0,
+                            "type": "xs:duration"
+                        },
+                        {
+                            "name": "EstimatedStartTimeUTC",
+                            "minOccurs": 0,
+                            "type": "emptiable_dateTime"
+                        },
+                        {
+                            "name": "EstimateVariationFactor",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "TaskNotes",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 2147483647}
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "TaskSet",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "Description",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 2147483647}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Type",
+                            "minOccurs": 1,
+                            "type": "CodeDescriptionPair"
+                        },
+                        {
+                            "name": "AgreedDeliveryDateUTC",
+                            "minOccurs": 0,
+                            "type": "emptiable_dateTime"
+                        },
+                        {
+                            "name": "CurrentStatus",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 2147483647}
+                                }
+                            }
+                        },
+                        {
+                            "name": "DateAcceptability",
+                            "minOccurs": 0,
+                            "type": "CodeDescriptionPair"
+                        },
+                        {
+                            "name": "EarliestStartDateUTC",
+                            "minOccurs": 0,
+                            "type": "emptiable_dateTime"
+                        },
+                        {
+                            "name": "IsActive",
+                            "minOccurs": 0,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "Notes",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 2147483647}
+                                }
+                            }
+                        },
+                        {
+                            "name": "ReleaseGroup",
+                            "minOccurs": 0,
+                            "type": "Group"
+                        },
+                        {
+                            "name": "TaskSetStatus",
+                            "minOccurs": 0,
+                            "type": "CodeDescriptionPair"
+                        },
+                        {
+                            "name": "TaskCollection",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:sequence": {
+                                    "xs:element": {
+                                        "name": "Task",
+                                        "minOccurs": 0,
+                                        "maxOccurs": "unbounded",
+                                        "type": "Task"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "name": "TaskSetCollection",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:sequence": {
+                                    "xs:element": {
+                                        "name": "TaskSet",
+                                        "minOccurs": 0,
+                                        "maxOccurs": "unbounded",
+                                        "type": "TaskSet"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "TaxID",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "TaxCode",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 10}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Description",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 35}
+                                }
+                            }
+                        },
+                        {
+                            "name": "ExtraTaxRate",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "ExtraTaxType",
+                            "minOccurs": 0,
+                            "type": "CodeDescriptionPair"
+                        },
+                        {
+                            "name": "TaxRate",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "TaxType",
+                            "minOccurs": 0,
+                            "type": "CodeDescriptionPair"
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "TaxMessageID",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "TaxMessageCode",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 10}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Description",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 80}
+                                }
+                            }
+                        },
+                        {
+                            "name": "EnglishTaxMessage",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 255}
+                                }
+                            }
+                        },
+                        {
+                            "name": "TaxGroupCode",
+                            "minOccurs": 0,
+                            "type": "CodeDescriptionPair"
+                        },
+                        {
+                            "name": "VATGSTExemptionDocumentType",
+                            "minOccurs": 0,
+                            "type": "CodeDescriptionPair"
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "UNLOCO",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "Code",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 5}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Name",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 35}
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "ValueTypePair",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "Type",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 35}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Value",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 35}
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        ],
+        "xs:simpleType": [
+            {
+                "name": "CollectionContent",
+                "xs:restriction": {
+                    "base": "xs:string",
+                    "xs:enumeration": [
+                        {"value": "Complete"},
+                        {"value": "Partial"}
+                    ]
+                }
+            },
+            {
+                "name": "emptiable_date",
+                "xs:union": {"memberTypes": "xs:date empty_string"}
+            },
+            {
+                "name": "emptiable_dateTime",
+                "xs:union": {"memberTypes": "xs:dateTime empty_string"}
+            },
+            {
+                "name": "empty_string",
+                "xs:restriction": {
+                    "base": "xs:string",
+                    "xs:length": {"value": 0}
+                }
+            },
+            {
+                "name": "string_maxLength10",
+                "xs:restriction": {
+                    "base": "xs:string",
+                    "xs:maxLength": {"value": 10}
+                }
+            },
+            {
+                "name": "string_maxLength3",
+                "xs:restriction": {
+                    "base": "xs:string",
+                    "xs:maxLength": {"value": 3}
+                }
+            },
+            {
+                "name": "string_maxLength35",
+                "xs:restriction": {
+                    "base": "xs:string",
+                    "xs:maxLength": {"value": 35}
+                }
+            },
+            {
+                "name": "string_maxLength4",
+                "xs:restriction": {
+                    "base": "xs:string",
+                    "xs:maxLength": {"value": 4}
+                }
+            },
+            {
+                "name": "string_maxLength50",
+                "xs:restriction": {
+                    "base": "xs:string",
+                    "xs:maxLength": {"value": 50}
+                }
+            },
+            {
+                "name": "string_maxLength80",
+                "xs:restriction": {
+                    "base": "xs:string",
+                    "xs:maxLength": {"value": 80}
+                }
+            }
+        ]
+    }
+}

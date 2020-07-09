@@ -1,0 +1,460 @@
+{
+    "xs:schema": {
+        "targetNamespace": "http://www.cargowise.com/Schemas/Native/2011/11",
+        "version": 2,
+        "elementFormDefault": "qualified",
+        "xmlns": "http://www.cargowise.com/Schemas/Native/2011/11",
+        "xmlns:xs": "http://www.w3.org/2001/XMLSchema",
+        "xs:include": {"schemaLocation": "Native.xsd"},
+        "xs:element": {
+            "name": "DangerousGood",
+            "type": "DangerousGoodData"
+        },
+        "xs:complexType": [
+            {
+                "name": "DangerousGoodData",
+                "xs:all": {
+                    "xs:element": {
+                        "name": "UNDGSubstance",
+                        "type": "NativeDangerousGood"
+                    }
+                },
+                "xs:attribute": {
+                    "name": "version",
+                    "type": "xs:token"
+                }
+            },
+            {
+                "name": "NativeDangerousGood",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "PK",
+                            "minOccurs": 0,
+                            "type": "xs:string"
+                        },
+                        {
+                            "name": "UNNO",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 4}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Variant",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 1}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Variation",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 80}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Class",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 4}
+                                }
+                            }
+                        },
+                        {
+                            "name": "SubLabel1",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 5}
+                                }
+                            }
+                        },
+                        {
+                            "name": "SubLabel2",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 3}
+                                }
+                            }
+                        },
+                        {
+                            "name": "PSN",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 100}
+                                }
+                            }
+                        },
+                        {
+                            "name": "PG",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 3}
+                                }
+                            }
+                        },
+                        {
+                            "name": "EMS",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 8}
+                                }
+                            }
+                        },
+                        {
+                            "name": "MP",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 1}
+                                }
+                            }
+                        },
+                        {
+                            "name": "FP",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 25}
+                                }
+                            }
+                        },
+                        {
+                            "name": "TechName",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 1}
+                                }
+                            }
+                        },
+                        {
+                            "name": "TreatAs",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 5}
+                                }
+                            }
+                        },
+                        {
+                            "name": "DglPhrase",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 20}
+                                }
+                            }
+                        },
+                        {
+                            "name": "PackIns",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 20}
+                                }
+                            }
+                        },
+                        {
+                            "name": "PackProv",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 24}
+                                }
+                            }
+                        },
+                        {
+                            "name": "IBCIns",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 6}
+                                }
+                            }
+                        },
+                        {
+                            "name": "IBCProv",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 9}
+                                }
+                            }
+                        },
+                        {
+                            "name": "IMOTankIns",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 8}
+                                }
+                            }
+                        },
+                        {
+                            "name": "UNTankIns",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 4}
+                                }
+                            }
+                        },
+                        {
+                            "name": "TankProv",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 24}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Markers",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 5}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Pointers",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 8}
+                                }
+                            }
+                        },
+                        {
+                            "name": "EXVector",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 17}
+                                }
+                            }
+                        },
+                        {
+                            "name": "StowCat",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 2}
+                                }
+                            }
+                        },
+                        {
+                            "name": "CodedStow",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 52}
+                                }
+                            }
+                        },
+                        {
+                            "name": "State",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 1}
+                                }
+                            }
+                        },
+                        {
+                            "name": "ExpLim",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 26}
+                                }
+                            }
+                        },
+                        {
+                            "name": "UlineEMS",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 1}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Code",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 5}
+                                }
+                            }
+                        },
+                        {
+                            "name": "UsrUSDOTShippingName",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 100}
+                                }
+                            }
+                        },
+                        {
+                            "name": "LQMaxAmt",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "LQMaxAmtUQ",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 2}
+                                }
+                            }
+                        },
+                        {
+                            "name": "LQSpecProvIndex",
+                            "minOccurs": 0,
+                            "type": "xs:int"
+                        },
+                        {
+                            "name": "ExceptedQuantityCode",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 2}
+                                }
+                            }
+                        },
+                        {
+                            "name": "IsActive",
+                            "minOccurs": 0,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "IsSystem",
+                            "minOccurs": 0,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "UNDGAttributeCollection",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:sequence": {
+                                    "xs:element": {
+                                        "name": "UNDGAttribute",
+                                        "minOccurs": 0,
+                                        "maxOccurs": "unbounded",
+                                        "xs:complexType": {
+                                            "xs:all": {
+                                                "xs:element": [
+                                                    {
+                                                        "name": "PK",
+                                                        "minOccurs": 0,
+                                                        "type": "xs:string"
+                                                    },
+                                                    {
+                                                        "name": "Language",
+                                                        "minOccurs": 0,
+                                                        "xs:simpleType": {
+                                                            "xs:restriction": {
+                                                                "base": "xs:string",
+                                                                "xs:maxLength": {"value": 7}
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "name": "Type",
+                                                        "minOccurs": 0,
+                                                        "xs:simpleType": {
+                                                            "xs:restriction": {
+                                                                "base": "xs:string",
+                                                                "xs:maxLength": {"value": 3}
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "name": "Index",
+                                                        "minOccurs": 0,
+                                                        "type": "xs:int"
+                                                    },
+                                                    {
+                                                        "name": "Descriptor",
+                                                        "minOccurs": 0,
+                                                        "xs:simpleType": {
+                                                            "xs:restriction": {"base": "xs:string"}
+                                                        }
+                                                    },
+                                                    {
+                                                        "name": "IsSystem",
+                                                        "minOccurs": 0,
+                                                        "type": "xs:boolean"
+                                                    }
+                                                ]
+                                            },
+                                            "xs:attribute": {
+                                                "name": "Action",
+                                                "type": "Action"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                },
+                "xs:attribute": {
+                    "name": "Action",
+                    "type": "Action"
+                }
+            }
+        ]
+    }
+}

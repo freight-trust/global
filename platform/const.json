@@ -1,0 +1,14 @@
+
+  /**
+   * The value of this keyword MAY be of any type, including null.
+   * Use of this keyword is functionally equivalent to an "enum" with a single value.
+   * @example { const: 'some' }
+   *
+   * @reference https://json-schema.org/latest/json-schema-validation.html#rfc.section.6.1.3
+   * 
+   * @param value
+   * @returns {this}
+   */
+  const <P extends T> (value: P): BaseSchema<P, R> {
+    return this.copyWith({ plain: { const: value } }) as any
+  }

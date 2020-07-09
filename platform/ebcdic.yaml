@@ -1,0 +1,1799 @@
+-
+   d: d
+   h: h
+   EBCDIC: EBCDIC
+   EBCDIC: ASCII
+   ASCII: undefined
+   ASCII: undefined
+-
+   d: 0
+   h: 0
+   EBCDIC: NUL
+   EBCDIC: Null
+   ASCII: NUL
+   ASCII: Null
+-
+   d: 1
+   h: 1
+   EBCDIC: SOH
+   EBCDIC: Start of Header
+   ASCII: STX
+   ASCII: Start of Header
+-
+   d: 2
+   h: 2
+   EBCDIC: STX
+   EBCDIC: Start of Text
+   ASCII: SOT
+   ASCII: Start of Text
+-
+   d: 3
+   h: 3
+   EBCDIC: ETX
+   EBCDIC: End of Text
+   ASCII: ETX
+   ASCII: End of Text
+-
+   d: 4
+   h: 4
+   EBCDIC: PF
+   EBCDIC: Punch Off
+   ASCII: EOT
+   ASCII: End of Transmission
+-
+   d: 5
+   h: 5
+   EBCDIC: HT
+   EBCDIC: Horizontal Tab
+   ASCII: ENQ
+   ASCII: Enquiry
+-
+   d: 6
+   h: 6
+   EBCDIC: LC
+   EBCDIC: Lower Case
+   ASCII: ACK
+   ASCII: Acknowledge
+-
+   d: 7
+   h: 7
+   EBCDIC: DEL
+   EBCDIC: Delete
+   ASCII: BEL
+   ASCII: Bell
+-
+   d: 8
+   h: 8
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: BS
+   ASCII: BackSpace
+-
+   d: 9
+   h: 9
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: HT
+   ASCII: Horizontal Tabulation
+-
+   d: 10
+   h: 0A
+   EBCDIC: SMM
+   EBCDIC: Start of Manual Message
+   ASCII: LF
+   ASCII: Line Feed
+-
+   d: 11
+   h: 0B
+   EBCDIC: VT
+   EBCDIC: Vertical Tabulation
+   ASCII: VT
+   ASCII: Vertical Tabulation
+-
+   d: 12
+   h: 0C
+   EBCDIC: FF
+   EBCDIC: Form Feed
+   ASCII: FF
+   ASCII: Form Feed
+-
+   d: 13
+   h: 0D
+   EBCDIC: CR
+   EBCDIC: Carriage Return
+   ASCII: CR
+   ASCII: Carriage Return
+-
+   d: 14
+   h: 0E
+   EBCDIC: SO
+   EBCDIC: Shift Out
+   ASCII: SO
+   ASCII: Shift Out
+-
+   d: 15
+   h: 0F
+   EBCDIC: SI
+   EBCDIC: Shift In
+   ASCII: SI
+   ASCII: Shift In
+-
+   d: 16
+   h: 10
+   EBCDIC: DLE
+   EBCDIC: Data Link Escape
+   ASCII: DLE
+   ASCII: Data Link Escape
+-
+   d: 17
+   h: 11
+   EBCDIC: DC1
+   EBCDIC: Device Control 1
+   ASCII: DC1
+   ASCII: Device Control 1 (XON)
+-
+   d: 18
+   h: 12
+   EBCDIC: DC2
+   EBCDIC: Device Control 2
+   ASCII: DC2
+   ASCII: Device Control 2
+-
+   d: 19
+   h: 13
+   EBCDIC: TM
+   EBCDIC: Tape Mark
+   ASCII: DC3
+   ASCII: Device Control 3 (XOFF)
+-
+   d: 20
+   h: 14
+   EBCDIC: RES
+   EBCDIC: Restore
+   ASCII: DC4
+   ASCII: Device Control 4
+-
+   d: 21
+   h: 15
+   EBCDIC: NL
+   EBCDIC: New Line
+   ASCII: NAK
+   ASCII: Negative acknowledge
+-
+   d: 22
+   h: 16
+   EBCDIC: BS
+   EBCDIC: Backspace
+   ASCII: SYN
+   ASCII: Synchronous Idle
+-
+   d: 23
+   h: 17
+   EBCDIC: IL
+   EBCDIC: Idle
+   ASCII: ETB
+   ASCII: End of Transmission Block
+-
+   d: 24
+   h: 18
+   EBCDIC: CAN
+   EBCDIC: Cancel
+   ASCII: CAN
+   ASCII: Cancel
+-
+   d: 25
+   h: 19
+   EBCDIC: EM
+   EBCDIC: End of Medium
+   ASCII: EM
+   ASCII: End of Medium
+-
+   d: 26
+   h: 1A
+   EBCDIC: CC
+   EBCDIC: Cursor Control
+   ASCII: SUB
+   ASCII: Substitute
+-
+   d: 27
+   h: 1B
+   EBCDIC: CU1
+   EBCDIC: Customer Use 1
+   ASCII: ESC
+   ASCII: Escape
+-
+   d: 28
+   h: 1C
+   EBCDIC: IFS
+   EBCDIC: Interchange File Separator
+   ASCII: FS
+   ASCII: File Separator
+-
+   d: 29
+   h: 1D
+   EBCDIC: IGS
+   EBCDIC: Interchange Group Separator
+   ASCII: GS
+   ASCII: Group Separator
+-
+   d: 30
+   h: 1E
+   EBCDIC: IRS
+   EBCDIC: Interchange Record Separator
+   ASCII: RS
+   ASCII: Record Separator
+-
+   d: 31
+   h: 1F
+   EBCDIC: IUS
+   EBCDIC: Interchange Unit Separator
+   ASCII: US
+   ASCII: Unit Separator
+-
+   d: 32
+   h: 20
+   EBCDIC: DS
+   EBCDIC: Digit Select
+   ASCII: [Space]
+   ASCII: Space
+-
+   d: 33
+   h: 21
+   EBCDIC: SOS
+   EBCDIC: Start of Significance
+   ASCII: !
+   ASCII: Exclamation mark
+-
+   d: 34
+   h: 22
+   EBCDIC: FS
+   EBCDIC: Field Separator
+   ASCII: "
+   ASCII: Quotes
+-
+   d: 35
+   h: 23
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: #
+   ASCII: Hash
+-
+   d: 36
+   h: 24
+   EBCDIC: BYP
+   EBCDIC: Bypass
+   ASCII: $
+   ASCII: Dollar
+-
+   d: 37
+   h: 25
+   EBCDIC: LF
+   EBCDIC: Line Feed
+   ASCII: %
+   ASCII: Percent
+-
+   d: 38
+   h: 26
+   EBCDIC: ETB
+   EBCDIC: End of Transmission Block
+   ASCII: &
+   ASCII: Ampersand
+-
+   d: 39
+   h: 27
+   EBCDIC: ESC
+   EBCDIC: Escape
+   ASCII: 
+   ASCII: Apostrophe
+-
+   d: 40
+   h: 28
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: (
+   ASCII: Open bracket
+-
+   d: 41
+   h: 29
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: )
+   ASCII: Close bracket
+-
+   d: 42
+   h: 2A
+   EBCDIC: SM
+   EBCDIC: Set Mode
+   ASCII: *
+   ASCII: Asterisk
+-
+   d: 43
+   h: 2B
+   EBCDIC: CU2
+   EBCDIC: Customer Use 2
+   ASCII: _  =+
+   ASCII: Plus
+-
+   d: 44
+   h: 2C
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: ,
+   ASCII: Comma
+-
+   d: 45
+   h: 2D
+   EBCDIC: ENQ
+   EBCDIC: Enquiry
+   ASCII: -
+   ASCII: Dash
+-
+   d: 46
+   h: 2E
+   EBCDIC: ACK
+   EBCDIC: Acknowledge
+   ASCII: .
+   ASCII: Full stop
+-
+   d: 47
+   h: 2F
+   EBCDIC: BEL
+   EBCDIC: Bell
+   ASCII: /
+   ASCII: Slash
+-
+   d: 48
+   h: 30
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 0
+   ASCII: Zero
+-
+   d: 49
+   h: 31
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 1
+   ASCII: One
+-
+   d: 50
+   h: 32
+   EBCDIC: SYN
+   EBCDIC: Synchronous Idle
+   ASCII: 2
+   ASCII: Two
+-
+   d: 51
+   h: 33
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 3
+   ASCII: Three
+-
+   d: 52
+   h: 34
+   EBCDIC: PN
+   EBCDIC: Punch On
+   ASCII: 4
+   ASCII: Four
+-
+   d: 53
+   h: 35
+   EBCDIC: RS
+   EBCDIC: Reader Stop
+   ASCII: 5
+   ASCII: Five
+-
+   d: 54
+   h: 36
+   EBCDIC: UC
+   EBCDIC: Upper Case
+   ASCII: 6
+   ASCII: Six
+-
+   d: 55
+   h: 37
+   EBCDIC: EOT
+   EBCDIC: End of Transmission
+   ASCII: 7
+   ASCII: Seven
+-
+   d: 56
+   h: 38
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 8
+   ASCII: Eight
+-
+   d: 57
+   h: 39
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 9
+   ASCII: Nine
+-
+   d: 58
+   h: 3A
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: :
+   ASCII: Colon
+-
+   d: 59
+   h: 3B
+   EBCDIC: CU3
+   EBCDIC: Customer Use 3
+   ASCII: ;
+   ASCII: Semi-colon
+-
+   d: 60
+   h: 3C
+   EBCDIC: DC4
+   EBCDIC: Device Control 4
+   ASCII: <
+   ASCII: Less than
+-
+   d: 61
+   h: 3D
+   EBCDIC: NAK
+   EBCDIC: Negative Acknowledge
+   ASCII: _.  =
+   ASCII: Equals
+-
+   d: 62
+   h: 3E
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: >
+   ASCII: Greater than
+-
+   d: 63
+   h: 3F
+   EBCDIC: SUB
+   EBCDIC: Substitute
+   ASCII: ?
+   ASCII: Question mark
+-
+   d: 64
+   h: 40
+   EBCDIC: SP
+   EBCDIC: Space
+   ASCII: @
+   ASCII: At
+-
+   d: 65
+   h: 41
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: A
+   ASCII: Uppercase A
+-
+   d: 66
+   h: 42
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: B
+   ASCII: Uppercase B
+-
+   d: 67
+   h: 43
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: C
+   ASCII: Uppercase C
+-
+   d: 68
+   h: 44
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: D
+   ASCII: Uppercase D
+-
+   d: 69
+   h: 45
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: E
+   ASCII: Uppercase E
+-
+   d: 70
+   h: 46
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: F
+   ASCII: Uppercase F
+-
+   d: 71
+   h: 47
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: G
+   ASCII: Uppercase G
+-
+   d: 72
+   h: 48
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: H
+   ASCII: Uppercase H
+-
+   d: 73
+   h: 49
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: I
+   ASCII: Uppercase I
+-
+   d: 74
+   h: 4A
+   EBCDIC: �
+   EBCDIC: Cent Sign
+   ASCII: J
+   ASCII: Uppercase J
+-
+   d: 75
+   h: 4B
+   EBCDIC: .
+   EBCDIC: Full stop
+   ASCII: K
+   ASCII: Uppercase K
+-
+   d: 76
+   h: 4C
+   EBCDIC: <
+   EBCDIC: Less-than
+   ASCII: L
+   ASCII: Uppercase L
+-
+   d: 77
+   h: 4D
+   EBCDIC: (
+   EBCDIC: Left Parenthesis
+   ASCII: M
+   ASCII: Uppercase M
+-
+   d: 78
+   h: 4E
+   EBCDIC: _.  =+
+   EBCDIC: Plus
+   ASCII: N
+   ASCII: Uppercase N
+-
+   d: 79
+   h: 4F
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: O
+   ASCII: Uppercase O
+-
+   d: 80
+   h: 50
+   EBCDIC: &
+   EBCDIC: Ampersand
+   ASCII: P
+   ASCII: Uppercase P
+-
+   d: 81
+   h: 51
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: Q
+   ASCII: Uppercase Q
+-
+   d: 82
+   h: 52
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: R
+   ASCII: Uppercase R
+-
+   d: 83
+   h: 53
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: S
+   ASCII: Uppercase S
+-
+   d: 84
+   h: 54
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: T
+   ASCII: Uppercase T
+-
+   d: 85
+   h: 55
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: U
+   ASCII: Uppercase U
+-
+   d: 86
+   h: 56
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: V
+   ASCII: Uppercase V
+-
+   d: 87
+   h: 57
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: W
+   ASCII: Uppercase W
+-
+   d: 88
+   h: 58
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: X
+   ASCII: Uppercase X
+-
+   d: 89
+   h: 59
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: Y
+   ASCII: Uppercase Y
+-
+   d: 90
+   h: 5A
+   EBCDIC: !
+   EBCDIC: Exclamation mark
+   ASCII: Z
+   ASCII: Uppercase Z
+-
+   d: 91
+   h: 5B
+   EBCDIC: $
+   EBCDIC: Dollar
+   ASCII: [
+   ASCII: Open square bracket
+-
+   d: 92
+   h: 5C
+   EBCDIC: *
+   EBCDIC: Asterisk
+   ASCII: \
+   ASCII: Backslash
+-
+   d: 93
+   h: 5D
+   EBCDIC: )
+   EBCDIC: Right Parenthesis
+   ASCII: ]
+   ASCII: Close square bracket
+-
+   d: 94
+   h: 5E
+   EBCDIC: ;
+   EBCDIC: Semicolon
+   ASCII: ^
+   ASCII: Caret / hat
+-
+   d: 95
+   h: 5F
+   EBCDIC: ¬
+   EBCDIC: Logical NOT
+   ASCII: _
+   ASCII: Underscore
+-
+   d: 96
+   h: 60
+   EBCDIC: -
+   EBCDIC: Dash
+   ASCII: `
+   ASCII: Grave accent
+-
+   d: 97
+   h: 61
+   EBCDIC: /
+   EBCDIC: Slash
+   ASCII: a
+   ASCII: Lowercase a
+-
+   d: 98
+   h: 62
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: b
+   ASCII: Lowercase b
+-
+   d: 99
+   h: 63
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: c
+   ASCII: Lowercase c
+-
+   d: 100
+   h: 64
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: d
+   ASCII: Lowercase d
+-
+   d: 101
+   h: 65
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: e
+   ASCII: Lowercase e
+-
+   d: 102
+   h: 66
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: f
+   ASCII: Lowercase f
+-
+   d: 103
+   h: 67
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: g
+   ASCII: Lowercase g
+-
+   d: 104
+   h: 68
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: h
+   ASCII: Lowercase h
+-
+   d: 105
+   h: 69
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: i
+   ASCII: Lowercase i
+-
+   d: 106
+   h: 6A
+   EBCDIC: |
+   EBCDIC: Logical OR
+   ASCII: j
+   ASCII: Lowercase j
+-
+   d: 107
+   h: 6B
+   EBCDIC: ,
+   EBCDIC: Comma
+   ASCII: k
+   ASCII: Lowercase k
+-
+   d: 108
+   h: 6C
+   EBCDIC: %
+   EBCDIC: Percent
+   ASCII: l
+   ASCII: Lowercase l
+-
+   d: 109
+   h: 6D
+   EBCDIC: _
+   EBCDIC: Underscore
+   ASCII: m
+   ASCII: Lowercase m
+-
+   d: 110
+   h: 6E
+   EBCDIC: >
+   EBCDIC: Greater-than
+   ASCII: n
+   ASCII: Lowercase n
+-
+   d: 111
+   h: 6F
+   EBCDIC: ?
+   EBCDIC: Question mark
+   ASCII: o
+   ASCII: Lowercase o
+-
+   d: 112
+   h: 70
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: p
+   ASCII: Lowercase p
+-
+   d: 113
+   h: 71
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: q
+   ASCII: Lowercase q
+-
+   d: 114
+   h: 72
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: r
+   ASCII: Lowercase r
+-
+   d: 115
+   h: 73
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: s
+   ASCII: Lowercase s
+-
+   d: 116
+   h: 74
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: t
+   ASCII: Lowercase t
+-
+   d: 117
+   h: 75
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: u
+   ASCII: Lowercase u
+-
+   d: 118
+   h: 76
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: v
+   ASCII: Lowercase v
+-
+   d: 119
+   h: 77
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: w
+   ASCII: Lowercase w
+-
+   d: 120
+   h: 78
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: x
+   ASCII: Lowercase x
+-
+   d: 121
+   h: 79
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: y
+   ASCII: Lowercase y
+-
+   d: 122
+   h: 7A
+   EBCDIC: :
+   EBCDIC: Colon
+   ASCII: z
+   ASCII: Lowercase z
+-
+   d: 123
+   h: 7B
+   EBCDIC: #
+   EBCDIC: Number Sign
+   ASCII: {
+   ASCII: Open brace
+-
+   d: 124
+   h: 7C
+   EBCDIC: @
+   EBCDIC: At
+   ASCII: |
+   ASCII: Pipe
+-
+   d: 125
+   h: 7D
+   EBCDIC: 
+   EBCDIC: Apostrophe
+   ASCII: }
+   ASCII: Close brace
+-
+   d: 126
+   h: 7E
+   EBCDIC: _  =
+   EBCDIC: Equals
+   ASCII: ~
+   ASCII: Tilde
+-
+   d: 127
+   h: 7F
+   EBCDIC: "
+   EBCDIC: Quotation mark
+   ASCII: 
+   ASCII: Delete
+-
+   d: 128
+   h: 80
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 129
+   h: 81
+   EBCDIC: a
+   EBCDIC: Lowercase a
+   ASCII: 
+   ASCII: 
+-
+   d: 130
+   h: 82
+   EBCDIC: b
+   EBCDIC: Lowercase b
+   ASCII: 
+   ASCII: 
+-
+   d: 131
+   h: 83
+   EBCDIC: c
+   EBCDIC: Lowercase c
+   ASCII: 
+   ASCII: 
+-
+   d: 132
+   h: 84
+   EBCDIC: d
+   EBCDIC: Lowercase d
+   ASCII: 
+   ASCII: 
+-
+   d: 133
+   h: 85
+   EBCDIC: e
+   EBCDIC: Lowercase e
+   ASCII: 
+   ASCII: 
+-
+   d: 134
+   h: 86
+   EBCDIC: f
+   EBCDIC: Lowercase f
+   ASCII: 
+   ASCII: 
+-
+   d: 135
+   h: 87
+   EBCDIC: g
+   EBCDIC: Lowercase g
+   ASCII: 
+   ASCII: 
+-
+   d: 136
+   h: 88
+   EBCDIC: h
+   EBCDIC: Lowercase h
+   ASCII: 
+   ASCII: 
+-
+   d: 137
+   h: 89
+   EBCDIC: i
+   EBCDIC: Lowercase i
+   ASCII: 
+   ASCII: 
+-
+   d: 138
+   h: 8A
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 139
+   h: 8B
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 140
+   h: 8C
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 141
+   h: 8D
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 142
+   h: 8E
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 143
+   h: 8F
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 144
+   h: 90
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 145
+   h: 91
+   EBCDIC: j
+   EBCDIC: Lowercase j
+   ASCII: 
+   ASCII: 
+-
+   d: 146
+   h: 92
+   EBCDIC: k
+   EBCDIC: Lowercase k
+   ASCII: 
+   ASCII: 
+-
+   d: 147
+   h: 93
+   EBCDIC: l
+   EBCDIC: Lowercase l
+   ASCII: 
+   ASCII: 
+-
+   d: 148
+   h: 94
+   EBCDIC: m
+   EBCDIC: Lowercase m
+   ASCII: 
+   ASCII: 
+-
+   d: 149
+   h: 95
+   EBCDIC: n
+   EBCDIC: Lowercase n
+   ASCII: 
+   ASCII: 
+-
+   d: 150
+   h: 96
+   EBCDIC: o
+   EBCDIC: Lowercase o
+   ASCII: 
+   ASCII: 
+-
+   d: 151
+   h: 97
+   EBCDIC: p
+   EBCDIC: Lowercase p
+   ASCII: 
+   ASCII: 
+-
+   d: 152
+   h: 98
+   EBCDIC: q
+   EBCDIC: Lowercase q
+   ASCII: 
+   ASCII: 
+-
+   d: 153
+   h: 99
+   EBCDIC: r
+   EBCDIC: Lowercase r
+   ASCII: 
+   ASCII: 
+-
+   d: 154
+   h: 9A
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 155
+   h: 9B
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 156
+   h: 9C
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 157
+   h: 9D
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 158
+   h: 9E
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 159
+   h: 9F
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 160
+   h: A0
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 161
+   h: A1
+   EBCDIC: ~
+   EBCDIC: Tilde
+   ASCII: 
+   ASCII: 
+-
+   d: 162
+   h: A2
+   EBCDIC: s
+   EBCDIC: Lowercase s
+   ASCII: 
+   ASCII: 
+-
+   d: 163
+   h: A3
+   EBCDIC: t
+   EBCDIC: Lowercase t
+   ASCII: 
+   ASCII: 
+-
+   d: 164
+   h: A4
+   EBCDIC: u
+   EBCDIC: Lowercase u
+   ASCII: 
+   ASCII: 
+-
+   d: 165
+   h: A5
+   EBCDIC: v
+   EBCDIC: Lowercase v
+   ASCII: 
+   ASCII: 
+-
+   d: 166
+   h: A6
+   EBCDIC: w
+   EBCDIC: Lowercase w
+   ASCII: 
+   ASCII: 
+-
+   d: 167
+   h: A7
+   EBCDIC: x
+   EBCDIC: Lowercase x
+   ASCII: 
+   ASCII: 
+-
+   d: 168
+   h: A8
+   EBCDIC: y
+   EBCDIC: Lowercase y
+   ASCII: 
+   ASCII: 
+-
+   d: 169
+   h: A9
+   EBCDIC: z
+   EBCDIC: Lowercase z
+   ASCII: 
+   ASCII: 
+-
+   d: 170
+   h: AA
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 171
+   h: AB
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 172
+   h: AC
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 173
+   h: AD
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 174
+   h: AE
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 175
+   h: AF
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 176
+   h: B0
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 177
+   h: B1
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 178
+   h: B2
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 179
+   h: B3
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 180
+   h: B4
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 181
+   h: B5
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 182
+   h: B6
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 183
+   h: B7
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 184
+   h: B8
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 185
+   h: B9
+   EBCDIC: `
+   EBCDIC: Grave Accent
+   ASCII: 
+   ASCII: 
+-
+   d: 186
+   h: BA
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 187
+   h: BB
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 188
+   h: BC
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 189
+   h: BD
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 190
+   h: BE
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 191
+   h: BF
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 192
+   h: C0
+   EBCDIC: {
+   EBCDIC: Opening Brace
+   ASCII: 
+   ASCII: 
+-
+   d: 193
+   h: C1
+   EBCDIC: A
+   EBCDIC: Uppercase A
+   ASCII: 
+   ASCII: 
+-
+   d: 194
+   h: C2
+   EBCDIC: B
+   EBCDIC: Uppercase B
+   ASCII: 
+   ASCII: 
+-
+   d: 195
+   h: C3
+   EBCDIC: C
+   EBCDIC: Uppercase C
+   ASCII: 
+   ASCII: 
+-
+   d: 196
+   h: C4
+   EBCDIC: D
+   EBCDIC: Uppercase D
+   ASCII: 
+   ASCII: 
+-
+   d: 197
+   h: C5
+   EBCDIC: E
+   EBCDIC: Uppercase E
+   ASCII: 
+   ASCII: 
+-
+   d: 198
+   h: C6
+   EBCDIC: F
+   EBCDIC: Uppercase F
+   ASCII: 
+   ASCII: 
+-
+   d: 199
+   h: C7
+   EBCDIC: G
+   EBCDIC: Uppercase G
+   ASCII: 
+   ASCII: 
+-
+   d: 200
+   h: C8
+   EBCDIC: H
+   EBCDIC: Uppercase H
+   ASCII: 
+   ASCII: 
+-
+   d: 201
+   h: C9
+   EBCDIC: I
+   EBCDIC: Uppercase I
+   ASCII: 
+   ASCII: 
+-
+   d: 202
+   h: CA
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 203
+   h: CB
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 204
+   h: CC
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 205
+   h: CD
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 206
+   h: CE
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 207
+   h: CF
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 208
+   h: D0
+   EBCDIC: }
+   EBCDIC: Closing Brace
+   ASCII: 
+   ASCII: 
+-
+   d: 209
+   h: D1
+   EBCDIC: J
+   EBCDIC: Uppercase J
+   ASCII: 
+   ASCII: 
+-
+   d: 210
+   h: D2
+   EBCDIC: K
+   EBCDIC: Uppercase K
+   ASCII: 
+   ASCII: 
+-
+   d: 211
+   h: D3
+   EBCDIC: L
+   EBCDIC: Uppercase L
+   ASCII: 
+   ASCII: 
+-
+   d: 212
+   h: D4
+   EBCDIC: M
+   EBCDIC: Uppercase M
+   ASCII: 
+   ASCII: 
+-
+   d: 213
+   h: D5
+   EBCDIC: N
+   EBCDIC: Uppercase N
+   ASCII: 
+   ASCII: 
+-
+   d: 214
+   h: D6
+   EBCDIC: O
+   EBCDIC: Uppercase O
+   ASCII: 
+   ASCII: 
+-
+   d: 215
+   h: D7
+   EBCDIC: P
+   EBCDIC: Uppercase P
+   ASCII: 
+   ASCII: 
+-
+   d: 216
+   h: D8
+   EBCDIC: Q
+   EBCDIC: Uppercase Q
+   ASCII: 
+   ASCII: 
+-
+   d: 217
+   h: D9
+   EBCDIC: R
+   EBCDIC: Uppercase R
+   ASCII: 
+   ASCII: 
+-
+   d: 218
+   h: DA
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 219
+   h: DB
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 220
+   h: DC
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 221
+   h: DD
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 222
+   h: DE
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 223
+   h: DF
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 224
+   h: E0
+   EBCDIC: \
+   EBCDIC: Backslash
+   ASCII: 
+   ASCII: 
+-
+   d: 225
+   h: E1
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 226
+   h: E2
+   EBCDIC: S
+   EBCDIC: Uppercase S
+   ASCII: 
+   ASCII: 
+-
+   d: 227
+   h: E3
+   EBCDIC: T
+   EBCDIC: Uppercase T
+   ASCII: 
+   ASCII: 
+-
+   d: 228
+   h: E4
+   EBCDIC: U
+   EBCDIC: Uppercase U
+   ASCII: 
+   ASCII: 
+-
+   d: 229
+   h: E5
+   EBCDIC: V
+   EBCDIC: Uppercase V
+   ASCII: 
+   ASCII: 
+-
+   d: 230
+   h: E6
+   EBCDIC: W
+   EBCDIC: Uppercase W
+   ASCII: 
+   ASCII: 
+-
+   d: 231
+   h: E7
+   EBCDIC: X
+   EBCDIC: Uppercase X
+   ASCII: 
+   ASCII: 
+-
+   d: 232
+   h: E8
+   EBCDIC: Y
+   EBCDIC: Uppercase Y
+   ASCII: 
+   ASCII: 
+-
+   d: 233
+   h: E9
+   EBCDIC: Z
+   EBCDIC: Uppercase Z
+   ASCII: 
+   ASCII: 
+-
+   d: 234
+   h: EA
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 235
+   h: EB
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 236
+   h: EC
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 237
+   h: ED
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 238
+   h: EE
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 239
+   h: EF
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 240
+   h: F0
+   EBCDIC: 0
+   EBCDIC: Zero
+   ASCII: 
+   ASCII: 
+-
+   d: 241
+   h: F1
+   EBCDIC: 1
+   EBCDIC: One
+   ASCII: 
+   ASCII: 
+-
+   d: 242
+   h: F2
+   EBCDIC: 2
+   EBCDIC: Two
+   ASCII: 
+   ASCII: 
+-
+   d: 243
+   h: F3
+   EBCDIC: 3
+   EBCDIC: Three
+   ASCII: 
+   ASCII: 
+-
+   d: 244
+   h: F4
+   EBCDIC: 4
+   EBCDIC: Four
+   ASCII: 
+   ASCII: 
+-
+   d: 245
+   h: F5
+   EBCDIC: 5
+   EBCDIC: Five
+   ASCII: 
+   ASCII: 
+-
+   d: 246
+   h: F6
+   EBCDIC: 6
+   EBCDIC: Six
+   ASCII: 
+   ASCII: 
+-
+   d: 247
+   h: F7
+   EBCDIC: 7
+   EBCDIC: Seven
+   ASCII: 
+   ASCII: 
+-
+   d: 248
+   h: F8
+   EBCDIC: 8
+   EBCDIC: Eight
+   ASCII: 
+   ASCII: 
+-
+   d: 249
+   h: F9
+   EBCDIC: 9
+   EBCDIC: Nine
+   ASCII: 
+   ASCII: 
+-
+   d: 250
+   h: FA
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 251
+   h: FB
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 252
+   h: FC
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 253
+   h: FD
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 254
+   h: FE
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 
+-
+   d: 255
+   h: FF
+   EBCDIC: 
+   EBCDIC: 
+   ASCII: 
+   ASCII: 

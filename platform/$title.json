@@ -1,0 +1,13 @@
+  /**
+   * It can be used to decorate a user interface with information about the data produced by this user interface. A title will preferably be short.
+   *
+   * @example { title: "string" }
+   *
+   * @reference https://json-schema.org/latest/json-schema-validation.html#rfc.section.10.1
+   *
+   * @param {string} title
+   * @returns {this}
+   */
+  title (title: string) {
+    return this.copyWith({ plain: { title } })
+  }
