@@ -1,0 +1,18 @@
+[
+"_embedded": {
+        "relationships": [
+            {
+                "marketSide": null,
+                "legNumber": null,
+                "ratio": null,
+                "_links": {
+                    "underlyingInstrument": {
+                        "href": "https://api.refdata.nr.cmegroup.com/v1/instruments/[underlying instrument guid]"
+                    },
+                    "overlyingInstrument": {
+                        "href": "https://api.refdata.nr.cmegroup.com/v1/instruments/[overlying instrument guid]"
+                    }
+                }
+            }
+        }
+    ]

@@ -1,0 +1,46 @@
+[
+{
+    "_embedded": {
+        "relationships": [
+            {
+                "marketSide": "SELL",
+                "legNumber": "2",
+                "ratio": "1",
+                "_links": {
+                    "underlyingProduct": {
+                        "href": "__/v#/products/[underlying productGuid]"
+                    },
+                    "overlyingProduct": {
+                        "href": "__/v#/products/[overlying productGuid1]"
+                    }
+                }
+            },
+            {
+                "marketSide": "BUY",
+                "legNumber": "1",
+                "ratio": "1",
+                "_links": {
+                    "underlyingProduct": {
+                        "href": "__/v#/products/[underlying productGuid]"
+                    },
+                    "overlyingProduct": {
+                        "href": "__/v#/products/[overlying productGuid2]"
+                    }
+                }
+            }
+        ]
+    },
+    "_links": {
+        "self": {
+            "href": "__/v#/products/[productGuid]/underlyings?page=0&size=20"
+        }
+    },
+    "_metadata": {
+        "size": 20,
+        "totalElements": 2,
+        "totalPages": 1,
+        "number": 0,
+        "type": "page"
+    }
+}
+]

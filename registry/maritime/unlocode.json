@@ -1,0 +1,52 @@
+   { 
+
+               "type": "cdm",
+       "contentMediaType": "key/Value",
+       "contentSchema": [
+
+          "identityScheme": {
+                "type": "object",
+                "properties": {
+                    "Unlocode": {
+                        "description": "missing description",
+                        "type": "string"
+                    },
+                    "OtherIdentification": {
+                        "items": {
+                            "description": "A unique identifier for this logistics related location, such as a United Nations Location Code (UNLOCODE) or GS1 Global Location Number (GLN).",
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "Name": {
+                        "description": "A name, expressed as text, of this logistics related location.",
+                        "type": "string"
+                    },
+                    "Description": {
+                        "description": "A textual description of this logistics related location.",
+                        "type": "string"
+                    },
+                    "Country": {
+                        "description": "The unique identifier of a country for this logistics location.",
+                        "type": "string"
+                    },
+                    "Type": {
+                        "description": "A code specifying the type of this logistics related location.",
+                        "type": "string"
+                    },
+                    "Latitude": {
+                        "description": "missing description",
+                        "type": "number"
+                    },
+                    "Longditude": {
+                        "description": "missing description",
+                        "type": "number"
+                    },
+                    "PostalTradeAddress": {
+                        "$ref": "#/components/schemas/TradeAddress"
+                    }
+                },
+                "required": [
+                    "Unlocode"
+                ]
+            }

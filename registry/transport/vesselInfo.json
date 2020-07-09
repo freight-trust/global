@@ -1,0 +1,8 @@
+[
+    vesselInfo["source"] = data.get("Source")
+    vesselInfo["sCAC"] = data.get("SCAC")
+    vesselInfo["vesselCode"] = None
+    vesselInfo["vesselName"] = data.get("Vessel Name")
+    vesselInfo["voyageNumber"] = data.get("Voyage Number")
+    newJson["vesselInfo"] = vesselInfo
+]

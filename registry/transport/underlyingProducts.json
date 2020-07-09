@@ -1,0 +1,12 @@
+{
+"_links" : {
+  "self" : {
+    "href" : "__/v#/products/[productGuid]"
+  },
+  "underlyingProducts" : {
+    "href" : "__/v#/products/[productGuid]/underlyings"
+  },
+  "instruments" : {
+    "href" : "__/v#/products/[productGuid]/instruments"
+  }
+}

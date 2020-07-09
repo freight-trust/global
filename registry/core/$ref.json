@@ -1,0 +1,11 @@
+  /**
+   * The value must be a valid id e.g. #properties/foo
+   *
+   * @example { $ref: "string" }
+   *
+   * @param {string} ref
+   * @returns {this}
+   */
+  ref ($ref: string) {
+    return this.copyWith({ plain: { $ref } })
+  }

@@ -1,0 +1,677 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://cannonical.freighttrust.com/schema/maritime/carrier.json\"",
+    "type": "array",
+    "title": "Schema for Maritime Index for NVOCC/VOCC's",
+    "description": "Meta Scheam for Information for Maritime Index",
+    "default": [],
+    "const": [
+        {
+            "key": "LEI",
+            "value": "string",
+            "composable": "${#LEI}"
+        },
+        {
+            "key": "VOCCs",
+            "value": true,
+            "composable": "${OCC}"
+        },
+        {
+            "key": "NVOCC",
+            "value": false,
+            "composable": "${OCC}"
+        },
+        {
+            "key": "NAIC",
+            "value": "string",
+            "composable": "${#NAIC}"
+        },
+        {
+            "key": "prefix",
+            "value": "string",
+            "composable": "${string}"
+        },
+        {
+            "key": "legal entity name",
+            "value": "string",
+            "composable": "${string}"
+        },
+        {
+            "key": "vesselCode",
+            "value": "string",
+            "composable": "$vesselCode"
+        },
+        {
+            "key": "voyageNumber",
+            "value": "string",
+            "composable": "$voyageNumber"
+        },
+        {
+            "key": "SCAC",
+            "value": "string",
+            "composable": "$SCAC"
+        },
+        {
+            "key": "unlocCode",
+            "value": "string",
+            "composable": "$unlocCode"
+        }
+    ],
+    "examples": [
+        [
+            {
+                "key": "LEI",
+                "value": "string",
+                "composable": "${#LEI}"
+            },
+            {
+                "key": "VOCCs",
+                "value": true,
+                "composable": "${OCC}"
+            }
+        ]
+    ],
+    "additionalItems": true,
+    "items": [
+        {
+            "$id": "#/items/0",
+            "type": "object",
+            "title": "The first items schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "const": {
+                "key": "LEI",
+                "value": "string",
+                "composable": "${#LEI}"
+            },
+            "examples": [
+                {
+                    "key": "LEI",
+                    "value": "string",
+                    "composable": "${#LEI}"
+                }
+            ],
+            "required": [
+                "key",
+                "value",
+                "composable"
+            ],
+            "additionalProperties": true,
+            "properties": {
+                "key": {
+                    "$id": "#/items/0/properties/key",
+                    "type": "string",
+                    "title": "The key schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "const": "LEI",
+                    "examples": [
+                        "LEI"
+                    ]
+                },
+                "value": {
+                    "$id": "#/items/0/properties/value",
+                    "type": "string",
+                    "title": "The value schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "const": "string",
+                    "examples": [
+                        "string"
+                    ]
+                },
+                "composable": {
+                    "$id": "#/items/0/properties/composable",
+                    "type": "string",
+                    "title": "The composable schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "const": "${#LEI}",
+                    "examples": [
+                        "${#LEI}"
+                    ]
+                }
+            }
+        },
+        {
+            "$id": "#/items/1",
+            "type": "object",
+            "title": "The second items schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "const": {
+                "key": "VOCCs",
+                "value": true,
+                "composable": "${OCC}"
+            },
+            "examples": [
+                {
+                    "key": "VOCCs",
+                    "value": true,
+                    "composable": "${OCC}"
+                }
+            ],
+            "required": [
+                "key",
+                "value",
+                "composable"
+            ],
+            "additionalProperties": true,
+            "properties": {
+                "key": {
+                    "$id": "#/items/1/properties/key",
+                    "type": "string",
+                    "title": "The key schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "const": "VOCCs",
+                    "examples": [
+                        "VOCCs"
+                    ]
+                },
+                "value": {
+                    "$id": "#/items/1/properties/value",
+                    "type": "boolean",
+                    "title": "The value schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": false,
+                    "const": true,
+                    "examples": [
+                        true
+                    ]
+                },
+                "composable": {
+                    "$id": "#/items/1/properties/composable",
+                    "type": "string",
+                    "title": "The composable schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "const": "${OCC}",
+                    "examples": [
+                        "${OCC}"
+                    ]
+                }
+            }
+        },
+        {
+            "$id": "#/items/2",
+            "type": "object",
+            "title": "The third items schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "const": {
+                "key": "NVOCC",
+                "value": false,
+                "composable": "${OCC}"
+            },
+            "examples": [
+                {
+                    "key": "NVOCC",
+                    "value": false,
+                    "composable": "${OCC}"
+                }
+            ],
+            "required": [
+                "key",
+                "value",
+                "composable"
+            ],
+            "additionalProperties": true,
+            "properties": {
+                "key": {
+                    "$id": "#/items/2/properties/key",
+                    "type": "string",
+                    "title": "The key schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "const": "NVOCC",
+                    "examples": [
+                        "NVOCC"
+                    ]
+                },
+                "value": {
+                    "$id": "#/items/2/properties/value",
+                    "type": "boolean",
+                    "title": "The value schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": false,
+                    "const": false,
+                    "examples": [
+                        false
+                    ]
+                },
+                "composable": {
+                    "$id": "#/items/2/properties/composable",
+                    "type": "string",
+                    "title": "The composable schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "const": "${OCC}",
+                    "examples": [
+                        "${OCC}"
+                    ]
+                }
+            }
+        },
+        {
+            "$id": "#/items/3",
+            "type": "object",
+            "title": "The fourth items schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "const": {
+                "key": "NAIC",
+                "value": "string",
+                "composable": "${#NAIC}"
+            },
+            "examples": [
+                {
+                    "key": "NAIC",
+                    "value": "string",
+                    "composable": "${#NAIC}"
+                }
+            ],
+            "required": [
+                "key",
+                "value",
+                "composable"
+            ],
+            "additionalProperties": true,
+            "properties": {
+                "key": {
+                    "$id": "#/items/3/properties/key",
+                    "type": "string",
+                    "title": "The key schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "const": "NAIC",
+                    "examples": [
+                        "NAIC"
+                    ]
+                },
+                "value": {
+                    "$id": "#/items/3/properties/value",
+                    "type": "string",
+                    "title": "The value schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "const": "string",
+                    "examples": [
+                        "string"
+                    ]
+                },
+                "composable": {
+                    "$id": "#/items/3/properties/composable",
+                    "type": "string",
+                    "title": "The composable schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "const": "${#NAIC}",
+                    "examples": [
+                        "${#NAIC}"
+                    ]
+                }
+            }
+        },
+        {
+            "$id": "#/items/4",
+            "type": "object",
+            "title": "The fifth items schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "const": {
+                "key": "prefix",
+                "value": "string",
+                "composable": "${string}"
+            },
+            "examples": [
+                {
+                    "key": "prefix",
+                    "value": "string",
+                    "composable": "${string}"
+                }
+            ],
+            "required": [
+                "key",
+                "value",
+                "composable"
+            ],
+            "additionalProperties": true,
+            "properties": {
+                "key": {
+                    "$id": "#/items/4/properties/key",
+                    "type": "string",
+                    "title": "The key schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "const": "prefix",
+                    "examples": [
+                        "prefix"
+                    ]
+                },
+                "value": {
+                    "$id": "#/items/4/properties/value",
+                    "type": "string",
+                    "title": "The value schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "const": "string",
+                    "examples": [
+                        "string"
+                    ]
+                },
+                "composable": {
+                    "$id": "#/items/4/properties/composable",
+                    "type": "string",
+                    "title": "The composable schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "const": "${string}",
+                    "examples": [
+                        "${string}"
+                    ]
+                }
+            }
+        },
+        {
+            "$id": "#/items/5",
+            "type": "object",
+            "title": "The sixth items schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "const": {
+                "key": "legal entity name",
+                "value": "string",
+                "composable": "${string}"
+            },
+            "examples": [
+                {
+                    "key": "legal entity name",
+                    "value": "string",
+                    "composable": "${string}"
+                }
+            ],
+            "required": [
+                "key",
+                "value",
+                "composable"
+            ],
+            "additionalProperties": true,
+            "properties": {
+                "key": {
+                    "$id": "#/items/5/properties/key",
+                    "type": "string",
+                    "title": "The key schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "const": "legal entity name",
+                    "examples": [
+                        "legal entity name"
+                    ]
+                },
+                "value": {
+                    "$id": "#/items/5/properties/value",
+                    "type": "string",
+                    "title": "The value schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "const": "string",
+                    "examples": [
+                        "string"
+                    ]
+                },
+                "composable": {
+                    "$id": "#/items/5/properties/composable",
+                    "type": "string",
+                    "title": "The composable schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "const": "${string}",
+                    "examples": [
+                        "${string}"
+                    ]
+                }
+            }
+        },
+        {
+            "$id": "#/items/6",
+            "type": "object",
+            "title": "The seventh items schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "const": {
+                "key": "vesselCode",
+                "value": "string",
+                "composable": "$vesselCode"
+            },
+            "examples": [
+                {
+                    "key": "vesselCode",
+                    "value": "string",
+                    "composable": "$vesselCode"
+                }
+            ],
+            "required": [
+                "key",
+                "value",
+                "composable"
+            ],
+            "additionalProperties": true,
+            "properties": {
+                "key": {
+                    "$id": "#/items/6/properties/key",
+                    "type": "string",
+                    "title": "The key schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "const": "vesselCode",
+                    "examples": [
+                        "vesselCode"
+                    ]
+                },
+                "value": {
+                    "$id": "#/items/6/properties/value",
+                    "type": "string",
+                    "title": "The value schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "const": "string",
+                    "examples": [
+                        "string"
+                    ]
+                },
+                "composable": {
+                    "$id": "#/items/6/properties/composable",
+                    "type": "string",
+                    "title": "The composable schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "const": "$vesselCode",
+                    "examples": [
+                        "$vesselCode"
+                    ]
+                }
+            }
+        },
+        {
+            "$id": "#/items/7",
+            "type": "object",
+            "title": "The eighth items schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "const": {
+                "key": "voyageNumber",
+                "value": "string",
+                "composable": "$voyageNumber"
+            },
+            "examples": [
+                {
+                    "key": "voyageNumber",
+                    "value": "string",
+                    "composable": "$voyageNumber"
+                }
+            ],
+            "required": [
+                "key",
+                "value",
+                "composable"
+            ],
+            "additionalProperties": true,
+            "properties": {
+                "key": {
+                    "$id": "#/items/7/properties/key",
+                    "type": "string",
+                    "title": "The key schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "const": "voyageNumber",
+                    "examples": [
+                        "voyageNumber"
+                    ]
+                },
+                "value": {
+                    "$id": "#/items/7/properties/value",
+                    "type": "string",
+                    "title": "The value schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "const": "string",
+                    "examples": [
+                        "string"
+                    ]
+                },
+                "composable": {
+                    "$id": "#/items/7/properties/composable",
+                    "type": "string",
+                    "title": "The composable schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "const": "$voyageNumber",
+                    "examples": [
+                        "$voyageNumber"
+                    ]
+                }
+            }
+        },
+        {
+            "$id": "#/items/8",
+            "type": "object",
+            "title": "The ninth items schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "const": {
+                "key": "SCAC",
+                "value": "string",
+                "composable": "$SCAC"
+            },
+            "examples": [
+                {
+                    "key": "SCAC",
+                    "value": "string",
+                    "composable": "$SCAC"
+                }
+            ],
+            "required": [
+                "key",
+                "value",
+                "composable"
+            ],
+            "additionalProperties": true,
+            "properties": {
+                "key": {
+                    "$id": "#/items/8/properties/key",
+                    "type": "string",
+                    "title": "The key schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "const": "SCAC",
+                    "examples": [
+                        "SCAC"
+                    ]
+                },
+                "value": {
+                    "$id": "#/items/8/properties/value",
+                    "type": "string",
+                    "title": "The value schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "const": "string",
+                    "examples": [
+                        "string"
+                    ]
+                },
+                "composable": {
+                    "$id": "#/items/8/properties/composable",
+                    "type": "string",
+                    "title": "The composable schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "const": "$SCAC",
+                    "examples": [
+                        "$SCAC"
+                    ]
+                }
+            }
+        },
+        {
+            "$id": "#/items/9",
+            "type": "object",
+            "title": "The tenth items schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "const": {
+                "key": "unlocCode",
+                "value": "string",
+                "composable": "$unlocCode"
+            },
+            "examples": [
+                {
+                    "key": "unlocCode",
+                    "value": "string",
+                    "composable": "$unlocCode"
+                }
+            ],
+            "required": [
+                "key",
+                "value",
+                "composable"
+            ],
+            "additionalProperties": true,
+            "properties": {
+                "key": {
+                    "$id": "#/items/9/properties/key",
+                    "type": "string",
+                    "title": "The key schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "const": "unlocCode",
+                    "examples": [
+                        "unlocCode"
+                    ]
+                },
+                "value": {
+                    "$id": "#/items/9/properties/value",
+                    "type": "string",
+                    "title": "The value schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "const": "string",
+                    "examples": [
+                        "string"
+                    ]
+                },
+                "composable": {
+                    "$id": "#/items/9/properties/composable",
+                    "type": "string",
+                    "title": "The composable schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "const": "$unlocCode",
+                    "examples": [
+                        "$unlocCode"
+                    ]
+                }
+            }
+        }
+    ]
+}

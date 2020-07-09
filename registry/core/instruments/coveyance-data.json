@@ -1,0 +1,5 @@
+{
+  "conveyance": "deliveryStatus",
+  "transportStatus": true,
+  "transportEmitEvents": "Delivered"
+}
