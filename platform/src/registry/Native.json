@@ -1,0 +1,424 @@
+{
+    "xs:schema": {
+        "targetNamespace": "http://www.cargowise.com/Schemas/Native/2011/11",
+        "version": 2,
+        "elementFormDefault": "qualified",
+        "xmlns": "http://www.cargowise.com/Schemas/Native/2011/11",
+        "xmlns:uv": "http://www.cargowise.com/Schemas/Universal/2011/11",
+        "xmlns:xs": "http://www.w3.org/2001/XMLSchema",
+        "xs:import": {
+            "schemaLocation": "UniversalCommon.xsd",
+            "namespace": "http://www.cargowise.com/Schemas/Universal/2011/11"
+        },
+        "xs:element": {
+            "name": "Native",
+            "xs:complexType": {
+                "xs:sequence": {
+                    "xs:element": [
+                        {
+                            "name": "Header",
+                            "xs:complexType": {
+                                "xs:sequence": {
+                                    "xs:element": [
+                                        {
+                                            "name": "OwnerCode",
+                                            "type": "xs:string",
+                                            "minOccurs": 0
+                                        },
+                                        {
+                                            "name": "EnableCodeMapping",
+                                            "type": "xs:boolean",
+                                            "minOccurs": 0
+                                        },
+                                        {
+                                            "name": "DataContext",
+                                            "type": "uv:DataContext",
+                                            "minOccurs": 0
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Body",
+                            "xs:complexType": {
+                                "xs:sequence": {
+                                    "xs:any": {
+                                        "minOccurs": 1,
+                                        "maxOccurs": "unbounded",
+                                        "processContents": "skip"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                },
+                "xs:attribute": {
+                    "name": "version",
+                    "type": "xs:token"
+                }
+            }
+        },
+        "xs:simpleType": [
+            {
+                "name": "Action",
+                "xs:restriction": {
+                    "base": "xs:string",
+                    "xs:enumeration": [
+                        {"value": "INSERT"},
+                        {"value": "UPDATE"},
+                        {"value": "MERGE"},
+                        {"value": "DELETE"}
+                    ]
+                }
+            },
+            {
+                "name": "emptiableDateTime",
+                "xs:union": {"memberTypes": "xs:dateTime emptyString"}
+            },
+            {
+                "name": "emptyString",
+                "xs:restriction": {
+                    "base": "xs:string",
+                    "xs:length": {"value": 0}
+                }
+            }
+        ],
+        "xs:complexType": [
+            {
+                "name": "NativeOrganizationAddress",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "OrganizationCode",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 12}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Address1",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 50}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Address2",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 50}
+                                }
+                            }
+                        },
+                        {
+                            "name": "City",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 25}
+                                }
+                            }
+                        },
+                        {
+                            "name": "CompanyName",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 100}
+                                }
+                            }
+                        },
+                        {
+                            "name": "AddressShortCode",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 25}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Country",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:all": {
+                                    "xs:element": [
+                                        {
+                                            "name": "Code",
+                                            "xs:simpleType": {
+                                                "xs:restriction": {
+                                                    "base": "xs:string",
+                                                    "xs:maxLength": {"value": 2}
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "type": "xs:string",
+                                            "name": "Name",
+                                            "minOccurs": 0
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Email",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 60}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Fax",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 20}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Phone",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 20}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Port",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:all": {
+                                    "xs:element": [
+                                        {
+                                            "name": "Code",
+                                            "xs:simpleType": {
+                                                "xs:restriction": {
+                                                    "base": "xs:string",
+                                                    "xs:maxLength": {"value": 5}
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "type": "xs:string",
+                                            "name": "Name",
+                                            "minOccurs": 0
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Postcode",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 10}
+                                }
+                            }
+                        },
+                        {
+                            "name": "State",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 25}
+                                }
+                            }
+                        },
+                        {
+                            "name": "AddressType",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 40}
+                                }
+                            }
+                        },
+                        {
+                            "name": "RegistrationNumberCollection",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:sequence": {
+                                    "xs:element": {
+                                        "name": "RegistrationNumber",
+                                        "minOccurs": 0,
+                                        "maxOccurs": "unbounded",
+                                        "xs:complexType": {
+                                            "xs:all": {
+                                                "xs:element": [
+                                                    {
+                                                        "name": "Type",
+                                                        "minOccurs": 1,
+                                                        "xs:complexType": {
+                                                            "xs:all": {
+                                                                "xs:element": [
+                                                                    {
+                                                                        "name": "Code",
+                                                                        "minOccurs": 1,
+                                                                        "xs:simpleType": {
+                                                                            "xs:restriction": {
+                                                                                "base": "xs:string",
+                                                                                "xs:maxLength": {"value": 3}
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        "name": "Description",
+                                                                        "minOccurs": 0,
+                                                                        "xs:simpleType": {
+                                                                            "xs:restriction": {
+                                                                                "base": "xs:string",
+                                                                                "xs:maxLength": {"value": 35}
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                ]
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "name": "CountryOfIssue",
+                                                        "minOccurs": 0,
+                                                        "xs:complexType": {
+                                                            "xs:all": {
+                                                                "xs:element": [
+                                                                    {
+                                                                        "name": "Code",
+                                                                        "minOccurs": 1,
+                                                                        "xs:simpleType": {
+                                                                            "xs:restriction": {
+                                                                                "base": "xs:string",
+                                                                                "xs:maxLength": {"value": 2}
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        "name": "Name",
+                                                                        "minOccurs": 0,
+                                                                        "xs:simpleType": {
+                                                                            "xs:restriction": {
+                                                                                "base": "xs:string",
+                                                                                "xs:maxLength": {"value": 35}
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                ]
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "name": "Value",
+                                                        "minOccurs": 1,
+                                                        "xs:simpleType": {
+                                                            "xs:restriction": {
+                                                                "base": "xs:string",
+                                                                "xs:maxLength": {"value": 35}
+                                                            }
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "CustomValues",
+                "xs:sequence": {
+                    "maxOccurs": "unbounded",
+                    "xs:choice": {
+                        "xs:element": [
+                            {
+                                "name": "Boolean",
+                                "xs:complexType": {
+                                    "xs:simpleContent": {
+                                        "xs:extension": {
+                                            "base": "xs:boolean",
+                                            "xs:attribute": {
+                                                "name": "Name",
+                                                "type": "xs:string",
+                                                "use": "required"
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "name": "DateTime",
+                                "xs:complexType": {
+                                    "xs:simpleContent": {
+                                        "xs:extension": {
+                                            "base": "xs:dateTime",
+                                            "xs:attribute": {
+                                                "name": "Name",
+                                                "type": "xs:string",
+                                                "use": "required"
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "name": "Integer",
+                                "xs:complexType": {
+                                    "xs:simpleContent": {
+                                        "xs:extension": {
+                                            "base": "xs:integer",
+                                            "xs:attribute": {
+                                                "name": "Name",
+                                                "type": "xs:string",
+                                                "use": "required"
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "name": "String",
+                                "xs:complexType": {
+                                    "xs:simpleContent": {
+                                        "xs:extension": {
+                                            "base": "xs:string",
+                                            "xs:attribute": {
+                                                "name": "Name",
+                                                "type": "xs:string",
+                                                "use": "required"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+}

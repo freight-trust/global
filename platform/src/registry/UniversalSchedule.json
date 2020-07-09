@@ -1,0 +1,392 @@
+{
+    "xs:schema": {
+        "targetNamespace": "http://www.cargowise.com/Schemas/Universal/2011/11",
+        "version": 1.1,
+        "elementFormDefault": "qualified",
+        "xmlns": "http://www.cargowise.com/Schemas/Universal/2011/11",
+        "xmlns:xs": "http://www.w3.org/2001/XMLSchema",
+        "xs:include": {"schemaLocation": "UniversalCommon.xsd"},
+        "xs:element": {
+            "name": "UniversalSchedule",
+            "type": "UniversalScheduleData"
+        },
+        "xs:complexType": [
+            {
+                "name": "UniversalScheduleData",
+                "xs:all": {
+                    "xs:element": {
+                        "name": "Schedule",
+                        "type": "Schedule"
+                    }
+                },
+                "xs:attribute": {
+                    "name": "version",
+                    "type": "xs:token"
+                }
+            },
+            {
+                "name": "Schedule",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "DataContext",
+                            "minOccurs": 0,
+                            "type": "DataContext"
+                        },
+                        {
+                            "name": "DataProvider",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 3}
+                                }
+                            }
+                        },
+                        {
+                            "name": "IsCancellation",
+                            "minOccurs": 1,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "Carrier",
+                            "minOccurs": 0,
+                            "type": "OrganizationAddress"
+                        },
+                        {
+                            "name": "Transport",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:all": {
+                                    "xs:element": [
+                                        {
+                                            "name": "Air",
+                                            "minOccurs": 0,
+                                            "xs:complexType": {
+                                                "xs:all": {
+                                                    "xs:element": [
+                                                        {
+                                                            "name": "FlightNumber",
+                                                            "minOccurs": 1,
+                                                            "xs:simpleType": {
+                                                                "xs:restriction": {
+                                                                    "base": "xs:string",
+                                                                    "xs:maxLength": {"value": 35}
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "name": "IsCargoOnly",
+                                                            "minOccurs": 0,
+                                                            "type": "xs:boolean"
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "name": "Rail",
+                                            "minOccurs": 0,
+                                            "xs:complexType": {
+                                                "xs:all": {
+                                                    "xs:element": [
+                                                        {
+                                                            "name": "Journey",
+                                                            "minOccurs": 1,
+                                                            "xs:simpleType": {
+                                                                "xs:restriction": {
+                                                                    "base": "xs:string",
+                                                                    "xs:maxLength": {"value": 35}
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "name": "JourneyNumber",
+                                                            "minOccurs": 1,
+                                                            "xs:simpleType": {
+                                                                "xs:restriction": {
+                                                                    "base": "xs:string",
+                                                                    "xs:maxLength": {"value": 10}
+                                                                }
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "name": "Road",
+                                            "minOccurs": 0,
+                                            "xs:complexType": {
+                                                "xs:all": {
+                                                    "xs:element": {
+                                                        "name": "TruckReference",
+                                                        "minOccurs": 1,
+                                                        "xs:simpleType": {
+                                                            "xs:restriction": {
+                                                                "base": "xs:string",
+                                                                "xs:maxLength": {"value": 10}
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "name": "Sea",
+                                            "minOccurs": 0,
+                                            "xs:complexType": {
+                                                "xs:all": {
+                                                    "xs:element": [
+                                                        {
+                                                            "name": "Vessel",
+                                                            "minOccurs": 1,
+                                                            "xs:complexType": {
+                                                                "xs:all": {
+                                                                    "xs:element": [
+                                                                        {
+                                                                            "name": "VesselName",
+                                                                            "minOccurs": 1,
+                                                                            "xs:simpleType": {
+                                                                                "xs:restriction": {
+                                                                                    "base": "xs:string",
+                                                                                    "xs:maxLength": {"value": 35}
+                                                                                }
+                                                                            }
+                                                                        },
+                                                                        {
+                                                                            "name": "CallSign",
+                                                                            "minOccurs": 0,
+                                                                            "xs:simpleType": {
+                                                                                "xs:restriction": {
+                                                                                    "base": "xs:string",
+                                                                                    "xs:maxLength": {"value": 10}
+                                                                                }
+                                                                            }
+                                                                        },
+                                                                        {
+                                                                            "name": "LloydsNumber",
+                                                                            "minOccurs": 0,
+                                                                            "xs:simpleType": {
+                                                                                "xs:restriction": {
+                                                                                    "base": "xs:string",
+                                                                                    "xs:maxLength": {"value": 7}
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "name": "VoyageNumber",
+                                                            "minOccurs": 1,
+                                                            "xs:simpleType": {
+                                                                "xs:restriction": {
+                                                                    "base": "xs:string",
+                                                                    "xs:maxLength": {"value": 10}
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "name": "VoyageType",
+                                                            "minOccurs": 0,
+                                                            "type": "CodeDescriptionPair"
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "DischargeCollection",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:sequence": {
+                                    "xs:element": {
+                                        "name": "Discharge",
+                                        "minOccurs": 0,
+                                        "maxOccurs": "unbounded",
+                                        "xs:complexType": {
+                                            "xs:all": {
+                                                "xs:element": [
+                                                    {
+                                                        "name": "Port",
+                                                        "minOccurs": 1,
+                                                        "type": "UNLOCO"
+                                                    },
+                                                    {
+                                                        "name": "ActualArrival",
+                                                        "minOccurs": 0,
+                                                        "type": "emptiable_dateTime"
+                                                    },
+                                                    {
+                                                        "name": "ArrivalBerth",
+                                                        "minOccurs": 0,
+                                                        "xs:simpleType": {
+                                                            "xs:restriction": {
+                                                                "base": "xs:string",
+                                                                "xs:maxLength": {"value": 10}
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "name": "ArrivalCTO",
+                                                        "minOccurs": 0,
+                                                        "type": "OrganizationAddress"
+                                                    },
+                                                    {
+                                                        "name": "ArrivalReference",
+                                                        "minOccurs": 0,
+                                                        "xs:simpleType": {
+                                                            "xs:restriction": {
+                                                                "base": "xs:string",
+                                                                "xs:maxLength": {"value": 20}
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "name": "EstimatedArrival",
+                                                        "minOccurs": 0,
+                                                        "type": "emptiable_dateTime"
+                                                    },
+                                                    {
+                                                        "name": "FCLAvailability",
+                                                        "minOccurs": 0,
+                                                        "type": "emptiable_dateTime"
+                                                    },
+                                                    {
+                                                        "name": "FCLStorage",
+                                                        "minOccurs": 0,
+                                                        "type": "emptiable_dateTime"
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "name": "LoadingCollection",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:sequence": {
+                                    "xs:element": {
+                                        "name": "Loading",
+                                        "minOccurs": 0,
+                                        "maxOccurs": "unbounded",
+                                        "xs:complexType": {
+                                            "xs:all": {
+                                                "xs:element": [
+                                                    {
+                                                        "name": "Port",
+                                                        "minOccurs": 1,
+                                                        "type": "UNLOCO"
+                                                    },
+                                                    {
+                                                        "name": "ActualArrival",
+                                                        "minOccurs": 0,
+                                                        "type": "emptiable_dateTime"
+                                                    },
+                                                    {
+                                                        "name": "ActualDeparture",
+                                                        "minOccurs": 0,
+                                                        "type": "emptiable_dateTime"
+                                                    },
+                                                    {
+                                                        "name": "DepartureBerth",
+                                                        "minOccurs": 0,
+                                                        "xs:simpleType": {
+                                                            "xs:restriction": {
+                                                                "base": "xs:string",
+                                                                "xs:maxLength": {"value": 10}
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "name": "DepartureCTO",
+                                                        "minOccurs": 0,
+                                                        "type": "OrganizationAddress"
+                                                    },
+                                                    {
+                                                        "name": "DepartureReference",
+                                                        "minOccurs": 0,
+                                                        "xs:simpleType": {
+                                                            "xs:restriction": {
+                                                                "base": "xs:string",
+                                                                "xs:maxLength": {"value": 20}
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "name": "DocumentCutOff",
+                                                        "minOccurs": 0,
+                                                        "type": "emptiable_dateTime"
+                                                    },
+                                                    {
+                                                        "name": "EstimatedArrival",
+                                                        "minOccurs": 0,
+                                                        "type": "emptiable_dateTime"
+                                                    },
+                                                    {
+                                                        "name": "EstimatedDeparture",
+                                                        "minOccurs": 0,
+                                                        "type": "emptiable_dateTime"
+                                                    },
+                                                    {
+                                                        "name": "FCLCutOff",
+                                                        "minOccurs": 0,
+                                                        "type": "emptiable_dateTime"
+                                                    },
+                                                    {
+                                                        "name": "FCLReceivalCommences",
+                                                        "minOccurs": 0,
+                                                        "type": "emptiable_dateTime"
+                                                    },
+                                                    {
+                                                        "name": "HazzardCutOffDate",
+                                                        "minOccurs": 0,
+                                                        "type": "emptiable_dateTime"
+                                                    },
+                                                    {
+                                                        "name": "HazzardReceivalCommences",
+                                                        "minOccurs": 0,
+                                                        "type": "emptiable_dateTime"
+                                                    },
+                                                    {
+                                                        "name": "TerminalCode",
+                                                        "minOccurs": 0,
+                                                        "xs:simpleType": {
+                                                            "xs:restriction": {
+                                                                "base": "xs:string",
+                                                                "xs:maxLength": {"value": 10}
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "name": "TerminalName",
+                                                        "minOccurs": 0,
+                                                        "xs:simpleType": {
+                                                            "xs:restriction": {
+                                                                "base": "xs:string",
+                                                                "xs:maxLength": {"value": 35}
+                                                            }
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

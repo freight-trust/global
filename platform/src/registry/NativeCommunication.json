@@ -1,0 +1,396 @@
+{
+    "xs:schema": {
+        "targetNamespace": "http://www.cargowise.com/Schemas/Native/2011/11",
+        "version": 2,
+        "elementFormDefault": "qualified",
+        "xmlns": "http://www.cargowise.com/Schemas/Native/2011/11",
+        "xmlns:xs": "http://www.w3.org/2001/XMLSchema",
+        "xs:include": {"schemaLocation": "Native.xsd"},
+        "xs:element": {
+            "name": "Communication",
+            "type": "CommunicationData"
+        },
+        "xs:complexType": [
+            {
+                "name": "CommunicationData",
+                "xs:all": {
+                    "xs:element": {
+                        "name": "OrgSalesCall",
+                        "type": "NativeCommunication"
+                    }
+                },
+                "xs:attribute": {
+                    "name": "version",
+                    "type": "xs:token"
+                }
+            },
+            {
+                "name": "NativeCommunication",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "PK",
+                            "minOccurs": 0,
+                            "type": "xs:string"
+                        },
+                        {
+                            "name": "CallDate",
+                            "minOccurs": 0,
+                            "type": "emptiableDateTime"
+                        },
+                        {
+                            "name": "NextCall",
+                            "minOccurs": 0,
+                            "type": "emptiableDateTime"
+                        },
+                        {
+                            "name": "SalesCallNotes",
+                            "minOccurs": 0,
+                            "type": "xs:base64Binary"
+                        },
+                        {
+                            "name": "FollowupNotes",
+                            "minOccurs": 0,
+                            "type": "xs:base64Binary"
+                        },
+                        {
+                            "name": "SystemCreateTimeUtc",
+                            "minOccurs": 0,
+                            "type": "emptiableDateTime"
+                        },
+                        {
+                            "name": "SystemLastEditTimeUtc",
+                            "minOccurs": 0,
+                            "type": "emptiableDateTime"
+                        },
+                        {
+                            "name": "CommunicationID",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 20}
+                                }
+                            }
+                        },
+                        {
+                            "name": "LocationText",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 50}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Duration",
+                            "minOccurs": 0,
+                            "type": "emptiableDateTime"
+                        },
+                        {
+                            "name": "TypeOfCall",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 3}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Status",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 3}
+                                }
+                            }
+                        },
+                        {
+                            "name": "GrowthOutlook",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 3}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Category",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 3}
+                                }
+                            }
+                        },
+                        {
+                            "name": "IsReminderClientFacing",
+                            "minOccurs": 0,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "CallSummary",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 80}
+                                }
+                            }
+                        },
+                        {
+                            "name": "OrgHeader",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:all": {
+                                    "xs:element": [
+                                        {
+                                            "name": "Code",
+                                            "minOccurs": 0,
+                                            "xs:simpleType": {
+                                                "xs:restriction": {
+                                                    "base": "xs:string",
+                                                    "xs:maxLength": {"value": 12}
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "name": "PK",
+                                            "minOccurs": 0,
+                                            "type": "xs:string"
+                                        }
+                                    ]
+                                },
+                                "xs:attribute": {
+                                    "name": "Action",
+                                    "type": "Action"
+                                }
+                            }
+                        },
+                        {
+                            "name": "OrgContact",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:all": {
+                                    "xs:element": [
+                                        {
+                                            "name": "ContactName",
+                                            "minOccurs": 0,
+                                            "xs:simpleType": {
+                                                "xs:restriction": {
+                                                    "base": "xs:string",
+                                                    "xs:maxLength": {"value": 256}
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "name": "PK",
+                                            "minOccurs": 0,
+                                            "type": "xs:string"
+                                        },
+                                        {
+                                            "name": "OrgHeader",
+                                            "minOccurs": 0,
+                                            "xs:complexType": {
+                                                "xs:all": {
+                                                    "xs:element": [
+                                                        {
+                                                            "name": "Code",
+                                                            "minOccurs": 0,
+                                                            "xs:simpleType": {
+                                                                "xs:restriction": {
+                                                                    "base": "xs:string",
+                                                                    "xs:maxLength": {"value": 12}
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "name": "PK",
+                                                            "minOccurs": 0,
+                                                            "type": "xs:string"
+                                                        }
+                                                    ]
+                                                },
+                                                "xs:attribute": {
+                                                    "name": "Action",
+                                                    "type": "Action"
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                "xs:attribute": {
+                                    "name": "Action",
+                                    "type": "Action"
+                                }
+                            }
+                        },
+                        {
+                            "name": "SalesRep",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:all": {
+                                    "xs:element": [
+                                        {
+                                            "name": "Code",
+                                            "minOccurs": 0,
+                                            "xs:simpleType": {
+                                                "xs:restriction": {
+                                                    "base": "xs:string",
+                                                    "xs:maxLength": {"value": 3}
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "name": "LoginName",
+                                            "minOccurs": 0,
+                                            "xs:simpleType": {
+                                                "xs:restriction": {
+                                                    "base": "xs:string",
+                                                    "xs:maxLength": {"value": 104}
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "name": "PK",
+                                            "minOccurs": 0,
+                                            "type": "xs:string"
+                                        }
+                                    ]
+                                },
+                                "xs:attribute": [
+                                    {
+                                        "name": "Action",
+                                        "type": "Action"
+                                    },
+                                    {
+                                        "name": "TableName",
+                                        "type": "xs:string"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "LocationResource",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:all": {
+                                    "xs:element": [
+                                        {
+                                            "name": "Code",
+                                            "minOccurs": 0,
+                                            "xs:simpleType": {
+                                                "xs:restriction": {
+                                                    "base": "xs:string",
+                                                    "xs:maxLength": {"value": 3}
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "name": "LoginName",
+                                            "minOccurs": 0,
+                                            "xs:simpleType": {
+                                                "xs:restriction": {
+                                                    "base": "xs:string",
+                                                    "xs:maxLength": {"value": 104}
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "name": "PK",
+                                            "minOccurs": 0,
+                                            "type": "xs:string"
+                                        }
+                                    ]
+                                },
+                                "xs:attribute": [
+                                    {
+                                        "name": "Action",
+                                        "type": "Action"
+                                    },
+                                    {
+                                        "name": "TableName",
+                                        "type": "xs:string"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "LocationAddress",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:all": {
+                                    "xs:element": [
+                                        {
+                                            "name": "Code",
+                                            "minOccurs": 0,
+                                            "xs:simpleType": {
+                                                "xs:restriction": {
+                                                    "base": "xs:string",
+                                                    "xs:maxLength": {"value": 25}
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "name": "PK",
+                                            "minOccurs": 0,
+                                            "type": "xs:string"
+                                        },
+                                        {
+                                            "name": "OrgHeader",
+                                            "minOccurs": 0,
+                                            "xs:complexType": {
+                                                "xs:all": {
+                                                    "xs:element": [
+                                                        {
+                                                            "name": "Code",
+                                                            "minOccurs": 0,
+                                                            "xs:simpleType": {
+                                                                "xs:restriction": {
+                                                                    "base": "xs:string",
+                                                                    "xs:maxLength": {"value": 12}
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "name": "PK",
+                                                            "minOccurs": 0,
+                                                            "type": "xs:string"
+                                                        }
+                                                    ]
+                                                },
+                                                "xs:attribute": {
+                                                    "name": "Action",
+                                                    "type": "Action"
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                "xs:attribute": [
+                                    {
+                                        "name": "Action",
+                                        "type": "Action"
+                                    },
+                                    {
+                                        "name": "TableName",
+                                        "type": "xs:string"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                "xs:attribute": {
+                    "name": "Action",
+                    "type": "Action"
+                }
+            }
+        ]
+    }
+}

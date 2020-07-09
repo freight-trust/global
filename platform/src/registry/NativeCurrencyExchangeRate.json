@@ -1,0 +1,168 @@
+{
+    "xs:schema": {
+        "targetNamespace": "http://www.cargowise.com/Schemas/Native/2011/11",
+        "version": 2,
+        "elementFormDefault": "qualified",
+        "xmlns": "http://www.cargowise.com/Schemas/Native/2011/11",
+        "xmlns:xs": "http://www.w3.org/2001/XMLSchema",
+        "xs:include": {"schemaLocation": "Native.xsd"},
+        "xs:element": {
+            "name": "CurrencyExchangeRate",
+            "type": "CurrencyExchangeRateData"
+        },
+        "xs:complexType": [
+            {
+                "name": "CurrencyExchangeRateData",
+                "xs:all": {
+                    "xs:element": {
+                        "name": "RefExchangeRate",
+                        "type": "NativeCurrencyExchangeRate"
+                    }
+                },
+                "xs:attribute": {
+                    "name": "version",
+                    "type": "xs:token"
+                }
+            },
+            {
+                "name": "NativeCurrencyExchangeRate",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "PK",
+                            "minOccurs": 0,
+                            "type": "xs:string"
+                        },
+                        {
+                            "name": "ExRateType",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 3}
+                                }
+                            }
+                        },
+                        {
+                            "name": "StartDate",
+                            "minOccurs": 0,
+                            "type": "emptiableDateTime"
+                        },
+                        {
+                            "name": "ExpiryDate",
+                            "minOccurs": 0,
+                            "type": "emptiableDateTime"
+                        },
+                        {
+                            "name": "SellRate",
+                            "minOccurs": 0,
+                            "type": "xs:decimal"
+                        },
+                        {
+                            "name": "IsSystem",
+                            "minOccurs": 0,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "RefCurrency",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:all": {
+                                    "xs:element": [
+                                        {
+                                            "name": "Code",
+                                            "minOccurs": 0,
+                                            "xs:simpleType": {
+                                                "xs:restriction": {
+                                                    "base": "xs:string",
+                                                    "xs:maxLength": {"value": 3}
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "name": "PK",
+                                            "minOccurs": 0,
+                                            "type": "xs:string"
+                                        }
+                                    ]
+                                },
+                                "xs:attribute": {
+                                    "name": "Action",
+                                    "type": "Action"
+                                }
+                            }
+                        },
+                        {
+                            "name": "Client",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:all": {
+                                    "xs:element": [
+                                        {
+                                            "name": "Code",
+                                            "minOccurs": 0,
+                                            "xs:simpleType": {
+                                                "xs:restriction": {
+                                                    "base": "xs:string",
+                                                    "xs:maxLength": {"value": 12}
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "name": "PK",
+                                            "minOccurs": 0,
+                                            "type": "xs:string"
+                                        }
+                                    ]
+                                },
+                                "xs:attribute": [
+                                    {
+                                        "name": "Action",
+                                        "type": "Action"
+                                    },
+                                    {
+                                        "name": "TableName",
+                                        "type": "xs:string"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "GlbCompany",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:all": {
+                                    "xs:element": [
+                                        {
+                                            "name": "Code",
+                                            "minOccurs": 0,
+                                            "xs:simpleType": {
+                                                "xs:restriction": {
+                                                    "base": "xs:string",
+                                                    "xs:maxLength": {"value": 3}
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "name": "PK",
+                                            "minOccurs": 0,
+                                            "type": "xs:string"
+                                        }
+                                    ]
+                                },
+                                "xs:attribute": {
+                                    "name": "Action",
+                                    "type": "Action"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "xs:attribute": {
+                    "name": "Action",
+                    "type": "Action"
+                }
+            }
+        ]
+    }
+}

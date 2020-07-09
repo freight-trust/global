@@ -1,0 +1,19 @@
+{
+    "http://freighttrust.com/ft/schema": {
+        "$": {
+            "@context": {
+                "data": "http://freighttrust.com/data/schema"
+            },
+            "@remove": "meta"
+        },
+        "$.data": {
+            "@ns": {
+                "ns:default": "ft"
+            },
+            "@context": {
+                "ft": "http://freighttrust.com/"
+            },
+            "@type": "http://freighttrust.com/@type"
+        }
+    }
+}

@@ -1,0 +1,163 @@
+{
+    "xs:schema": {
+        "targetNamespace": "http://www.cargowise.com/Schemas/Native",
+        "version": 2,
+        "elementFormDefault": "qualified",
+        "xmlns": "http://www.cargowise.com/Schemas/Native",
+        "xmlns:xs": "http://www.w3.org/2001/XMLSchema",
+        "xs:element": {
+            "name": "Native",
+            "xs:complexType": {
+                "xs:sequence": {
+                    "xs:element": {
+                        "name": "Body",
+                        "xs:complexType": {
+                            "xs:sequence": {
+                                "xs:choice": {
+                                    "xs:element": [
+                                        {
+                                            "name": "AcceptabilityBand",
+                                            "type": "CriteriaData"
+                                        },
+                                        {
+                                            "name": "Airline",
+                                            "type": "CriteriaData"
+                                        },
+                                        {
+                                            "name": "BMSystem",
+                                            "type": "CriteriaData"
+                                        },
+                                        {
+                                            "name": "CommodityCode",
+                                            "type": "CriteriaData"
+                                        },
+                                        {
+                                            "name": "Company",
+                                            "type": "CriteriaData"
+                                        },
+                                        {
+                                            "name": "Container",
+                                            "type": "CriteriaData"
+                                        },
+                                        {
+                                            "name": "Country",
+                                            "type": "CriteriaData"
+                                        },
+                                        {
+                                            "name": "CurrencyExchangeRate",
+                                            "type": "CriteriaData"
+                                        },
+                                        {
+                                            "name": "CusStatement",
+                                            "type": "CriteriaData"
+                                        },
+                                        {
+                                            "name": "DangerousGood",
+                                            "type": "CriteriaData"
+                                        },
+                                        {
+                                            "name": "Organization",
+                                            "type": "CriteriaData"
+                                        },
+                                        {
+                                            "name": "Product",
+                                            "type": "CriteriaData"
+                                        },
+                                        {
+                                            "name": "Rate",
+                                            "type": "CriteriaData"
+                                        },
+                                        {
+                                            "name": "ServiceLevel",
+                                            "type": "CriteriaData"
+                                        },
+                                        {
+                                            "name": "Staff",
+                                            "type": "CriteriaData"
+                                        },
+                                        {
+                                            "name": "Tag",
+                                            "type": "CriteriaData"
+                                        },
+                                        {
+                                            "name": "TagRule",
+                                            "type": "CriteriaData"
+                                        },
+                                        {
+                                            "name": "UNLOCO",
+                                            "type": "CriteriaData"
+                                        },
+                                        {
+                                            "name": "Vessel",
+                                            "type": "CriteriaData"
+                                        },
+                                        {
+                                            "name": "WorkflowTemplate",
+                                            "type": "CriteriaData"
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "xs:complexType": [
+            {
+                "name": "CriteriaData",
+                "xs:all": {
+                    "xs:element": {
+                        "name": "CriteriaGroup",
+                        "type": "CriteriaGroupType"
+                    }
+                }
+            },
+            {
+                "name": "CriteriaGroupType",
+                "xs:sequence": {
+                    "xs:element": {
+                        "type": "CriteriaType",
+                        "name": "Criteria",
+                        "maxOccurs": "unbounded"
+                    }
+                },
+                "xs:attribute": {
+                    "type": "TypeEnum",
+                    "name": "Type",
+                    "use": "required"
+                }
+            },
+            {
+                "name": "CriteriaType",
+                "xs:simpleContent": {
+                    "xs:extension": {
+                        "base": "xs:string",
+                        "xs:attribute": [
+                            {
+                                "type": "xs:string",
+                                "name": "Entity",
+                                "use": "required"
+                            },
+                            {
+                                "type": "xs:string",
+                                "name": "FieldName",
+                                "use": "required"
+                            }
+                        ]
+                    }
+                }
+            }
+        ],
+        "xs:simpleType": {
+            "name": "TypeEnum",
+            "xs:restriction": {
+                "base": "xs:string",
+                "xs:enumeration": [
+                    {"value": "Key"},
+                    {"value": "Partial"}
+                ]
+            }
+        }
+    }
+}

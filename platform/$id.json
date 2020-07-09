@@ -1,0 +1,13 @@
+  /**
+   * It defines a URI for the schema, and the base URI that other URI references within the schema are resolved against.
+   *
+   * @example { $id: "string" }
+   *
+   * @reference https://json-schema.org/latest/json-schema-core.html#id-keyword
+   *
+   * @param {string} $id - an #id
+   * @returns {this}
+   */
+  id ($id: string) {
+    return this.copyWith({ plain: { $id } })
+  }

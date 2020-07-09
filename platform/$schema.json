@@ -1,0 +1,10 @@
+  /**
+   * Set $schema property
+   *
+   * @example { $schema: "string" }
+   *
+   * @param {string} $schema
+   */
+  schema ($schema: string) {
+    return this.copyWith({ $schema })
+  }

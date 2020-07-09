@@ -1,0 +1,219 @@
+{
+    "xs:schema": {
+        "targetNamespace": "http://www.cargowise.com/Schemas/Universal/2011/11",
+        "version": 1.1,
+        "elementFormDefault": "qualified",
+        "xmlns": "http://www.cargowise.com/Schemas/Universal/2011/11",
+        "xmlns:xs": "http://www.w3.org/2001/XMLSchema",
+        "xs:include": {"schemaLocation": "UniversalCommon.xsd"},
+        "xs:element": {
+            "name": "UniversalActivity",
+            "type": "UniversalActivityData"
+        },
+        "xs:complexType": [
+            {
+                "name": "UniversalActivityData",
+                "xs:all": {
+                    "xs:element": {
+                        "name": "Activity",
+                        "type": "Activity"
+                    }
+                },
+                "xs:attribute": {
+                    "name": "version",
+                    "type": "xs:token"
+                }
+            },
+            {
+                "name": "Activity",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "DataContext",
+                            "minOccurs": 0,
+                            "type": "DataContext"
+                        },
+                        {
+                            "name": "Summary",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 100}
+                                }
+                            }
+                        },
+                        {
+                            "name": "Branch",
+                            "minOccurs": 0,
+                            "type": "Branch"
+                        },
+                        {
+                            "name": "Company",
+                            "minOccurs": 0,
+                            "type": "Company"
+                        },
+                        {
+                            "name": "Conversation",
+                            "minOccurs": 0,
+                            "type": "Conversation"
+                        },
+                        {
+                            "name": "CreatedBy",
+                            "minOccurs": 0,
+                            "type": "Staff"
+                        },
+                        {
+                            "name": "Department",
+                            "minOccurs": 0,
+                            "type": "Department"
+                        },
+                        {
+                            "name": "Description",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 2147483647}
+                                }
+                            }
+                        },
+                        {
+                            "name": "JobCosting",
+                            "minOccurs": 0,
+                            "type": "JobCosting"
+                        },
+                        {
+                            "name": "Location",
+                            "minOccurs": 0,
+                            "type": "CodeDescriptionPair5Char"
+                        },
+                        {
+                            "name": "ProjectManager",
+                            "minOccurs": 0,
+                            "type": "Staff"
+                        },
+                        {
+                            "name": "SelectionCriterion1",
+                            "minOccurs": 0,
+                            "type": "CodeDescriptionPair"
+                        },
+                        {
+                            "name": "SelectionCriterion2",
+                            "minOccurs": 0,
+                            "type": "CodeDescriptionPair"
+                        },
+                        {
+                            "name": "SelectionCriterion3",
+                            "minOccurs": 0,
+                            "type": "CodeDescriptionPair"
+                        },
+                        {
+                            "name": "SelectionCriterion4",
+                            "minOccurs": 0,
+                            "type": "CodeDescriptionPair"
+                        },
+                        {
+                            "name": "SelectionCriterion5",
+                            "minOccurs": 0,
+                            "type": "CodeDescriptionPair"
+                        },
+                        {
+                            "name": "Status",
+                            "minOccurs": 0,
+                            "type": "CodeDescriptionPair"
+                        },
+                        {
+                            "name": "CustomizedFieldCollection",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:sequence": {
+                                    "xs:element": {
+                                        "name": "CustomizedField",
+                                        "minOccurs": 0,
+                                        "maxOccurs": "unbounded",
+                                        "type": "CustomizedField"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "name": "MilestoneCollection",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:sequence": {
+                                    "xs:element": {
+                                        "name": "Milestone",
+                                        "minOccurs": 0,
+                                        "maxOccurs": "unbounded",
+                                        "type": "Milestone"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "name": "NoteCollection",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:sequence": {
+                                    "xs:element": {
+                                        "name": "Note",
+                                        "minOccurs": 0,
+                                        "maxOccurs": "unbounded",
+                                        "type": "Note"
+                                    }
+                                },
+                                "xs:attribute": {
+                                    "name": "Content",
+                                    "type": "CollectionContent"
+                                }
+                            }
+                        },
+                        {
+                            "name": "OrganizationAddressCollection",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:sequence": {
+                                    "xs:element": {
+                                        "name": "OrganizationAddress",
+                                        "minOccurs": 0,
+                                        "maxOccurs": "unbounded",
+                                        "type": "OrganizationAddress"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "name": "RelatedActivityCollection",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:sequence": {
+                                    "xs:element": {
+                                        "name": "RelatedActivity",
+                                        "minOccurs": 0,
+                                        "maxOccurs": "unbounded",
+                                        "type": "Activity"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "name": "TaskSetCollection",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:sequence": {
+                                    "xs:element": {
+                                        "name": "TaskSet",
+                                        "minOccurs": 0,
+                                        "maxOccurs": "unbounded",
+                                        "type": "TaskSet"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,113 @@
+ ContainerUpdate:
+    type: object
+    properties:
+      tare_kg:
+        type: number
+        format: float
+      tare_lbs:
+        type: number
+        format: float
+      group_st:
+        type: string
+        format: XXXX
+      detail_st:
+        type: string
+        format: XXXX
+      max_payload_kg:
+        type: number
+        format: float
+      max_payload_lbs:
+        type: number
+        format: float
+      max_gross_mass_kg:
+        type: number
+        format: float
+      max_gross_mass_lbs:
+        type: number
+        format: float
+      cubic_capacity_cbm:
+        type: number
+        format: float
+      cubic_capacity_cuft:
+        type: number
+        format: float
+      stacking_kg:
+        type: number
+        format: float
+      stacking_lbs:
+        type: number
+        format: float
+      racking_kg:
+        type: number
+        format: float
+      racking_lbs:
+        type: number
+        format: float
+      racking_n:
+        type: number
+        format: float
+      external_length_mm:
+        type: number
+        format: float
+      external_width_mm:
+        type: number
+        format: float
+      external_height_mm:
+        type: number
+        format: float
+      internal_length_mm:
+        type: number
+        format: float
+      internal_width_mm:
+        type: number
+        format: float
+      internal_height_mm:
+        type: number
+        format: float
+      door_opening_width_mm:
+        type: number
+        format: float
+      door_opening_height_mm:
+        type: number
+        format: float
+      manufacture_number:
+        type: number
+        format: float
+      manufacture_date:
+        type: string
+        format: '1933-06-30'
+      manufacturer:
+        type: number
+        format: float
+      customs_approval:
+        type: number
+        format: float
+      customs_approval_type:
+        type: number
+        format: float
+      csc_approval:
+        type: number
+        format: float
+      timber_treatment_approval:
+        type: string
+      one_door_off_stacking_kg:
+        type: number
+        format: float
+      one_door_off_stacking_lbs:
+        type: number
+        format: float
+      one_door_off_racking_kg:
+        type: number
+        format: float
+      one_door_off_racking_lbs:
+        type: number
+        format: float
+      one_door_off_racking_n:
+        type: number
+        format: float
+      one_door_off_end_wall_strength_kg:
+        type: number
+        format: float
+      one_door_off_end_wall_strength_lbs:
+        type: number
+        format: float

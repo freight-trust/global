@@ -1,0 +1,391 @@
+{
+    "xs:schema": {
+        "targetNamespace": "http://www.cargowise.com/Schemas/Universal/2011/11",
+        "version": 1.1,
+        "elementFormDefault": "qualified",
+        "xmlns": "http://www.cargowise.com/Schemas/Universal/2011/11",
+        "xmlns:xs": "http://www.w3.org/2001/XMLSchema",
+        "xs:include": {"schemaLocation": "UniversalCommon.xsd"},
+        "xs:element": {
+            "name": "UniversalEvent",
+            "type": "UniversalEventData"
+        },
+        "xs:complexType": [
+            {
+                "name": "UniversalEventData",
+                "xs:all": {
+                    "xs:element": {
+                        "name": "Event",
+                        "type": "Event"
+                    }
+                },
+                "xs:attribute": {
+                    "name": "version",
+                    "type": "xs:token"
+                }
+            },
+            {
+                "name": "Event",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "DataContext",
+                            "minOccurs": 0,
+                            "type": "DataContext"
+                        },
+                        {
+                            "name": "EventTime",
+                            "minOccurs": 1,
+                            "type": "emptiable_dateTime"
+                        },
+                        {
+                            "name": "EventType",
+                            "minOccurs": 1,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 3}
+                                }
+                            }
+                        },
+                        {
+                            "name": "CreatedTime",
+                            "minOccurs": 0,
+                            "type": "emptiable_dateTime"
+                        },
+                        {
+                            "name": "EventParameters",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:all": {
+                                    "xs:element": [
+                                        {
+                                            "name": "CustomsReferenceNumber",
+                                            "minOccurs": 0,
+                                            "xs:simpleType": {
+                                                "xs:restriction": {
+                                                    "base": "xs:string",
+                                                    "xs:maxLength": {"value": 256}
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "name": "Department",
+                                            "minOccurs": 0,
+                                            "xs:simpleType": {
+                                                "xs:restriction": {
+                                                    "base": "xs:string",
+                                                    "xs:maxLength": {"value": 256}
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "name": "EquipmentReferenceNumber",
+                                            "minOccurs": 0,
+                                            "xs:simpleType": {
+                                                "xs:restriction": {
+                                                    "base": "xs:string",
+                                                    "xs:maxLength": {"value": 256}
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "name": "ExternalDocumentType",
+                                            "minOccurs": 0,
+                                            "xs:simpleType": {
+                                                "xs:restriction": {
+                                                    "base": "xs:string",
+                                                    "xs:maxLength": {"value": 256}
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "name": "Facility",
+                                            "minOccurs": 0,
+                                            "xs:simpleType": {
+                                                "xs:restriction": {
+                                                    "base": "xs:string",
+                                                    "xs:maxLength": {"value": 256}
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "name": "FlightDate",
+                                            "minOccurs": 0,
+                                            "type": "emptiable_dateTime"
+                                        },
+                                        {
+                                            "name": "Location",
+                                            "minOccurs": 0,
+                                            "xs:simpleType": {
+                                                "xs:restriction": {
+                                                    "base": "xs:string",
+                                                    "xs:maxLength": {"value": 256}
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "name": "MessageSubType",
+                                            "minOccurs": 0,
+                                            "xs:simpleType": {
+                                                "xs:restriction": {
+                                                    "base": "xs:string",
+                                                    "xs:maxLength": {"value": 256}
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "name": "MessageType",
+                                            "minOccurs": 0,
+                                            "xs:simpleType": {
+                                                "xs:restriction": {
+                                                    "base": "xs:string",
+                                                    "xs:maxLength": {"value": 256}
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "name": "Name",
+                                            "minOccurs": 0,
+                                            "xs:simpleType": {
+                                                "xs:restriction": {
+                                                    "base": "xs:string",
+                                                    "xs:maxLength": {"value": 256}
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "name": "New",
+                                            "minOccurs": 0,
+                                            "xs:simpleType": {
+                                                "xs:restriction": {
+                                                    "base": "xs:string",
+                                                    "xs:maxLength": {"value": 256}
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "name": "Old",
+                                            "minOccurs": 0,
+                                            "xs:simpleType": {
+                                                "xs:restriction": {
+                                                    "base": "xs:string",
+                                                    "xs:maxLength": {"value": 256}
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "name": "Partial",
+                                            "minOccurs": 0,
+                                            "type": "xs:int"
+                                        },
+                                        {
+                                            "name": "Reason",
+                                            "minOccurs": 0,
+                                            "xs:simpleType": {
+                                                "xs:restriction": {
+                                                    "base": "xs:string",
+                                                    "xs:maxLength": {"value": 256}
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "name": "ReceiptNumber",
+                                            "minOccurs": 0,
+                                            "xs:simpleType": {
+                                                "xs:restriction": {
+                                                    "base": "xs:string",
+                                                    "xs:maxLength": {"value": 256}
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "name": "ReferenceNumber",
+                                            "minOccurs": 0,
+                                            "xs:simpleType": {
+                                                "xs:restriction": {
+                                                    "base": "xs:string",
+                                                    "xs:maxLength": {"value": 256}
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "name": "RequestNumber",
+                                            "minOccurs": 0,
+                                            "xs:simpleType": {
+                                                "xs:restriction": {
+                                                    "base": "xs:string",
+                                                    "xs:maxLength": {"value": 256}
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "name": "Service",
+                                            "minOccurs": 0,
+                                            "xs:simpleType": {
+                                                "xs:restriction": {
+                                                    "base": "xs:string",
+                                                    "xs:maxLength": {"value": 256}
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "name": "Total",
+                                            "minOccurs": 0,
+                                            "type": "xs:int"
+                                        },
+                                        {
+                                            "name": "Type",
+                                            "minOccurs": 0,
+                                            "xs:simpleType": {
+                                                "xs:restriction": {
+                                                    "base": "xs:string",
+                                                    "xs:maxLength": {"value": 256}
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "name": "VoyageFlightNumber",
+                                            "minOccurs": 0,
+                                            "xs:simpleType": {
+                                                "xs:restriction": {
+                                                    "base": "xs:string",
+                                                    "xs:maxLength": {"value": 256}
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "EventReference",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 1024}
+                                }
+                            }
+                        },
+                        {
+                            "name": "IsCancelled",
+                            "minOccurs": 0,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "IsEstimate",
+                            "minOccurs": 0,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "AdditionalContextCollection",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:sequence": {
+                                    "xs:element": {
+                                        "name": "AdditionalContext",
+                                        "minOccurs": 0,
+                                        "maxOccurs": "unbounded",
+                                        "xs:complexType": {
+                                            "xs:all": {
+                                                "xs:element": [
+                                                    {
+                                                        "name": "DataContext",
+                                                        "minOccurs": 0,
+                                                        "type": "DataContext"
+                                                    },
+                                                    {
+                                                        "name": "ContextCollection",
+                                                        "minOccurs": 0,
+                                                        "xs:complexType": {
+                                                            "xs:sequence": {
+                                                                "xs:element": {
+                                                                    "name": "Context",
+                                                                    "minOccurs": 0,
+                                                                    "maxOccurs": "unbounded",
+                                                                    "type": "Context"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "name": "AdditionalFieldsToUpdateCollection",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:sequence": {
+                                    "xs:element": {
+                                        "name": "AdditionalFieldsToUpdate",
+                                        "minOccurs": 0,
+                                        "maxOccurs": "unbounded",
+                                        "xs:complexType": {
+                                            "xs:all": {
+                                                "xs:element": [
+                                                    {
+                                                        "name": "Type",
+                                                        "minOccurs": 1,
+                                                        "xs:simpleType": {
+                                                            "xs:restriction": {
+                                                                "base": "xs:string",
+                                                                "xs:maxLength": {"value": 128}
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "name": "Value",
+                                                        "minOccurs": 1,
+                                                        "xs:simpleType": {
+                                                            "xs:restriction": {
+                                                                "base": "xs:string",
+                                                                "xs:maxLength": {"value": 1024}
+                                                            }
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "name": "AttachedDocumentCollection",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:sequence": {
+                                    "xs:element": {
+                                        "name": "AttachedDocument",
+                                        "minOccurs": 0,
+                                        "maxOccurs": "unbounded",
+                                        "type": "AttachedDocument"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "name": "ContextCollection",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:sequence": {
+                                    "xs:element": {
+                                        "name": "Context",
+                                        "minOccurs": 0,
+                                        "maxOccurs": "unbounded",
+                                        "type": "Context"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

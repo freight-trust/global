@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "properties": {
+    "Conveyance": {
+      "type": "string"
+    },
+    "transportStatus": {
+      "type": "boolean"
+    },
+    "transportEmitEvents": {
+      "type": "string",
+      "enum": [
+        "Delivered",
+        "Amendment",
+        "Delayed",
+        "Cancelled",
+        "Other"
+      ]
+    }
+  }
+}

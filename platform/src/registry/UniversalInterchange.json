@@ -1,0 +1,170 @@
+{
+    "xs:schema": {
+        "xmlns": "http://www.cargowise.com/Schemas/Universal/2011/11",
+        "xmlns:b": "http://schemas.microsoft.com/BizTalk/2003",
+        "targetNamespace": "http://www.cargowise.com/Schemas/Universal/2011/11",
+        "xmlns:xs": "http://www.w3.org/2001/XMLSchema",
+        "elementFormDefault": "qualified",
+        "xs:element": {
+            "name": "UniversalInterchange",
+            "xs:complexType": {
+                "xs:sequence": {
+                    "xs:element": [
+                        {
+                            "name": "Header",
+                            "xs:complexType": {
+                                "xs:sequence": {
+                                    "xs:element": [
+                                        {
+                                            "name": "SenderID",
+                                            "type": "xs:string"
+                                        },
+                                        {
+                                            "name": "RecipientID",
+                                            "type": "xs:string"
+                                        },
+                                        {
+                                            "name": "Acknowledgement",
+                                            "minOccurs": 0,
+                                            "xs:complexType": {
+                                                "xs:sequence": {
+                                                    "xs:element": [
+                                                        {
+                                                            "name": "Required",
+                                                            "xs:simpleType": {
+                                                                "xs:restriction": {
+                                                                    "base": "xs:string",
+                                                                    "xs:enumeration": [
+                                                                        {"value": "OnAll"},
+                                                                        {"value": "OnError"},
+                                                                        {"value": "OnSuccess"}
+                                                                    ]
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "name": "Channel",
+                                                            "xs:simpleType": {
+                                                                "xs:restriction": {
+                                                                    "base": "xs:string",
+                                                                    "xs:enumeration": [
+                                                                        {"value": "eHub"},
+                                                                        {"value": "eAdaptor"}
+                                                                    ]
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "name": "RecipientID",
+                                                            "type": "xs:string"
+                                                        },
+                                                        {
+                                                            "name": "ContextCollection",
+                                                            "minOccurs": 0,
+                                                            "xs:complexType": {
+                                                                "xs:sequence": {
+                                                                    "xs:element": {
+                                                                        "name": "Context",
+                                                                        "maxOccurs": "unbounded",
+                                                                        "xs:complexType": {
+                                                                            "xs:sequence": {
+                                                                                "xs:element": [
+                                                                                    {
+                                                                                        "name": "Type",
+                                                                                        "type": "xs:string"
+                                                                                    },
+                                                                                    {
+                                                                                        "name": "Value",
+                                                                                        "type": "xs:string"
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "name": "DeliveryMetadata",
+                                            "minOccurs": 0,
+                                            "xs:complexType": {
+                                                "xs:sequence": {
+                                                    "xs:element": {
+                                                        "name": "ValueCollection",
+                                                        "minOccurs": 0,
+                                                        "xs:complexType": {
+                                                            "xs:sequence": {
+                                                                "xs:element": {
+                                                                    "name": "Value",
+                                                                    "maxOccurs": "unbounded",
+                                                                    "xs:complexType": {
+                                                                        "xs:sequence": {
+                                                                            "xs:element": [
+                                                                                {
+                                                                                    "name": "Name",
+                                                                                    "type": "xs:string"
+                                                                                },
+                                                                                {
+                                                                                    "name": "Type",
+                                                                                    "xs:simpleType": {
+                                                                                        "xs:restriction": {
+                                                                                            "base": "xs:string",
+                                                                                            "xs:enumeration": [
+                                                                                                {"value": "String"},
+                                                                                                {"value": "DateTime"},
+                                                                                                {"value": "Integer"},
+                                                                                                {"value": "Decimal"},
+                                                                                                {"value": "Byte"},
+                                                                                                {"value": "Boolean"},
+                                                                                                {"value": "Short"},
+                                                                                                {"value": "DateTimeOffset"},
+                                                                                                {"value": "Geography"},
+                                                                                                {"value": "Base64Binary"}
+                                                                                            ]
+                                                                                        }
+                                                                                    }
+                                                                                },
+                                                                                {
+                                                                                    "name": "Data",
+                                                                                    "type": "xs:string"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "name": "Body",
+                            "xs:complexType": {
+                                "xs:sequence": {
+                                    "xs:any": {
+                                        "minOccurs": 0,
+                                        "maxOccurs": "unbounded",
+                                        "processContents": "skip"
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                },
+                "xs:attribute": {
+                    "name": "version",
+                    "type": "xs:token"
+                }
+            }
+        }
+    }
+}

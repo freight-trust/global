@@ -1,0 +1,428 @@
+{
+    "xs:schema": {
+        "targetNamespace": "http://www.cargowise.com/Schemas/Native/2011/11",
+        "version": 2,
+        "elementFormDefault": "qualified",
+        "xmlns": "http://www.cargowise.com/Schemas/Native/2011/11",
+        "xmlns:xs": "http://www.w3.org/2001/XMLSchema",
+        "xs:include": {"schemaLocation": "Native.xsd"},
+        "xs:element": {
+            "name": "UNLOCO",
+            "type": "UNLOCOData"
+        },
+        "xs:complexType": [
+            {
+                "name": "UNLOCOData",
+                "xs:all": {
+                    "xs:element": {
+                        "name": "RefUNLOCO",
+                        "type": "NativeUNLOCO"
+                    }
+                },
+                "xs:attribute": {
+                    "name": "version",
+                    "type": "xs:token"
+                }
+            },
+            {
+                "name": "NativeUNLOCO",
+                "xs:all": {
+                    "xs:element": [
+                        {
+                            "name": "PK",
+                            "minOccurs": 0,
+                            "type": "xs:string"
+                        },
+                        {
+                            "name": "PortName",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 35}
+                                }
+                            }
+                        },
+                        {
+                            "name": "NameWithDiacriticals",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 35}
+                                }
+                            }
+                        },
+                        {
+                            "name": "HasAirport",
+                            "minOccurs": 0,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "HasSeaport",
+                            "minOccurs": 0,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "HasRail",
+                            "minOccurs": 0,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "HasRoad",
+                            "minOccurs": 0,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "HasPost",
+                            "minOccurs": 0,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "HasCustomsLodge",
+                            "minOccurs": 0,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "HasUnload",
+                            "minOccurs": 0,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "HasStore",
+                            "minOccurs": 0,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "HasTerminal",
+                            "minOccurs": 0,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "HasDischarge",
+                            "minOccurs": 0,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "HasOutport",
+                            "minOccurs": 0,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "HasBorderCrossing",
+                            "minOccurs": 0,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "IsActive",
+                            "minOccurs": 0,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "IsSystem",
+                            "minOccurs": 0,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "IsUpdatable",
+                            "minOccurs": 0,
+                            "type": "xs:boolean"
+                        },
+                        {
+                            "name": "Code",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 5}
+                                }
+                            }
+                        },
+                        {
+                            "name": "IATA",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 3}
+                                }
+                            }
+                        },
+                        {
+                            "name": "IATARegionCode",
+                            "minOccurs": 0,
+                            "xs:simpleType": {
+                                "xs:restriction": {
+                                    "base": "xs:string",
+                                    "xs:maxLength": {"value": 3}
+                                }
+                            }
+                        },
+                        {
+                            "name": "RefTimeZoneSet",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:all": {
+                                    "xs:element": [
+                                        {
+                                            "name": "TimeZoneSetName",
+                                            "minOccurs": 0,
+                                            "xs:simpleType": {
+                                                "xs:restriction": {
+                                                    "base": "xs:string",
+                                                    "xs:maxLength": {"value": 35}
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "name": "PK",
+                                            "minOccurs": 0,
+                                            "type": "xs:string"
+                                        },
+                                        {
+                                            "name": "StandardZone",
+                                            "minOccurs": 0,
+                                            "xs:complexType": {
+                                                "xs:all": {
+                                                    "xs:element": {
+                                                        "name": "PK",
+                                                        "minOccurs": 0,
+                                                        "type": "xs:string"
+                                                    }
+                                                },
+                                                "xs:attribute": [
+                                                    {
+                                                        "name": "Action",
+                                                        "type": "Action"
+                                                    },
+                                                    {
+                                                        "name": "TableName",
+                                                        "type": "xs:string"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "name": "DaylightSavingZone",
+                                            "minOccurs": 0,
+                                            "xs:complexType": {
+                                                "xs:all": {
+                                                    "xs:element": {
+                                                        "name": "PK",
+                                                        "minOccurs": 0,
+                                                        "type": "xs:string"
+                                                    }
+                                                },
+                                                "xs:attribute": [
+                                                    {
+                                                        "name": "Action",
+                                                        "type": "Action"
+                                                    },
+                                                    {
+                                                        "name": "TableName",
+                                                        "type": "xs:string"
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                },
+                                "xs:attribute": {
+                                    "name": "Action",
+                                    "type": "Action"
+                                }
+                            }
+                        },
+                        {
+                            "name": "RefCountryStates",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:all": {
+                                    "xs:element": [
+                                        {
+                                            "name": "CountryCode",
+                                            "minOccurs": 0,
+                                            "xs:simpleType": {
+                                                "xs:restriction": {"base": "xs:string"}
+                                            }
+                                        },
+                                        {
+                                            "name": "Code",
+                                            "minOccurs": 0,
+                                            "xs:simpleType": {
+                                                "xs:restriction": {
+                                                    "base": "xs:string",
+                                                    "xs:maxLength": {"value": 3}
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "name": "PK",
+                                            "minOccurs": 0,
+                                            "type": "xs:string"
+                                        },
+                                        {
+                                            "name": "CountryCodeExternal",
+                                            "minOccurs": 0,
+                                            "xs:complexType": {
+                                                "xs:all": {
+                                                    "xs:element": [
+                                                        {
+                                                            "name": "Code",
+                                                            "minOccurs": 0,
+                                                            "xs:simpleType": {
+                                                                "xs:restriction": {
+                                                                    "base": "xs:string",
+                                                                    "xs:maxLength": {"value": 2}
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "name": "PK",
+                                                            "minOccurs": 0,
+                                                            "type": "xs:string"
+                                                        }
+                                                    ]
+                                                },
+                                                "xs:attribute": [
+                                                    {
+                                                        "name": "Action",
+                                                        "type": "Action"
+                                                    },
+                                                    {
+                                                        "name": "TableName",
+                                                        "type": "xs:string"
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                },
+                                "xs:attribute": {
+                                    "name": "Action",
+                                    "type": "Action"
+                                }
+                            }
+                        },
+                        {
+                            "name": "CountryCode",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:all": {
+                                    "xs:element": [
+                                        {
+                                            "name": "Code",
+                                            "minOccurs": 0,
+                                            "xs:simpleType": {
+                                                "xs:restriction": {
+                                                    "base": "xs:string",
+                                                    "xs:maxLength": {"value": 2}
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "name": "PK",
+                                            "minOccurs": 0,
+                                            "type": "xs:string"
+                                        }
+                                    ]
+                                },
+                                "xs:attribute": [
+                                    {
+                                        "name": "Action",
+                                        "type": "Action"
+                                    },
+                                    {
+                                        "name": "TableName",
+                                        "type": "xs:string"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "RefZonePivotCollection",
+                            "minOccurs": 0,
+                            "xs:complexType": {
+                                "xs:sequence": {
+                                    "xs:element": {
+                                        "name": "RefZonePivot",
+                                        "minOccurs": 0,
+                                        "maxOccurs": "unbounded",
+                                        "xs:complexType": {
+                                            "xs:all": {
+                                                "xs:element": [
+                                                    {
+                                                        "name": "PK",
+                                                        "minOccurs": 0,
+                                                        "type": "xs:string"
+                                                    },
+                                                    {
+                                                        "name": "RefZoneHeader",
+                                                        "minOccurs": 0,
+                                                        "xs:complexType": {
+                                                            "xs:all": {
+                                                                "xs:element": [
+                                                                    {
+                                                                        "name": "Code",
+                                                                        "minOccurs": 0,
+                                                                        "xs:simpleType": {
+                                                                            "xs:restriction": {
+                                                                                "base": "xs:string",
+                                                                                "xs:maxLength": {"value": 4}
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        "name": "ZoneType",
+                                                                        "minOccurs": 0,
+                                                                        "xs:simpleType": {
+                                                                            "xs:restriction": {
+                                                                                "base": "xs:string",
+                                                                                "xs:maxLength": {"value": 3}
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        "name": "Description",
+                                                                        "minOccurs": 0,
+                                                                        "xs:simpleType": {
+                                                                            "xs:restriction": {
+                                                                                "base": "xs:string",
+                                                                                "xs:maxLength": {"value": 35}
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        "name": "PK",
+                                                                        "minOccurs": 0,
+                                                                        "type": "xs:string"
+                                                                    }
+                                                                ]
+                                                            },
+                                                            "xs:attribute": {
+                                                                "name": "Action",
+                                                                "type": "Action"
+                                                            }
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            "xs:attribute": {
+                                                "name": "Action",
+                                                "type": "Action"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                },
+                "xs:attribute": {
+                    "name": "Action",
+                    "type": "Action"
+                }
+            }
+        ]
+    }
+}

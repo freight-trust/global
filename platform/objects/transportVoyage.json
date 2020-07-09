@@ -1,0 +1,25 @@
+  
+{
+            "Voyage": {
+                "type": "object",
+                "properties": {
+                    "PilotageExemption": {
+                        "description": "The identifier of a pilotage exemption for this logistics transport movement.",
+                        "type": "string"
+                    },
+                    "SailingAdviceNotificationInformation": {
+                        "description": "Sailing advice notification information, expressed as text, for this logistics transport movement.",
+                        "type": "string"
+                    }
+                },
+                "composable": [
+                    {
+                        "$ref": "$composable[tuple1]"
+                    },
+                    {
+                        "type": "object"
+                    }
+                ]
+            }
+        }
+    }
