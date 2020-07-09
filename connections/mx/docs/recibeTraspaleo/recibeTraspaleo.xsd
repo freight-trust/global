@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns:tns="http://privados.recintos.ws" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xs:import namespace="http://privados.recintos.ws" schemaLocation="tns.xsd"/>
+  <xs:import namespace="http://www.w3.org/2001/XMLSchema-instance" schemaLocation="xsi.xsd"/>
+  <xs:element name="informacionGeneral">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="idOperacion"/>
+        <xs:element ref="idAsociado"/>
+        <xs:element ref="fechRegistro"/>
+        <xs:element ref="idDetalleMovimiento"/>
+        <xs:element ref="idMovimiento"/>
+        <xs:element ref="idTipoOperacion"/>
+        <xs:element ref="idRecintoFiscalizado"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="idOperacion" type="xs:integer"/>
+  <xs:element name="fechRegistro" type="xs:dateTime"/>
+  <xs:element name="idDetalleMovimiento" type="xs:integer"/>
+  <xs:element name="idMovimiento" type="xs:integer"/>
+  <xs:element name="idTipoOperacion" type="xs:integer"/>
+  <xs:element name="idRecintoFiscalizado" type="xs:integer"/>
+  <xs:element name="contenedorOrigen">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="inicialesContenedor"/>
+        <xs:element ref="numeroContenedor"/>
+        <xs:element ref="tipoContenedor"/>
+        <xs:element ref="estadoDelContenedor"/>
+        <xs:element maxOccurs="unbounded" ref="sellos"/>
+        <xs:element maxOccurs="unbounded" ref="guiaHouse"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="contenedorDestino">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="inicialesContenedor"/>
+        <xs:element ref="numeroContenedor"/>
+        <xs:element ref="tipoContenedor"/>
+        <xs:element ref="estadoDelContenedor"/>
+        <xs:element maxOccurs="unbounded" ref="sellos"/>
+        <xs:element maxOccurs="unbounded" ref="guiaHouse"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="idAsociado" type="xs:integer"/>
+  <xs:element name="inicialesContenedor" type="xs:string"/>
+  <xs:element name="numeroContenedor" type="xs:string"/>
+  <xs:element name="tipoContenedor" type="xs:string"/>
+  <xs:element name="estadoDelContenedor" type="xs:string"/>
+  <xs:element name="sellos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="sello"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sello" type="xs:string"/>
+  <xs:element name="guiaHouse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="numeroGuiaBL"/>
+        <xs:element ref="idAsociado"/>
+        <xs:element ref="cveFolioCAAT"/>
+        <xs:element ref="mercancia"/>
+        <xs:element maxOccurs="unbounded" ref="personas"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="numeroGuiaBL" type="xs:string"/>
+  <xs:element name="cveFolioCAAT" type="xs:string"/>
+  <xs:element name="mercancia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="numSecuencia"/>
+        <xs:element ref="cvepaisOrigen"/>
+        <xs:element ref="descripcionMercancia"/>
+        <xs:element ref="cveImo"/>
+        <xs:element ref="cveVid"/>
+        <xs:element ref="valorMercancia"/>
+        <xs:element ref="cveMoneda"/>
+        <xs:element ref="numPiezas"/>
+        <xs:element ref="cveUmPiezas"/>
+        <xs:element ref="numPeso"/>
+        <xs:element ref="cvePeso"/>
+        <xs:element ref="condicionCarga"/>
+        <xs:element ref="cveTipoMercancia"/>
+        <xs:element ref="volumenMercancia"/>
+        <xs:element ref="Observaciones"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="numSecuencia" type="xs:string"/>
+  <xs:element name="cvepaisOrigen" type="xs:string"/>
+  <xs:element name="descripcionMercancia" type="xs:string"/>
+  <xs:element name="cveImo" type="xs:string"/>
+  <xs:element name="cveVid" type="xs:string"/>
+  <xs:element name="valorMercancia" type="xs:decimal"/>
+  <xs:element name="cveMoneda" type="xs:string"/>
+  <xs:element name="numPiezas" type="xs:integer"/>
+  <xs:element name="cveUmPiezas" type="xs:string"/>
+  <xs:element name="numPeso" type="xs:decimal"/>
+  <xs:element name="cvePeso" type="xs:decimal"/>
+  <xs:element name="condicionCarga" type="xs:string"/>
+  <xs:element name="cveTipoMercancia" type="xs:string"/>
+  <xs:element name="volumenMercancia" type="xs:decimal"/>
+  <xs:element name="Observaciones" type="xs:string"/>
+  <xs:element name="personas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ideTipoPersona"/>
+        <xs:element ref="nombre"/>
+        <xs:element ref="domicilio"/>
+        <xs:element ref="cp"/>
+        <xs:element ref="municipio"/>
+        <xs:element ref="entFed"/>
+        <xs:element ref="pais"/>
+        <xs:element ref="rfc"/>
+        <xs:element ref="email"/>
+        <xs:element ref="ciudad"/>
+        <xs:element ref="contacto"/>
+        <xs:element ref="tprTelefono"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ideTipoPersona" type="xs:string"/>
+  <xs:element name="nombre" type="xs:string"/>
+  <xs:element name="domicilio" type="xs:string"/>
+  <xs:element name="cp" type="xs:string"/>
+  <xs:element name="municipio" type="xs:string"/>
+  <xs:element name="entFed" type="xs:string"/>
+  <xs:element name="pais" type="xs:string"/>
+  <xs:element name="rfc" type="xs:string"/>
+  <xs:element name="email" type="xs:string"/>
+  <xs:element name="ciudad" type="xs:string"/>
+  <xs:element name="contacto" type="xs:string"/>
+  <xs:element name="tprTelefono" type="xs:string"/>
+</xs:schema>

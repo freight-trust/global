@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="http://privados.recintos.ws" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xs:import schemaLocation="recibeTransferencia.xsd"/>
+  <xs:import namespace="http://privados.recintos.ws" schemaLocation="tns.xsd"/>
+  <xs:attribute name="schemaLocation"/>
+</xs:schema>
