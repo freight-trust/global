@@ -1,0 +1,21 @@
+{
+  "server": {
+    "http_addr": ":4444",
+    "grpc_addr": ":7899",
+    "tls_cert_file": "./fixtures/notary-signer.crt",
+    "tls_key_file": "./fixtures/notary-signer.key",
+    "client_ca_file": "./fixtures/notary-server.crt"
+  },
+  "logging": {
+    "level": 2
+  },
+  "storage": {
+    "backend": "memory",
+  },
+  "reporting": {
+    "bugsnag": {
+      "api_key": "null",
+      "release_stage": "development"
+    }
+  }
+}
