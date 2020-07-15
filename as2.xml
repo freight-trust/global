@@ -1,0 +1,154 @@
+<maidenlane>
+	<properties
+		storageBaseDir="/opt/MaidenLane/data"
+		log_date_format="yyyy-MM-dd HH:mm:ss.SSS"
+		sql_timestamp_format="yyyy-MM-dd HH:mm:ss.SSS"
+		as2_message_id_format="OPENAS2-$date.ddMMyyyyHHmmssZ$-$rand.UUID$@$msg.sender.as2_id$_$msg.receiver.as2_id$"
+		as2_async_mdn_url="http://localhost:10081"
+	/>
+	<certificates classname="org.maidenlane.cert.PKCS12CertificateFactory"
+		filename="/opt/MaidenLane/config/store_managed.p12"
+		password="testast2"
+		interval="5"/>
+
+	<partnerships classname="org.maidenlane.partner.XMLPartnershipFactory"
+		filename="/opt/MaidenLane/config/partnerships.xml"
+		interval="5"/>
+
+	<loggers>
+		<logger classname="org.maidenlane.logging.ConsoleLogger"/>
+
+		<!-- Remove this comment to enable emailing of exceptions
+		<logger classname="org.maidenlane.logging.EmailLogger"
+			show="terminated"
+			javax.mail.properties.file="%home%/java.mail.properties"
+			from="maidenlane"
+			to="your email address"
+			smtpserver="your smtp server"
+			smtpauth="true"
+			smtpuser="mySmtpUserId"
+			smtppwd="mySmtpPwd"
+			subject="$exception.name$: $exception.message$"
+			bodytemplate="%home%/emailtemplate.txt"/>
+		-->
+
+		<logger classname="org.maidenlane.logging.FileLogger"
+			filename="/opt/MaidenLane/logs/log-$date.yyyyMMdd$.txt"/>
+		<!-- Remove this comment to enable socket logging
+		<logger classname="org.maidenlane.logging.SocketLogger"
+			ipaddr="127.0.0.1"
+			portid="19999"/>
+		-->
+	</loggers>
+	<commands classname="org.maidenlane.cmd.XMLCommandRegistry"
+		filename="%home%/commands.xml"/>
+
+	<commandProcessors>
+		<commandProcessor classname="org.maidenlane.cmd.processor.StreamCommandProcessor"/>
+		<commandProcessor classname="org.maidenlane.cmd.processor.SocketCommandProcessor"
+			portId="14321"
+			userid="userID"
+			password="pWd"/>
+	</commandProcessors>
+	<processor classname="org.maidenlane.processor.DefaultProcessor"
+		pendingMDN="$properties.storageBaseDir$/pendingMDN3"
+		pendingMDNinfo="$properties.storageBaseDir$/pendinginfoMDN3"
+	>
+		<module classname="org.maidenlane.processor.sender.AS2SenderModule"
+			retries="5"/>
+
+		<module classname="org.maidenlane.processor.sender.MDNSenderModule"
+			retries="3"/>
+
+		<!-- This directory polling module will parse the filename to get a sender, receiver and name of file to send to partner.
+		     For instance, a file named MyComapny_OID-PartnerB_OID-OrderID-745634.edi would be sent from MyCompany to PartnerB.
+		     The name of the file sent to the partner will be "OrderID-745634.edi" -->
+		<module classname="org.maidenlane.processor.receiver.AS2DirectoryPollingModule"
+			outboxdir="$properties.storageBaseDir$/toAny"
+			errordir="$properties.storageBaseDir$/toAny/error"
+			interval="5"
+			delimiters="-"
+			mergeextratokens="true"
+			sendfilename="true"
+			format="sender.as2_id, receiver.as2_id, attributes.filename"
+			mimetype="application/EDI-X12" />
+
+		<!-- This directory polling module will is dedicated to sending to partner PartnerA_OID -->
+		<module classname="org.maidenlane.processor.receiver.AS2DirectoryPollingModule"
+			outboxdir="$properties.storageBaseDir$/toPartnerA/"
+			errordir="$properties.storageBaseDir$/toPartnerA/error"
+			interval="5"
+			defaults="sender.as2_id=MyCompany_OID, receiver.as2_id=PartnerA_OID"
+			sendfilename="true"
+			mimetype="application/EDI-X12"/>
+
+		<!-- This directory polling module will is dedicated to sending to partner PartnerB_OID -->
+		<module classname="org.maidenlane.processor.receiver.AS2DirectoryPollingModule"
+			outboxdir="$properties.storageBaseDir$/toPartnerB"
+			errordir="$properties.storageBaseDir$/toPartnerB/error"
+			interval="5"
+			defaults="sender.as2_id=MyCompany_OID, receiver.as2_id=PartnerB_OID"
+			sendfilename="true"
+			mimetype="application/EDI-X12"/>
+
+		<module classname="org.maidenlane.processor.msgtracking.DbTrackingModule"
+			use_embedded_db="false"
+			force_load_jdbc_driver="false"
+			db_user="root"
+			db_pwd="Loop1234####"
+			db_name="maidenlane"
+			db_directory="/opt/MaidenLane/DB"
+			jdbc_driver="org.mysql.Driver"
+			jdbc_connect_string="jdbc:mysql://mysql:3306/$component.db_name$"
+			sql_escape_character="'"
+		/>
+
+		<module classname="org.maidenlane.processor.storage.MDNFileModule"
+			filename="$properties.storageBaseDir$/$mdn.msg.sender.as2_id$-$mdn.msg.receiver.as2_id$/mdn/$date.yyyy-MM-dd$/$mdn.msg.content-disposition.filename$-$mdn.msg.headers.message-id$"
+			protocol="as2"
+			tempdir="$properties.storageBaseDir$/temp"/>
+
+		<module classname="org.maidenlane.processor.storage.MessageFileModule"
+			filename="$properties.storageBaseDir$/$msg.sender.as2_id$-$msg.receiver.as2_id$/inbox/$msg.content-disposition.filename$-$msg.headers.message-id$"
+			header="$properties.storageBaseDir$/$msg.sender.as2_id$-$msg.receiver.as2_id$/msgheaders/$date.yyyy-MM-dd$/$msg.content-disposition.filename$-$msg.headers.message-id$"
+			protocol="as2"
+			tempdir="$properties.storageBaseDir$/temp"/>
+
+		<module classname="org.maidenlane.processor.receiver.AS2ReceiverModule"
+			port="10080"
+			errordir="$properties.storageBaseDir$/inbox/error"
+			errorformat="sender.as2_id, receiver.as2_id, headers.message-id"/>
+		<!-- Example HTTPS configuration
+		<module classname="org.maidenlane.processor.receiver.AS2ReceiverModule"
+			port="10443"
+			protocol="https"
+			ssl_protocol="TLS"
+			ssl_keystore="%home%/ssl_certs.jks"
+			ssl_keystore_password="testas2"
+			errordir="$properties.storageBaseDir$/inbox/error"
+			errorformat="sender.as2_id, receiver.as2_id, headers.message-id"/>
+			-->
+		<module classname="org.maidenlane.processor.receiver.AS2MDNReceiverModule"
+			port="10081"/>
+		<!-- Example HTTPS configuration
+		<module classname="org.maidenlane.processor.receiver.AS2MDNReceiverModule"
+			port="10444"
+			protocol="https"
+			ssl_protocol="TLS"
+			ssl_keystore="%home%/ssl_certs.jks"
+			ssl_keystore_password="testas2"
+			/>
+		-->
+
+		<module classname="org.maidenlane.processor.resender.DirectoryResenderModule"
+			resenddir="$properties.storageBaseDir$/resend"
+			errordir="$properties.storageBaseDir$/resend/error"
+			resenddelay="60"/>
+		<!--
+		<module classname="org.maidenlane.processor.receiver.HealthCheckModule"
+			port="10099"/>
+		-->
+		
+		
+	</processor>
+</maidenlane>
