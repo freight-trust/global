@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<IDataXMLCoder version="1.0">
+  <record javaclass="com.wm.util.Values">
+    <value name="fileName">Bommat03SinglePipeline.xml</value>
+    <idatacodable name="IDOC_CONTROL_REC_40" javaclass="com.wm.util.Table">
+      <value name="name">EDI_DC40</value>
+      <array name="data" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="TABNAM">EDI_DC40</value>
+          <value name="MANDT">800</value>
+          <value name="DOCNUM">0000000000466746</value>
+          <value name="DOCREL">46C</value>
+          <value name="STATUS">30</value>
+          <value name="DIRECT">1</value>
+          <value name="OUTMOD">2</value>
+          <value name="EXPRSS"></value>
+          <value name="TEST"></value>
+          <value name="IDOCTYP">BOMMAT03</value>
+          <value name="CIMTYP"></value>
+          <value name="MESTYP">BOMMAT</value>
+          <value name="MESCOD"></value>
+          <value name="MESFCT"></value>
+          <value name="STD"></value>
+          <value name="STDVRS"></value>
+          <value name="STDMES"></value>
+          <value name="SNDPOR">SAPIDR</value>
+          <value name="SNDPRT">LS</value>
+          <value name="SNDPFC"></value>
+          <value name="SNDPRN">T90CLNT090</value>
+          <value name="SNDSAD"></value>
+          <value name="SNDLAD"></value>
+          <value name="RCVPOR">A000000024</value>
+          <value name="RCVPRT">LS</value>
+          <value name="RCVPFC"></value>
+          <value name="RCVPRN">SPJ</value>
+          <value name="RCVSAD"></value>
+          <value name="RCVLAD"></value>
+          <value name="CREDAT">2002-08-08</value>
+          <value name="CRETIM">13:21:30</value>
+          <value name="REFINT"></value>
+          <value name="REFGRP"></value>
+          <value name="REFMES"></value>
+          <value name="ARCKEY"></value>
+          <value name="SERIAL">200208081321290001</value>
+        </record>
+      </array>
+      <array name="cols" type="value" depth="1">
+        <value>TABNAM</value>
+        <value>MANDT</value>
+        <value>DOCNUM</value>
+        <value>DOCREL</value>
+        <value>STATUS</value>
+        <value>DIRECT</value>
+        <value>OUTMOD</value>
+        <value>EXPRSS</value>
+        <value>TEST</value>
+        <value>IDOCTYP</value>
+        <value>CIMTYP</value>
+        <value>MESTYP</value>
+        <value>MESCOD</value>
+        <value>MESFCT</value>
+        <value>STD</value>
+        <value>STDVRS</value>
+        <value>STDMES</value>
+        <value>SNDPOR</value>
+        <value>SNDPRT</value>
+        <value>SNDPFC</value>
+        <value>SNDPRN</value>
+        <value>SNDSAD</value>
+        <value>SNDLAD</value>
+        <value>RCVPOR</value>
+        <value>RCVPRT</value>
+        <value>RCVPFC</value>
+        <value>RCVPRN</value>
+        <value>RCVSAD</value>
+        <value>RCVLAD</value>
+        <value>CREDAT</value>
+        <value>CRETIM</value>
+        <value>REFINT</value>
+        <value>REFGRP</value>
+        <value>REFMES</value>
+        <value>ARCKEY</value>
+        <value>SERIAL</value>
+      </array>
+      <null name="sizes"/>
+    </idatacodable>
+    <idatacodable name="IDOC_DATA_REC_40" javaclass="com.wm.util.Table">
+      <value name="name">EDI_DD40</value>
+      <array name="data" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="SEGNAM">E1STZUM</value>
+          <value name="MANDT">800</value>
+          <value name="DOCNUM">0000000000466746</value>
+          <value name="SEGNUM">000001</value>
+          <value name="PSGNUM">000000</value>
+          <value name="HLEVEL">01</value>
+          <record name="SDATA" javaclass="com.wm.util.Values">
+            <value name="MSGFN">009</value>
+            <value name="STLTY">M</value>
+            <value name="STLNR">00000015</value>
+            <value name="STLAN">1</value>
+            <value name="EXSTL">            1.000</value>
+            <value name="STLDT">00000000</value>
+            <value name="STLTM">000000</value>
+          </record>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="SEGNAM">E1MASTM</value>
+          <value name="MANDT">800</value>
+          <value name="DOCNUM">0000000000466746</value>
+          <value name="SEGNUM">000002</value>
+          <value name="PSGNUM">000001</value>
+          <value name="HLEVEL">02</value>
+          <record name="SDATA" javaclass="com.wm.util.Values">
+            <value name="MSGFN">009</value>
+            <value name="MATNR">100-100</value>
+            <value name="WERKS">1000</value>
+            <value name="STLAN">1</value>
+            <value name="STLNR">00000015</value>
+            <value name="STLAL">01</value>
+            <value name="LOSVN">0.000</value>
+            <value name="LOSBS">0.000</value>
+          </record>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="SEGNAM">E1STKOM</value>
+          <value name="MANDT">800</value>
+          <value name="DOCNUM">0000000000466746</value>
+          <value name="SEGNUM">000003</value>
+          <value name="PSGNUM">000001</value>
+          <value name="HLEVEL">02</value>
+          <record name="SDATA" javaclass="com.wm.util.Values">
+            <value name="MSGFN">009</value>
+            <value name="STLAL">01</value>
+            <value name="DATUV">20020808</value>
+            <value name="BMEIN">PCE</value>
+            <value name="BMENG">000000000000000</value>
+            <value name="STLST">01</value>
+            <value name="BMENG_C">         1.000</value>
+          </record>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="SEGNAM">E1STPOM</value>
+          <value name="MANDT">800</value>
+          <value name="DOCNUM">0000000000466746</value>
+          <value name="SEGNUM">000004</value>
+          <value name="PSGNUM">000001</value>
+          <value name="HLEVEL">02</value>
+          <record name="SDATA" javaclass="com.wm.util.Values">
+            <value name="MSGFN">009</value>
+            <value name="STLKN">00000001</value>
+            <value name="DATUV">20020808</value>
+            <value name="IDNRK">100-110</value>
+            <value name="POSTP">L</value>
+            <value name="POSNR">0010</value>
+            <value name="MEINS">PCE</value>
+            <value name="MENGE">000000000000000</value>
+            <value name="AUSCH">0.00</value>
+            <value name="AVOAU">0.00</value>
+            <value name="BEIKZ">L</value>
+            <value name="SANFE">X</value>
+            <value name="SANKA">X</value>
+            <value name="NLFZT">0</value>
+            <value name="EWAHR">0</value>
+            <value name="LIFZT">0</value>
+            <value name="PREIS">0.00</value>
+            <value name="PEINH">0</value>
+            <value name="ROANZ">0.000</value>
+            <value name="ROMS1">0.000</value>
+            <value name="ROMS2">0.000</value>
+            <value name="ROMS3">0.000</value>
+            <value name="ROMEN">1.000</value>
+            <value name="OBJTY">1</value>
+            <value name="WEBAZ">0</value>
+            <value name="CSSTR">0.00</value>
+            <value name="KNOBJ">000000000000000000</value>
+            <value name="LGORT">0001</value>
+            <value name="ALPRF">00</value>
+            <value name="CLSZU">00000000</value>
+            <value name="NLFZV">0</value>
+            <value name="MENGE_C">         1.000</value>
+            <value name="ROMEN_C">         0.000</value>
+          </record>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="SEGNAM">E1STPOM</value>
+          <value name="MANDT">800</value>
+          <value name="DOCNUM">0000000000466746</value>
+          <value name="SEGNUM">000005</value>
+          <value name="PSGNUM">000001</value>
+          <value name="HLEVEL">02</value>
+          <record name="SDATA" javaclass="com.wm.util.Values">
+            <value name="MSGFN">009</value>
+            <value name="STLKN">00000002</value>
+            <value name="DATUV">20020808</value>
+            <value name="IDNRK">100-120</value>
+            <value name="POSTP">L</value>
+            <value name="POSNR">0020</value>
+            <value name="MEINS">PCE</value>
+            <value name="MENGE">000000000000000</value>
+            <value name="AUSCH">0.00</value>
+            <value name="AVOAU">0.00</value>
+            <value name="BEIKZ">L</value>
+            <value name="SANFE">X</value>
+            <value name="SANKA">X</value>
+            <value name="NLFZT">0</value>
+            <value name="EWAHR">0</value>
+            <value name="LIFZT">0</value>
+            <value name="PREIS">0.00</value>
+            <value name="PEINH">0</value>
+            <value name="ROANZ">0.000</value>
+            <value name="ROMS1">0.000</value>
+            <value name="ROMS2">0.000</value>
+            <value name="ROMS3">0.000</value>
+            <value name="ROMEN">1.000</value>
+            <value name="OBJTY">1</value>
+            <value name="WEBAZ">0</value>
+            <value name="CSSTR">0.00</value>
+            <value name="KNOBJ">000000000000000000</value>
+            <value name="ALPRF">00</value>
+            <value name="CLSZU">00000000</value>
+            <value name="NLFZV">0</value>
+            <value name="MENGE_C">         1.000</value>
+            <value name="ROMEN_C">         0.000</value>
+          </record>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="SEGNAM">E1STPOM</value>
+          <value name="MANDT">800</value>
+          <value name="DOCNUM">0000000000466746</value>
+          <value name="SEGNUM">000006</value>
+          <value name="PSGNUM">000001</value>
+          <value name="HLEVEL">02</value>
+          <record name="SDATA" javaclass="com.wm.util.Values">
+            <value name="MSGFN">009</value>
+            <value name="STLKN">00000003</value>
+            <value name="DATUV">20020808</value>
+            <value name="IDNRK">100-130</value>
+            <value name="POSTP">L</value>
+            <value name="POSNR">0030</value>
+            <value name="MEINS">PCE</value>
+            <value name="MENGE">000000000000000</value>
+            <value name="AUSCH">0.00</value>
+            <value name="AVOAU">0.00</value>
+            <value name="BEIKZ">L</value>
+            <value name="SANFE">X</value>
+            <value name="SANKA">X</value>
+            <value name="NLFZT">0</value>
+            <value name="EWAHR">0</value>
+            <value name="LIFZT">0</value>
+            <value name="PREIS">0.00</value>
+            <value name="PEINH">0</value>
+            <value name="ROANZ">0.000</value>
+            <value name="ROMS1">0.000</value>
+            <value name="ROMS2">0.000</value>
+            <value name="ROMS3">0.000</value>
+            <value name="ROMEN">8.000</value>
+            <value name="OBJTY">1</value>
+            <value name="WEBAZ">0</value>
+            <value name="CSSTR">0.00</value>
+            <value name="KNOBJ">000000000000000000</value>
+            <value name="ALPRF">00</value>
+            <value name="CLSZU">00000000</value>
+            <value name="NLFZV">0</value>
+            <value name="MENGE_C">         8.000</value>
+            <value name="ROMEN_C">         0.000</value>
+          </record>
+        </record>
+      </array>
+      <array name="cols" type="value" depth="1">
+        <value>SEGNAM</value>
+        <value>MANDT</value>
+        <value>DOCNUM</value>
+        <value>SEGNUM</value>
+        <value>PSGNUM</value>
+        <value>HLEVEL</value>
+        <value>SDATA</value>
+      </array>
+      <null name="sizes"/>
+    </idatacodable>
+    <value name="$rfcname">IDOC_INBOUND_ASYNCHRONOUS</value>
+    <value name="serverName">IDR800</value>
+    <value name="$call">true</value>
+    <value name="$encoding">ISO-8859-1</value>
+    <value name="serviceName">sap.inbound.IDR800:IDOC_INBOUND_ASYNCHRONOUS</value>
+    <value name="$tid">0A301A9B098C3D52D2CB0096</value>
+    <record name="transaction" javaclass="com.wm.util.Values">
+      <value name="$tid">0A301A9B098C3D52D2CB0096</value>
+      <value name="state">0</value>
+      <value name="sender">T90CLNT090</value>
+      <value name="receiver">SPJ</value>
+      <value name="msgType">BOMMAT</value>
+      <value name="date">08/08/2002 01:31:14 PM</value>
+      <value name="flow">sap.inbound.IDR800:IDOC_INBOUND_ASYNCHRONOUS</value>
+      <array name="auditLog" type="record" depth="1">
+        <record javaclass="com.wm.util.Values">
+          <value name="date">08/08/2002 01:31:14 PM</value>
+          <value name="message">State changed to: Created</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="date">08/08/2002 01:31:16 PM</value>
+          <value name="message">ALE:InboundProcess Execute 0A301A9B098C3D52D2CB0096</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="date">08/08/2002 01:31:17 PM</value>
+          <value name="message">State changed to: Created</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="date">08/08/2002 01:31:17 PM</value>
+          <value name="message">Gateway Manager &lt;-- 'ALE (R/3 IDOC)</value>
+        </record>
+        <record javaclass="com.wm.util.Values">
+          <value name="date">08/08/2002 01:31:17 PM</value>
+          <value name="message">Invoked flow wm.PartnerMgr.flows.T90CLNT090.SPJ:BOMMAT</value>
+        </record>
+      </array>
+    </record>
+    <value name="$action">1</value>
+    <value name="transport">ALE (R/3 IDOC)</value>
+    <value name="sender">T90CLNT090</value>
+    <value name="receiver">SPJ</value>
+    <value name="msgType">BOMMAT</value>
+    <value name="tranService">wm.PartnerMgr.gateway.transport.B2B:OutboundProcess</value>
+    <record name="transportParams" javaclass="com.wm.data.BasicData">
+      <value name="serverAlias">(local)</value>
+      <value name="valueScope">SESSION</value>
+      <value name="servicePath">spjexamples.idoc.outbound</value>
+      <value name="service">testProcessBommat03SingleWithJava</value>
+    </record>
+  </record>
+</IDataXMLCoder>
