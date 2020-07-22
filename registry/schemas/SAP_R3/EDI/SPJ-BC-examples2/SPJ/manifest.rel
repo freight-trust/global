@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="name">SPJ</value>
+  <value name="version">1.0</value>
+  <value name="build">20030527</value>
+  <value name="patch_nums"></value>
+  <value name="description">Example package for SPJ BC article, by R. Chu</value>
+  <value name="target_pkg_version">1.0</value>
+  <value name="jvm_version">1.3.0</value>
+  <value name="source_server_version">4.6</value>
+  <value name="target_server_version">4.6</value>
+  <value name="time">2003-05-27 23:25:23 PDT</value>
+  <value name="type">full</value>
+  <value name="target_pkg_name">SPJ</value>
+  <value name="publisher">I800790.pal.sap-ag.de</value>
+  <array name="files_to_delete" type="value" depth="1">
+  </array>
+</Values>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://privados.recintos.ws" xmlns:tns="http://privados.recintos.ws" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xs:import schemaLocation="recibeTransferencia.xsd"/>
+  <xs:import namespace="http://www.w3.org/2001/XMLSchema-instance" schemaLocation="xsi.xsd"/>
+  <xs:element name="recibeTransferenciaOrigen">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="informacionGeneral"/>
+        <xs:element ref="idRecintoFiscalizadoTransferencia"/>
+        <xs:element maxOccurs="unbounded" ref="transferencia"/>
+      </xs:sequence>
+      <xs:attribute ref="xsi:schemaLocation" use="required"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

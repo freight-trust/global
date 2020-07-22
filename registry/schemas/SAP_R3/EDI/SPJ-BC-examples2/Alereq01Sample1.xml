@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+
+<ALEREQ01>
+  <IDOC BEGIN="1">
+    <EDI_DC40 SEGMENT="1">
+      <TABNAM>EDI_DC40</TABNAM>
+      <MANDT/>
+      <DOCNUM/>
+      <DOCREL/>
+      <STATUS/>
+      <DOCTYP/>
+      <DIRECT>2</DIRECT>
+      <RCVPOR/>
+      <RCVPRT>LS</RCVPRT>
+      <RCVPRN>PKUCLNT850</RCVPRN>
+      <RCVSAD/>
+      <RCVLAD/>
+      <STD/>
+      <STDVRS/>
+      <STDMES/>
+      <MESCOD/>
+      <MESFCT/>
+      <OUTMOD/>
+      <TEST/>
+      <SNDPOR/>
+      <SNDPRT>LS</SNDPRT>
+      <SNDPRN>BIT531-00</SNDPRN>
+      <SNDSAD/>
+      <SNDLAD/>
+      <REFINT/>
+      <REFGRP/>
+      <REFMES/>
+      <ARCKEY/>
+      <CREDAT/>
+      <CRETIM/>
+      <MESTYP>MATFET</MESTYP>
+      <IDOCTYP>ALEREQ01</IDOCTYP>
+      <CIMTYP/>
+      <RCVPFC/>
+      <SNDPFC/>
+      <SERIAL/>
+      <EXPRSS/>
+    </EDI_DC40>
+    <E1ALER1 SEGMENT="1">
+      <MESTYP>MATMAS</MESTYP>
+      <MESTYP40>MATMAS</MESTYP40>
+      <E1ALEQ1 SEGMENT="1">
+        <OBJVALUE>MATNR</OBJVALUE>
+        <SIGN>I</SIGN>
+        <OPTION>EQ</OPTION>
+        <LOW>P-101</LOW>
+      </E1ALEQ1>
+    </E1ALER1>
+  </IDOC>
+</ALEREQ01>

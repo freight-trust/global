@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT BillOfMaterials (BillOfMaterial+)>
+<!ELEMENT BillOfMaterial (Category, Plant, ValidFromDate, Quantity, UnitOfMeasure, Components)>
+<!ATTLIST BillOfMaterial
+	MaterialNumber CDATA #REQUIRED
+>
+<!ELEMENT Category (#PCDATA)>
+<!ELEMENT Plant (#PCDATA)>
+<!ELEMENT ValidFromDate (#PCDATA)>
+<!ELEMENT Quantity (#PCDATA)>
+<!ELEMENT UnitOfMeasure (#PCDATA)>
+<!ELEMENT Components (Component+)>
+<!ELEMENT Component (MaterialNumber, ItemCategory, Quantity, UnitOfMeasure)>
+<!ATTLIST Component
+	itemnumber CDATA #REQUIRED
+>
+<!ELEMENT MaterialNumber (#PCDATA)>
+<!ELEMENT ItemCategory (#PCDATA)>

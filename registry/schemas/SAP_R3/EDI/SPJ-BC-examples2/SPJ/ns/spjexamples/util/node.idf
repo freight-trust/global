@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="node_type">interface</value>
+  <value name="node_nsName">spjexamples.util</value>
+  <value name="encodeutf8">true</value>
+  <value name="shared">Ly8gdXNlIHN0YXRpYyBkYXRhIG1lbWJlciB0byBjYWNoZSB0aGUgbG9va3VwIGRhdGEKcHJpdmF0
+ZSBzdGF0aWMgUHJvcGVydGllcyBsb29rdXBQcm9wOwovLyB1c2Ugc3RhdGljIGluaXRpYWxpemVy
+IHRvIHByZS1sb2FkIHRoZSBsb29rdXAgZGF0YSBmcm9tIHRoZSBmaWxlCnN0YXRpYyB7CiAgdHJ5
+IHsKICAgIFN0cmluZyBsb29rdXBGaWxlbmFtZSA9ICJwYWNrYWdlcy9TUEovcmVzb3VyY2VzL1Ni
+Y0xvb2t1cEZpbGUudHh0IjsKICAgIEZpbGVJbnB1dFN0cmVhbSBmaXMgPSBuZXcgRmlsZUlucHV0
+U3RyZWFtKG5ldyBGaWxlKGxvb2t1cEZpbGVuYW1lKSk7Cglsb29rdXBQcm9wID0gbmV3IFByb3Bl
+cnRpZXMoKTsKCWxvb2t1cFByb3AubG9hZChmaXMpOwogICAgZmlzLmNsb3NlKCk7CiAgfSBjYXRj
+aCAoRXhjZXB0aW9uIGV4KSB7CiAgICBleC5wcmludFN0YWNrVHJhY2UoKTsKICB9Cn0KCi8vIHVz
+ZSBzdGF0aWMgZGF0YSBtZW1iZXIgdG8gY2FjaGUgdGhlIGNvbmZpZyBkYXRhCnByaXZhdGUgc3Rh
+dGljIFByb3BlcnRpZXMgY29uZmlnUHJvcDsKLy8gdXNlIHN0YXRpYyBpbml0aWFsaXplciB0byBw
+cmUtbG9hZCB0aGUgY29uZmlnIGRhdGEgZnJvbSB0aGUgZmlsZQpzdGF0aWMgewogIHRyeSB7CiAg
+ICBTdHJpbmcgY29uZmlnRmlsZW5hbWUgPSAicGFja2FnZXMvU1BKL3Jlc291cmNlcy9jb25maWcu
+dHh0IjsKICAgIEZpbGVJbnB1dFN0cmVhbSBmaXMgPSBuZXcgRmlsZUlucHV0U3RyZWFtKG5ldyBG
+aWxlKGNvbmZpZ0ZpbGVuYW1lKSk7Cgljb25maWdQcm9wID0gbmV3IFByb3BlcnRpZXMoKTsKCWNv
+bmZpZ1Byb3AubG9hZChmaXMpOwogICAgZmlzLmNsb3NlKCk7CiAgfSBjYXRjaCAoRXhjZXB0aW9u
+IGV4KSB7CiAgICBleC5wcmludFN0YWNrVHJhY2UoKTsKICB9Cn0=</value>
+  <value name="extends"></value>
+  <array name="implements" type="value" depth="1">
+  </array>
+  <array name="imports" type="value" depth="1">
+    <value>java.io.*</value>
+    <value>java.util.*</value>
+  </array>
+</Values>

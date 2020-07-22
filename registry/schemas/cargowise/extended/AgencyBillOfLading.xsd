@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://www.edi.com.au/EnterpriseService/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.edi.com.au/EnterpriseService/" xmlns:NS="http://www.edi.com.au/EnterpriseService/" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="Elements.xsd" />
+	<xs:include schemaLocation="Billing.xsd" />
+	
+	<xs:element name="AgencyBillsOfLading">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="AgencyBillOfLading" type="AgencyBillOfLading" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="AgencyBillOfLading">
+		<xs:sequence>
+			<xs:element name="BillNumber" type="xs:string" />
+			<xs:element name="Sailing" type="SailingWithVesselVoyage" />
+			<xs:element name="BookingReference" type="xs:string" minOccurs="0" />
+			<xs:element name="ShippersReference" type="xs:string" minOccurs="0" />
+			<xs:element name="InterimReceipt" type="xs:string" minOccurs="0" />
+			<xs:element name="Description" type="xs:string" minOccurs="0" />
+			<xs:element name="MarksAndNumbers" type="xs:string" minOccurs="0" />
+			<xs:element name="INCOTerm" type="INCOTERM" minOccurs="0" />
+			<xs:element name="ReleaseType" type="ReleaseType" minOccurs="0" />
+			<xs:element name="ChargesApply" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:maxLength value="3" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="CustomsEntryNumber" type="CustomsEntryNumber" minOccurs="0" />
+			<xs:element name="PackageSummary" type="Package" minOccurs="0" />
+			<xs:element name="IssueDate" type="xs:dateTime" minOccurs="0" />
+			<xs:element name="ShippedOnBoard" type="ShippedOnBoard" minOccurs="0" />
+			<xs:element name="OriginalBills" type="xs:unsignedByte" minOccurs="0" />
+			<xs:element name="CopyBills" type="xs:unsignedByte" minOccurs="0" />
+			<xs:element name="CargoType" type="ContainerMode" minOccurs="0" />
+			<xs:element name="Load" type="UNLOCO" minOccurs="0" />
+			<xs:element name="Origin" type="UNLOCO" />
+			<xs:element name="Discharge" type="UNLOCO" minOccurs="0" />
+			<xs:element name="Destination" type="UNLOCO" />
+			<xs:element name="Containers" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Container" type="Container" maxOccurs="unbounded" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Packages" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Package" type="Package" maxOccurs="unbounded" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Addresses" type="DocAddresses" minOccurs="0" />
+			<xs:element ref="Billing" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ShippedOnBoard">
+		<xs:sequence>
+			<xs:element name="Date" type="xs:dateTime" minOccurs="0" />
+			<xs:element name="Code" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:maxLength value="3" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<BOMMAT03>
+  <IDOC BEGIN="1">
+    <EDI_DC40 SEGMENT="1">
+      <TABNAM>EDI_DC40</TABNAM>
+      <MANDT>400</MANDT>
+      <DOCNUM>0000000000281748</DOCNUM>
+      <DOCREL>46B</DOCREL>
+      <STATUS>30</STATUS>
+      <DIRECT>1</DIRECT>
+      <OUTMOD>4</OUTMOD>
+      <EXPRSS/>
+      <TEST/>
+      <IDOCTYP>BOMMAT03</IDOCTYP>
+      <CIMTYP/>
+      <MESTYP>BOMMAT</MESTYP>
+      <MESCOD/>
+      <MESFCT/>
+      <STD/>
+      <STDVRS/>
+      <STDMES/>
+      <SNDPOR>SAPYSP</SNDPOR>
+      <SNDPRT>LS</SNDPRT>
+      <SNDPFC/>
+      <SNDPRN>YSPCLNT400</SNDPRN>
+      <SNDSAD/>
+      <SNDLAD/>
+      <RCVPOR>A000000020</RCVPOR>
+      <RCVPRT>LS</RCVPRT>
+      <RCVPFC/>
+      <RCVPRN>SPJ_M</RCVPRN>
+      <RCVSAD/>
+      <RCVLAD/>
+      <CREDAT>20020707</CREDAT>
+      <CRETIM>150601</CRETIM>
+      <REFINT/>
+      <REFGRP/>
+      <REFMES/>
+      <ARCKEY/>
+      <SERIAL>200207071505590001</SERIAL>
+    </EDI_DC40>
+    <E1STZUM SEGMENT="1">
+      <MSGFN>009</MSGFN>
+      <STLTY>M</STLTY>
+      <STLNR>00000614</STLNR>
+      <STLAN>1</STLAN>
+      <EXSTL>            1.000</EXSTL>
+      <STLDT>00000000</STLDT>
+      <STLTM>000000</STLTM>
+      <E1MASTM SEGMENT="1">
+        <MSGFN>009</MSGFN>
+        <MATNR>T-B100</MATNR>
+        <WERKS>1000</WERKS>
+        <STLAN>1</STLAN>
+        <STLNR>00000614</STLNR>
+        <STLAL>01</STLAL>
+        <LOSVN>0.000</LOSVN>
+        <LOSBS>0.000</LOSBS>
+      </E1MASTM>
+      <E1STKOM SEGMENT="1">
+        <MSGFN>009</MSGFN>
+        <STLAL>01</STLAL>
+        <DATUV>20020707</DATUV>
+        <BMEIN>PCE</BMEIN>
+        <BMENG>000000000000000</BMENG>
+        <STLST>01</STLST>
+        <BMENG_C>         1.000</BMENG_C>
+      </E1STKOM>
+      <E1STPOM SEGMENT="1">
+        <MSGFN>009</MSGFN>
+        <STLKN>00000001</STLKN>
+        <DATUV>20020707</DATUV>
+        <IDNRK>T-T100</IDNRK>
+        <POSTP>L</POSTP>
+        <POSNR>0010</POSNR>
+        <MEINS>PCE</MEINS>
+        <MENGE>000000000000000</MENGE>
+        <AUSCH>0.00</AUSCH>
+        <AVOAU>0.00</AVOAU>
+        <SANFE>X</SANFE>
+        <SANKA>X</SANKA>
+        <NLFZT>0</NLFZT>
+        <EWAHR>0</EWAHR>
+        <LIFZT>0</LIFZT>
+        <PREIS>0.00</PREIS>
+        <PEINH>0</PEINH>
+        <ROANZ>0.000</ROANZ>
+        <ROMS1>0.000</ROMS1>
+        <ROMS2>0.000</ROMS2>
+        <ROMS3>0.000</ROMS3>
+        <ROMEN>1.000</ROMEN>
+        <OBJTY>1</OBJTY>
+        <MATKL>001</MATKL>
+        <WEBAZ>0</WEBAZ>
+        <CSSTR>0.00</CSSTR>
+        <KNOBJ>000000000000000000</KNOBJ>
+        <LGORT>0001</LGORT>
+        <ALPRF>00</ALPRF>
+        <CLSZU>00000000</CLSZU>
+        <NLFZV>0</NLFZV>
+        <MENGE_C>         1.000</MENGE_C>
+        <ROMEN_C>         0.000</ROMEN_C>
+      </E1STPOM>
+      <E1STPOM SEGMENT="1">
+        <MSGFN>009</MSGFN>
+        <STLKN>00000002</STLKN>
+        <DATUV>20020707</DATUV>
+        <IDNRK>T-T200</IDNRK>
+        <POSTP>L</POSTP>
+        <POSNR>0020</POSNR>
+        <MEINS>PCE</MEINS>
+        <MENGE>000000000000000</MENGE>
+        <AUSCH>0.00</AUSCH>
+        <AVOAU>0.00</AVOAU>
+        <SANFE>X</SANFE>
+        <SANKA>X</SANKA>
+        <NLFZT>0</NLFZT>
+        <EWAHR>0</EWAHR>
+        <LIFZT>0</LIFZT>
+        <PREIS>0.00</PREIS>
+        <PEINH>0</PEINH>
+        <ROANZ>0.000</ROANZ>
+        <ROMS1>0.000</ROMS1>
+        <ROMS2>0.000</ROMS2>
+        <ROMS3>0.000</ROMS3>
+        <ROMEN>1.000</ROMEN>
+        <OBJTY>1</OBJTY>
+        <MATKL>001</MATKL>
+        <WEBAZ>0</WEBAZ>
+        <CSSTR>0.00</CSSTR>
+        <KNOBJ>000000000000000000</KNOBJ>
+        <ALPRF>00</ALPRF>
+        <CLSZU>00000000</CLSZU>
+        <NLFZV>0</NLFZV>
+        <MENGE_C>         1.000</MENGE_C>
+        <ROMEN_C>         0.000</ROMEN_C>
+      </E1STPOM>
+      <E1STPOM SEGMENT="1">
+        <MSGFN>009</MSGFN>
+        <STLKN>00000003</STLKN>
+        <DATUV>20020707</DATUV>
+        <IDNRK>T-T300</IDNRK>
+        <POSTP>L</POSTP>
+        <POSNR>0030</POSNR>
+        <MEINS>PCE</MEINS>
+        <MENGE>000000000000000</MENGE>
+        <AUSCH>0.00</AUSCH>
+        <AVOAU>0.00</AVOAU>
+        <SANFE>X</SANFE>
+        <SANKA>X</SANKA>
+        <NLFZT>0</NLFZT>
+        <EWAHR>0</EWAHR>
+        <LIFZT>0</LIFZT>
+        <PREIS>0.00</PREIS>
+        <PEINH>0</PEINH>
+        <ROANZ>0.000</ROANZ>
+        <ROMS1>0.000</ROMS1>
+        <ROMS2>0.000</ROMS2>
+        <ROMS3>0.000</ROMS3>
+        <ROMEN>8.000</ROMEN>
+        <OBJTY>1</OBJTY>
+        <MATKL>001</MATKL>
+        <WEBAZ>0</WEBAZ>
+        <CSSTR>0.00</CSSTR>
+        <KNOBJ>000000000000000000</KNOBJ>
+        <ALPRF>00</ALPRF>
+        <CLSZU>00000000</CLSZU>
+        <NLFZV>0</NLFZV>
+        <MENGE_C>         8.000</MENGE_C>
+        <ROMEN_C>         0.000</ROMEN_C>
+      </E1STPOM>
+    </E1STZUM>
+  </IDOC>
+  <IDOC BEGIN="1">
+    <EDI_DC40 SEGMENT="1">
+      <TABNAM>EDI_DC40</TABNAM>
+      <MANDT>400</MANDT>
+      <DOCNUM>0000000000281749</DOCNUM>
+      <DOCREL>46B</DOCREL>
+      <STATUS>30</STATUS>
+      <DIRECT>1</DIRECT>
+      <OUTMOD>4</OUTMOD>
+      <EXPRSS/>
+      <TEST/>
+      <IDOCTYP>BOMMAT03</IDOCTYP>
+      <CIMTYP/>
+      <MESTYP>BOMMAT</MESTYP>
+      <MESCOD/>
+      <MESFCT/>
+      <STD/>
+      <STDVRS/>
+      <STDMES/>
+      <SNDPOR>SAPYSP</SNDPOR>
+      <SNDPRT>LS</SNDPRT>
+      <SNDPFC/>
+      <SNDPRN>YSPCLNT400</SNDPRN>
+      <SNDSAD/>
+      <SNDLAD/>
+      <RCVPOR>A000000020</RCVPOR>
+      <RCVPRT>LS</RCVPRT>
+      <RCVPFC/>
+      <RCVPRN>SPJ_M</RCVPRN>
+      <RCVSAD/>
+      <RCVLAD/>
+      <CREDAT>20020707</CREDAT>
+      <CRETIM>150603</CRETIM>
+      <REFINT/>
+      <REFGRP/>
+      <REFMES/>
+      <ARCKEY/>
+      <SERIAL>200207071506020002</SERIAL>
+    </EDI_DC40>
+    <E1STZUM SEGMENT="1">
+      <MSGFN>009</MSGFN>
+      <STLTY>M</STLTY>
+      <STLNR>00000620</STLNR>
+      <STLAN>1</STLAN>
+      <EXSTL>            1.000</EXSTL>
+      <STLDT>00000000</STLDT>
+      <STLTM>000000</STLTM>
+      <E1MASTM SEGMENT="1">
+        <MSGFN>009</MSGFN>
+        <MATNR>T-B101</MATNR>
+        <WERKS>1000</WERKS>
+        <STLAN>1</STLAN>
+        <STLNR>00000620</STLNR>
+        <STLAL>01</STLAL>
+        <LOSVN>0.000</LOSVN>
+        <LOSBS>0.000</LOSBS>
+      </E1MASTM>
+      <E1STKOM SEGMENT="1">
+        <MSGFN>009</MSGFN>
+        <STLAL>01</STLAL>
+        <DATUV>20020707</DATUV>
+        <BMEIN>PCE</BMEIN>
+        <BMENG>000000000000000</BMENG>
+        <STLST>01</STLST>
+        <BMENG_C>         1.000</BMENG_C>
+      </E1STKOM>
+      <E1STPOM SEGMENT="1">
+        <MSGFN>009</MSGFN>
+        <STLKN>00000001</STLKN>
+        <DATUV>20020707</DATUV>
+        <IDNRK>T-T101</IDNRK>
+        <POSTP>L</POSTP>
+        <POSNR>0010</POSNR>
+        <MEINS>PCE</MEINS>
+        <MENGE>000000000000000</MENGE>
+        <AUSCH>0.00</AUSCH>
+        <AVOAU>0.00</AVOAU>
+        <SANFE>X</SANFE>
+        <SANKA>X</SANKA>
+        <NLFZT>0</NLFZT>
+        <EWAHR>0</EWAHR>
+        <LIFZT>0</LIFZT>
+        <PREIS>0.00</PREIS>
+        <PEINH>0</PEINH>
+        <ROANZ>0.000</ROANZ>
+        <ROMS1>0.000</ROMS1>
+        <ROMS2>0.000</ROMS2>
+        <ROMS3>0.000</ROMS3>
+        <ROMEN>1.000</ROMEN>
+        <OBJTY>1</OBJTY>
+        <MATKL>001</MATKL>
+        <WEBAZ>0</WEBAZ>
+        <CSSTR>0.00</CSSTR>
+        <KNOBJ>000000000000000000</KNOBJ>
+        <LGORT>0001</LGORT>
+        <ALPRF>00</ALPRF>
+        <CLSZU>00000000</CLSZU>
+        <NLFZV>0</NLFZV>
+        <MENGE_C>         1.000</MENGE_C>
+        <ROMEN_C>         0.000</ROMEN_C>
+      </E1STPOM>
+      <E1STPOM SEGMENT="1">
+        <MSGFN>009</MSGFN>
+        <STLKN>00000002</STLKN>
+        <DATUV>20020707</DATUV>
+        <IDNRK>T-T201</IDNRK>
+        <POSTP>L</POSTP>
+        <POSNR>0020</POSNR>
+        <MEINS>PCE</MEINS>
+        <MENGE>000000000000000</MENGE>
+        <AUSCH>0.00</AUSCH>
+        <AVOAU>0.00</AVOAU>
+        <SANFE>X</SANFE>
+        <SANKA>X</SANKA>
+        <NLFZT>0</NLFZT>
+        <EWAHR>0</EWAHR>
+        <LIFZT>0</LIFZT>
+        <PREIS>0.00</PREIS>
+        <PEINH>0</PEINH>
+        <ROANZ>0.000</ROANZ>
+        <ROMS1>0.000</ROMS1>
+        <ROMS2>0.000</ROMS2>
+        <ROMS3>0.000</ROMS3>
+        <ROMEN>1.000</ROMEN>
+        <OBJTY>1</OBJTY>
+        <MATKL>001</MATKL>
+        <WEBAZ>0</WEBAZ>
+        <CSSTR>0.00</CSSTR>
+        <KNOBJ>000000000000000000</KNOBJ>
+        <ALPRF>00</ALPRF>
+        <CLSZU>00000000</CLSZU>
+        <NLFZV>0</NLFZV>
+        <MENGE_C>         1.000</MENGE_C>
+        <ROMEN_C>         0.000</ROMEN_C>
+      </E1STPOM>
+      <E1STPOM SEGMENT="1">
+        <MSGFN>009</MSGFN>
+        <STLKN>00000003</STLKN>
+        <DATUV>20020707</DATUV>
+        <IDNRK>T-T301</IDNRK>
+        <POSTP>L</POSTP>
+        <POSNR>0030</POSNR>
+        <MEINS>PCE</MEINS>
+        <MENGE>000000000000000</MENGE>
+        <AUSCH>0.00</AUSCH>
+        <AVOAU>0.00</AVOAU>
+        <SANFE>X</SANFE>
+        <SANKA>X</SANKA>
+        <NLFZT>0</NLFZT>
+        <EWAHR>0</EWAHR>
+        <LIFZT>0</LIFZT>
+        <PREIS>0.00</PREIS>
+        <PEINH>0</PEINH>
+        <ROANZ>0.000</ROANZ>
+        <ROMS1>0.000</ROMS1>
+        <ROMS2>0.000</ROMS2>
+        <ROMS3>0.000</ROMS3>
+        <ROMEN>8.000</ROMEN>
+        <OBJTY>1</OBJTY>
+        <MATKL>001</MATKL>
+        <WEBAZ>0</WEBAZ>
+        <CSSTR>0.00</CSSTR>
+        <KNOBJ>000000000000000000</KNOBJ>
+        <ALPRF>00</ALPRF>
+        <CLSZU>00000000</CLSZU>
+        <NLFZV>0</NLFZV>
+        <MENGE_C>         8.000</MENGE_C>
+        <ROMEN_C>         0.000</ROMEN_C>
+      </E1STPOM>
+    </E1STZUM>
+  </IDOC>
+  <IDOC BEGIN="1">
+    <EDI_DC40 SEGMENT="1">
+      <TABNAM>EDI_DC40</TABNAM>
+      <MANDT>400</MANDT>
+      <DOCNUM>0000000000281750</DOCNUM>
+      <DOCREL>46B</DOCREL>
+      <STATUS>30</STATUS>
+      <DIRECT>1</DIRECT>
+      <OUTMOD>4</OUTMOD>
+      <EXPRSS/>
+      <TEST/>
+      <IDOCTYP>BOMMAT03</IDOCTYP>
+      <CIMTYP/>
+      <MESTYP>BOMMAT</MESTYP>
+      <MESCOD/>
+      <MESFCT/>
+      <STD/>
+      <STDVRS/>
+      <STDMES/>
+      <SNDPOR>SAPYSP</SNDPOR>
+      <SNDPRT>LS</SNDPRT>
+      <SNDPFC/>
+      <SNDPRN>YSPCLNT400</SNDPRN>
+      <SNDSAD/>
+      <SNDLAD/>
+      <RCVPOR>A000000020</RCVPOR>
+      <RCVPRT>LS</RCVPRT>
+      <RCVPFC/>
+      <RCVPRN>SPJ_M</RCVPRN>
+      <RCVSAD/>
+      <RCVLAD/>
+      <CREDAT>20020707</CREDAT>
+      <CRETIM>150603</CRETIM>
+      <REFINT/>
+      <REFGRP/>
+      <REFMES/>
+      <ARCKEY/>
+      <SERIAL>200207071506030003</SERIAL>
+    </EDI_DC40>
+    <E1STZUM SEGMENT="1">
+      <MSGFN>009</MSGFN>
+      <STLTY>M</STLTY>
+      <STLNR>00000626</STLNR>
+      <STLAN>1</STLAN>
+      <EXSTL>            1.000</EXSTL>
+      <STLDT>00000000</STLDT>
+      <STLTM>000000</STLTM>
+      <E1MASTM SEGMENT="1">
+        <MSGFN>009</MSGFN>
+        <MATNR>T-B102</MATNR>
+        <WERKS>1000</WERKS>
+        <STLAN>1</STLAN>
+        <STLNR>00000626</STLNR>
+        <STLAL>01</STLAL>
+        <LOSVN>0.000</LOSVN>
+        <LOSBS>0.000</LOSBS>
+      </E1MASTM>
+      <E1STKOM SEGMENT="1">
+        <MSGFN>009</MSGFN>
+        <STLAL>01</STLAL>
+        <DATUV>20020707</DATUV>
+        <BMEIN>PCE</BMEIN>
+        <BMENG>000000000000000</BMENG>
+        <STLST>01</STLST>
+        <BMENG_C>         1.000</BMENG_C>
+      </E1STKOM>
+      <E1STPOM SEGMENT="1">
+        <MSGFN>009</MSGFN>
+        <STLKN>00000001</STLKN>
+        <DATUV>20020707</DATUV>
+        <IDNRK>T-T102</IDNRK>
+        <POSTP>L</POSTP>
+        <POSNR>0010</POSNR>
+        <MEINS>PCE</MEINS>
+        <MENGE>000000000000000</MENGE>
+        <AUSCH>0.00</AUSCH>
+        <AVOAU>0.00</AVOAU>
+        <SANFE>X</SANFE>
+        <SANKA>X</SANKA>
+        <NLFZT>0</NLFZT>
+        <EWAHR>0</EWAHR>
+        <LIFZT>0</LIFZT>
+        <PREIS>0.00</PREIS>
+        <PEINH>0</PEINH>
+        <ROANZ>0.000</ROANZ>
+        <ROMS1>0.000</ROMS1>
+        <ROMS2>0.000</ROMS2>
+        <ROMS3>0.000</ROMS3>
+        <ROMEN>1.000</ROMEN>
+        <OBJTY>1</OBJTY>
+        <MATKL>001</MATKL>
+        <WEBAZ>0</WEBAZ>
+        <CSSTR>0.00</CSSTR>
+        <KNOBJ>000000000000000000</KNOBJ>
+        <LGORT>0001</LGORT>
+        <ALPRF>00</ALPRF>
+        <CLSZU>00000000</CLSZU>
+        <NLFZV>0</NLFZV>
+        <MENGE_C>         1.000</MENGE_C>
+        <ROMEN_C>         0.000</ROMEN_C>
+      </E1STPOM>
+      <E1STPOM SEGMENT="1">
+        <MSGFN>009</MSGFN>
+        <STLKN>00000002</STLKN>
+        <DATUV>20020707</DATUV>
+        <IDNRK>T-T202</IDNRK>
+        <POSTP>L</POSTP>
+        <POSNR>0020</POSNR>
+        <MEINS>PCE</MEINS>
+        <MENGE>000000000000000</MENGE>
+        <AUSCH>0.00</AUSCH>
+        <AVOAU>0.00</AVOAU>
+        <SANFE>X</SANFE>
+        <SANKA>X</SANKA>
+        <NLFZT>0</NLFZT>
+        <EWAHR>0</EWAHR>
+        <LIFZT>0</LIFZT>
+        <PREIS>0.00</PREIS>
+        <PEINH>0</PEINH>
+        <ROANZ>0.000</ROANZ>
+        <ROMS1>0.000</ROMS1>
+        <ROMS2>0.000</ROMS2>
+        <ROMS3>0.000</ROMS3>
+        <ROMEN>1.000</ROMEN>
+        <OBJTY>1</OBJTY>
+        <MATKL>001</MATKL>
+        <WEBAZ>0</WEBAZ>
+        <CSSTR>0.00</CSSTR>
+        <KNOBJ>000000000000000000</KNOBJ>
+        <ALPRF>00</ALPRF>
+        <CLSZU>00000000</CLSZU>
+        <NLFZV>0</NLFZV>
+        <MENGE_C>         1.000</MENGE_C>
+        <ROMEN_C>         0.000</ROMEN_C>
+      </E1STPOM>
+      <E1STPOM SEGMENT="1">
+        <MSGFN>009</MSGFN>
+        <STLKN>00000003</STLKN>
+        <DATUV>20020707</DATUV>
+        <IDNRK>T-T302</IDNRK>
+        <POSTP>L</POSTP>
+        <POSNR>0030</POSNR>
+        <MEINS>PCE</MEINS>
+        <MENGE>000000000000000</MENGE>
+        <AUSCH>0.00</AUSCH>
+        <AVOAU>0.00</AVOAU>
+        <SANFE>X</SANFE>
+        <SANKA>X</SANKA>
+        <NLFZT>0</NLFZT>
+        <EWAHR>0</EWAHR>
+        <LIFZT>0</LIFZT>
+        <PREIS>0.00</PREIS>
+        <PEINH>0</PEINH>
+        <ROANZ>0.000</ROANZ>
+        <ROMS1>0.000</ROMS1>
+        <ROMS2>0.000</ROMS2>
+        <ROMS3>0.000</ROMS3>
+        <ROMEN>8.000</ROMEN>
+        <OBJTY>1</OBJTY>
+        <MATKL>001</MATKL>
+        <WEBAZ>0</WEBAZ>
+        <CSSTR>0.00</CSSTR>
+        <KNOBJ>000000000000000000</KNOBJ>
+        <ALPRF>00</ALPRF>
+        <CLSZU>00000000</CLSZU>
+        <NLFZV>0</NLFZV>
+        <MENGE_C>         8.000</MENGE_C>
+        <ROMEN_C>         0.000</ROMEN_C>
+      </E1STPOM>
+    </E1STZUM>
+  </IDOC>
+</BOMMAT03>

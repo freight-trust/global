@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by Richard White (Eagle Datamation International) -->
+<xs:schema targetNamespace="http://www.edi.com.au/EnterpriseService/" xmlns="http://www.edi.com.au/EnterpriseService/" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="Elements.xsd"/>
+	<xs:element name="WipOrAccrual" type="WipOrAccrual">
+		<xs:annotation>
+			<xs:documentation>Comment describing your root element</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="WipOrAccrual">
+		<xs:sequence>
+			<xs:element name="LineType">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="REV"/>
+						<xs:enumeration value="CST"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="PostOrReverse">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="P"/>
+						<xs:enumeration value="R"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="PostOrReverseDate" type="xs:dateTime" minOccurs="0"/>
+			<xs:element name="PostOrReversePeriod" type="xs:integer" minOccurs="0"/>
+			<xs:element name="DebtorOrCreditor" type="Organisation" minOccurs="0"/>
+			<xs:element name="ChargeCode" type="xs:NMTOKEN"/>
+			<xs:element name="ChargeGroup" type="xs:NMTOKEN" minOccurs="0"/>
+			<xs:element name="ChargeSubGroup" type="xs:NMTOKEN" minOccurs="0"/>
+			<xs:element name="ChargeCodeSalesGroup" type="xs:NMTOKEN" minOccurs="0"/>
+			<xs:element name="ChargeCodeExpenseGroup" type="xs:NMTOKEN" minOccurs="0"/>
+			<xs:element name="GLAccount" type="xs:NMTOKEN" minOccurs="0"/>
+			<xs:element name="Description" type="xs:normalizedString" minOccurs="0"/>
+			<xs:element name="Branch" type="xs:NMTOKEN"/>
+			<xs:element name="Department" type="xs:NMTOKEN"/>
+			<xs:element name="JobNo" type="xs:NMTOKEN" minOccurs="0"/>
+			<xs:element name="JobType" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="CSL"/>
+						<xs:enumeration value="SHP"/>
+						<xs:enumeration value="BRK"/>
+						<xs:enumeration value="AWB"/>
+						<xs:enumeration value="CSH"/>
+						<xs:enumeration value="CLL"/>
+						<xs:enumeration value="TRN"/>
+						<xs:enumeration value="WIN"/>
+						<xs:enumeration value="WOU"/>
+						<xs:enumeration value="WST"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="MasterBillNo" type="xs:NMTOKEN" minOccurs="0"/>
+			<xs:element name="HouseBIllNo" type="xs:NMTOKEN" minOccurs="0"/>
+			<xs:element name="OriginPortCode" type="UNLOCO" minOccurs="0"/>
+			<xs:element name="DestinationPortCode" type="UNLOCO" minOccurs="0"/>
+			<xs:element name="Incoterm" type="INCOTERM" minOccurs="0"/>
+			<xs:element name="LocalInvoiceAmtExclTax" type="FinancialValue"/>
+			<xs:element name="CreatedUserId" type="xs:normalizedString" minOccurs="0"/>
+			<xs:element name="DepartmentActivity" type="DepartmentActivity" minOccurs="0"/>
+			<xs:element name="AgentsReference" type="xs:string" minOccurs="0"/>
+      <xs:element name="WipOrAccrualGUID" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

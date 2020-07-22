@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BillOfMaterials>
+	<BillOfMaterial MaterialNumber="103-100">
+		<Category>M</Category>
+		<Plant>1000</Plant>
+		<ValidFromDate>20020321</ValidFromDate>
+		<Quantity>1</Quantity>
+		<UnitOfMeasure>PCE</UnitOfMeasure>
+		<Components>
+			<Component itemnumber="10">
+				<MaterialNumber>100-110</MaterialNumber>
+				<ItemCategory>L</ItemCategory>
+				<Quantity>1</Quantity>
+				<UnitOfMeasure>PCE</UnitOfMeasure>
+			</Component>
+			<Component itemnumber="20">
+				<MaterialNumber>100-120</MaterialNumber>
+				<ItemCategory>L</ItemCategory>
+				<Quantity>1</Quantity>
+				<UnitOfMeasure>PCE</UnitOfMeasure>
+			</Component>
+			<Component itemnumber="30">
+				<MaterialNumber>100-130</MaterialNumber>
+				<ItemCategory>L</ItemCategory>
+				<Quantity>8</Quantity>
+				<UnitOfMeasure>PCE</UnitOfMeasure>
+			</Component>
+		</Components>
+	</BillOfMaterial>
+	<BillOfMaterial MaterialNumber="103-100">
+		<Category>M</Category>
+		<Plant>1000</Plant>
+		<ValidFromDate>20020321</ValidFromDate>
+		<Quantity>1</Quantity>
+		<UnitOfMeasure>PCE</UnitOfMeasure>
+		<Components>
+			<Component itemnumber="10">
+				<MaterialNumber>100-110</MaterialNumber>
+				<ItemCategory>L</ItemCategory>
+				<Quantity>1</Quantity>
+				<UnitOfMeasure>PCE</UnitOfMeasure>
+			</Component>
+			<Component itemnumber="20">
+				<MaterialNumber>100-120</MaterialNumber>
+				<ItemCategory>L</ItemCategory>
+				<Quantity>1</Quantity>
+				<UnitOfMeasure>PCE</UnitOfMeasure>
+			</Component>
+			<Component itemnumber="30">
+				<MaterialNumber>100-130</MaterialNumber>
+				<ItemCategory>L</ItemCategory>
+				<Quantity>8</Quantity>
+				<UnitOfMeasure>PCE</UnitOfMeasure>
+			</Component>
+		</Components>
+	</BillOfMaterial>
+</BillOfMaterials>

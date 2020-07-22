@@ -1,0 +1,1292 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://privados.recintos.ws" targetNamespace="http://privados.recintos.ws">
+
+	<!--RF_OPERACION-->
+	<xsd:simpleType name="tipo_id_operacion">
+		<xsd:restriction base="xsd:positiveInteger">
+
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_fec_registro">
+		<xsd:restriction base="xsd:dateTime"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_id_movimiento">
+		<xsd:restriction base="xsd:positiveInteger">
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_id_detalle_movimiento">
+		<xsd:restriction base="xsd:positiveInteger">
+		    <xsd:totalDigits value="15"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_id_tipo_operacion">
+		<xsd:restriction base="xsd:positiveInteger">
+		    <xsd:pattern value="[0-9][0-9]"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_id_recinto_fiscalizado">
+		<xsd:restriction base="xsd:positiveInteger">
+		    <xsd:totalDigits value="14"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_id_original">
+		<xsd:restriction base="xsd:positiveInteger">
+		    <xsd:totalDigits value="18"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_ide_est_operacion">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="18"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_id_asociado">
+		<xsd:restriction base="xsd:positiveInteger">
+		    <xsd:totalDigits value="18"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!--RF_INGRESO-->
+	<xsd:simpleType name="tipo_id_operacionP0">
+		<xsd:restriction base="xsd:positiveInteger">
+		    <xsd:totalDigits value="18"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_cve_estatus_ingreso">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="14"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_cve_tipo_ingreso">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="14"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_id_tipo_mercancia">
+		<xsd:restriction base="xsd:positiveInteger">
+		    <xsd:maxExclusive value="20"/>
+		    <xsd:minInclusive value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_peso_kg">
+		<xsd:restriction base="xsd:decimal">
+		    <xsd:totalDigits value="14"/>
+		    <xsd:fractionDigits value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_fec_ini_carga">
+		<xsd:restriction base="xsd:dateTime"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_fec_fin_carga">
+		<xsd:restriction base="xsd:dateTime"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="condiciones_carga">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="200"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="observaciones">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="200"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_id_operacion_P3">
+		<xsd:restriction base="xsd:positiveInteger">
+		    <xsd:totalDigits value="18"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_id_operacion_P8">
+		<xsd:restriction base="xsd:positiveInteger">
+		    <xsd:totalDigits value="18"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_id_cve_rechazo">
+		<xsd:restriction base="xsd:positiveInteger">
+		    <xsd:totalDigits value="25"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_peso_ingresado">
+		<xsd:restriction base="xsd:decimal">
+		    <xsd:totalDigits value="14"/>
+		    <xsd:fractionDigits value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!--RF_ANEXO29-->
+	<!--En anexo 29 solo se utiliza el id operacion P0 -->
+	<!--RF_INGRESO_PEDIMENTO-->
+	<!--la tabla de ingreso pedimento lleva los valores de -->
+	<!--id_operacion P0, ID_PEDIMENTO-->
+	<xsd:simpleType name="tipo_id_patente">
+		<xsd:restriction base="xsd:positiveInteger">
+		    <xsd:totalDigits value="14"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_cve_aduana">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!--RF_GUIA-->
+	<!--CONTENIDO EN GUIA:-->
+	<!--ID_OPERACION_P0, OBSERVACIONES-->
+	<xsd:simpleType name="tipo_id_guia">
+		<xsd:restriction base="xsd:positiveInteger">
+		    <xsd:totalDigits value="20"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_numero_guia_bl">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="50"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_ide_tipo_documento_transporte">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_ide_tipo_operacion_master">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="20"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_valor_declarado">
+		<xsd:restriction base="xsd:decimal">
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_cve_moneda">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_num_peso_bruto_total_guia">
+		<xsd:restriction base="xsd:decimal">
+		    <xsd:totalDigits value="14"/>
+		    <xsd:fractionDigits value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_cod_unidad_peso_bruto">
+		<xsd:restriction base="xsd:decimal">
+		    <xsd:totalDigits value="14"/>
+		    <xsd:fractionDigits value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_peso_ingresado_kg">
+		<xsd:restriction base="xsd:decimal">
+		    <xsd:totalDigits value="14"/>
+		    <xsd:fractionDigits value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_num_volument_total">
+		<xsd:restriction base="xsd:decimal">
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_cod_unidad_volumen">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_num_piezas">
+		<xsd:restriction base="xsd:positiveInteger">
+		    <xsd:totalDigits value="10"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_num_parcialidad">
+		<xsd:restriction base="xsd:positiveInteger">
+		    <xsd:totalDigits value="10"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_num_secuencia">
+		<xsd:restriction base="xsd:positiveInteger">
+		    <xsd:totalDigits value="10"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_tipo_carga">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="20"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_id_manifiesto">
+		<xsd:restriction base="xsd:positiveInteger">
+		    <xsd:totalDigits value="18"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!--RF_INGRESO_AUTORIDAD-->
+	<!--CONTENIDO IDOPERACION_P0, id_fundamento-->
+	<xsd:simpleType name="tipo_nombre_area1">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="50"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_nombre_area2">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="50"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_fec_oficio">
+		<xsd:restriction base="xsd:dateTime"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_numero_oficio">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="50"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_numero_expediente">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="20"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_cargo_destinatario">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="30"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_asunto">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="50"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_oficio_autoridad">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="50"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_autoridad_emisora">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="60"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_nombre_firmante">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="60"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_puesto">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="50"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_id_categoria">
+		<xsd:restriction base="xsd:positiveInteger">
+		    <xsd:totalDigits value="50"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_identificador_transporte">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="25"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_cve_pais">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!--CAT-CATEGORIA-->
+	<xsd:simpleType name="tipo_id_categoriI">
+		<xsd:restriction base="xsd:positiveInteger">
+		    <xsd:totalDigits value="50"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!--CAT_FUNDAMENTO-->
+	<xsd:simpleType name="tipo_id_fundamento">
+		<xsd:restriction base="xsd:positiveInteger">
+		    <xsd:totalDigits value="50"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!--RF_CCP-->
+	<xsd:simpleType name="tipo_id_secuencia">
+		<xsd:restriction base="xsd:positiveInteger">
+		    <xsd:totalDigits value="50"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_parrafo">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="500"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!--RF_PARRAFOS_SOLICITUD-->
+	<!-- ATRIBUTOS OPERACION P0, SECUENCI Y PARRAFO YA DEFINIDOS -->
+	<!-- RF_INFORMACION_IMPORTADOR -->
+	<xsd:simpleType name="tipo_nombre">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="60"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_domicilio_calle_nem">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="80"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_num_inetrior">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="20"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_num_exterior">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="20"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_cp">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="20"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_municipio">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="25"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_entidad_federativa">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="25"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- tipo clave pais ya definida -->
+	<xsd:simpleType name="tipo_rfc">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="15"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_curp">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="18"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_e_correo">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="30"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_ciudad">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="25"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_nombre_contacto">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="60"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_telefono_contacto">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="25"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- rf_cont_house -->
+	<!--id_contenedor-->
+	<xsd:simpleType name="tipo_ide_estatus">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="20"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- VUC_CAT -->
+	<xsd:simpleType name="tipo_cve_folio_caat">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="4"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- RF_MANIFIESTO -->
+	<xsd:simpleType name="tipo_id_recinto_discalizado_d">
+		<xsd:restriction base="xsd:positiveInteger">
+		    <xsd:totalDigits value="14"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_num_vuelo_buque_viaje">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="28"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_fec_hora_estimada_arribo">
+		<xsd:restriction base="xsd:dateTime"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_origen_vuelo_buque">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="30"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_num_manifiesto">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="80"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_ide_medio_transporte">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="19"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_num_peso_bruto_total">
+		<xsd:restriction base="xsd:decimal">
+		    <xsd:totalDigits value="14"/>
+		    <xsd:fractionDigits value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_cod_unidad_peso">
+		<xsd:restriction base="xsd:decimal">
+		    <xsd:totalDigits value="14"/>
+		    <xsd:fractionDigits value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_num_total_piezas">
+		<xsd:restriction base="xsd:positiveInteger">
+		    <xsd:totalDigits value="14"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_ide_tipo_transporte">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="20"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- RF_MERCANCIA -->
+	<xsd:simpleType name="tipo_id_mercancia">
+		<xsd:restriction base="xsd:positiveInteger">
+		    <xsd:totalDigits value="20"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_id_guia_master">
+		<xsd:restriction base="xsd:positiveInteger">
+		    <xsd:totalDigits value="20"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_id_guia_house">
+		<xsd:restriction base="xsd:positiveInteger">
+		    <xsd:totalDigits value="20"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_id_contenedor">
+		<xsd:restriction base="xsd:positiveInteger">
+		    <xsd:totalDigits value="18"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_cve_pais_origen">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_valor_mercancia">
+		<xsd:restriction base="xsd:decimal">
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_num_piezas_mercancia">
+		<xsd:restriction base="xsd:positiveInteger">
+		    <xsd:totalDigits value="6"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_cve_um_piezas">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_num_peso">
+		<xsd:restriction base="xsd:decimal">
+		    <xsd:totalDigits value="14"/>
+		    <xsd:fractionDigits value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_cve_peso">
+		<xsd:restriction base="xsd:decimal">
+		    <xsd:totalDigits value="14"/>
+		    <xsd:fractionDigits value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_peso_kg_mercancia">
+		<xsd:restriction base="xsd:decimal">
+		    <xsd:totalDigits value="14"/>
+		    <xsd:fractionDigits value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_cve_tipo_mercancia">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_volumen_mercancia">
+		<xsd:restriction base="xsd:decimal">
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_descripcion_mercancia">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="300"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_cve_imo">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="17"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_cve_vid">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="20"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_operable">
+		<xsd:restriction base="xsd:positiveInteger">
+		    <xsd:totalDigits value="50"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_ide_operacion_origen">
+		<xsd:restriction base="xsd:positiveInteger">
+		    <xsd:totalDigits value="50"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_ide_nivel_origen">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="20"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_peso_saldo">
+		<xsd:restriction base="xsd:decimal">
+		    <xsd:totalDigits value="14"/>
+		    <xsd:fractionDigits value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_piezas_saldo">
+		<xsd:restriction base="xsd:positiveInteger">
+		    <xsd:totalDigits value="6"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!--RF_VIN-->
+	<!--incluye id_mercancia-->
+	<xsd:simpleType name="tipo_id_vin">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="20"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_tvn_vin">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="30"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!--RF_MOVIMIENTOS-->
+	<!--ID_OPERACION, ID_MERCANCIA, PESO, PIEZAS-->
+	<xsd:simpleType name="tipo_peso_merma">
+		<xsd:restriction base="xsd:decimal">
+		    <xsd:totalDigits value="14"/>
+		    <xsd:fractionDigits value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_bl_signo">
+		<xsd:restriction base="xsd:positiveInteger">
+		    <xsd:totalDigits value="40"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!--RF_PERSONAS-->
+	<!--tabla con contenido id_OperacionP0-->
+	<xsd:simpleType name="tipo_id_persona">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="20"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_ide_tipo_persona">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="10"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_nombre_persona">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="60"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_domicilio">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="200"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_CP">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="15"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_municipio_persona">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="30"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_ent_fed">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_pais">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_RFC">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="80"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_email">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="256"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_ciudad_persona">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_contacto">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="60"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_TPR_telefono">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="256"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!--RF_PEDIMENTO-->
+	<!--ID_OPERACION_P0, id_seguimiento -->
+	<xsd:simpleType name="tipo_id_pedimento">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="14"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_num_pedimento">
+		<xsd:restriction base="xsd:positiveInteger">
+		    <xsd:totalDigits value="14"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_ide_tipo_consulta_pedimento">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="20"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_cve_aduana_es">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="20"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_tipo_operacion">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_clave_documento">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="100"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_RFC_">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="15"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_CURP">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="18"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="t_tipo_cambio">
+		<xsd:restriction base="xsd:positiveInteger">
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_monto">
+		<xsd:restriction base="xsd:positiveInteger">
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_peso">
+		<xsd:restriction base="xsd:decimal">
+		    <xsd:totalDigits value="14"/>
+		    <xsd:fractionDigits value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_transporte">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="100"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_destino">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="200"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_origen_informacion">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="20"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_num_patente">
+		<xsd:restriction base="xsd:positiveInteger">
+		    <xsd:totalDigits value="7"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_num_guia">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="20"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_num_contenedor">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="12"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_id_e_documento">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="13"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="xml_pedimento">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="500"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!--RF_INGRESO_CONTENEDRO-->
+	<!--ID_OPERACION_P0, tipo_ide_estatus,tipo_ide_nivel_origen, observaciones, id_seguimiento-->
+	<xsd:simpleType name="tipo_id_cotenedor">
+		<xsd:restriction base="xsd:positiveInteger">
+		    <xsd:totalDigits value="18"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_temperatura">
+		<xsd:restriction base="xsd:positiveInteger">
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!--RF_INGRESO_PARCIALES-->
+	<!--ID_OPERACION_P0,num_parcialidad, PESO, NUM_PIEZAS, ID_SEGUIMIENTO -->
+	<xsd:simpleType name="tipo_bl_ultima_parcialidad">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!--RF_SELLOS-->
+	<!--ID_OPERAACION_P0. ID_CONTENEDOR,  -->
+	<xsd:simpleType name="tipo_id_sello">
+		<xsd:restriction base="xsd:positiveInteger">
+		    <xsd:totalDigits value="15"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_sello">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="15"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!--RF_CONTENEDOR-->
+	<!--id_contenedor-->
+	<xsd:simpleType name="tipo_clave_contenedor">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="8"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_iniciales_contenedor">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="4"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_numero_contenedor">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="18"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_de_contenedor">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_ide_contenedor_ubicacion">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="20"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_ide_contenedor_estado">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="20"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!--RF_TRASPALEO-->
+	<!--id_operacion_p0,S,origen,destino,cancelacion, se utiliza el mismo objeto simple-->
+	<!--id_seguimiento-->
+	<xsd:simpleType name="tipo_id_operacion_P0_Traspaleo">
+		<xsd:restriction base="xsd:positiveInteger">
+		    <xsd:totalDigits value="18"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_ide_estatus_traspaleo">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="20"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!--RF_CONSOLIDACION-->
+	<!--ID_OPERACION,HOUSE,MASTER,C,P0,IDSEGUIMIENTO, SE UTILIZA EL MISMO OBJETO-->
+	<xsd:simpleType name="tipo_id_operacion_consolidacion">
+		<xsd:restriction base="xsd:positiveInteger">
+		    <xsd:totalDigits value="18"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!--RF_URL_RECINTO-->
+	<!--id_recinto_Fiscalizado-->
+	<xsd:simpleType name="tipo_desc_url">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="2000"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_fecha_inicio_vigencia">
+		<xsd:restriction base="xsd:dateTime"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_fecha_final_vigencia">
+		<xsd:restriction base="xsd:dateTime"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_BLN_activo">
+		<xsd:restriction base="xsd:positiveInteger">
+		    <xsd:totalDigits value="10"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!--RF_HORARIO_RECINTO-->
+	<!--ID_RECINTO_FISCALIZADO,BLN_ACTIVO-->
+	<xsd:simpleType name="tipo_N_dia">
+		<xsd:restriction base="xsd:positiveInteger">
+		    <xsd:totalDigits value="10"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_hora_Inicio_fin">
+		<xsd:restriction base="xsd:dateTime"/>
+	</xsd:simpleType>
+	<!--RF_EXCEPCION_HORARIO-->
+	<!--ID_RECINTO_FISCALIZADO,BLN_ACTIVO-->
+	<xsd:simpleType name="tipo_dia_hora_inicio_fin">
+		<xsd:restriction base="xsd:dateTime"/>
+	</xsd:simpleType>
+	<!--RF_BITACORA_MENSAJE-->
+	<!--ID_OPERACION,-->
+	<xsd:simpleType name="tipo_id_bitacora_mensaje">
+		<xsd:restriction base="xsd:positiveInteger">
+		    <xsd:totalDigits value="18"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_fecha">
+		<xsd:restriction base="xsd:dateTime"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_estatus_envio">
+		<xsd:restriction base="xsd:positiveInteger"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_mensaje">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_BLN_envio">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="tipo_ruta_archivo_MSG">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="250"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:complexType name="informacionGeneral" mixed="false">
+		<xsd:sequence>
+			<xsd:element name="idOperacion" type="tns:tipo_id_operacion"/>
+			<!--consecutivo de mensaje-->
+			<xsd:element name="idAsociado" type="tns:tipo_id_asociado"/>
+			<xsd:element name="fechRegistro" type="tns:tipo_fec_registro"/>
+			<xsd:element name="idDetalleMovimiento" type="tns:tipo_id_detalle_movimiento"/>
+			<xsd:element name="idMovimiento" type="tns:tipo_id_movimiento"/>
+			<xsd:element name="idTipoOperacion" type="tns:tipo_id_tipo_operacion"/>
+			<xsd:element name="idRecintoFiscalizado" type="tns:tipo_id_recinto_fiscalizado"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+
+	<xsd:complexType name="transporte">
+		<xsd:sequence>
+			<xsd:element name="numeroVueloBuqueViaje " type="tns:tipo_num_vuelo_buque_viaje"/>
+			<xsd:element name="fechaHoraDeArribo" type="tns:tipo_fec_hora_estimada_arribo"/>
+			<xsd:element name="ideTipoTransporte" type="tns:tipo_ide_tipo_transporte"/>
+			<xsd:element name="origenVueloBuque" type="tns:tipo_origen_vuelo_buque"/>
+			<xsd:element name="numManifiesto" type="tns:tipo_num_manifiesto"/>
+			<xsd:element name="cveFolioCAAT" type="tns:tipo_cve_folio_caat"/>
+			<xsd:element name="numPesoBruto" type="tns:tipo_num_peso_bruto_total"/>
+			<xsd:element name="codUnidadPeso" type="tns:tipo_cod_unidad_peso"/>
+			<xsd:element name="numPiezasTotal" type="tns:tipo_num_piezas"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="informacionDelMaster">
+		<xsd:sequence>
+			<xsd:element name="numeroGuiaBlMaster" type="tns:tipo_numero_guia_bl"/>
+			<xsd:element name="cveFolioCAAT" type="tns:tipo_cve_folio_caat"/>
+			<xsd:element name="ideTipoOperacionMaster" type="tns:tipo_ide_tipo_operacion_master"/>
+			<xsd:element name="valorDeclaradoAduana" type="tns:tipo_valor_declarado"/>
+			<xsd:element name="cveMoneda" type="tns:tipo_cve_moneda"/>
+			<xsd:element name="pesoBrutoTotal" type="tns:tipo_num_peso_bruto_total"/>
+			<xsd:element name="codUnidadPesoBruto" type="tns:tipo_cod_unidad_peso_bruto"/>
+			<xsd:element name="pesoIngresadoKG" type="tns:tipo_peso_ingresado_kg"/>
+			<xsd:element name="numVolumenTotal" type="tns:tipo_num_volument_total"/>
+			<xsd:element name="codUnidadVolumen" type="tns:tipo_cod_unidad_volumen"/>
+			<xsd:element name="numParcialidad" type="tns:tipo_num_parcialidad"/>
+			<xsd:element name="numSecuencia" type="tns:tipo_num_secuencia"/>
+			<xsd:element name="observaciones" type="tns:observaciones"/>
+			<xsd:element name="mercancia" type="tns:mercancia" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="personas" type="tns:personas" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="guiaHouse" type="tns:guiaHouse" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="contenedor" type="tns:contenedor" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="personas">
+		<xsd:sequence>
+			<xsd:element name="ideTipoPersona" type="tns:tipo_ide_tipo_persona"/>
+			<xsd:element name="nombre" type="tns:tipo_nombre"/>
+			<xsd:element name="domicilio" type="tns:tipo_domicilio_calle_nem"/>
+			<xsd:element name="cp" type="tns:tipo_cp"/>
+			<xsd:element name="municipio" type="tns:tipo_municipio_persona"/>
+			<xsd:element name="entFed" type="tns:tipo_entidad_federativa"/>
+			<xsd:element name="pais" type="tns:tipo_pais"/>
+			<xsd:element name="rfc" type="tns:tipo_rfc"/>
+			<xsd:element name="email" type="tns:tipo_email"/>
+			<xsd:element name="ciudad" type="tns:tipo_ciudad_persona"/>
+			<xsd:element name="contacto" type="tns:tipo_nombre_contacto"/>
+			<xsd:element name="tprTelefono" type="tns:tipo_telefono_contacto"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="house" mixed="false">
+		<xsd:sequence maxOccurs="unbounded">
+			<xsd:element name="guiaHouse" type="tns:tipo_id_guia_house"/>
+			<xsd:element name="cveFolioCAAT" type="tns:tipo_cve_folio_caat"/>
+			<xsd:element name="pesoenKG" type="tns:tipo_peso_kg"/>
+			<xsd:element name="mercancia" type="tns:mercancia" minOccurs="1" maxOccurs="unbounded"/>
+			<xsd:element name="personas" type="tns:personas" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="mercancia">
+		<xsd:sequence>
+			<xsd:element name="numSecuencia" type="tns:tipo_id_secuencia"/>
+			<xsd:element name="cvepaisOrigen" type="tns:tipo_cve_pais_origen"/>
+			<xsd:element name="descripcionMercancia" type="tns:tipo_descripcion_mercancia"/>
+			<xsd:element name="cveImo" type="tns:tipo_cve_imo"/>
+			<xsd:element name="cveVid" type="tns:tipo_cve_vid"/>
+			<xsd:element name="valorMercancia" type="tns:tipo_valor_mercancia"/>
+			<xsd:element name="cveMoneda" type="tns:tipo_cve_moneda"/>
+			<xsd:element name="numPiezas" type="tns:tipo_num_piezas_mercancia"/>
+			<xsd:element name="cveUmPiezas" type="tns:tipo_cve_um_piezas"/>
+			<xsd:element name="numPeso" type="tns:tipo_peso"/>
+			<xsd:element name="cvePeso" type="tns:tipo_cve_peso"/>
+			<xsd:element name="condicionCarga" type="tns:condiciones_carga"/>
+			<xsd:element name="cveTipoMercancia" type="tns:tipo_cve_tipo_mercancia"/>
+			<xsd:element name="volumenMercancia" type="tns:tipo_num_volument_total"/>
+			<xsd:element name="Observaciones" type="tns:observaciones"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="contenedor">
+		<xsd:sequence>
+			<xsd:element name="inicialesContenedor" type="tns:tipo_iniciales_contenedor"/>
+			<xsd:element name="numeroContenedor" type="tns:tipo_num_contenedor"/>
+			<xsd:element name="tipoContenedor" type="tns:tipo_de_contenedor"/>
+			<xsd:element name="estadoDelContenedor" type="tns:tipo_ide_contenedor_estado"/>
+			<xsd:element name="sellos" type="tns:sellos" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="guiaHouse" type="tns:guiaHouse" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="contenedorOrigen">
+		<xsd:sequence>
+			<xsd:element name="inicialesContenedor" type="tns:tipo_iniciales_contenedor"/>
+			<xsd:element name="numeroContenedor" type="tns:tipo_num_contenedor"/>
+			<xsd:element name="tipoContenedor" type="tns:tipo_de_contenedor"/>
+			<xsd:element name="estadoDelContenedor" type="tns:tipo_ide_contenedor_estado"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="masterConsolid">
+		<xsd:sequence>
+			<xsd:element name="cveFolioCAAT" type="tns:tipo_cve_folio_caat"/>
+			<xsd:element name="numeroGuiaBl" type="tns:tipo_numero_guia_bl"/>
+			<xsd:element name="ideTipoOperacionMaster" type="tns:tipo_ide_tipo_operacion_master"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="sellos">
+		<xsd:sequence>
+			<xsd:element name="sello" type="tns:tipo_sello"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+		<xsd:complexType name="guiaMaster"><!--mercancia 2-->
+		<xsd:sequence>
+			<xsd:element name="numeroGuiaBl" type="tns:tipo_numero_guia_bl"/>
+			<xsd:element name="cveFolioCAAT" type="tns:tipo_cve_folio_caat"/>
+			<xsd:element name="ideTipoOperacionMaster" type="tns:tipo_ide_tipo_operacion_master"/>
+			<xsd:element name="valorDeclarado" type="tns:tipo_valor_declarado"/>
+			<xsd:element name="cveMoneda" type="tns:tipo_cve_moneda"/>
+			<xsd:element name="numPesoBrutoTotal" type="tns:tipo_num_peso_bruto_total"/>
+			<xsd:element name="codUnidadPesoBruto" type="tns:tipo_cod_unidad_peso_bruto"/>
+			<xsd:element name="numVolumenTotal" type="tns:tipo_num_volument_total"/>
+			<xsd:element name="codUnidadVolumen" type="tns:tipo_cod_unidad_volumen"/>
+			<xsd:element name="numPiezas" type="tns:tipo_num_piezas"/>
+			<xsd:element name="numParcialidad" type="tns:tipo_num_parcialidad"/>
+			<xsd:element name="numSecuencia" type="tns:tipo_num_secuencia"/>
+			<xsd:element name="observaciones" type="tns:observaciones"/>
+			<xsd:element name="tipoCarga" type="tns:tipo_tipo_carga"/>
+			
+			</xsd:sequence>
+	</xsd:complexType>
+
+
+	<xsd:complexType name="guiaHouse">
+		<xsd:sequence>
+			<xsd:element name="numeroGuiaBL" type="tns:tipo_numero_guia_bl"/>
+			<xsd:element name="idAsociado" type="tns:tipo_id_asociado"/>
+			<xsd:element name="cveFolioCAAT" type="tns:tipo_cve_folio_caat"/>
+			<xsd:element name="mercancia" type="tns:mercancia"/>
+			<xsd:element name="personas" type="tns:personas" minOccurs="0" maxOccurs="unbounded"/>
+			
+		</xsd:sequence>
+	</xsd:complexType>
+<!--
+	<xsd:complexType name="mercancia">
+		<xsd:sequence>
+			<xsd:element name="numSecuencia" type="tns:tipo_id_secuencia"/>
+			<xsd:element name="paisDeOrigen" type="tns:tipo_cve_pais_origen"/>
+			<xsd:element name="DecripcionDeMercancia" type="tns:tipo_descripcion_mercancia"/>
+			<xsd:element name="valorMercancia" type="tns:tipo_valor_mercancia"/>
+			<xsd:element name="tipoDeMoneda" type="tns:tipo_cve_moneda"/>
+			<xsd:element name="numPiezas" type="tns:tipo_num_piezas_mercancia"/>
+			<xsd:element name="cveUmPiezas" type="tns:tipo_cve_um_piezas"/>
+			<xsd:element name="Peso" type="tns:tipo_peso"/>
+			<xsd:element name="unidadDePeso" type="tns:tipo_cve_peso"/>
+			<xsd:element name="condicionesDeLaCarga" type="tns:condiciones_carga"/>
+			<xsd:element name="tipoDeMercancia" type="tns:tipo_cve_tipo_mercancia"/>
+			<xsd:element name="VolumenDeMercancia" type="tns:tipo_num_volument_total"/>
+			<xsd:element name="Observaciones" type="tns:observaciones"/>
+		</xsd:sequence>
+	</xsd:complexType>
+-->
+	
+
+	<xsd:complexType name="solicitudMercancia">
+		<xsd:sequence>
+			<xsd:element name="idMercancia" type="tns:tipo_id_mercancia"/>
+			<xsd:element name="numSecuencia" type="tns:tipo_id_secuencia"/>
+			<xsd:element name="numPiezas" type="tns:tipo_num_piezas_mercancia"/>
+			<xsd:element name="cveUmPiezas" type="tns:tipo_cve_um_piezas"/>
+			<xsd:element name="numPeso" type="tns:tipo_peso"/>
+		</xsd:sequence>
+	</xsd:complexType>		
+
+	<xsd:complexType name="solicitudMercanciaPedimento">
+		<xsd:sequence>
+			<xsd:element name="idMercancia" type="tns:tipo_id_mercancia"/>
+			<xsd:element name="idAsociado" type="tns:tipo_id_asociado"/>
+			<xsd:element name="numSecuencia" type="tns:tipo_id_secuencia"/>
+			<xsd:element name="numPiezas" type="tns:tipo_num_piezas_mercancia"/>
+			<xsd:element name="cveUmPiezas" type="tns:tipo_cve_um_piezas"/>
+			<xsd:element name="numPeso" type="tns:tipo_peso"/>
+		</xsd:sequence>
+	</xsd:complexType>	
+
+		<xsd:complexType name="solicitudMercanciaSubdivision">
+		<xsd:sequence>
+			<xsd:element name="idMercancia" type="tns:tipo_id_mercancia"/>
+			<xsd:element name="idAsociado" type="tns:tipo_id_asociado"/>
+			<xsd:element name="numSecuencia" type="tns:tipo_id_secuencia"/>
+			<xsd:element name="numPiezas" type="tns:tipo_num_piezas_mercancia"/>
+			<xsd:element name="cveUmPiezas" type="tns:tipo_cve_um_piezas"/>
+			<xsd:element name="numPeso" type="tns:tipo_peso"/>
+			<!-- Mercancia Destino-->
+			<xsd:element name="numSecuenciaD" type="tns:tipo_id_secuencia"/>
+			<xsd:element name="numPiezasD" type="tns:tipo_num_piezas_mercancia"/>
+			<xsd:element name="cveUmPiezasD" type="tns:tipo_cve_um_piezas"/>
+			<xsd:element name="numPesoD" type="tns:tipo_peso"/>
+
+
+		</xsd:sequence>
+	</xsd:complexType>
+
+
+	<xsd:complexType name="informacionTransferenciaSolicitud">
+		<xsd:sequence>
+			<xsd:element name="idAsociado" type="tns:tipo_id_asociado"/>
+			<xsd:element name="numeroGuiaBl" type="tns:tipo_numero_guia_bl"/>
+			<xsd:element name="mercancia" type="tns:solicitudMercancia" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+
+
+    <xsd:complexType name="informacionEntradaSimple">
+        <xsd:sequence>
+            <xsd:element name="tipoDeMercancia" type="tns:tipo_id_tipo_mercancia"/>
+            <xsd:element name="fechaInicioCarga" type="tns:tipo_fec_ini_carga"/>
+            <xsd:element name="fechaFinCarga" type="tns:tipo_fec_fin_carga"/>
+            <xsd:element name="peso" type="tns:tipo_peso"/>
+            <xsd:element name="totalDeParcialidades" type="tns:tipo_num_parcialidad"/>
+            <xsd:element name="numeroDeParcialidad" type="tns:tipo_num_parcialidad"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+
+
+	<!-- Procesos de RecintosFiscalizados -->
+
+	<xsd:element name="recibeP0">
+		<xsd:complexType>
+			<xsd:sequence>
+				<!--informacion general -->
+				<xsd:element name="informacionGeneral" type="tns:informacionGeneral"/>
+				<!-- informacion del transporte -->
+				<xsd:element name="transporte" type="tns:transporte"/>
+				<!--bl master -->
+				<xsd:element name="guiaMaster" type="tns:informacionDelMaster"/>
+				<xsd:element name="contenedor" type="tns:contenedor" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element name="guiaHouse" type="tns:guiaHouse" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element name="mercancia" type="tns:mercancia" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element name="personas" type="tns:personas" minOccurs="0" maxOccurs="unbounded"/>
+				<!--Informacion de mercancia-->
+				<!-- informacion de personas-->
+				<!--informacion del house-->
+				<!-- informacion contenedor-->
+				<!-- informacion del sello -->
+				<!--Informacion de mercancia del contenedor-->
+				<!--informacion del house de la mercacnia-->
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+
+	<!--PROCESO E FLUJO ALTERNO-->
+
+	<xsd:element name="recibeP3FAVucem">
+		<xsd:complexType>
+			<xsd:sequence>
+				<!--informacion general -->
+				<xsd:element name="informacionGeneral" type="tns:informacionGeneral"/>
+				<!-- informacion del transporte -->
+				<xsd:element name="transporte" type="tns:transporte"/>
+				<!--bl master -->
+				<xsd:element name="guiaMaster" type="tns:informacionDelMaster"/>
+				<xsd:element name="contenedor" type="tns:contenedor" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element name="guiaHouse" type="tns:guiaHouse" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element name="mercancia" type="tns:mercancia" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element name="personas" type="tns:personas" minOccurs="0" maxOccurs="unbounded"/>
+				
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<!--PROCESO P8-->
+
+	<xsd:element name="recibeP8Vucem">
+		<xsd:complexType>
+			<xsd:sequence>
+				<!--informacion general -->
+				<xsd:element name="informacionGeneral" type="tns:informacionGeneral"/>
+				<xsd:element name="IdtipoMercancia" type="tns:tipo_id_tipo_mercancia"/>
+	            <xsd:element name="fechaInicioCarga" type="tns:tipo_fec_ini_carga"/>
+	            <xsd:element name="fechaFinCarga" type="tns:tipo_fec_fin_carga"/>
+	            <xsd:element name="peso" type="tns:tipo_peso"/>
+    			<xsd:element name="condicionCarga" type="tns:condiciones_carga"/>
+    			<xsd:element name="observaciones" type="tns:observaciones"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<!--PROCESO P3 INGRESO SIMPLE -->
+
+	<xsd:element name="recibeP3Vucem">
+		<xsd:complexType>
+			<xsd:sequence>
+			<xsd:element name="informacionGeneral" type="tns:informacionGeneral"/>
+			<xsd:element name="IdtipoMercancia" type="tns:tipo_id_tipo_mercancia"/>
+            <xsd:element name="fechaInicioCarga" type="tns:tipo_fec_ini_carga"/>
+            <xsd:element name="fechaFinCarga" type="tns:tipo_fec_fin_carga"/>
+            <xsd:element name="peso" type="tns:tipo_peso"/>
+			<xsd:element name="condicionCarga" type="tns:condiciones_carga"/>
+    		<xsd:element name="observaciones" type="tns:observaciones"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+
+	<xsd:element name="recibeTransferenciaOrigen">
+		<xsd:complexType>
+			<xsd:sequence>
+			<xsd:element name="informacionGeneral" type="tns:informacionGeneral"/>
+			<xsd:element name="idRecintoFiscalizadoTransferencia" type="tns:tipo_id_recinto_fiscalizado"/>
+			<xsd:element name="transferencia" type="tns:informacionTransferenciaSolicitud" minOccurs="1" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="recibePedimento">
+		<xsd:complexType>
+			<xsd:sequence>
+			<xsd:element name="informacionGeneral" type="tns:informacionGeneral"/>
+			<xsd:element name="pedimento" type="tns:tipo_num_pedimento"/>
+			<xsd:element name="aduana" type="tns:tipo_cve_aduana_es"/>
+			<xsd:element name="patente" type="tns:tipo_num_patente"/>
+			<xsd:element name="mercancia" type="tns:solicitudMercanciaPedimento" maxOccurs="unbounded" minOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="recibeSubdivision">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="informacionGeneral" type="tns:informacionGeneral"/>
+				<xsd:element name="mercancia" type="tns:solicitudMercanciaSubdivision" maxOccurs="unbounded"/>
+			</xsd:sequence> 
+		</xsd:complexType>
+	</xsd:element> 
+
+	<xsd:element name="recibeConsolidacion">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="informacionGeneral" type="tns:informacionGeneral"/>
+				<xsd:element name="guiaMaster" type="tns:guiaMaster"/>
+				<xsd:element name="guiaHouse" type="tns:guiaHouse" maxOccurs="unbounded" minOccurs="0"/>		
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="recibeTraspaleo">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="informacionGeneral" type="tns:informacionGeneral"/>
+				<xsd:element name="contenedorOrigen" type="tns:contenedor"/>
+				<xsd:element name="contenedorDestino" type="tns:contenedor"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="recibeDesconsolidacion">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="informacionGeneral" type="tns:informacionGeneral"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+
+	<xsd:element name="recibeIncidencia">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="informacionGeneral" type="tns:informacionGeneral"/>
+				<xsd:element name="numSecuencia" type="tns:tipo_id_secuencia"/>
+				<xsd:element name="numPeso" type="tns:tipo_peso"/>
+				<xsd:element name="numPiezas" type="tns:tipo_num_piezas_mercancia"/>
+				<xsd:element name="cveUmPiezas" type="tns:tipo_cve_um_piezas"/>
+				<xsd:element name="observaciones" type="tns:observaciones"/>
+				
+			</xsd:sequence> 
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="recibeIngresoSinIdAsociado">
+		<xsd:complexType>
+			<xsd:sequence>
+				<!--informacion general -->
+				<xsd:element name="informacionGeneral" type="tns:informacionGeneral"/>
+				<!-- informacion del transporte -->
+				<xsd:element name="transporte" type="tns:transporte"/>
+				<!--bl master -->
+				<xsd:element name="guiaMaster" type="tns:informacionDelMaster"/>
+				<xsd:element name="contenedor" type="tns:contenedor" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element name="guiaHouse" type="tns:guiaHouse" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element name="mercancia" type="tns:mercancia" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element name="personas" type="tns:personas" minOccurs="0" maxOccurs="unbounded"/>
+				
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+</xsd:schema>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <value name="encodeutf8">true</value>
+  <value name="shared">Ly8gdXNlIHN0YXRpYyBkYXRhIG1lbWJlciB0byBjYWNoZSB0aGUgbG9va3VwIGRhdGEKcHJpdmF0
+ZSBzdGF0aWMgUHJvcGVydGllcyBsb29rdXBQcm9wOwovLyB1c2Ugc3RhdGljIGluaXRpYWxpemVy
+IHRvIHByZS1sb2FkIHRoZSBsb29rdXAgZGF0YSBmcm9tIHRoZSBmaWxlCnN0YXRpYyB7CiAgdHJ5
+IHsKICAgIFN0cmluZyBsb29rdXBGaWxlbmFtZSA9ICJwYWNrYWdlcy9TUEovcmVzb3VyY2VzL1Ni
+Y0xvb2t1cEZpbGUudHh0IjsKICAgIEZpbGVJbnB1dFN0cmVhbSBmaXMgPSBuZXcgRmlsZUlucHV0
+U3RyZWFtKG5ldyBGaWxlKGxvb2t1cEZpbGVuYW1lKSk7Cglsb29rdXBQcm9wID0gbmV3IFByb3Bl
+cnRpZXMoKTsKCWxvb2t1cFByb3AubG9hZChmaXMpOwogICAgZmlzLmNsb3NlKCk7CiAgfSBjYXRj
+aCAoRXhjZXB0aW9uIGV4KSB7CiAgICBleC5wcmludFN0YWNrVHJhY2UoKTsKICB9Cn0KCnByaXZh
+dGUgc3RhdGljIFN0cmluZyBsb29rdXBGaWxlKFN0cmluZyBrZXkpIHsKCS8vIGxvb2t1cAoJU3Ry
+aW5nIHZhbHVlID0gbG9va3VwUHJvcC5nZXRQcm9wZXJ0eShrZXksICJub3QgZm91bmQiKTsKCXJl
+dHVybiB2YWx1ZTsKfQoKcHJpdmF0ZSBzdGF0aWMgU3RyaW5nIGxvb2t1cERCKFN0cmluZyBrZXkp
+IHsKCVN0cmluZyB2YWx1ZSA9ICJub3QgZm91bmQiOwoKCS8vIHVzZSBKREJDIHRvIGxvb2t1cCB2
+YWx1ZQoJdHJ5IHsKCQlDb25uZWN0aW9uIGNvbiA9IERyaXZlck1hbmFnZXIuZ2V0Q29ubmVjdGlv
+bigiamRiYzpvZGJjOlNiY0xvb2t1cCIsICIiLCAiIik7CgkJU3RhdGVtZW50IHN0bXQgPSBjb24u
+Y3JlYXRlU3RhdGVtZW50KCk7CgkJU3RyaW5nIHF1ZXJ5U3RyID0gInNlbGVjdCB2YWx1ZSBmcm9t
+IFNiY0xvb2t1cFRhYmxlIHdoZXJlIGtleSA9ICciICsga2V5ICsgIiciOwoJCVJlc3VsdFNldCBy
+cyA9IHN0bXQuZXhlY3V0ZVF1ZXJ5KHF1ZXJ5U3RyKTsKCQlpZiAocnMubmV4dCgpKSB7CgkJCXZh
+bHVlID0gcnMuZ2V0U3RyaW5nKCJ2YWx1ZSIpOwoJCX0KCQlycy5jbG9zZSgpOwoJCXN0bXQuY2xv
+c2UoKTsKCQljb24uY2xvc2UoKTsKCX0gY2F0Y2ggKEV4Y2VwdGlvbiBleCkgewoJCWV4LnByaW50
+U3RhY2tUcmFjZSgpOwoJfQoJcmV0dXJuIHZhbHVlOwp9</value>
+  <value name="extends"></value>
+  <array name="implements" type="value" depth="1">
+  </array>
+  <array name="imports" type="value" depth="1">
+    <value>java.io.*</value>
+    <value>java.util.*</value>
+    <value>java.sql.*</value>
+    <value>com.wm.pkg.sap.idoc.*</value>
+  </array>
+</Values>

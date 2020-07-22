@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns:tns="http://privados.recintos.ws" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <xs:import namespace="http://privados.recintos.ws" schemaLocation="tns.xsd"/>
+  <xs:import namespace="http://www.w3.org/2001/XMLSchema-instance" schemaLocation="xsi.xsd"/>
+  <xs:element name="informacionGeneral">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="idOperacion"/>
+        <xs:element ref="idAsociado"/>
+        <xs:element ref="fechRegistro"/>
+        <xs:element ref="idDetalleMovimiento"/>
+        <xs:element ref="idMovimiento"/>
+        <xs:element ref="idTipoOperacion"/>
+        <xs:element ref="idRecintoFiscalizado"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="idOperacion" type="xs:integer"/>
+  <xs:element name="fechRegistro" type="xs:dateTime"/>
+  <xs:element name="idDetalleMovimiento" type="xs:integer"/>
+  <xs:element name="idMovimiento" type="xs:integer"/>
+  <xs:element name="idTipoOperacion" type="xs:integer"/>
+  <xs:element name="idRecintoFiscalizado" type="xs:integer"/>
+  <xs:element name="idRecintoFiscalizadoTransferencia" type="xs:integer"/>
+  <xs:element name="transferencia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="idAsociado"/>
+        <xs:element ref="numeroGuiaBl"/>
+        <xs:element maxOccurs="unbounded" ref="mercancia"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="numeroGuiaBl" type="xs:string"/>
+  <xs:element name="mercancia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="idMercancia"/>
+        <xs:element ref="numSecuencia"/>
+        <xs:element ref="numPiezas"/>
+        <xs:element ref="cveUmPiezas"/>
+        <xs:element ref="numPeso"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="idMercancia" type="xs:integer"/>
+  <xs:element name="numSecuencia" type="xs:string"/>
+  <xs:element name="numPiezas" type="xs:integer"/>
+  <xs:element name="cveUmPiezas" type="xs:string"/>
+  <xs:element name="numPeso" type="xs:decimal"/>
+  <xs:element name="idAsociado" type="xs:integer"/>
+</xs:schema>

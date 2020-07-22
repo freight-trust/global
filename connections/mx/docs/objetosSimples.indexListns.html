@@ -1,0 +1,610 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>Schema documentation for </title>
+      <link rel="stylesheet" href="docHtml.css" type="text/css" /><script type="text/javascript"><!--
+        
+      
+        var button_prefix = 'button_';
+        
+        /**
+        * Returns an element in the current HTML document.
+        *
+        * @param elementID Identifier of HTML element
+        * @return               HTML element object
+        */
+        function getElementObject(elementID) {
+            var elemObj = null;
+            if (document.getElementById) {
+                elemObj = document.getElementById(elementID);
+            }
+            return elemObj;
+        }
+        
+        /**
+        * Switches the state of a collapseable box, e.g.
+        * if it's opened, it'll be closed, and vice versa.
+        *
+        * @param boxID Identifier of box
+        */
+        function switchState(boxID) {
+            var boxObj = getElementObject(boxID);
+            var buttonObj = getElementObject(button_prefix + boxID);
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else if (boxObj.style.display == "none") {
+                // Box is closed, so open it
+                openBox(boxObj, buttonObj);
+            } else if (boxObj.style.display == "block") {
+                // Box is opened, so close it
+                closeBox(boxObj, buttonObj);
+            }
+        }
+        
+        /**
+        * Opens a collapseable box.
+        *
+        * @param boxObj       Collapseable box
+        * @param buttonObj Button controlling box
+        */
+        function openBox(boxObj, buttonObj) {
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else {
+                // Change 'display' CSS property of box
+                boxObj.style.display = "block";
+                
+                // Change text of button
+                if (boxObj.style.display == "block") {
+                    buttonObj.src = "img/btM.gif";
+                }
+            }
+        }
+        
+        /**
+        * Closes a collapseable box.
+        *
+        * @param boxObj       Collapseable box
+        * @param buttonObj Button controlling box
+        */
+        function closeBox(boxObj, buttonObj) {
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else {
+                // Change 'display' CSS property of box
+                boxObj.style.display = "none";
+                
+                // Change text of button
+                if (boxObj.style.display == "none") {
+                    buttonObj.src = "img/btP.gif";
+                }
+            }
+        }
+    
+       function switchStateForAll(buttonObj, boxList) {
+            if (buttonObj == null) {
+                // button not found
+            } else if (buttonObj.value == "+") {
+                // Expand all
+                expandAll(boxList);
+                buttonObj.value = "-";
+            } else if (buttonObj.value == "-") {
+                // Collapse all
+                collapseAll(boxList);
+                buttonObj.value = "+";
+            }
+        }
+        
+        /**
+        * Closes all boxes in a given list.
+        *
+        * @param boxList Array of box IDs
+        */
+        function collapseAll(boxList) {
+            var idx;
+            for (idx = 0; idx < boxList.length; idx++) {
+                var boxObj = getElementObject(boxList[idx]);
+                var buttonObj = getElementObject(button_prefix + boxList[idx]);
+                closeBox(boxObj, buttonObj);
+            }
+        }
+            
+        /**
+        * Open all boxes in a given list.
+        *
+        * @param boxList Array of box IDs
+        */
+        function expandAll(boxList) {
+            var idx;
+            for (idx = 0; idx < boxList.length; idx++) {
+                var boxObj = getElementObject(boxList[idx]);
+                var buttonObj = getElementObject(button_prefix + boxList[idx]);
+                openBox(boxObj, buttonObj);
+            }
+        }
+        
+        /**
+         * Update the message presented in the title of the html page.
+         * - If the documentation was splited by namespace we present something like: "Documentation for namespace 'ns'"
+         * - If the documentation was splited by location we present somehing like: "Documentation for 'Schema.xsd'"
+         * - If no split we always present: "Documentation for 'MainSchema.xsd'"
+         */
+        function updatePageTitle(message) {
+            top.document.title = message;
+        }
+        
+          
+                    
+         /**
+          * Finds an HTML element by its ID and makes it floatable over the normal content.
+          *
+          * @param x_displacement The difference in pixels to the right side of the window from 
+          *           the left side of the element.
+          * @param y_displacement The difference in pixels to the right side of the window from 
+          *           the top of the element.          
+          */
+         function findAndFloat(id, x_displacement, y_displacement){
+
+            var element = getElementObject(id);            
+            
+            window[id + "_obj"] = element;
+            
+            if(document.layers) {
+               element.style = element;
+            }
+            
+            element.current_y = y_displacement;      
+            element.first_time = true;
+         
+            element.floatElement = function(){
+               // It may be closed by an user action.
+                
+               // Target X and Y coordinates.
+               var x, y;
+               
+               var myWidth = 0, myHeight = 0;
+               if( typeof( window.innerWidth ) == 'number' ) {
+                  //Non-IE
+                  myWidth = window.innerWidth;
+                  myHeight = window.innerHeight;
+               } else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+                  //IE 6+ in 'standards compliant mode'
+                  myWidth = document.documentElement.clientWidth;
+                  myHeight = document.documentElement.clientHeight;
+               } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+                  //IE 4 compatible
+                  myWidth = document.body.clientWidth;
+                  myHeight = document.body.clientHeight;
+               }
+               
+               
+               x = myWidth - x_displacement;
+               
+               var ns = (navigator.appName.indexOf("Netscape") != -1);               
+               y = ns ? pageYOffset : document.documentElement && document.documentElement.scrollTop ? 
+                  document.documentElement.scrollTop : document.body.scrollTop;               
+               y = y + y_displacement;               
+               
+               // The current y is the current coordinate of the floating element.
+               // This should be at the limit the y target coordinate.
+               this.current_y += (y - this.current_y)/1.25;
+               
+               // Add the pixels constant after the values
+               // and move the element.
+               var px = document.layers ? "" : "px";
+               this.style.left =  x + px;
+               this.style.top =  this.current_y + px;
+                              
+               setTimeout(this.id + "_obj.floatElement()", 100);
+            }
+            
+            element.floatElement();
+            return element;
+          }
+
+         /**
+          * Finds an HTML element by its ID and makes it floatable over the normal content.
+          *
+          * @param x_displacement The difference in pixels to the right side of the window from 
+          *           the left side of the element.
+          * @param y_displacement The difference in pixels to the right side of the window from 
+          *           the top of the element.          
+          */
+         function selectTOCGroupBy(id, isChunked, indexFileLocation, indexFileNamespace, indexFileComponent){
+
+            if (!isChunked) {
+             var selectIds = new Array('toc_group_by_namespace', 'toc_group_by_location', 'toc_group_by_component_type');
+             // Make all the tabs invisible.
+               for (i = 0; i < 3; i++){
+                  var tab = getElementObject(selectIds[i]);
+                  tab.style.display = 'none';
+               }
+               var selTab = getElementObject(id);
+               selTab.style.display = 'block';
+            } else {
+             if (id == 'toc_group_by_namespace') {
+               parent.indexFrame.location = indexFileNamespace;
+             } else  if (id == 'toc_group_by_location') {
+               parent.indexFrame.location = indexFileLocation;
+             } else  if (id == 'toc_group_by_component_type') {
+              parent.indexFrame.location = indexFileComponent;
+             }
+            }
+         }
+          
+
+    
+                        //--></script></head>
+   <body>
+      <h2><a id="INDEX">Table of Contents</a></h2>
+      <div class="toc">
+         <form action="none">
+            <div><span> Group by: <select id="selectTOC" onchange="selectTOCGroupBy(this.options[this.selectedIndex].value, true, 'objetosSimples.indexList.html', 'objetosSimples.indexListns.html', 'objetosSimples.indexListcomp.html');">
+                     <option value="toc_group_by_namespace" selected="selected">Namespace</option>
+                     <option value="toc_group_by_location">Location</option>
+                     <option value="toc_group_by_component_type">Component Type</option></select></span></div>
+         </form>
+         <div class="level1" id="toc_group_by_namespace" style="display:block">
+            <div>
+               <div class="level2">
+                  <p><input id="button_boxIdNamespace1" type="image" value="-" src="img/btM.gif" onclick="switchState('boxIdNamespace1');" class="control" /><span class="indexGroupTitle">http://privados.recintos.ws</span></p>
+                  <div id="boxIdNamespace1" style="display:block">
+                     <div class="horizontalLayout">
+                        <table class="rt">
+                           <tr>
+                              <td class="rt_cornerTopLeft"></td>
+                              <td class="rt_lineTop"></td>
+                              <td class="rt_cornerTopRight"></td>
+                           </tr>
+                           <tr>
+                              <td class="rt_lineLeft"></td>
+                              <td class="rt_content">
+                                 <table class="componentGroup">
+                                    <tbody>
+                                       <tr>
+                                          <td class="componentGroup"><input id="button_boxIdNamespace1Main_schema" type="image" value="-" src="img/btM.gif" onclick="switchState('boxIdNamespace1Main_schema');" class="control" /></td>
+                                          <td class="componentGroup">
+                                             <div class="componentGroupTitle">Main Schema</div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="componentGroup"></td>
+                                          <td class="componentGroup">
+                                             <div id="boxIdNamespace1Main_schema" class="componentGroup" style="display:block">
+                                                <div><b><a href="privados_recintos_ws.html#objetosSimples.xsd" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">objetosSimples.xsd</a></b></div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                              </td>
+                              <td class="rt_lineRight"></td>
+                           </tr>
+                           <tr>
+                              <td class="rt_cornerBottomLeft"></td>
+                              <td class="rt_lineBottom"></td>
+                              <td class="rt_cornerBottomRight"></td>
+                           </tr>
+                        </table>
+                     </div>
+                     <div class="horizontalLayout">
+                        <table class="rt">
+                           <tr>
+                              <td class="rt_cornerTopLeft"></td>
+                              <td class="rt_lineTop"></td>
+                              <td class="rt_cornerTopRight"></td>
+                           </tr>
+                           <tr>
+                              <td class="rt_lineLeft"></td>
+                              <td class="rt_content">
+                                 <table class="componentGroup">
+                                    <tbody>
+                                       <tr>
+                                          <td class="componentGroup"><input id="button_boxIdNamespace1Element" type="image" value="-" src="img/btM.gif" onclick="switchState('boxIdNamespace1Element');" class="control" /></td>
+                                          <td class="componentGroup">
+                                             <div class="componentGroupTitle">Elements</div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="componentGroup"></td>
+                                          <td class="componentGroup">
+                                             <div id="boxIdNamespace1Element" class="componentGroup" style="display:block">
+                                                <div><b><a href="privados_recintos_ws.html#recibeConsolidacion" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:recibeConsolidacion</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#recibeDesconsolidacion" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:recibeDesconsolidacion</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#recibeIncidencia" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:recibeIncidencia</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#recibeIngresoSinIdAsociado" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:recibeIngresoSinIdAsociado</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#recibeP0" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:recibeP0</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#recibeP3FAVucem" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:recibeP3FAVucem</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#recibeP3Vucem" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:recibeP3Vucem</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#recibeP8Vucem" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:recibeP8Vucem</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#recibePedimento" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:recibePedimento</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#recibeSubdivision" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:recibeSubdivision</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#recibeTransferenciaOrigen" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:recibeTransferenciaOrigen</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#recibeTraspaleo" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:recibeTraspaleo</a></b></div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                              </td>
+                              <td class="rt_lineRight"></td>
+                           </tr>
+                           <tr>
+                              <td class="rt_cornerBottomLeft"></td>
+                              <td class="rt_lineBottom"></td>
+                              <td class="rt_cornerBottomRight"></td>
+                           </tr>
+                        </table>
+                     </div>
+                     <div class="horizontalLayout">
+                        <table class="rt">
+                           <tr>
+                              <td class="rt_cornerTopLeft"></td>
+                              <td class="rt_lineTop"></td>
+                              <td class="rt_cornerTopRight"></td>
+                           </tr>
+                           <tr>
+                              <td class="rt_lineLeft"></td>
+                              <td class="rt_content">
+                                 <table class="componentGroup">
+                                    <tbody>
+                                       <tr>
+                                          <td class="componentGroup"><input id="button_boxIdNamespace1Simple_Type" type="image" value="-" src="img/btM.gif" onclick="switchState('boxIdNamespace1Simple_Type');" class="control" /></td>
+                                          <td class="componentGroup">
+                                             <div class="componentGroupTitle">Simple Types</div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="componentGroup"></td>
+                                          <td class="componentGroup">
+                                             <div id="boxIdNamespace1Simple_Type" class="componentGroup" style="display:block">
+                                                <div><b><a href="privados_recintos_ws.html#condiciones_carga" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:condiciones_carga</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#observaciones" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:observaciones</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#t_tipo_cambio" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:t_tipo_cambio</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_BLN_activo" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_BLN_activo</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_BLN_envio" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_BLN_envio</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#http___privados.recintos.ws_tipo_CP" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_CP</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#http___privados.recintos.ws_tipo_CURP" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_CURP</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_N_dia" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_N_dia</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#http___privados.recintos.ws_tipo_RFC" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_RFC</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_RFC_" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_RFC_</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_TPR_telefono" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_TPR_telefono</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_asunto" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_asunto</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_autoridad_emisora" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_autoridad_emisora</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_bl_signo" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_bl_signo</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_bl_ultima_parcialidad" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_bl_ultima_parcialidad</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_cargo_destinatario" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_cargo_destinatario</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_ciudad" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_ciudad</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_ciudad_persona" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_ciudad_persona</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_clave_contenedor" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_clave_contenedor</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_clave_documento" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_clave_documento</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_cod_unidad_peso" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_cod_unidad_peso</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_cod_unidad_peso_bruto" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_cod_unidad_peso_bruto</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_cod_unidad_volumen" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_cod_unidad_volumen</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_contacto" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_contacto</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_cp" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_cp</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_curp" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_curp</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_cve_aduana" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_cve_aduana</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_cve_aduana_es" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_cve_aduana_es</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_cve_estatus_ingreso" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_cve_estatus_ingreso</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_cve_folio_caat" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_cve_folio_caat</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_cve_imo" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_cve_imo</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_cve_moneda" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_cve_moneda</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_cve_pais" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_cve_pais</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_cve_pais_origen" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_cve_pais_origen</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_cve_peso" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_cve_peso</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_cve_tipo_ingreso" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_cve_tipo_ingreso</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_cve_tipo_mercancia" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_cve_tipo_mercancia</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_cve_um_piezas" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_cve_um_piezas</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_cve_vid" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_cve_vid</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_de_contenedor" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_de_contenedor</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_desc_url" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_desc_url</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_descripcion_mercancia" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_descripcion_mercancia</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_destino" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_destino</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_dia_hora_inicio_fin" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_dia_hora_inicio_fin</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_domicilio" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_domicilio</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_domicilio_calle_nem" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_domicilio_calle_nem</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_e_correo" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_e_correo</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_email" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_email</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_ent_fed" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_ent_fed</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_entidad_federativa" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_entidad_federativa</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_estatus_envio" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_estatus_envio</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_fec_fin_carga" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_fec_fin_carga</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_fec_hora_estimada_arribo" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_fec_hora_estimada_arribo</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_fec_ini_carga" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_fec_ini_carga</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_fec_oficio" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_fec_oficio</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_fec_registro" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_fec_registro</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_fecha" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_fecha</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_fecha_final_vigencia" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_fecha_final_vigencia</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_fecha_inicio_vigencia" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_fecha_inicio_vigencia</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_hora_Inicio_fin" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_hora_Inicio_fin</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_id_asociado" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_id_asociado</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_id_bitacora_mensaje" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_id_bitacora_mensaje</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_id_categoriI" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_id_categoriI</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_id_categoria" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_id_categoria</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_id_contenedor" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_id_contenedor</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_id_cotenedor" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_id_cotenedor</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_id_cve_rechazo" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_id_cve_rechazo</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_id_detalle_movimiento" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_id_detalle_movimiento</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_id_e_documento" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_id_e_documento</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_id_fundamento" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_id_fundamento</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_id_guia" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_id_guia</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_id_guia_house" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_id_guia_house</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_id_guia_master" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_id_guia_master</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_id_manifiesto" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_id_manifiesto</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_id_mercancia" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_id_mercancia</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_id_movimiento" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_id_movimiento</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_id_operacion" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_id_operacion</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_id_operacionP0" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_id_operacionP0</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_id_operacion_P0_Traspaleo" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_id_operacion_P0_Traspaleo</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_id_operacion_P3" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_id_operacion_P3</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_id_operacion_P8" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_id_operacion_P8</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_id_operacion_consolidacion" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_id_operacion_consolidacion</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_id_original" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_id_original</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_id_patente" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_id_patente</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_id_pedimento" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_id_pedimento</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_id_persona" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_id_persona</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_id_recinto_discalizado_d" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_id_recinto_discalizado_d</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_id_recinto_fiscalizado" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_id_recinto_fiscalizado</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_id_secuencia" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_id_secuencia</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_id_sello" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_id_sello</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_id_tipo_mercancia" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_id_tipo_mercancia</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_id_tipo_operacion" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_id_tipo_operacion</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_id_vin" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_id_vin</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_ide_contenedor_estado" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_ide_contenedor_estado</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_ide_contenedor_ubicacion" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_ide_contenedor_ubicacion</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_ide_est_operacion" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_ide_est_operacion</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_ide_estatus" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_ide_estatus</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_ide_estatus_traspaleo" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_ide_estatus_traspaleo</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_ide_medio_transporte" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_ide_medio_transporte</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_ide_nivel_origen" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_ide_nivel_origen</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_ide_operacion_origen" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_ide_operacion_origen</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_ide_tipo_consulta_pedimento" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_ide_tipo_consulta_pedimento</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_ide_tipo_documento_transporte" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_ide_tipo_documento_transporte</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_ide_tipo_operacion_master" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_ide_tipo_operacion_master</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_ide_tipo_persona" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_ide_tipo_persona</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_ide_tipo_transporte" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_ide_tipo_transporte</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_identificador_transporte" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_identificador_transporte</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_iniciales_contenedor" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_iniciales_contenedor</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_mensaje" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_mensaje</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_monto" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_monto</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_municipio" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_municipio</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_municipio_persona" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_municipio_persona</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_nombre" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_nombre</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_nombre_area1" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_nombre_area1</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_nombre_area2" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_nombre_area2</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_nombre_contacto" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_nombre_contacto</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_nombre_firmante" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_nombre_firmante</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_nombre_persona" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_nombre_persona</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_num_contenedor" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_num_contenedor</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_num_exterior" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_num_exterior</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_num_guia" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_num_guia</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_num_inetrior" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_num_inetrior</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_num_manifiesto" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_num_manifiesto</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_num_parcialidad" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_num_parcialidad</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_num_patente" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_num_patente</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_num_pedimento" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_num_pedimento</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_num_peso" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_num_peso</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_num_peso_bruto_total" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_num_peso_bruto_total</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_num_peso_bruto_total_guia" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_num_peso_bruto_total_guia</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_num_piezas" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_num_piezas</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_num_piezas_mercancia" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_num_piezas_mercancia</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_num_secuencia" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_num_secuencia</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_num_total_piezas" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_num_total_piezas</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_num_volument_total" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_num_volument_total</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_num_vuelo_buque_viaje" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_num_vuelo_buque_viaje</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_numero_contenedor" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_numero_contenedor</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_numero_expediente" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_numero_expediente</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_numero_guia_bl" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_numero_guia_bl</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_numero_oficio" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_numero_oficio</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_oficio_autoridad" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_oficio_autoridad</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_operable" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_operable</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_origen_informacion" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_origen_informacion</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_origen_vuelo_buque" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_origen_vuelo_buque</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_pais" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_pais</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_parrafo" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_parrafo</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_peso" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_peso</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_peso_ingresado" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_peso_ingresado</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_peso_ingresado_kg" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_peso_ingresado_kg</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_peso_kg" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_peso_kg</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_peso_kg_mercancia" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_peso_kg_mercancia</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_peso_merma" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_peso_merma</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_peso_saldo" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_peso_saldo</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_piezas_saldo" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_piezas_saldo</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_puesto" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_puesto</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_rfc" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_rfc</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_ruta_archivo_MSG" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_ruta_archivo_MSG</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_sello" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_sello</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_telefono_contacto" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_telefono_contacto</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_temperatura" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_temperatura</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_tipo_carga" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_tipo_carga</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_tipo_operacion" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_tipo_operacion</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_transporte" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_transporte</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_tvn_vin" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_tvn_vin</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_valor_declarado" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_valor_declarado</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_valor_mercancia" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_valor_mercancia</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#tipo_volumen_mercancia" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:tipo_volumen_mercancia</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#xml_pedimento" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:xml_pedimento</a></b></div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                              </td>
+                              <td class="rt_lineRight"></td>
+                           </tr>
+                           <tr>
+                              <td class="rt_cornerBottomLeft"></td>
+                              <td class="rt_lineBottom"></td>
+                              <td class="rt_cornerBottomRight"></td>
+                           </tr>
+                        </table>
+                     </div>
+                     <div class="horizontalLayout">
+                        <table class="rt">
+                           <tr>
+                              <td class="rt_cornerTopLeft"></td>
+                              <td class="rt_lineTop"></td>
+                              <td class="rt_cornerTopRight"></td>
+                           </tr>
+                           <tr>
+                              <td class="rt_lineLeft"></td>
+                              <td class="rt_content">
+                                 <table class="componentGroup">
+                                    <tbody>
+                                       <tr>
+                                          <td class="componentGroup"><input id="button_boxIdNamespace1Complex_Type" type="image" value="-" src="img/btM.gif" onclick="switchState('boxIdNamespace1Complex_Type');" class="control" /></td>
+                                          <td class="componentGroup">
+                                             <div class="componentGroupTitle">Complex Types</div>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="componentGroup"></td>
+                                          <td class="componentGroup">
+                                             <div id="boxIdNamespace1Complex_Type" class="componentGroup" style="display:block">
+                                                <div><b><a href="privados_recintos_ws.html#contenedor" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:contenedor</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#contenedorOrigen" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:contenedorOrigen</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#guiaHouse" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:guiaHouse</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#guiaMaster" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:guiaMaster</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#house" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:house</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#informacionDelMaster" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:informacionDelMaster</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#informacionEntradaSimple" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:informacionEntradaSimple</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#informacionGeneral" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:informacionGeneral</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#informacionTransferenciaSolicitud" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:informacionTransferenciaSolicitud</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#masterConsolid" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:masterConsolid</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#mercancia" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:mercancia</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#personas" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:personas</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#sellos" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:sellos</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#solicitudMercancia" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:solicitudMercancia</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#solicitudMercanciaPedimento" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:solicitudMercanciaPedimento</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#solicitudMercanciaSubdivision" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:solicitudMercanciaSubdivision</a></b></div>
+                                                <div><b><a href="privados_recintos_ws.html#transporte" target="mainFrame" title="http://privados.recintos.ws" onclick="updatePageTitle('Schema documentation for namespace http://privados.recintos.ws')">tns:transporte</a></b></div>
+                                             </div>
+                                          </td>
+                                       </tr>
+                                    </tbody>
+                                 </table>
+                              </td>
+                              <td class="rt_lineRight"></td>
+                           </tr>
+                           <tr>
+                              <td class="rt_cornerBottomLeft"></td>
+                              <td class="rt_lineBottom"></td>
+                              <td class="rt_cornerBottomRight"></td>
+                           </tr>
+                        </table>
+                     </div>
+                     <div style="clear:left"></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="footer">
+         <hr />
+         <div align="center">XML Schema documentation generated by <a href="http://www.oxygenxml.com" target="_parent"><span class="oXygenLogo"><span class="redX">&lt;</span>o<span class="redX">X</span>ygen<span class="redX">/&gt;</span></span></a><sup>®</sup> XML Editor Trial Edition.</div>
+      </div>
+   </body>
+</html>
