@@ -1,0 +1,29 @@
+[ {
+    "MessageStatus": "ACCEPTED", "MessageDisposition": "ACK"}
+, {
+    "MessageStatus": "AFFIRMED", "MessageDisposition": "ACK"}
+, {
+    "MessageStatus": "ALLEGED", "MessageDisposition": "STATUS"}
+, {
+    "MessageStatus": "AMENDED", "MessageDisposition": "STATUS"}
+, {
+    "MessageStatus": "CANCELLED", "MessageDisposition": "STATUS"}
+, {
+    "MessageStatus": "CERTAIN", "MessageDisposition": "ACK"}
+, {
+    "MessageStatus": "CLEARED", "MessageDisposition": "ACK"}
+, {
+    "MessageStatus": "CONFIRMED", "MessageDisposition": "ACK"}
+, {
+    "MessageStatus": "PENDING", "MessageDisposition": "STATUS"}
+, {
+    "MessageStatus": "REJECTED", "MessageDisposition": "NEGATIVE"}
+, {
+    "MessageStatus": "SUBMITTED", "MessageDisposition": "PENDING"}
+, {
+    "MessageStatus": "TERMINATED", "MessageDisposition": "STATUS"}
+, {
+    "MessageStatus": "UNCERTAIN", "MessageDisposition": "UNKNOWN"}
+, {
+    "MessageStatus": "UNCONFIRMED", "MessageDisposition": "STATUS"}
+]
