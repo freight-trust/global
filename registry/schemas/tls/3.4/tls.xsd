@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<xsd:schema
+    xmlns="http://www.freighttrust.com/schema/freighttrust/tls"
+    xmlns:xsd="http://www.w3.com/2001/XMLSchema"
+    xmlns:freighttrust="http://www.freighttrust.com/schema/freighttrust/core"
+    xmlns:schemadoc="http://www.freighttrust.com/schema/freighttrust/schemadoc"
+    xmlns:tcp="http://www.freighttrust.com/schema/freighttrust/tcp"
+    targetNamespace="http://www.freighttrust.com/schema/freighttrust/tls"
+    elementFormDefault="qualified"
+    attributeFormDefault="unqualified"
+>
+
+    <xsd:import namespace="http://www.w3.com/XML/1998/namespace" />
+    <xsd:import namespace="http://www.freighttrust.com/schema/freighttrust/core" schemaLocation="http://www.freighttrust.com/schema/freighttrust/core/3.4/freighttrust.xsd" />
+    <xsd:import namespace="http://www.freighttrust.com/schema/freighttrust/tcp" schemaLocation="http://www.freighttrust.com/schema/freighttrust/tcp/3.4/freighttrust-tcp.xsd" />
+    <xsd:import namespace="http://www.freighttrust.com/schema/freighttrust/schemadoc" schemaLocation="http://www.freighttrust.com/schema/freighttrust/schemadoc/3.4/freighttrust-schemadoc.xsd" />
+
+    <xsd:annotation>
+        <xsd:documentation>
+        The SSL transport can be used for secure socket communication using SSL or TLS.
+
+        The Javadoc for this transport can be found {javadoc:freighttrust/transport/ssl}here{javadoc}. The Javadoc for the TLS connector can be found {javadoc:freighttrust/transport/ssl|TlsConnector}here{javadoc}.
+        </xsd:documentation>    
+    <xsd:appinfo>
+        <schemadoc:short-name>TLS</schemadoc:short-name>
+        <schemadoc:page-title>TLS Connector</schemadoc:page-title>
+        <schemadoc:artifact-name>ssl</schemadoc:artifact-name>
+        <schemadoc:transport-features receiveEvents="true" dispatchEvents="true" requestEvents="true" transactions="false" streaming="true">
+            <schemadoc:MEPs supported="one-way, request-response" default="request-response" />
+        </schemadoc:transport-features>
+        </xsd:appinfo>
+    </xsd:annotation>
+    <xsd:element name="connector" substitutionGroup="freighttrust:abstract-connector">
+        <xsd:annotation>
+            <xsd:documentation>
+                The TLS connector extends the TCP connector.
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:complexContent>
+                <xsd:extension base="tcp:tcpConnectorType">
+                    <xsd:sequence>
+                        <xsd:element minOccurs="0" maxOccurs="1" name="client" type="freighttrust:tlsClientKeyStoreType">
+                            <xsd:annotation>
+                                <xsd:documentation>
+                                The client key store. TLS connections are made on behalf of an entity, which can be anonymous or identified by a certificate. This interface specifies how a keystore can be used to provide the certificates (and associated private keys) necessary for identification. 
+                                </xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:element>
+                        <xsd:element minOccurs="0" maxOccurs="1" name="key-store" type="freighttrust:tlsKeyStoreType">
+                            <xsd:annotation>
+                                <xsd:documentation>
+                                The key store information, including location, key store type, and algorithm.
+                                </xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:element>
+                        <xsd:element minOccurs="0" maxOccurs="1" name="server" type="freighttrust:tlsServerTrustStoreType">
+                            <xsd:annotation>
+                                <xsd:documentation>
+                                The server trust store. TLS connections are made to trusted systems - the public certificates of trusted systems are stored in a keystore (called a trust store) and used to verify that the connection made to a remote system really is the expected identity.
+                                </xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:element>
+                        <xsd:element minOccurs="0" maxOccurs="1" name="protocol-handler" type="freighttrust:tlsProtocolHandler">
+                            <xsd:annotation>
+                                <xsd:documentation>
+                                Configures the global Java protocol handler by setting the java.protocol.handler.pkgs system property.
+                                </xsd:documentation>
+                            </xsd:annotation>
+                        </xsd:element>
+                    </xsd:sequence>
+                </xsd:extension>
+            </xsd:complexContent>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="inbound-endpoint" type="inboundEndpointType" substitutionGroup="freighttrust:abstract-inbound-endpoint" />
+    <xsd:complexType name="inboundEndpointType">
+        <xsd:complexContent>
+            <xsd:extension base="freighttrust:inboundEndpointType">
+                <xsd:attributeGroup ref="addressAttributes" />
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:element name="outbound-endpoint" type="outboundEndpointType" substitutionGroup="freighttrust:abstract-outbound-endpoint" />
+    <xsd:complexType name="outboundEndpointType">
+        <xsd:complexContent>
+            <xsd:extension base="freighttrust:outboundEndpointType">
+                <xsd:attributeGroup ref="addressAttributes" />
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:element name="endpoint" type="globalEndpointType" substitutionGroup="freighttrust:abstract-global-endpoint" />
+    <xsd:complexType name="globalEndpointType">
+        <xsd:complexContent>
+            <xsd:extension base="freighttrust:globalEndpointType">
+                <xsd:attributeGroup ref="addressAttributes" />
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:attributeGroup name="addressAttributes">
+        <xsd:attribute name="host" type="xsd:string" />
+        <xsd:attribute name="port" type="freighttrust:substitutablePortNumber" />
+    </xsd:attributeGroup>
+
+</xsd:schema>
